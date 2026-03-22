@@ -5,11 +5,34 @@
       <stop offset="100%" style="stop-color:#4F46E5;stop-opacity:1" />
     </linearGradient>
   </defs>
+
+  <!-- Background rounded rectangle -->
   <rect width="512" height="512" rx="96" ry="96" fill="url(#bgGrad)"/>
+
+  <!-- Barbell: center horizontal bar -->
   <rect x="136" y="234" width="240" height="44" rx="22" fill="white"/>
+
+  <!-- Left outer weight plate -->
   <rect x="88" y="186" width="52" height="140" rx="20" fill="white"/>
+
+  <!-- Left inner collar -->
   <rect x="140" y="206" width="20" height="100" rx="8" fill="white" opacity="0.7"/>
+
+  <!-- Right inner collar -->
   <rect x="352" y="206" width="20" height="100" rx="8" fill="white" opacity="0.7"/>
+
+  <!-- Right outer weight plate -->
   <rect x="372" y="186" width="52" height="140" rx="20" fill="white"/>
-  <text x="256" y="418" font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif" font-size="80" font-weight="900" text-anchor="middle" fill="white" letter-spacing="6">GP</text>
+
+  <!-- GP text below barbell -->
+  <text
+    x="256"
+    y="418"
+    font-family="'Arial Black', 'Helvetica Neue', Arial, sans-serif"
+    font-size="80"
+    font-weight="900"
+    text-anchor="middle"
+    fill="white"
+    letter-spacing="6"
+  >GP</text>
 </svg>

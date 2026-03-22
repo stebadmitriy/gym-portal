@@ -18,6 +18,23 @@
   }
 }
 
+/* ===== GLOBAL FONT SCALE-UP (accessibility) ===== */
+/* text-xs → becomes text-sm size, text-sm → text-base, text-base → text-lg */
+@layer base {
+  html {
+    font-size: 17px; /* base bump: was 16px */
+  }
+}
+
+@layer components {
+  /* Override Tailwind text size utilities globally for accessibility */
+  .text-xs  { font-size: 0.875rem !important; line-height: 1.25rem !important; }  /* was 0.75rem */
+  .text-sm  { font-size: 1rem !important;     line-height: 1.5rem !important; }   /* was 0.875rem */
+  .text-base{ font-size: 1.125rem !important; line-height: 1.75rem !important; }  /* was 1rem */
+  /* Bump button min-height for larger tap targets */
+  .btn-primary { min-height: 52px !important; padding-top: 0.875rem !important; padding-bottom: 0.875rem !important; }
+}
+
 @layer utilities {
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom, 16px);

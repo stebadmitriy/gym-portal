@@ -10,6 +10,7 @@ import ProgressPage from './pages/ProgressPage'
 import ExercisesPage from './pages/ExercisesPage'
 import SettingsPage from './pages/SettingsPage'
 import WorkoutSummaryPage from './pages/WorkoutSummaryPage'
+import InfoPage from './pages/InfoPage'
 import BottomNav from './components/BottomNav'
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -90,6 +91,14 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <SettingsPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/info"
+          element={
+            <ProtectedRoute>
+              <InfoPage />
             </ProtectedRoute>
           }
         />
