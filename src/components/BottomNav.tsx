@@ -1,0 +1,62 @@
+import { Link, useLocation } from 'react-router-dom'
+import { useWorkoutStore } from '../stores/workoutStore'
+
+const tabs = [
+  { path: '/', icon: '🏠', label: 'Сегодня' },
+  { path: '/workout', icon: '💪', label: 'Тренировка' },
+  { path: '/progress', icon: '📊', label: 'Прогресс' },
+  { path: '/exercises', icon: '📚', label: 'Упражнения' },
+  { path: '/settings', icon: '⚙️', label: 'Настройки' },
+]
+
+export default function BottomNav() {
+  const location = useLocation()
+  const { activeWorkout } = useWorkoutStore()
+
+  // Don't show on pin page or summary page
+  if (location.pathname === '/pin' || location.pathname === '/workout/summary') return null
+
+  return (
+    <nav
+      className="fixed bottom-0 left-0 right-0 z-50"
+      style={{
+        background: 'rgba(10, 10, 15, 0.95)',
+        backdropFilter: 'blur(20px)',
+        borderTop: '1px solid rgba(255,255,255,0.08)',
+        paddingBottom: 'env(safe-area-inset-bottom, 0px)'
+      }}
+    >
+      <div className="flex items-center justify-around px-2 py-2">
+        {tabs.map(tab => {
+          const isActive = location.pathname === tab.path ||
+            (tab.path === '/workout' && location.pathname.startsWith('/workout'))
+
+          const isWorkoutActive = tab.path === '/workout' && !!activeWorkout
+
+          return (
+            <Link
+              key={tab.path}
+              to={tab.path}
+              className="flex flex-col items-center gap-1 px-3 py-1.5 rounded-xl transition-all"
+              style={{
+                minWidth: 56,
+                color: isActive ? '#8b5cf6' : 'rgba(255,255,255,0.4)',
+              }}
+            >
+              <span className="text-xl leading-none relative">
+                {tab.icon}
+                {isWorkoutActive && (
+                  <span
+                    className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-green-400"
+                    style={{ border: '2px solid #0a0a0f' }}
+                  />
+                )}
+              </span>
+              <span className="text-[10px] font-medium leading-none">{tab.label}</span>
+            </Link>
+          )
+        })}
+      </div>
+    </nav>
+  )
+}

@@ -1,0 +1,240 @@
+import { Exercise } from '../types'
+
+export const EXERCISES: Exercise[] = [
+  // Workout A
+  {
+    id: 'lat_pulldown',
+    name_ru: 'Тяга верхнего блока',
+    muscle_primary: 'Широчайшие',
+    is_compound: true,
+    increment_kg: 2.5,
+    tempo: '3-1-2',
+    workout_slot: 'A',
+    exercise_order: 1,
+    sets: 4,
+    reps: '10-12',
+    muscle_emoji: '🏋️',
+    tips_ru: '🔑 V-тейп секрет: УЗКИЙ хват — локти вдоль тела. Широкий хват качает трапеции, НЕ широчайшие. Тяни лопатки ВНИЗ перед стартом движения.'
+  },
+  {
+    id: 'chest_press',
+    name_ru: 'Жим в тренажёре',
+    muscle_primary: 'Грудь',
+    is_compound: true,
+    increment_kg: 5,
+    tempo: '3-1-2',
+    workout_slot: 'A',
+    exercise_order: 2,
+    sets: 4,
+    reps: '10-12',
+    muscle_emoji: '💪',
+    tips_ru: 'Лопатки сведены и опущены. Не отрывай спину от спинки. Темп 3-1-2 обязателен.'
+  },
+  {
+    id: 'shoulder_press',
+    name_ru: 'Жим плеч',
+    muscle_primary: 'Дельты',
+    is_compound: true,
+    increment_kg: 2.5,
+    tempo: '3-1-2',
+    workout_slot: 'A',
+    exercise_order: 3,
+    sets: 4,
+    reps: '10-12',
+    muscle_emoji: '🤲',
+    tips_ru: 'Не блокируй локти в верхней точке. Опускай до угла 90° в локте — не ниже, чтобы беречь плечи.'
+  },
+  {
+    id: 'incline_pec_fly',
+    name_ru: 'Разводка (наклон)',
+    muscle_primary: 'Верхняя грудь',
+    is_compound: false,
+    increment_kg: 2.5,
+    tempo: '3-1-2',
+    workout_slot: 'A',
+    exercise_order: 4,
+    sets: 3,
+    reps: '12',
+    muscle_emoji: '🦅',
+    tips_ru: 'Контролируй движение на всём диапазоне. Чувствуй растяжение в верхней части груди. Не своди руки слишком резко.'
+  },
+  {
+    id: 'cable_lateral_raise',
+    name_ru: 'Боковые разводки (кабель)',
+    muscle_primary: 'Боковые дельты',
+    is_compound: false,
+    increment_kg: 2.5,
+    tempo: '2-0-2',
+    workout_slot: 'A',
+    exercise_order: 5,
+    sets: 3,
+    reps: '15',
+    muscle_emoji: '↔️',
+    tips_ru: '🔑 V-тейп секрет: боковые дельты дают ШИРИНУ плечам. Держи небольшой наклон вперёд, локоть чуть согнут. Кабель = равномерная нагрузка по всей траектории.'
+  },
+  {
+    id: 'leg_press',
+    name_ru: 'Жим ногами',
+    muscle_primary: 'Квадрицепсы',
+    is_compound: true,
+    increment_kg: 5,
+    tempo: '3-1-2',
+    workout_slot: 'A',
+    exercise_order: 6,
+    sets: 4,
+    reps: '10-12',
+    muscle_emoji: '🦵',
+    tips_ru: 'Не блокируй колени в верхней точке! Стопы на ширине плеч, пятки давят в платформу. Поясница прижата.'
+  },
+  {
+    id: 'seated_leg_curl',
+    name_ru: 'Сгибание ног сидя',
+    muscle_primary: 'Бицепс бедра',
+    is_compound: false,
+    increment_kg: 2.5,
+    tempo: '3-1-2',
+    workout_slot: 'A',
+    exercise_order: 7,
+    sets: 3,
+    reps: '12',
+    muscle_emoji: '🦿',
+    tips_ru: 'Полный диапазон движения. Не дёргай — контролируй обратную фазу 2 секунды. Стопы параллельны или чуть развёрнуты внутрь.'
+  },
+  {
+    id: 'abdominal_crunch',
+    name_ru: 'Скручивания на пресс',
+    muscle_primary: 'Пресс',
+    is_compound: false,
+    increment_kg: 0,
+    tempo: 'свободный',
+    workout_slot: 'A',
+    exercise_order: 8,
+    sets: 3,
+    reps: '15',
+    muscle_emoji: '🎯',
+    tips_ru: 'Фокус на сжатии мышц пресса, а не на подъёме тела. Руки за ушами, не тяни шею. Выдох на сжатии.'
+  },
+  // Workout B
+  {
+    id: 'pull_over',
+    name_ru: 'Пуловер',
+    muscle_primary: 'Широчайшие',
+    is_compound: true,
+    increment_kg: 2.5,
+    tempo: '3-1-2',
+    workout_slot: 'B',
+    exercise_order: 1,
+    sets: 4,
+    reps: '10-12',
+    muscle_emoji: '🏋️',
+    tips_ru: 'Растяни широчайшие в верхней точке — пауза 1 сек. Пуловер уникален: нагружает лат в растянутом положении = максимум роста.'
+  },
+  {
+    id: 'linear_back_row',
+    name_ru: 'Тяга горизонтального блока',
+    muscle_primary: 'Спина (толщина)',
+    is_compound: true,
+    increment_kg: 2.5,
+    tempo: '3-1-2',
+    workout_slot: 'B',
+    exercise_order: 2,
+    sets: 4,
+    reps: '10-12',
+    muscle_emoji: '🔗',
+    tips_ru: 'Тяни к поясу, локти вдоль тела. Сводим лопатки — не горбись. Корпус прямой, без раскачки.'
+  },
+  {
+    id: 'shoulder_press_b',
+    name_ru: 'Жим плеч (2й раз)',
+    muscle_primary: 'Дельты',
+    is_compound: true,
+    increment_kg: 2.5,
+    tempo: '3-1-2',
+    workout_slot: 'B',
+    exercise_order: 3,
+    sets: 3,
+    reps: '12',
+    muscle_emoji: '🤲',
+    tips_ru: 'Не блокируй локти в верхней точке. Опускай до угла 90° в локте — не ниже, чтобы беречь плечи.'
+  },
+  {
+    id: 'cable_lateral_raise_b',
+    name_ru: 'Боковые разводки (2й раз)',
+    muscle_primary: 'Боковые дельты',
+    is_compound: false,
+    increment_kg: 2.5,
+    tempo: '2-0-2',
+    workout_slot: 'B',
+    exercise_order: 4,
+    sets: 3,
+    reps: '15',
+    muscle_emoji: '↔️',
+    tips_ru: '🔑 V-тейп секрет: боковые дельты дают ШИРИНУ плечам. Держи небольшой наклон вперёд, локоть чуть согнут. Кабель = равномерная нагрузка по всей траектории.'
+  },
+  {
+    id: 'leg_extension',
+    name_ru: 'Разгибание ног',
+    muscle_primary: 'Квадрицепсы',
+    is_compound: false,
+    increment_kg: 2.5,
+    tempo: '3-1-2',
+    workout_slot: 'B',
+    exercise_order: 5,
+    sets: 4,
+    reps: '12',
+    muscle_emoji: '🦵',
+    tips_ru: 'Пик-сокращение в верхней точке — задержи 1 сек. Спина прижата к спинке. Не используй инерцию.'
+  },
+  {
+    id: 'ham_curl',
+    name_ru: 'Сгибание ног (одна нога)',
+    muscle_primary: 'Бицепс бедра',
+    is_compound: false,
+    increment_kg: 2.5,
+    tempo: '3-1-2',
+    workout_slot: 'B',
+    exercise_order: 6,
+    sets: 3,
+    reps: '12',
+    muscle_emoji: '🦿',
+    tips_ru: 'Полный диапазон — полное разгибание внизу. Таз не должен подниматься. Фокус на растяжении бицепса бедра.'
+  },
+  {
+    id: 'biceps_curl',
+    name_ru: 'Сгибание бицепс',
+    muscle_primary: 'Бицепс',
+    is_compound: false,
+    increment_kg: 2.5,
+    tempo: '3-1-2',
+    workout_slot: 'B',
+    exercise_order: 7,
+    sets: 3,
+    reps: '12',
+    muscle_emoji: '💪',
+    tips_ru: 'Локти зафиксированы у корпуса. В нижней точке полное разгибание — не срезай амплитуду.'
+  },
+  {
+    id: 'abdominal_crunch_b',
+    name_ru: 'Скручивания на пресс',
+    muscle_primary: 'Пресс',
+    is_compound: false,
+    increment_kg: 0,
+    tempo: 'свободный',
+    workout_slot: 'B',
+    exercise_order: 8,
+    sets: 3,
+    reps: '15',
+    muscle_emoji: '🎯',
+    tips_ru: 'Фокус на сжатии мышц пресса, а не на подъёме тела. Руки за ушами, не тяни шею. Выдох на сжатии.'
+  }
+]
+
+export const getExercisesByWorkout = (workout: 'A' | 'B'): Exercise[] => {
+  return EXERCISES
+    .filter(e => e.workout_slot === workout)
+    .sort((a, b) => a.exercise_order - b.exercise_order)
+}
+
+export const getExerciseById = (id: string): Exercise | undefined => {
+  return EXERCISES.find(e => e.id === id)
+}

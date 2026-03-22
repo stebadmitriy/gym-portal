@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Упражнение — предпросмотр</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0a14; color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+  h1 { font-size: 18px; background: linear-gradient(90deg,#e94560,#f5a623); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; }
+  .subtitle { color: #666; font-size: 12px; text-align: center; }
+
+  .phone {
+    width: 300px;
+    background: #111;
+    border-radius: 36px;
+    border: 6px solid #222;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  }
+  .screen {
+    background: linear-gradient(160deg, #1a1a2e 0%, #16213e 100%);
+    min-height: 620px;
+    overflow-y: auto;
+  }
+  .status-bar { display: flex; justify-content: space-between; padding: 10px 16px 4px; font-size: 11px; color: #888; }
+  .back-header { display: flex; align-items: center; gap: 10px; padding: 8px 14px 12px; }
+  .back-btn { color: #f5a623; font-size: 13px; font-weight: 600; }
+  .page-title { font-size: 17px; font-weight: 800; color: #fff; }
+
+  .muscle-tags { display: flex; gap: 6px; padding: 0 14px 12px; }
+  .tag { border-radius: 20px; padding: 4px 10px; font-size: 10px; font-weight: 700; }
+  .tag-primary { background: rgba(233,69,96,0.2); color: #e94560; border: 1px solid rgba(233,69,96,0.3); }
+  .tag-secondary { background: rgba(255,255,255,0.07); color: #888; }
+
+  /* GIF section */
+  .section-header { padding: 0 14px 8px; display: flex; align-items: center; gap: 8px; }
+  .section-icon { font-size: 14px; }
+  .section-title { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #666; text-transform: uppercase; }
+
+  .gif-container {
+    margin: 0 14px 14px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .gif-placeholder {
+    background: linear-gradient(135deg, #1a1a2e, #0f3460);
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+  }
+  .gif-label { color: #e94560; font-size: 10px; font-weight: 700; letter-spacing: 1px; position: absolute; top: 10px; left: 10px; background: rgba(233,69,96,0.2); padding: 2px 8px; border-radius: 4px; }
+  .muscle-body { font-size: 48px; }
+  .gif-caption { font-size: 11px; color: #888; }
+
+  /* Tips */
+  .tips-card {
+    margin: 0 14px 14px;
+    background: rgba(245,166,35,0.07);
+    border: 1px solid rgba(245,166,35,0.2);
+    border-radius: 14px;
+    padding: 12px 14px;
+  }
+  .tips-title { font-size: 10px; font-weight: 700; letter-spacing: 1px; color: #f5a623; margin-bottom: 8px; }
+  .tip { display: flex; gap: 8px; margin-bottom: 6px; font-size: 12px; color: #ccc; line-height: 1.4; }
+  .tip-icon { color: #f5a623; flex-shrink: 0; }
+
+  /* Instagram embed mock */
+  .ig-section {
+    margin: 0 14px 14px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .ig-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .ig-avatar {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .ig-username { font-size: 12px; font-weight: 700; color: #fff; }
+  .ig-source { font-size: 10px; color: #666; }
+  .ig-logo { margin-left: auto; font-size: 18px; }
+  .ig-video {
+    background: #000;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  .ig-thumbnail-bg {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, #1a0a0a, #2d1515);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .ig-play-btn {
+    width: 48px; height: 48px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    position: relative; z-index: 1;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+  .ig-exercise-label {
+    position: absolute; top: 10px; left: 10px;
+    background: rgba(0,0,0,0.7);
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 10px;
+    color: #fff;
+    font-weight: 600;
+    z-index: 1;
+  }
+  .ig-footer {
+    padding: 10px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .ig-caption { font-size: 11px; color: #888; }
+  .ig-open-btn {
+    background: rgba(245,166,35,0.15);
+    border: 1px solid rgba(245,166,35,0.3);
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: 10px;
+    color: #f5a623;
+    font-weight: 700;
+  }
+
+  .note {
+    max-width: 300px;
+    background: rgba(100,180,255,0.08);
+    border: 1px solid rgba(100,180,255,0.2);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-size: 12px;
+    color: #aaa;
+    line-height: 1.6;
+    text-align: center;
+  }
+  .note strong { color: #64b4ff; }
+</style>
+</head>
+<body>
+
+<h1>Экран упражнения</h1>
+<p class="subtitle">Lat Pulldown / Тяга верхнего блока</p>
+
+<div class="phone">
+  <div class="screen">
+    <div class="status-bar"><span>9:41</span><span>●●●</span><span>🔋</span></div>
+
+    <div class="back-header">
+      <div class="back-btn">← Назад</div>
+      <div class="page-title">Тяга верхнего блока</div>
+    </div>
+
+    <div class="muscle-tags">
+      <div class="tag tag-primary">Широчайшие</div>
+      <div class="tag tag-secondary">Бицепс</div>
+      <div class="tag tag-secondary">Задние дельты</div>
+    </div>
+
+    <!-- GIF -->
+    <div class="section-header">
+      <span class="section-icon">🎬</span>
+      <span class="section-title">Анимация техники</span>
+    </div>
+    <div class="gif-container">
+      <div class="gif-placeholder">
+        <div class="gif-label">GIF · ExerciseDB</div>
+        <div class="muscle-body">🏋</div>
+        <div style="font-size:32px;position:absolute;opacity:0.15">💪</div>
+        <div class="gif-caption">анимация движения</div>
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="section-header">
+      <span class="section-icon">💡</span>
+      <span class="section-title">На что обратить внимание</span>
+    </div>
+    <div class="tips-card">
+      <div class="tips-title">СОВЕТЫ ТРЕНЕРА</div>
+      <div class="tip"><span class="tip-icon">▸</span>Тяни локти вниз и назад, не кисти</div>
+      <div class="tip"><span class="tip-icon">▸</span>Лопатки сводятся в нижней точке</div>
+      <div class="tip"><span class="tip-icon">▸</span>Не раскачивайся — минимум инерции</div>
+      <div class="tip"><span class="tip-icon">⚠</span>Не блокируй локти в верхней точке</div>
+    </div>
+
+    <!-- Instagram embed -->
+    <div class="section-header">
+      <span class="section-icon">📸</span>
+      <span class="section-title">Видео от @appyoucan</span>
+    </div>
+    <div class="ig-section">
+      <div class="ig-header">
+        <div class="ig-avatar">💪</div>
+        <div>
+          <div class="ig-username">appyoucan</div>
+          <div class="ig-source">instagram.com</div>
+        </div>
+        <div class="ig-logo">📸</div>
+      </div>
+      <div class="ig-video">
+        <div class="ig-thumbnail-bg">
+          <div style="font-size:60px;opacity:0.3">🏋</div>
+        </div>
+        <div class="ig-exercise-label">Lat Pulldown Tutorial</div>
+        <div class="ig-play-btn">▶</div>
+      </div>
+      <div class="ig-footer">
+        <div class="ig-caption">Нажми для просмотра Reel</div>
+        <div class="ig-open-btn">Открыть ↗</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="note">
+  <strong>Как работает embed:</strong><br>
+  Instagram Reel встраивается как плеер прямо на страницу. Нажимаешь — видео играет. Если ты залогинен в Instagram — воспроизводится сразу. Если нет — открывается в Instagram-приложении.
+</div>
+
+</body>
+</html>

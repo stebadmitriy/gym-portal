@@ -1,0 +1,78 @@
+<h2>Три подхода к реализации</h2>
+<p class="subtitle">Выбери архитектуру портала — каждый вариант имеет свои плюсы и минусы</p>
+
+<div class="options">
+
+  <div class="option" data-choice="react-pwa" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>React + Vite + Supabase · PWA ⭐ Рекомендую</h3>
+      <p><strong>Стек:</strong> React 18, Vite, Supabase (auth + DB), GitHub Pages + GitHub Actions (auto-build)</p>
+      <p><strong>Плюсы:</strong></p>
+      <ul>
+        <li>✅ Устанавливается на iPhone как приложение (Add to Home Screen)</li>
+        <li>✅ Push-уведомления таймера работают даже при свёрнутом экране</li>
+        <li>✅ Offline режим — видишь программу без интернета</li>
+        <li>✅ Компонентная архитектура — легко масштабировать</li>
+        <li>✅ Богатая экосистема: charts, анимации, UI-библиотеки</li>
+        <li>✅ Supabase бесплатный tier более чем достаточен (500MB, 50K MAU)</li>
+      </ul>
+      <p><strong>Минусы:</strong></p>
+      <ul>
+        <li>⚠️ Нужен build step (GitHub Actions — настраивается один раз)</li>
+        <li>⚠️ Чуть сложнее старта, чем vanilla</li>
+      </ul>
+      <p><strong>Хостинг:</strong> GitHub Pages (бесплатно) · <strong>БД:</strong> Supabase (бесплатно)</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="vanilla-pwa" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Vanilla JS + Supabase · PWA</h3>
+      <p><strong>Стек:</strong> HTML/CSS/JS чистый, Supabase JS SDK, GitHub Pages (прямой деплой без сборки)</p>
+      <p><strong>Плюсы:</strong></p>
+      <ul>
+        <li>✅ Максимально простой деплой — push в репо = сайт обновлён</li>
+        <li>✅ Нет зависимостей от фреймворков, нет npm install</li>
+        <li>✅ PWA и уведомления работают так же</li>
+        <li>✅ Молниеносная загрузка</li>
+      </ul>
+      <p><strong>Минусы:</strong></p>
+      <ul>
+        <li>❌ Без компонентов — код быстро станет громоздким при расширении</li>
+        <li>❌ Сложнее поддерживать сложную логику программы тренировок</li>
+        <li>❌ Нет типобезопасности — баги сложнее отловить</li>
+      </ul>
+      <p><strong>Хостинг:</strong> GitHub Pages (бесплатно) · <strong>БД:</strong> Supabase (бесплатно)</p>
+    </div>
+  </div>
+
+  <div class="option" data-choice="nextjs" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Next.js + Supabase · Vercel</h3>
+      <p><strong>Стек:</strong> Next.js 15, Supabase, Vercel hosting</p>
+      <p><strong>Плюсы:</strong></p>
+      <ul>
+        <li>✅ Server-side rendering — быстрый первый экран</li>
+        <li>✅ API Routes для сложной логики программ (без отдельного бэкенда)</li>
+        <li>✅ Vercel деплой в 1 клик, очень удобно</li>
+        <li>✅ PWA поддержка через next-pwa</li>
+      </ul>
+      <p><strong>Минусы:</strong></p>
+      <ul>
+        <li>⚠️ Vercel free tier ограничен (100GB bandwidth/мес — хватит для личного использования)</li>
+        <li>⚠️ Сложнее чем React+Vite для этого масштаба приложения</li>
+        <li>⚠️ Избыточность: SSR не нужен для личного приложения</li>
+      </ul>
+      <p><strong>Хостинг:</strong> Vercel (бесплатно для личного) · <strong>БД:</strong> Supabase (бесплатно)</p>
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top:24px;background:rgba(233,69,96,0.1);border:1px solid rgba(233,69,96,0.3);border-radius:10px;padding:16px;">
+  <p style="color:#f5a623;font-weight:700;margin:0 0 8px;">💡 Моя рекомендация: Вариант A</p>
+  <p style="color:#ccc;margin:0;font-size:14px;">React + Vite + Supabase + GitHub Pages — лучший баланс между возможностями и простотой поддержки. PWA даёт нативные уведомления таймера на iPhone. Один раз настраиваем GitHub Actions и дальше деплой автоматический при каждом push.</p>
+</div>
