@@ -14,7 +14,9 @@ export const EXERCISES: Exercise[] = [
     sets: 4,
     reps: '10-12',
     muscle_emoji: '🏋️',
-    tips_ru: '🔑 V-тейп секрет: УЗКИЙ хват — локти вдоль тела. Широкий хват качает трапеции, НЕ широчайшие. Тяни лопатки ВНИЗ перед стартом движения.'
+    tips_ru: '🔑 V-тейп секрет: УЗКИЙ хват — локти вдоль тела. Широкий хват качает трапеции, НЕ широчайшие. Тяни лопатки ВНИЗ перед стартом движения.',
+    gifUrl: 'https://static.exercisedb.dev/media/rkg41Fb.gif',
+    alternatives: ['pull_over', 'rocky_pulldown', 'assisted_pullup']
   },
   {
     id: 'chest_press',
@@ -28,7 +30,9 @@ export const EXERCISES: Exercise[] = [
     sets: 4,
     reps: '10-12',
     muscle_emoji: '💪',
-    tips_ru: 'Лопатки сведены и опущены. Не отрывай спину от спинки. Темп 3-1-2 обязателен.'
+    tips_ru: 'Лопатки сведены и опущены. Не отрывай спину от спинки. Темп 3-1-2 обязателен.',
+    gifUrl: 'https://static.exercisedb.dev/media/wDN97Ca.gif',
+    alternatives: ['incline_pec_fly', 'cable_fly', 'push_up']
   },
   {
     id: 'shoulder_press',
@@ -42,7 +46,9 @@ export const EXERCISES: Exercise[] = [
     sets: 4,
     reps: '10-12',
     muscle_emoji: '🤲',
-    tips_ru: 'Не блокируй локти в верхней точке. Опускай до угла 90° в локте — не ниже, чтобы беречь плечи.'
+    tips_ru: 'Не блокируй локти в верхней точке. Опускай до угла 90° в локте — не ниже, чтобы беречь плечи.',
+    gifUrl: 'https://static.exercisedb.dev/media/67n3r98.gif',
+    alternatives: ['cable_lateral_raise', 'dumbbell_press', 'arnold_press']
   },
   {
     id: 'incline_pec_fly',
@@ -56,7 +62,9 @@ export const EXERCISES: Exercise[] = [
     sets: 3,
     reps: '12',
     muscle_emoji: '🦅',
-    tips_ru: 'Контролируй движение на всём диапазоне. Чувствуй растяжение в верхней части груди. Не своди руки слишком резко.'
+    tips_ru: 'Контролируй движение на всём диапазоне. Чувствуй растяжение в верхней части груди. Не своди руки слишком резко.',
+    gifUrl: 'https://static.exercisedb.dev/media/vi8EhoE.gif',
+    alternatives: ['chest_press', 'cable_fly']
   },
   {
     id: 'cable_lateral_raise',
@@ -70,7 +78,9 @@ export const EXERCISES: Exercise[] = [
     sets: 3,
     reps: '15',
     muscle_emoji: '↔️',
-    tips_ru: '🔑 V-тейп секрет: боковые дельты дают ШИРИНУ плечам. Держи небольшой наклон вперёд, локоть чуть согнут. Кабель = равномерная нагрузка по всей траектории.'
+    tips_ru: '🔑 V-тейп секрет: боковые дельты дают ШИРИНУ плечам. Держи небольшой наклон вперёд, локоть чуть согнут. Кабель = равномерная нагрузка по всей траектории.',
+    gifUrl: 'https://static.exercisedb.dev/media/myJeTAe.gif',
+    alternatives: ['shoulder_press', 'dumbbell_lateral']
   },
   {
     id: 'leg_press',
@@ -84,7 +94,9 @@ export const EXERCISES: Exercise[] = [
     sets: 4,
     reps: '10-12',
     muscle_emoji: '🦵',
-    tips_ru: 'Не блокируй колени в верхней точке! Стопы на ширине плеч, пятки давят в платформу. Поясница прижата.'
+    tips_ru: 'Не блокируй колени в верхней точке! Стопы на ширине плеч, пятки давят в платформу. Поясница прижата.',
+    gifUrl: 'https://static.exercisedb.dev/media/10Z2DXU.gif',
+    alternatives: ['squat', 'split_squat', 'hack_squat']
   },
   {
     id: 'seated_leg_curl',
@@ -98,7 +110,9 @@ export const EXERCISES: Exercise[] = [
     sets: 3,
     reps: '12',
     muscle_emoji: '🦿',
-    tips_ru: 'Полный диапазон движения. Не дёргай — контролируй обратную фазу 2 секунды. Стопы параллельны или чуть развёрнуты внутрь.'
+    tips_ru: 'Полный диапазон движения. Не дёргай — контролируй обратную фазу 2 секунды. Стопы параллельны или чуть развёрнуты внутрь.',
+    gifUrl: 'https://static.exercisedb.dev/media/Zg3XY7P.gif',
+    alternatives: ['leg_extension', 'rdl']
   },
   {
     id: 'abdominal_crunch',
@@ -112,7 +126,9 @@ export const EXERCISES: Exercise[] = [
     sets: 3,
     reps: '15',
     muscle_emoji: '🎯',
-    tips_ru: 'Фокус на сжатии мышц пресса, а не на подъёме тела. Руки за ушами, не тяни шею. Выдох на сжатии.'
+    tips_ru: 'Фокус на сжатии мышц пресса, а не на подъёме тела. Руки за ушами, не тяни шею. Выдох на сжатии.',
+    gifUrl: 'https://static.exercisedb.dev/media/TFqbd8t.gif',
+    alternatives: []
   },
   // Workout B
   {
@@ -127,7 +143,9 @@ export const EXERCISES: Exercise[] = [
     sets: 4,
     reps: '10-12',
     muscle_emoji: '🏋️',
-    tips_ru: 'Растяни широчайшие в верхней точке — пауза 1 сек. Пуловер уникален: нагружает лат в растянутом положении = максимум роста.'
+    tips_ru: 'Растяни широчайшие в верхней точке — пауза 1 сек. Пуловер уникален: нагружает лат в растянутом положении = максимум роста.',
+    gifUrl: 'https://static.exercisedb.dev/media/vi8EhoE.gif',
+    alternatives: ['lat_pulldown', 'straight_arm_pulldown']
   },
   {
     id: 'linear_back_row',
@@ -141,7 +159,9 @@ export const EXERCISES: Exercise[] = [
     sets: 4,
     reps: '10-12',
     muscle_emoji: '🔗',
-    tips_ru: 'Тяни к поясу, локти вдоль тела. Сводим лопатки — не горбись. Корпус прямой, без раскачки.'
+    tips_ru: 'Тяни к поясу, локти вдоль тела. Сводим лопатки — не горбись. Корпус прямой, без раскачки.',
+    gifUrl: 'https://static.exercisedb.dev/media/7I6LNUG.gif',
+    alternatives: ['low_row', 'cable_row', 'dumbbell_row']
   },
   {
     id: 'shoulder_press_b',
@@ -155,7 +175,9 @@ export const EXERCISES: Exercise[] = [
     sets: 3,
     reps: '12',
     muscle_emoji: '🤲',
-    tips_ru: 'Не блокируй локти в верхней точке. Опускай до угла 90° в локте — не ниже, чтобы беречь плечи.'
+    tips_ru: 'Не блокируй локти в верхней точке. Опускай до угла 90° в локте — не ниже, чтобы беречь плечи.',
+    gifUrl: 'https://static.exercisedb.dev/media/67n3r98.gif',
+    alternatives: ['cable_lateral_raise', 'dumbbell_press', 'arnold_press']
   },
   {
     id: 'cable_lateral_raise_b',
@@ -169,7 +191,9 @@ export const EXERCISES: Exercise[] = [
     sets: 3,
     reps: '15',
     muscle_emoji: '↔️',
-    tips_ru: '🔑 V-тейп секрет: боковые дельты дают ШИРИНУ плечам. Держи небольшой наклон вперёд, локоть чуть согнут. Кабель = равномерная нагрузка по всей траектории.'
+    tips_ru: '🔑 V-тейп секрет: боковые дельты дают ШИРИНУ плечам. Держи небольшой наклон вперёд, локоть чуть согнут. Кабель = равномерная нагрузка по всей траектории.',
+    gifUrl: 'https://static.exercisedb.dev/media/myJeTAe.gif',
+    alternatives: ['shoulder_press', 'dumbbell_lateral']
   },
   {
     id: 'leg_extension',
@@ -183,7 +207,9 @@ export const EXERCISES: Exercise[] = [
     sets: 4,
     reps: '12',
     muscle_emoji: '🦵',
-    tips_ru: 'Пик-сокращение в верхней точке — задержи 1 сек. Спина прижата к спинке. Не используй инерцию.'
+    tips_ru: 'Пик-сокращение в верхней точке — задержи 1 сек. Спина прижата к спинке. Не используй инерцию.',
+    gifUrl: 'https://static.exercisedb.dev/media/my33uHU.gif',
+    alternatives: ['leg_press', 'wall_sit']
   },
   {
     id: 'ham_curl',
@@ -197,7 +223,9 @@ export const EXERCISES: Exercise[] = [
     sets: 3,
     reps: '12',
     muscle_emoji: '🦿',
-    tips_ru: 'Полный диапазон — полное разгибание внизу. Таз не должен подниматься. Фокус на растяжении бицепса бедра.'
+    tips_ru: 'Полный диапазон — полное разгибание внизу. Таз не должен подниматься. Фокус на растяжении бицепса бедра.',
+    gifUrl: 'https://static.exercisedb.dev/media/Zg3XY7P.gif',
+    alternatives: ['seated_leg_curl', 'rdl']
   },
   {
     id: 'biceps_curl',
@@ -211,7 +239,9 @@ export const EXERCISES: Exercise[] = [
     sets: 3,
     reps: '12',
     muscle_emoji: '💪',
-    tips_ru: 'Локти зафиксированы у корпуса. В нижней точке полное разгибание — не срезай амплитуду.'
+    tips_ru: 'Локти зафиксированы у корпуса. В нижней точке полное разгибание — не срезай амплитуду.',
+    gifUrl: 'https://static.exercisedb.dev/media/b4b6afT.gif',
+    alternatives: ['hammer_curl', 'cable_curl']
   },
   {
     id: 'abdominal_crunch_b',
@@ -225,7 +255,9 @@ export const EXERCISES: Exercise[] = [
     sets: 3,
     reps: '15',
     muscle_emoji: '🎯',
-    tips_ru: 'Фокус на сжатии мышц пресса, а не на подъёме тела. Руки за ушами, не тяни шею. Выдох на сжатии.'
+    tips_ru: 'Фокус на сжатии мышц пресса, а не на подъёме тела. Руки за ушами, не тяни шею. Выдох на сжатии.',
+    gifUrl: 'https://static.exercisedb.dev/media/TFqbd8t.gif',
+    alternatives: []
   }
 ]
 

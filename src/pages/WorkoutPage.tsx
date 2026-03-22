@@ -1,12 +1,47 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useWorkoutStore } from '../stores/workoutStore'
 import { useProgramStore } from '../stores/programStore'
 import { getExercisesByWorkout, getExerciseById } from '../lib/exercises'
-import { getBlockForWeek, getRestTime } from '../lib/program'
+import { getBlockForWeek, getRestTime, getWorkoutEstimates } from '../lib/program'
+import { Exercise } from '../types'
 import RestTimerOverlay from '../components/RestTimerOverlay'
 import TempoGuide from '../components/TempoGuide'
+
+type WorkoutPhase = 'preview' | 'active' | 'finished'
+
+// Inline alternative exercise data for exercises not in the main list
+const ALTERNATIVE_EXERCISES: Record<string, { name_ru: string; muscle_primary: string; tips_ru: string }> = {
+  squat: { name_ru: 'Приседания', muscle_primary: 'Квадрицепсы', tips_ru: 'Стопы на ширине плеч, спина прямая, опускаться до параллели с полом.' },
+  split_squat: { name_ru: 'Болгарские выпады', muscle_primary: 'Квадрицепсы + Ягодицы', tips_ru: 'Одна нога сзади на скамье. Опускай колено до пола контролируемо.' },
+  hack_squat: { name_ru: 'Гак-приседания', muscle_primary: 'Квадрицепсы', tips_ru: 'Стопы узко, спина прижата к платформе. Колени не заходят за носки.' },
+  rdl: { name_ru: 'Румынская становая', muscle_primary: 'Бицепс бедра', tips_ru: 'Спина прямая, тяни таз назад. Чувствуй растяжение в задней части бедра.' },
+  hammer_curl: { name_ru: 'Молотковые сгибания', muscle_primary: 'Бицепс + Брахиалис', tips_ru: 'Нейтральный хват (ладони друг к другу). Не качай корпус.' },
+  cable_curl: { name_ru: 'Сгибания на кабеле', muscle_primary: 'Бицепс', tips_ru: 'Локти фиксированы, полный диапазон движения. Контролируй опускание.' },
+  cable_row: { name_ru: 'Тяга кабеля сидя', muscle_primary: 'Средняя спина', tips_ru: 'Тяни локти назад, лопатки своди в конце движения. Спина прямая.' },
+  push_up: { name_ru: 'Отжимания', muscle_primary: 'Грудь + Трицепс', tips_ru: 'Тело прямое как доска. Локти под углом 45° к телу, не в стороны.' },
+  cable_fly: { name_ru: 'Разводка на кабеле', muscle_primary: 'Грудь', tips_ru: 'Руки слегка согнуты, движение по дуге. Чувствуй растяжение в груди.' },
+  dumbbell_press: { name_ru: 'Жим гантелей', muscle_primary: 'Дельты', tips_ru: 'Локти под углом 90°, не заваливай запястья. Полный диапазон.' },
+  arnold_press: { name_ru: 'Жим Арнольда', muscle_primary: 'Дельты (все головки)', tips_ru: 'Начинай с ладонями к себе, в верхней точке разворачивай наружу.' },
+  dumbbell_lateral: { name_ru: 'Разводки гантелями', muscle_primary: 'Боковые дельты', tips_ru: 'Небольшой наклон вперёд, локоть чуть согнут. Поднимай до уровня плеча.' },
+  wall_sit: { name_ru: 'Стульчик у стены', muscle_primary: 'Квадрицепсы', tips_ru: 'Спина прямая к стене, колени 90°. Держи позицию 30–60 секунд.' },
+  tricep_pushdown: { name_ru: 'Разгибание трицепса на кабеле', muscle_primary: 'Трицепс', tips_ru: 'Локти прижаты к телу. Полное разгибание в нижней точке.' },
+  straight_arm_pulldown: { name_ru: 'Тяга прямыми руками', muscle_primary: 'Широчайшие', tips_ru: 'Руки прямые, небольшой наклон вперёд. Тяни руки к бёдрам через дугу.' },
+  dumbbell_row: { name_ru: 'Тяга гантели в наклоне', muscle_primary: 'Широчайшие + Средняя спина', tips_ru: 'Колено и рука на скамье. Тяни локоть вверх и назад.' },
+  low_row: { name_ru: 'Тяга нижнего блока узким хватом', muscle_primary: 'Средняя спина', tips_ru: 'Узкий нейтральный хват, локти вдоль тела. Лопатки сводить в конце.' },
+  rocky_pulldown: { name_ru: 'Тяга "Роки"', muscle_primary: 'Широчайшие', tips_ru: 'Чередующийся хват, каждый повтор — поочерёдно левый/правый локоть ведущий.' },
+  assisted_pullup: { name_ru: 'Подтягивания в гравитроне', muscle_primary: 'Широчайшие', tips_ru: 'Хват на ширине плеч. Тяни лопатки вниз перед движением.' },
+}
+
+// Resolve alternative: check main EXERCISES first, then inline data
+function resolveAlternative(id: string, mainExercises: Exercise[]): { id: string; name_ru: string; muscle_primary: string; tips_ru: string } | null {
+  const found = mainExercises.find(e => e.id === id)
+  if (found) return { id: found.id, name_ru: found.name_ru, muscle_primary: found.muscle_primary, tips_ru: found.tips_ru }
+  const inline = ALTERNATIVE_EXERCISES[id]
+  if (inline) return { id, ...inline }
+  return null
+}
 
 export default function WorkoutPage() {
   const navigate = useNavigate()
@@ -25,16 +60,28 @@ export default function WorkoutPage() {
   } = useWorkoutStore()
 
   const { programState, weights, updateWeight } = useProgramStore()
+  const [workoutPhase, setWorkoutPhase] = useState<WorkoutPhase>('preview')
   const [showTip, setShowTip] = useState<string | null>(null)
+  const [showGif, setShowGif] = useState(true)
+  const [gifLoaded, setGifLoaded] = useState<Record<string, boolean>>({})
+  const [showSwapModal, setShowSwapModal] = useState(false)
+  const [swappedExercises, setSwappedExercises] = useState<Record<number, Exercise>>({})
+  const [swapToast, setSwapToast] = useState(false)
   const [inputWeights, setInputWeights] = useState<Record<string, number>>({})
   const [inputReps, setInputReps] = useState<Record<string, number>>({})
   const elapsedRef = useRef<NodeJS.Timeout | null>(null)
   const restRef = useRef<NodeJS.Timeout | null>(null)
 
-  const { block } = getBlockForWeek(programState.total_week)
-  const exercises = activeWorkout ? getExercisesByWorkout(activeWorkout.workout_type) : []
+  const { block, weekInBlock, blockInfo } = getBlockForWeek(programState.total_week)
+  const workoutType = programState.next_workout_type
+  const previewExercises = getExercisesByWorkout(workoutType)
+  const estimates = getWorkoutEstimates(workoutType, block)
 
-  // Initialize if no active workout - start from store
+  // Compute effective exercises list (with swaps applied)
+  const baseExercises = activeWorkout ? getExercisesByWorkout(activeWorkout.workout_type) : previewExercises
+  const exercises = baseExercises.map((ex, i) => swappedExercises[i] ?? ex)
+
+  // Initialize workout on mount (but don't start elapsed timer yet)
   useEffect(() => {
     if (!activeWorkout) {
       const type = programState.next_workout_type
@@ -43,13 +90,14 @@ export default function WorkoutPage() {
     }
   }, [])
 
-  // Elapsed timer
+  // Elapsed timer — only when active
   useEffect(() => {
+    if (workoutPhase !== 'active') return
     elapsedRef.current = setInterval(() => {
       tickElapsed()
     }, 1000)
     return () => { if (elapsedRef.current) clearInterval(elapsedRef.current) }
-  }, [])
+  }, [workoutPhase])
 
   // Rest timer tick
   useEffect(() => {
@@ -86,8 +134,9 @@ export default function WorkoutPage() {
     )
   }
 
-  const currentExercise = exercises[activeWorkout.currentExerciseIndex]
-  const exerciseSets = activeWorkout.sets.filter(s => s.exercise_id === currentExercise?.id)
+  const currentExerciseIndex = activeWorkout.currentExerciseIndex
+  const currentExercise = exercises[currentExerciseIndex]
+  const exerciseSets = activeWorkout.sets.filter(s => s.exercise_id === (baseExercises[currentExerciseIndex]?.id))
   const completedSetsCount = exerciseSets.filter(s => s.completed).length
   const totalSetsCount = exerciseSets.length
 
@@ -99,16 +148,18 @@ export default function WorkoutPage() {
     return `${m}:${s}`
   }
 
+  const blockLabel = block === 'strength' ? 'Сила' : block === 'deload' ? 'Разгрузка' : 'Гипертрофия'
+
   const handleCompleteSet = (setNumber: number) => {
     if (!currentExercise) return
-    const key = `${currentExercise.id}_${setNumber}`
-    const w = inputWeights[key] ?? weights[currentExercise.id] ?? 20
+    const originalId = baseExercises[currentExerciseIndex]?.id
+    if (!originalId) return
+    const key = `${originalId}_${setNumber}`
+    const w = inputWeights[key] ?? weights[originalId] ?? 20
     const r = inputReps[key] ?? 10
 
-    completeSet(currentExercise.id, setNumber, r, w)
-    updateWeight(currentExercise.id, w)
-
-    // Start rest timer
+    completeSet(originalId, setNumber, r, w)
+    updateWeight(originalId, w)
     startRestTimer(currentExercise.is_compound, activeWorkout.block)
   }
 
@@ -117,6 +168,30 @@ export default function WorkoutPage() {
     if (workout) {
       navigate('/workout/summary')
     }
+  }
+
+  const handleSwap = (altId: string) => {
+    // Build a pseudo Exercise from either main list or inline data
+    const mainList = getExercisesByWorkout(activeWorkout.workout_type)
+    const resolved = resolveAlternative(altId, mainList)
+    if (!resolved) return
+
+    const original = baseExercises[currentExerciseIndex]
+    if (!original) return
+
+    const swapped: Exercise = {
+      ...original,
+      id: original.id, // keep original id so sets still match
+      name_ru: resolved.name_ru,
+      muscle_primary: resolved.muscle_primary,
+      tips_ru: resolved.tips_ru,
+      gifUrl: mainList.find(e => e.id === altId)?.gifUrl,
+    }
+
+    setSwappedExercises(prev => ({ ...prev, [currentExerciseIndex]: swapped }))
+    setShowSwapModal(false)
+    setSwapToast(true)
+    setTimeout(() => setSwapToast(false), 2500)
   }
 
   const completedExercises = new Set(
@@ -133,6 +208,119 @@ export default function WorkoutPage() {
     .filter(s => s.completed)
     .reduce((sum, s) => sum + s.weight_kg * s.actual_reps, 0)
 
+  // Alternative options for current exercise
+  const currentAlternatives = (currentExercise?.alternatives ?? [])
+    .map(id => resolveAlternative(id, getExercisesByWorkout(activeWorkout.workout_type)))
+    .filter(Boolean) as { id: string; name_ru: string; muscle_primary: string; tips_ru: string }[]
+
+  // ─── PREVIEW SCREEN ─────────────────────────────────────────────────────────
+  if (workoutPhase === 'preview') {
+    return (
+      <div className="min-h-screen bg-[#0a0a0f] flex flex-col pb-8" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
+        {/* Header */}
+        <div
+          className="px-4 pt-6 pb-4"
+          style={{ background: 'linear-gradient(180deg, rgba(99,102,241,0.15) 0%, transparent 100%)' }}
+        >
+          <div className="flex items-center gap-2 mb-1">
+            <span
+              className="text-xs font-semibold px-2 py-0.5 rounded-full"
+              style={{
+                background: block === 'strength' ? '#f59e0b30' : '#6366f130',
+                color: block === 'strength' ? '#f59e0b' : '#8b5cf6'
+              }}
+            >
+              {blockLabel}
+            </span>
+            <span className="text-white/40 text-xs">Неделя {programState.total_week} · Блок: {blockInfo.nameRu}</span>
+          </div>
+          <h1 className="text-3xl font-extrabold text-white mb-1">
+            Тренировка {workoutType}
+          </h1>
+          <div className="flex items-center gap-4 text-white/50 text-sm">
+            <span>⏱ ~{estimates.durationMin} мин</span>
+            <span>🔥 ~{estimates.calories} ккал</span>
+            <span>💪 {estimates.exerciseCount} упр.</span>
+          </div>
+        </div>
+
+        {/* Exercise list */}
+        <div className="flex-1 px-4 overflow-y-auto">
+          <p className="text-white/40 text-xs uppercase tracking-widest mb-3 mt-2">Программа тренировки</p>
+          <div className="space-y-2">
+            {previewExercises.map((ex, i) => (
+              <motion.div
+                key={ex.id}
+                initial={{ opacity: 0, x: -16 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.05 }}
+                className="flex items-center gap-3 p-3 rounded-2xl"
+                style={{
+                  background: ex.is_compound
+                    ? 'rgba(99,102,241,0.1)'
+                    : 'rgba(255,255,255,0.04)',
+                  border: `1px solid ${ex.is_compound ? 'rgba(99,102,241,0.2)' : 'rgba(255,255,255,0.06)'}`
+                }}
+              >
+                {/* Number */}
+                <div
+                  className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
+                  style={{
+                    background: ex.is_compound
+                      ? 'rgba(99,102,241,0.3)'
+                      : 'rgba(255,255,255,0.08)',
+                    color: ex.is_compound ? '#a5b4fc' : '#fff'
+                  }}
+                >
+                  {i + 1}
+                </div>
+
+                {/* Emoji */}
+                <span className="text-xl flex-shrink-0">{ex.muscle_emoji}</span>
+
+                {/* Info */}
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="text-white font-semibold text-sm truncate">{ex.name_ru}</span>
+                    {ex.is_compound && (
+                      <span className="text-xs px-1.5 py-0.5 rounded-full flex-shrink-0"
+                        style={{ background: 'rgba(99,102,241,0.2)', color: '#a5b4fc' }}>
+                        база
+                      </span>
+                    )}
+                  </div>
+                  <span className="text-white/40 text-xs">{ex.muscle_primary}</span>
+                </div>
+
+                {/* Sets × reps */}
+                <div className="text-right flex-shrink-0">
+                  <div className="text-white font-bold text-sm">{ex.sets}×{ex.reps}</div>
+                  <div className="text-white/30 text-xs">{ex.tempo}</div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Start button */}
+        <div className="px-4 pt-4">
+          <motion.button
+            onClick={() => setWorkoutPhase('active')}
+            className="w-full py-5 rounded-2xl font-extrabold text-xl text-white tracking-wide"
+            style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7)' }}
+            whileTap={{ scale: 0.97 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            СТАРТ
+          </motion.button>
+        </div>
+      </div>
+    )
+  }
+
+  // ─── ACTIVE WORKOUT SCREEN ───────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-[#0a0a0f] pb-24 flex flex-col">
       {/* Sticky header */}
@@ -187,11 +375,12 @@ export default function WorkoutPage() {
       <div className="px-4 py-3">
         <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
           {exercises.map((ex, i) => {
-            const isDone = completedExercises.has(ex.id)
+            const originalId = baseExercises[i]?.id
+            const isDone = originalId ? completedExercises.has(originalId) : false
             const isCurrent = i === activeWorkout.currentExerciseIndex
             return (
               <button
-                key={ex.id}
+                key={ex.id + '_' + i}
                 onClick={() => setCurrentExercise(i)}
                 className="flex-shrink-0 flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-all"
                 style={{
@@ -218,16 +407,16 @@ export default function WorkoutPage() {
       {currentExercise && (
         <div className="flex-1 px-4">
           <motion.div
-            key={currentExercise.id}
+            key={currentExercise.id + '_' + currentExerciseIndex}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             className="card p-5 mb-4"
           >
             <div className="flex items-start justify-between mb-1">
-              <div>
-                <div className="flex items-center gap-2 mb-1">
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1 flex-wrap">
                   <span className="text-xs font-semibold text-white/40">
-                    {activeWorkout.currentExerciseIndex + 1}/{exercises.length}
+                    {currentExerciseIndex + 1}/{exercises.length}
                   </span>
                   <span
                     className="text-xs px-2 py-0.5 rounded-full"
@@ -238,10 +427,27 @@ export default function WorkoutPage() {
                   >
                     {currentExercise.is_compound ? 'Базовое' : 'Изоляция'}
                   </span>
+                  {swappedExercises[currentExerciseIndex] && (
+                    <span className="text-xs px-2 py-0.5 rounded-full"
+                      style={{ background: 'rgba(16,185,129,0.2)', color: '#34d399' }}>
+                      замена
+                    </span>
+                  )}
                 </div>
-                <h2 className="text-xl font-bold text-white">{currentExercise.name_ru}</h2>
+                <h2 className="text-xl font-bold text-white leading-tight">{currentExercise.name_ru}</h2>
                 <p className="text-white/50 text-sm">{currentExercise.muscle_emoji} {currentExercise.muscle_primary}</p>
               </div>
+
+              {/* Swap button */}
+              {currentAlternatives.length > 0 && (
+                <button
+                  onClick={() => setShowSwapModal(true)}
+                  className="flex-shrink-0 ml-3 px-3 py-1.5 rounded-xl text-xs font-semibold"
+                  style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.6)' }}
+                >
+                  🔄 Заменить
+                </button>
+              )}
             </div>
 
             <div className="flex gap-3 mt-3 mb-4">
@@ -298,10 +504,67 @@ export default function WorkoutPage() {
             )}
           </motion.div>
 
+          {/* Exercise GIF */}
+          {currentExercise.gifUrl && (
+            <div className="mb-4">
+              <button
+                onClick={() => setShowGif(v => !v)}
+                className="flex items-center gap-2 text-sm text-white/50 mb-2 w-full"
+              >
+                <span>{showGif ? '▲ Скрыть технику' : '▼ Показать технику'}</span>
+              </button>
+              <AnimatePresence>
+                {showGif && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden"
+                  >
+                    <div
+                      className="rounded-2xl overflow-hidden relative"
+                      style={{ background: 'rgba(255,255,255,0.05)', maxHeight: 220 }}
+                    >
+                      {/* Skeleton loader */}
+                      {!gifLoaded[currentExercise.gifUrl] && (
+                        <div
+                          className="absolute inset-0 animate-pulse"
+                          style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 'inherit' }}
+                        />
+                      )}
+                      <img
+                        src={currentExercise.gifUrl}
+                        alt={currentExercise.name_ru}
+                        loading="lazy"
+                        onLoad={() => setGifLoaded(prev => ({ ...prev, [currentExercise.gifUrl!]: true }))}
+                        className="w-full object-cover"
+                        style={{
+                          maxHeight: 220,
+                          opacity: gifLoaded[currentExercise.gifUrl] ? 1 : 0,
+                          transition: 'opacity 0.3s'
+                        }}
+                      />
+                      <a
+                        href="https://www.instagram.com/appyoucan/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute bottom-2 right-2 text-xs px-2 py-1 rounded-full"
+                        style={{ background: 'rgba(0,0,0,0.55)', color: 'rgba(255,255,255,0.7)' }}
+                      >
+                        📱 @appyoucan
+                      </a>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          )}
+
           {/* Sets */}
           <div className="space-y-3 mb-4">
             {exerciseSets.map((set) => {
-              const key = `${set.exercise_id}_${set.set_number}`
+              const originalId = baseExercises[currentExerciseIndex]?.id ?? ''
+              const key = `${originalId}_${set.set_number}`
               const w = inputWeights[key] ?? set.weight_kg ?? 20
               const r = inputReps[key] ?? set.target_reps
 
@@ -471,6 +734,90 @@ export default function WorkoutPage() {
           }
         />
       )}
+
+      {/* Swap modal (bottom sheet) */}
+      <AnimatePresence>
+        {showSwapModal && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              className="fixed inset-0 z-40"
+              style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowSwapModal(false)}
+            />
+
+            {/* Sheet */}
+            <motion.div
+              className="fixed bottom-0 left-0 right-0 z-50 rounded-t-3xl p-5"
+              style={{ background: '#13131a', border: '1px solid rgba(255,255,255,0.08)', borderBottom: 'none' }}
+              initial={{ y: '100%' }}
+              animate={{ y: 0 }}
+              exit={{ y: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            >
+              {/* Handle */}
+              <div className="w-10 h-1 rounded-full mx-auto mb-4" style={{ background: 'rgba(255,255,255,0.2)' }} />
+
+              <h3 className="text-lg font-bold text-white mb-1">Заменить упражнение</h3>
+              <p className="text-white/40 text-sm mb-4">Выбери альтернативу для этой тренировки</p>
+
+              <div className="space-y-2 mb-4">
+                {currentAlternatives.map(alt => (
+                  <button
+                    key={alt.id}
+                    onClick={() => handleSwap(alt.id)}
+                    className="w-full text-left p-3 rounded-2xl transition-all active:scale-98"
+                    style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
+                  >
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <div className="text-white font-semibold text-sm">{alt.name_ru}</div>
+                        <div className="text-white/40 text-xs mt-0.5">{alt.muscle_primary}</div>
+                        <div className="text-white/30 text-xs mt-1 leading-relaxed">{alt.tips_ru}</div>
+                      </div>
+                      <span className="text-indigo-400 text-sm ml-3 flex-shrink-0 mt-0.5">→</span>
+                    </div>
+                  </button>
+                ))}
+              </div>
+
+              {/* Note */}
+              <div
+                className="p-3 rounded-xl text-xs text-white/40 mb-3 leading-relaxed"
+                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
+              >
+                ℹ️ Замена только на эту тренировку. В следующий раз вернётся оригинал.
+              </div>
+
+              <button
+                onClick={() => setShowSwapModal(false)}
+                className="w-full py-3 rounded-xl text-white/60 font-semibold"
+                style={{ background: 'rgba(255,255,255,0.06)' }}
+              >
+                Отмена
+              </button>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* Swap toast */}
+      <AnimatePresence>
+        {swapToast && (
+          <motion.div
+            className="fixed top-16 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full text-sm font-semibold text-white"
+            style={{ background: 'rgba(16,185,129,0.9)', backdropFilter: 'blur(8px)' }}
+            initial={{ opacity: 0, y: -20, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.9 }}
+          >
+            ✅ Упражнение заменено
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

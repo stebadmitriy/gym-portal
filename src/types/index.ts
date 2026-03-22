@@ -15,6 +15,8 @@ export interface Exercise {
   sets: number
   reps: string
   muscle_emoji: string
+  gifUrl?: string
+  alternatives?: string[]
 }
 
 export interface WorkoutSet {
