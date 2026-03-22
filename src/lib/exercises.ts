@@ -1,10 +1,11 @@
 import { Exercise } from '../types'
 
 export const EXERCISES: Exercise[] = [
-  // Workout A
+  // ─── Workout A ────────────────────────────────────────────────────────────
   {
     id: 'lat_pulldown',
     name_ru: 'Тяга верхнего блока',
+    name_en: 'Lat Pulldown',
     muscle_primary: 'Широчайшие',
     is_compound: true,
     increment_kg: 2.5,
@@ -16,11 +17,13 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '🏋️',
     tips_ru: '🔑 V-тейп секрет: УЗКИЙ хват — локти вдоль тела. Широкий хват качает трапеции, НЕ широчайшие. Тяни лопатки ВНИЗ перед стартом движения.',
     gifUrl: 'https://static.exercisedb.dev/media/rkg41Fb.gif',
+    instagramUrl: 'https://www.instagram.com/reel/DVbb-gZjk0G/',
     alternatives: ['pull_over', 'rocky_pulldown', 'assisted_pullup']
   },
   {
     id: 'chest_press',
     name_ru: 'Жим в тренажёре',
+    name_en: 'Chest Press Machine',
     muscle_primary: 'Грудь',
     is_compound: true,
     increment_kg: 5,
@@ -37,6 +40,7 @@ export const EXERCISES: Exercise[] = [
   {
     id: 'shoulder_press',
     name_ru: 'Жим плеч',
+    name_en: 'Shoulder Press Machine',
     muscle_primary: 'Дельты',
     is_compound: true,
     increment_kg: 2.5,
@@ -48,11 +52,13 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '🤲',
     tips_ru: 'Не блокируй локти в верхней точке. Опускай до угла 90° в локте — не ниже, чтобы беречь плечи.',
     gifUrl: 'https://static.exercisedb.dev/media/67n3r98.gif',
+    instagramUrl: 'https://www.instagram.com/reel/DWAUGaalCyz/',
     alternatives: ['cable_lateral_raise', 'dumbbell_press', 'arnold_press']
   },
   {
     id: 'incline_pec_fly',
     name_ru: 'Разводка (наклон)',
+    name_en: 'Incline Pec Deck',
     muscle_primary: 'Верхняя грудь',
     is_compound: false,
     increment_kg: 2.5,
@@ -69,6 +75,7 @@ export const EXERCISES: Exercise[] = [
   {
     id: 'cable_lateral_raise',
     name_ru: 'Боковые разводки (кабель)',
+    name_en: 'Cable Lateral Raise',
     muscle_primary: 'Боковые дельты',
     is_compound: false,
     increment_kg: 2.5,
@@ -80,11 +87,13 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '↔️',
     tips_ru: '🔑 V-тейп секрет: боковые дельты дают ШИРИНУ плечам. Держи небольшой наклон вперёд, локоть чуть согнут. Кабель = равномерная нагрузка по всей траектории.',
     gifUrl: 'https://static.exercisedb.dev/media/myJeTAe.gif',
+    instagramUrl: 'https://www.instagram.com/reel/DV6OAHpCXMc/',
     alternatives: ['shoulder_press', 'dumbbell_lateral']
   },
   {
     id: 'leg_press',
     name_ru: 'Жим ногами',
+    name_en: 'Leg Press',
     muscle_primary: 'Квадрицепсы',
     is_compound: true,
     increment_kg: 5,
@@ -96,11 +105,13 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '🦵',
     tips_ru: 'Не блокируй колени в верхней точке! Стопы на ширине плеч, пятки давят в платформу. Поясница прижата.',
     gifUrl: 'https://static.exercisedb.dev/media/10Z2DXU.gif',
+    instagramUrl: 'https://www.instagram.com/reel/DV4mQyviG46/',
     alternatives: ['squat', 'split_squat', 'hack_squat']
   },
   {
     id: 'seated_leg_curl',
     name_ru: 'Сгибание ног сидя',
+    name_en: 'Seated Leg Curl',
     muscle_primary: 'Бицепс бедра',
     is_compound: false,
     increment_kg: 2.5,
@@ -117,6 +128,7 @@ export const EXERCISES: Exercise[] = [
   {
     id: 'abdominal_crunch',
     name_ru: 'Скручивания на пресс',
+    name_en: 'Ab Crunch Machine',
     muscle_primary: 'Пресс',
     is_compound: false,
     increment_kg: 0,
@@ -130,10 +142,30 @@ export const EXERCISES: Exercise[] = [
     gifUrl: 'https://static.exercisedb.dev/media/TFqbd8t.gif',
     alternatives: []
   },
-  // Workout B
+  {
+    id: 'trap_shrug',
+    name_ru: 'Шраги (трапеции)',
+    name_en: 'Dumbbell Shrugs',
+    muscle_primary: 'Трапеция',
+    is_compound: false,
+    increment_kg: 2.5,
+    tempo: '2-1-2',
+    workout_slot: 'A',
+    exercise_order: 9,
+    sets: 3,
+    reps: '15',
+    muscle_emoji: '🦬',
+    tips_ru: '🔑 V-тейп секрет: развитые трапеции придают мощный вид сзади. Подними плечи максимально вверх, задержи 1 сек на пике. Не вращай плечами — только вертикаль.',
+    gifUrl: 'https://static.exercisedb.dev/media/3GkSvR2.gif',
+    instagramUrl: 'https://www.instagram.com/reel/DV4fXwtFJgo/',
+    alternatives: []
+  },
+
+  // ─── Workout B ────────────────────────────────────────────────────────────
   {
     id: 'pull_over',
     name_ru: 'Пуловер',
+    name_en: 'Cable Pullover',
     muscle_primary: 'Широчайшие',
     is_compound: true,
     increment_kg: 2.5,
@@ -150,6 +182,7 @@ export const EXERCISES: Exercise[] = [
   {
     id: 'linear_back_row',
     name_ru: 'Тяга горизонтального блока',
+    name_en: 'Seated Cable Row',
     muscle_primary: 'Спина (толщина)',
     is_compound: true,
     increment_kg: 2.5,
@@ -166,6 +199,7 @@ export const EXERCISES: Exercise[] = [
   {
     id: 'shoulder_press_b',
     name_ru: 'Жим плеч (2й раз)',
+    name_en: 'Shoulder Press Machine',
     muscle_primary: 'Дельты',
     is_compound: true,
     increment_kg: 2.5,
@@ -177,11 +211,13 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '🤲',
     tips_ru: 'Не блокируй локти в верхней точке. Опускай до угла 90° в локте — не ниже, чтобы беречь плечи.',
     gifUrl: 'https://static.exercisedb.dev/media/67n3r98.gif',
+    instagramUrl: 'https://www.instagram.com/reel/DWAUGaalCyz/',
     alternatives: ['cable_lateral_raise', 'dumbbell_press', 'arnold_press']
   },
   {
     id: 'cable_lateral_raise_b',
     name_ru: 'Боковые разводки (2й раз)',
+    name_en: 'Cable Lateral Raise',
     muscle_primary: 'Боковые дельты',
     is_compound: false,
     increment_kg: 2.5,
@@ -193,11 +229,13 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '↔️',
     tips_ru: '🔑 V-тейп секрет: боковые дельты дают ШИРИНУ плечам. Держи небольшой наклон вперёд, локоть чуть согнут. Кабель = равномерная нагрузка по всей траектории.',
     gifUrl: 'https://static.exercisedb.dev/media/myJeTAe.gif',
+    instagramUrl: 'https://www.instagram.com/reel/DV6OAHpCXMc/',
     alternatives: ['shoulder_press', 'dumbbell_lateral']
   },
   {
     id: 'leg_extension',
     name_ru: 'Разгибание ног',
+    name_en: 'Leg Extension',
     muscle_primary: 'Квадрицепсы',
     is_compound: false,
     increment_kg: 2.5,
@@ -214,6 +252,7 @@ export const EXERCISES: Exercise[] = [
   {
     id: 'ham_curl',
     name_ru: 'Сгибание ног (одна нога)',
+    name_en: 'Lying Leg Curl',
     muscle_primary: 'Бицепс бедра',
     is_compound: false,
     increment_kg: 2.5,
@@ -230,6 +269,7 @@ export const EXERCISES: Exercise[] = [
   {
     id: 'biceps_curl',
     name_ru: 'Сгибание бицепс',
+    name_en: 'Biceps Curl',
     muscle_primary: 'Бицепс',
     is_compound: false,
     increment_kg: 2.5,
@@ -246,6 +286,7 @@ export const EXERCISES: Exercise[] = [
   {
     id: 'abdominal_crunch_b',
     name_ru: 'Скручивания на пресс',
+    name_en: 'Ab Crunch Machine',
     muscle_primary: 'Пресс',
     is_compound: false,
     increment_kg: 0,
@@ -258,6 +299,23 @@ export const EXERCISES: Exercise[] = [
     tips_ru: 'Фокус на сжатии мышц пресса, а не на подъёме тела. Руки за ушами, не тяни шею. Выдох на сжатии.',
     gifUrl: 'https://static.exercisedb.dev/media/TFqbd8t.gif',
     alternatives: []
+  },
+  {
+    id: 'cable_face_pull',
+    name_ru: 'Тяга к лицу (кабель)',
+    name_en: 'Cable Face Pull',
+    muscle_primary: 'Задние дельты + Трапеция',
+    is_compound: false,
+    increment_kg: 2.5,
+    tempo: '2-1-2',
+    workout_slot: 'B',
+    exercise_order: 9,
+    sets: 3,
+    reps: '15',
+    muscle_emoji: '🎯',
+    tips_ru: '🔑 V-тейп секрет: тяга к лицу — лучшее упражнение для здоровья плечей и объёма задних дельт. Тяни к ушам, локти выше плеч. Канатная рукоять, высокий блок.',
+    gifUrl: 'https://static.exercisedb.dev/media/3GkSvR2.gif',
+    alternatives: ['trap_shrug']
   }
 ]
 

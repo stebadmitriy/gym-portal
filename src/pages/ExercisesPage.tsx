@@ -131,6 +131,9 @@ function ExerciseModal({ exercise, currentWeight, onClose }: ExerciseModalProps)
                 Тренировка {exercise.workout_slot}
               </span>
               <h2 className="text-2xl font-black text-white">{exercise.name_ru}</h2>
+              {exercise.name_en && (
+                <p className="text-white/30 text-xs font-medium tracking-widest uppercase mt-0.5">{exercise.name_en}</p>
+              )}
               <p className="text-white/50 mt-1">{exercise.muscle_emoji} {exercise.muscle_primary}</p>
             </div>
             <button
@@ -207,12 +210,29 @@ function ExerciseModal({ exercise, currentWeight, onClose }: ExerciseModalProps)
 
           {/* Science tip */}
           <div
-            className="p-4 rounded-xl"
+            className="p-4 rounded-xl mb-4"
             style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.2)' }}
           >
             <p className="text-indigo-400 text-xs font-semibold mb-2 uppercase tracking-wider">💡 Научный совет</p>
             <p className="text-white/80 text-sm leading-relaxed">{exercise.tips_ru}</p>
           </div>
+
+          {/* Instagram video link */}
+          {exercise.instagramUrl && (
+            <a
+              href={exercise.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-semibold text-sm"
+              style={{
+                background: 'linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045)',
+                color: 'white'
+              }}
+            >
+              <span>▶</span>
+              <span>Смотреть технику на @appyoucan</span>
+            </a>
+          )}
         </div>
       </motion.div>
     </motion.div>

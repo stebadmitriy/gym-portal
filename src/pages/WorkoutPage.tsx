@@ -435,6 +435,9 @@ export default function WorkoutPage() {
                   )}
                 </div>
                 <h2 className="text-xl font-bold text-white leading-tight">{currentExercise.name_ru}</h2>
+                {currentExercise.name_en && (
+                  <p className="text-white/30 text-xs font-medium tracking-wide uppercase mb-0.5">{currentExercise.name_en}</p>
+                )}
                 <p className="text-white/50 text-sm">{currentExercise.muscle_emoji} {currentExercise.muscle_primary}</p>
               </div>
 
@@ -545,13 +548,19 @@ export default function WorkoutPage() {
                         }}
                       />
                       <a
-                        href="https://www.instagram.com/appyoucan/"
+                        href={currentExercise.instagramUrl ?? 'https://www.instagram.com/appyoucan/'}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="absolute bottom-2 right-2 text-xs px-2 py-1 rounded-full"
-                        style={{ background: 'rgba(0,0,0,0.55)', color: 'rgba(255,255,255,0.7)' }}
+                        className="absolute bottom-2 right-2 text-xs px-2.5 py-1.5 rounded-full flex items-center gap-1.5 font-semibold"
+                        style={{
+                          background: currentExercise.instagramUrl
+                            ? 'linear-gradient(135deg, rgba(131,58,180,0.85), rgba(253,29,29,0.85), rgba(252,176,69,0.85))'
+                            : 'rgba(0,0,0,0.55)',
+                          color: 'white',
+                          backdropFilter: 'blur(4px)'
+                        }}
                       >
-                        📱 @appyoucan
+                        {currentExercise.instagramUrl ? '▶ Смотреть видео' : '📱 @appyoucan'}
                       </a>
                     </div>
                   </motion.div>

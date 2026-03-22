@@ -5,6 +5,7 @@ export type FeedbackType = 'hard' | 'normal' | 'easy'
 export interface Exercise {
   id: string
   name_ru: string
+  name_en?: string
   muscle_primary: string
   is_compound: boolean
   increment_kg: number
@@ -16,6 +17,7 @@ export interface Exercise {
   reps: string
   muscle_emoji: string
   gifUrl?: string
+  instagramUrl?: string
   alternatives?: string[]
 }
 

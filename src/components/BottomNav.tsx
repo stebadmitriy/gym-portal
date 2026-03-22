@@ -38,13 +38,14 @@ export default function BottomNav() {
             <Link
               key={tab.path}
               to={tab.path}
-              className="flex flex-col items-center gap-1 px-1.5 py-1.5 rounded-xl transition-all"
+              className="flex flex-col items-center justify-center rounded-xl transition-all"
               style={{
-                minWidth: 48,
+                minWidth: 44,
+                padding: '10px 8px',
                 color: isActive ? '#8b5cf6' : 'rgba(255,255,255,0.4)',
               }}
             >
-              <span className="text-xl leading-none relative">
+              <span className="text-2xl leading-none relative">
                 {tab.icon}
                 {isWorkoutActive && (
                   <span
@@ -53,7 +54,6 @@ export default function BottomNav() {
                   />
                 )}
               </span>
-              <span className="text-xs font-medium leading-none" style={{ fontSize: '11px' }}>{tab.label}</span>
             </Link>
           )
         })}
