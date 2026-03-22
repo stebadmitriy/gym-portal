@@ -17,7 +17,7 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '🏋️',
     tips_ru: '🔑 V-тейп секрет: УЗКИЙ хват — локти вдоль тела. Широкий хват качает трапеции, НЕ широчайшие. Тяни лопатки ВНИЗ перед стартом движения.',
     gifUrl: 'https://static.exercisedb.dev/media/rkg41Fb.gif',
-    instagramUrl: 'https://www.instagram.com/reel/DVbb-gZjk0G/',
+    instagramUrl: 'https://www.instagram.com/p/DVbhSbdCPxJ/',
     alternatives: ['pull_over', 'rocky_pulldown', 'assisted_pullup']
   },
   {
@@ -35,6 +35,7 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '💪',
     tips_ru: 'Лопатки сведены и опущены. Не отрывай спину от спинки. Темп 3-1-2 обязателен.',
     gifUrl: 'https://static.exercisedb.dev/media/wDN97Ca.gif',
+    instagramUrl: 'https://www.instagram.com/p/DV1LoTSjZL2/',
     alternatives: ['incline_pec_fly', 'cable_fly', 'push_up']
   },
   {
@@ -70,6 +71,7 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '🦅',
     tips_ru: 'Контролируй движение на всём диапазоне. Чувствуй растяжение в верхней части груди. Не своди руки слишком резко.',
     gifUrl: 'https://static.exercisedb.dev/media/vi8EhoE.gif',
+    instagramUrl: 'https://www.instagram.com/p/DVzPWdEid16/',
     alternatives: ['chest_press', 'cable_fly']
   },
   {
@@ -123,6 +125,7 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '🦿',
     tips_ru: 'Полный диапазон движения. Не дёргай — контролируй обратную фазу 2 секунды. Стопы параллельны или чуть развёрнуты внутрь.',
     gifUrl: 'https://static.exercisedb.dev/media/Zg3XY7P.gif',
+    instagramUrl: 'https://www.instagram.com/p/DU2CBoyipBB/',
     alternatives: ['leg_extension', 'rdl']
   },
   {
@@ -140,6 +143,7 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '🎯',
     tips_ru: 'Фокус на сжатии мышц пресса, а не на подъёме тела. Руки за ушами, не тяни шею. Выдох на сжатии.',
     gifUrl: 'https://static.exercisedb.dev/media/TFqbd8t.gif',
+    instagramUrl: 'https://www.instagram.com/p/DVChZI9lDHZ/',
     alternatives: []
   },
   {
@@ -177,6 +181,7 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '🏋️',
     tips_ru: 'Растяни широчайшие в верхней точке — пауза 1 сек. Пуловер уникален: нагружает лат в растянутом положении = максимум роста.',
     gifUrl: 'https://static.exercisedb.dev/media/vi8EhoE.gif',
+    instagramUrl: 'https://www.instagram.com/p/DVpdud0kXp4/',
     alternatives: ['lat_pulldown', 'straight_arm_pulldown']
   },
   {
@@ -194,6 +199,7 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '🔗',
     tips_ru: 'Тяни к поясу, локти вдоль тела. Сводим лопатки — не горбись. Корпус прямой, без раскачки.',
     gifUrl: 'https://static.exercisedb.dev/media/7I6LNUG.gif',
+    instagramUrl: 'https://www.instagram.com/p/DVEkVcXE3G-/',
     alternatives: ['low_row', 'cable_row', 'dumbbell_row']
   },
   {
@@ -247,6 +253,7 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '🦵',
     tips_ru: 'Пик-сокращение в верхней точке — задержи 1 сек. Спина прижата к спинке. Не используй инерцию.',
     gifUrl: 'https://static.exercisedb.dev/media/my33uHU.gif',
+    instagramUrl: 'https://www.instagram.com/p/DVwHpWuDGnw/',
     alternatives: ['leg_press', 'wall_sit']
   },
   {
@@ -264,6 +271,7 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '🦿',
     tips_ru: 'Полный диапазон — полное разгибание внизу. Таз не должен подниматься. Фокус на растяжении бицепса бедра.',
     gifUrl: 'https://static.exercisedb.dev/media/Zg3XY7P.gif',
+    instagramUrl: 'https://www.instagram.com/p/DU2CBoyipBB/',
     alternatives: ['seated_leg_curl', 'rdl']
   },
   {
@@ -281,6 +289,7 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '💪',
     tips_ru: 'Локти зафиксированы у корпуса. В нижней точке полное разгибание — не срезай амплитуду.',
     gifUrl: 'https://static.exercisedb.dev/media/b4b6afT.gif',
+    instagramUrl: 'https://www.instagram.com/p/DVoSXnnCVQd/',
     alternatives: ['hammer_curl', 'cable_curl']
   },
   {
@@ -298,6 +307,7 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '🎯',
     tips_ru: 'Фокус на сжатии мышц пресса, а не на подъёме тела. Руки за ушами, не тяни шею. Выдох на сжатии.',
     gifUrl: 'https://static.exercisedb.dev/media/TFqbd8t.gif',
+    instagramUrl: 'https://www.instagram.com/p/DVChZI9lDHZ/',
     alternatives: []
   },
   {
@@ -315,6 +325,7 @@ export const EXERCISES: Exercise[] = [
     muscle_emoji: '🎯',
     tips_ru: '🔑 V-тейп секрет: тяга к лицу — лучшее упражнение для здоровья плечей и объёма задних дельт. Тяни к ушам, локти выше плеч. Канатная рукоять, высокий блок.',
     gifUrl: 'https://static.exercisedb.dev/media/3GkSvR2.gif',
+    instagramUrl: 'https://www.instagram.com/p/DVWeLDjCWcy/',
     alternatives: ['trap_shrug']
   }
 ]
