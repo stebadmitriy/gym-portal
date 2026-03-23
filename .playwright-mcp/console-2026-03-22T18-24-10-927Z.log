@@ -1,0 +1,9 @@
+[    2262ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://www.instagram.com/graphql/query/?doc_id=18113378221181848&variables=%7B%22include_chaining%22%3Afalse%2C%22include_highlight_reels%22%3Atrue%2C%22include_live_status%22%3Afalse%2C%22include_logged_out_extras%22%3Atrue%2C%22include_reel%22%3Afalse%2C%22include_suggested_users%22%3Afalse%2C%22user_id%22%3A%2263621338863%22%7D:0
+[    2266ms] [ERROR] ErrorUtils caught an error:
+
+invalid request [Caught in: unexpected]
+
+Subsequent non-fatal errors won't be logged; see https://fburl.com/debugjs. {clientTime: 1774203853, extra: Object, guardList: Array(0), hash: sy1pzt, isNormalizedError: true} @ https://static.cdninstagram.com/rsrc.php/v4/y9/r/XTTbkH9A15N.js:78
+[  175948ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://www.instagram.com/graphql/query/?query_hash=e769aa130647d2354c40ea6a439bfc08&variables=%7B%22id%22%3A%2263621338863%22%2C%22first%22%3A12%2C%22after%22%3A%22QVFCa05PWmpWLVl0ZW0weG1JMjhkSmx1bTduRWxEeHFCbExGSVhwUGY3b0gwLUR4ak9XdkFKdkFuVkhKZGg4S3EyUWxsN183bjlyb2xKYXc3Q1VzdU9GNA%3D%3D%22%7D:0
+[  250918ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://www.instagram.com/api/v1/feed/user/63621338863/?count=12&max_id=3837568457341372649_63621338863:0
+[  275481ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://www.instagram.com/api/v1/feed/user/63621338863/?count=12&max_id=QVFCa05PWmpWLVl0ZW0weG1JMjhkSmx1bTduRWxEeHFCbExGSVhwUGY3b0gwLUR4ak9XdkFKdkFuVkhKZGg4S3EyUWxsN183bjlyb2xKYXc3Q1VzdU9GNA%3D%3D:0

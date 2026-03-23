@@ -91,7 +91,7 @@ export default function SettingsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] pb-24">
+    <div className="min-h-screen bg-[#0a0a0f] pb-28">
       <div
         className="px-5 pb-4"
         style={{ paddingTop: `calc(env(safe-area-inset-top, 0px) + 20px)` }}

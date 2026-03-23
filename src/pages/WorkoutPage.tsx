@@ -8,6 +8,7 @@ import { getBlockForWeek, getRestTime, getWorkoutEstimates } from '../lib/progra
 import { Exercise } from '../types'
 import RestTimerOverlay from '../components/RestTimerOverlay'
 import TempoGuide from '../components/TempoGuide'
+import ExerciseModal from '../components/ExerciseModal'
 
 type WorkoutPhase = 'preview' | 'active' | 'finished'
 
@@ -69,6 +70,7 @@ export default function WorkoutPage() {
   const [swapToast, setSwapToast] = useState(false)
   const [inputWeights, setInputWeights] = useState<Record<string, number>>({})
   const [inputReps, setInputReps] = useState<Record<string, number>>({})
+  const [selectedPreviewExercise, setSelectedPreviewExercise] = useState<Exercise | null>(null)
   const elapsedRef = useRef<NodeJS.Timeout | null>(null)
   const restRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -216,7 +218,7 @@ export default function WorkoutPage() {
   // ─── PREVIEW SCREEN ─────────────────────────────────────────────────────────
   if (workoutPhase === 'preview') {
     return (
-      <div className="min-h-screen bg-[#0a0a0f] flex flex-col pb-8" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
+      <div className="min-h-screen bg-[#0a0a0f] flex flex-col pb-28" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
         {/* Header */}
         <div
           className="px-4 pt-6 pb-4"
@@ -254,7 +256,8 @@ export default function WorkoutPage() {
                 initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.05 }}
-                className="flex items-center gap-3 p-3 rounded-2xl"
+                className="flex items-center gap-3 p-3 rounded-2xl cursor-pointer active:scale-98 transition-transform"
+                onClick={() => setSelectedPreviewExercise(ex)}
                 style={{
                   background: ex.is_compound
                     ? 'rgba(99,102,241,0.1)'
@@ -303,7 +306,7 @@ export default function WorkoutPage() {
         </div>
 
         {/* Start button */}
-        <div className="px-4 pt-4">
+        <div className="px-4 pt-4 pb-2">
           <motion.button
             onClick={() => setWorkoutPhase('active')}
             className="w-full py-5 rounded-2xl font-extrabold text-xl text-white tracking-wide"
@@ -316,6 +319,17 @@ export default function WorkoutPage() {
             СТАРТ
           </motion.button>
         </div>
+
+        {/* Exercise detail modal */}
+        <AnimatePresence>
+          {selectedPreviewExercise && (
+            <ExerciseModal
+              exercise={selectedPreviewExercise}
+              currentWeight={weights[selectedPreviewExercise.id] || 0}
+              onClose={() => setSelectedPreviewExercise(null)}
+            />
+          )}
+        </AnimatePresence>
       </div>
     )
   }

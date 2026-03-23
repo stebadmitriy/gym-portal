@@ -54,7 +54,7 @@ export default function HomePage() {
   const cycleProgress = ((programState.total_week - 1) % 9) / 9 * 100
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] pb-24">
+    <div className="min-h-screen bg-[#0a0a0f] pb-28">
       {/* Header */}
       <div
         className="px-5 pt-safe pb-5"
