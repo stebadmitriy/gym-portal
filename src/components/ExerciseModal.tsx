@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Exercise } from '../types'
+import { useProgramStore } from '../stores/programStore'
+import { pinVideo, unpinVideo, getBlockWeekLabel } from '../lib/exerciseLibrary'
 
 const EQUIPMENT_PHOTOS: Record<string, string> = {
   lat_pulldown: '/gym-portal/gym-photos/lat_pulldown.jpg',
@@ -36,11 +38,38 @@ function getInstagramEmbedUrl(instagramUrl: string): string | null {
 }
 
 export default function ExerciseModal({ exercise, currentWeight, onClose }: ExerciseModalProps) {
-  const embedUrl = exercise.instagramUrl ? getInstagramEmbedUrl(exercise.instagramUrl) : null
+  const { programState } = useProgramStore()
+  const totalWeek = programState.total_week
+
+  // All videos: primary + alternatives
+  const allVideos = [
+    ...(exercise.instagramUrl ? [exercise.instagramUrl] : []),
+    ...(exercise.alternatives || [])
+  ]
+  const blockIndex = Math.floor((totalWeek - 1) / 4)
+
+  // Check for pinned video in localStorage
+  const [pinnedUrl, setPinnedUrl] = useState<string | null>(() => {
+    try { return localStorage.getItem(`gymPrime_primaryVideo_${exercise.id}`) } catch { return null }
+  })
+
+  // Which video is currently "main"
+  const mainVideoUrl = pinnedUrl || (allVideos[blockIndex % allVideos.length] ?? exercise.instagramUrl)
+  const mainEmbedUrl = mainVideoUrl ? getInstagramEmbedUrl(mainVideoUrl) : null
+
+  const isPinned = !!pinnedUrl
+  const currentVariantIndex = allVideos.indexOf(mainVideoUrl ?? '')
+
   const [showEquipment, setShowEquipment] = useState(false)
   const [showAlternatives, setShowAlternatives] = useState(false)
   const [activeAltIndex, setActiveAltIndex] = useState(0)
   const equipmentPhoto = EQUIPMENT_PHOTOS[exercise.id] || null
+
+  const handlePin = (url: string) => {
+    pinVideo(exercise.id, url)
+    setPinnedUrl(url)
+    setShowAlternatives(false)
+  }
 
   useEffect(() => {
     const prev = document.body.style.overflow
@@ -55,6 +84,7 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
   useEffect(() => {
     setShowAlternatives(false)
     setActiveAltIndex(0)
+    setPinnedUrl(localStorage.getItem(`gymPrime_primaryVideo_${exercise.id}`))
   }, [exercise.id])
 
   return (
@@ -117,11 +147,33 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
 
           {/* Instagram Video Embed */}
           <div className="mb-4 rounded-2xl overflow-hidden" style={{ background: 'rgba(99,102,241,0.08)' }}>
-            {embedUrl ? (
+            {mainEmbedUrl ? (
               <div style={{ position: 'relative', width: '100%' }}>
+                {/* Rotation info bar */}
+                {allVideos.length > 1 && (
+                  <div
+                    className="absolute top-0 left-0 right-0 flex items-center justify-between px-3 py-1.5"
+                    style={{ background: 'linear-gradient(180deg, rgba(28,28,39,0.9) 0%, transparent 100%)', zIndex: 2 }}
+                  >
+                    <span className="text-white/50 text-xs">
+                      {isPinned ? '📌 Закреплено' : `📅 ${getBlockWeekLabel(blockIndex)} • Вариант ${(currentVariantIndex >= 0 ? currentVariantIndex : 0) + 1}/${allVideos.length}`}
+                    </span>
+                    {isPinned && (
+                      <button
+                        onClick={() => {
+                          unpinVideo(exercise.id)
+                          setPinnedUrl(null)
+                        }}
+                        className="text-white/40 text-xs"
+                      >
+                        ✕ сброс
+                      </button>
+                    )}
+                  </div>
+                )}
                 <div style={{ overflow: 'hidden', borderRadius: 16, height: 460 }}>
                   <iframe
-                    src={embedUrl}
+                    src={mainEmbedUrl}
                     width="100%"
                     height="540"
                     frameBorder={0}
@@ -137,6 +189,14 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                   style={{ background: 'linear-gradient(0deg, rgba(28,28,39,0.9) 0%, transparent 100%)' }}
                 >
                   <span className="text-white/40 text-xs">@appyoucan</span>
+                  {allVideos.length > 1 && !isPinned && (
+                    <button
+                      onClick={() => handlePin(exercise.instagramUrl!)}
+                      className="text-white/30 text-xs"
+                    >
+                      📌
+                    </button>
+                  )}
                 </div>
               </div>
             ) : (
@@ -163,7 +223,7 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                 <div>
                   {/* Tab buttons for selecting which alt video */}
                   {exercise.alternatives.length > 1 && (
-                    <div className="flex gap-2 mb-2">
+                    <div className="flex gap-2 mb-2 flex-wrap">
                       {exercise.alternatives.map((_, i) => (
                         <button
                           key={i}
@@ -181,6 +241,16 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                       ))}
                     </div>
                   )}
+                  {/* Pin button for the active alternative */}
+                  <div className="mb-2">
+                    <button
+                      onClick={() => handlePin(exercise.alternatives![activeAltIndex])}
+                      className="px-3 py-1.5 rounded-lg text-xs font-semibold"
+                      style={{ background: 'rgba(99,102,241,0.2)', color: '#a5b4fc' }}
+                    >
+                      📌 Сделать главным
+                    </button>
+                  </div>
                   {/* The active alternative video */}
                   {(() => {
                     const altUrl = exercise.alternatives[activeAltIndex]

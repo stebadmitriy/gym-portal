@@ -745,3 +745,69 @@ export const VTAPER_TARGETS: Record<string, { label: string; target: number; pri
   abs: { label: 'Пресс', target: 6, priority: 'low' },
   traps: { label: 'Трапеции', target: 4, priority: 'low' },
 }
+
+/**
+ * Returns the recommended video URL for an exercise based on the current training block.
+ * Videos rotate every 4 weeks: block 0 (weeks 1-4) = primaryVideo,
+ * block 1 (weeks 5-8) = altVideos[0], block 2 (weeks 9-12) = altVideos[1], etc.
+ */
+export function getVideoForBlock(exercise: LibraryExercise, totalWeek: number): { url: string; title?: string; variantIndex: number; totalVariants: number } {
+  const allVideos = [exercise.primaryVideo, ...exercise.altVideos]
+  const blockIndex = Math.floor((totalWeek - 1) / 4)
+  const variantIndex = blockIndex % allVideos.length
+  return {
+    ...allVideos[variantIndex],
+    variantIndex,
+    totalVariants: allVideos.length,
+  }
+}
+
+/**
+ * Returns the video URL to use, respecting user's localStorage override.
+ * localStorage key: `gymPrime_primaryVideo_${exerciseId}`
+ */
+export function getActiveVideoUrl(
+  exercise: LibraryExercise,
+  totalWeek: number
+): { url: string; title?: string; variantIndex: number; totalVariants: number; isPinned: boolean } {
+  const pinned = typeof window !== 'undefined'
+    ? localStorage.getItem(`gymPrime_primaryVideo_${exercise.id}`)
+    : null
+
+  if (pinned) {
+    const allVideos = [exercise.primaryVideo, ...exercise.altVideos]
+    const idx = allVideos.findIndex(v => v.url === pinned)
+    return {
+      url: pinned,
+      variantIndex: idx >= 0 ? idx : 0,
+      totalVariants: allVideos.length,
+      isPinned: true,
+    }
+  }
+
+  return { ...getVideoForBlock(exercise, totalWeek), isPinned: false }
+}
+
+/**
+ * Pin a video as primary for an exercise (saves to localStorage).
+ */
+export function pinVideo(exerciseId: string, url: string): void {
+  localStorage.setItem(`gymPrime_primaryVideo_${exerciseId}`, url)
+}
+
+/**
+ * Remove pinned video for an exercise (back to algorithmic rotation).
+ */
+export function unpinVideo(exerciseId: string): void {
+  localStorage.removeItem(`gymPrime_primaryVideo_${exerciseId}`)
+}
+
+/**
+ * Get week range label for a block index.
+ * E.g. blockIndex=0 → "Нед. 1–4", blockIndex=1 → "Нед. 5–8"
+ */
+export function getBlockWeekLabel(blockIndex: number): string {
+  const start = blockIndex * 4 + 1
+  const end = start + 3
+  return `Нед. ${start}–${end}`
+}
