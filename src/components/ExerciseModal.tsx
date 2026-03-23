@@ -38,6 +38,8 @@ function getInstagramEmbedUrl(instagramUrl: string): string | null {
 export default function ExerciseModal({ exercise, currentWeight, onClose }: ExerciseModalProps) {
   const embedUrl = exercise.instagramUrl ? getInstagramEmbedUrl(exercise.instagramUrl) : null
   const [showEquipment, setShowEquipment] = useState(false)
+  const [showAlternatives, setShowAlternatives] = useState(false)
+  const [activeAltIndex, setActiveAltIndex] = useState(0)
   const equipmentPhoto = EQUIPMENT_PHOTOS[exercise.id] || null
 
   useEffect(() => {
@@ -49,6 +51,11 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
       document.documentElement.style.overflow = ''
     }
   }, [])
+
+  useEffect(() => {
+    setShowAlternatives(false)
+    setActiveAltIndex(0)
+  }, [exercise.id])
 
   return (
     <motion.div
@@ -138,6 +145,76 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
               </div>
             )}
           </div>
+
+          {/* Alternative Videos */}
+          {exercise.alternatives && exercise.alternatives.length > 0 && (
+            <div className="mb-4">
+              <button
+                onClick={() => setShowAlternatives(prev => !prev)}
+                className="w-full flex items-center justify-between p-3 rounded-xl mb-2"
+                style={{ background: 'rgba(255,255,255,0.04)' }}
+              >
+                <span className="text-white/70 text-sm font-semibold">
+                  🔄 Альтернативные видео ({exercise.alternatives.length})
+                </span>
+                <span className="text-white/40">{showAlternatives ? '▲' : '▼'}</span>
+              </button>
+              {showAlternatives && (
+                <div>
+                  {/* Tab buttons for selecting which alt video */}
+                  {exercise.alternatives.length > 1 && (
+                    <div className="flex gap-2 mb-2">
+                      {exercise.alternatives.map((_, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setActiveAltIndex(i)}
+                          className="w-8 h-8 rounded-lg text-xs font-bold transition-all"
+                          style={{
+                            background: activeAltIndex === i
+                              ? 'linear-gradient(135deg, #6366f1, #8b5cf6)'
+                              : 'rgba(255,255,255,0.08)',
+                            color: activeAltIndex === i ? 'white' : 'rgba(255,255,255,0.5)'
+                          }}
+                        >
+                          {i + 1}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                  {/* The active alternative video */}
+                  {(() => {
+                    const altUrl = exercise.alternatives[activeAltIndex]
+                    const altEmbedUrl = getInstagramEmbedUrl(altUrl)
+                    return altEmbedUrl ? (
+                      <div className="rounded-2xl overflow-hidden" style={{ background: 'rgba(99,102,241,0.08)' }}>
+                        <div style={{ position: 'relative', width: '100%' }}>
+                          <div style={{ overflow: 'hidden', borderRadius: 16, height: 460 }}>
+                            <iframe
+                              src={altEmbedUrl}
+                              width="100%"
+                              height="540"
+                              frameBorder={0}
+                              scrolling="no"
+                              allowTransparency={true}
+                              title={`Alternative ${activeAltIndex + 1}`}
+                              style={{ marginTop: -60, display: 'block', border: 'none' }}
+                              loading="lazy"
+                            />
+                          </div>
+                          <div
+                            className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-1.5 py-2"
+                            style={{ background: 'linear-gradient(0deg, rgba(28,28,39,0.9) 0%, transparent 100%)' }}
+                          >
+                            <span className="text-white/40 text-xs">@appyoucan • Вариант {activeAltIndex + 1}</span>
+                          </div>
+                        </div>
+                      </div>
+                    ) : null
+                  })()}
+                </div>
+              )}
+            </div>
+          )}
 
           {/* Stats */}
           <div className="grid grid-cols-2 gap-3 mb-4">

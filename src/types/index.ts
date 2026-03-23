@@ -77,3 +77,37 @@ export interface Settings {
   notificationsEnabled: boolean
   stepGoal: number
 }
+
+export type MuscleGroup =
+  | 'back_width'
+  | 'back_thickness'
+  | 'chest'
+  | 'shoulders_lateral'
+  | 'shoulders_front'
+  | 'shoulders_rear'
+  | 'legs_quads'
+  | 'legs_hamstrings'
+  | 'glutes'
+  | 'biceps'
+  | 'triceps'
+  | 'abs'
+  | 'traps'
+  | 'forearms'
+
+export interface VideoRef {
+  url: string
+  title?: string
+}
+
+export interface LibraryExercise {
+  id: string
+  name_ru: string
+  name_en: string
+  muscle_group: MuscleGroup
+  muscle_emoji: string
+  is_compound: boolean
+  primaryVideo: VideoRef
+  altVideos: VideoRef[]
+  equipmentPhotoKey?: string
+  tips_ru: string
+}

@@ -308,7 +308,10 @@ export const EXERCISES: Exercise[] = [
     tips_ru: 'Локти зафиксированы у корпуса. В нижней точке полное разгибание — не срезай амплитуду.',
     gifUrl: 'https://static.exercisedb.dev/media/b4b6afT.gif',
     instagramUrl: 'https://www.instagram.com/p/DVoSXnnCVQd/',
-    alternatives: ['hammer_curl', 'cable_curl']
+    alternatives: [
+      'https://www.instagram.com/p/DVjPOfeCG7p/',
+      'https://www.instagram.com/p/DVSR6FVgWd8/',
+    ]
   },
   {
     id: 'abdominal_crunch_b',
@@ -344,8 +347,30 @@ export const EXERCISES: Exercise[] = [
     tips_ru: '🔑 V-тейп секрет: тяга к лицу — лучшее упражнение для здоровья плечей и объёма задних дельт. Тяни к ушам, локти выше плеч. Канатная рукоять, высокий блок.',
     gifUrl: 'https://static.exercisedb.dev/media/3GkSvR2.gif',
     instagramUrl: 'https://www.instagram.com/p/DVWeLDjCWcy/',
-    alternatives: ['trap_shrug']
-  }
+    alternatives: [
+      'https://www.instagram.com/p/DToqx8-kijp/',
+    ]
+  },
+  {
+    id: 'triceps_pushdown',
+    name_ru: 'Разгибание рук на блоке',
+    name_en: 'Triceps Pushdown',
+    muscle_primary: 'Трицепс',
+    muscle_emoji: '💪',
+    is_compound: false,
+    increment_kg: 2.5,
+    tempo: '3-1-1',
+    workout_slot: 'B',
+    exercise_order: 10,
+    sets: 3,
+    reps: '10-12',
+    tips_ru: 'Локти зафиксированы у тела. Полное разгибание с 1 сек паузой. Трицепс составляет 2/3 объёма руки — не игнорируй его. V-гриф снижает нагрузку на запястья.',
+    instagramUrl: 'https://www.instagram.com/p/DV16kaxDeQ1/',
+    alternatives: [
+      'https://www.instagram.com/p/DUuPCeqjOJg/',
+      'https://www.instagram.com/p/DULWjLqArmS/',
+    ],
+  },
 ]
 
 export const getExercisesByWorkout = (workout: 'A' | 'B'): Exercise[] => {
