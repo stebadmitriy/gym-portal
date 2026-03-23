@@ -1,5 +1,27 @@
+import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Exercise } from '../types'
+
+const EQUIPMENT_PHOTOS: Record<string, string> = {
+  lat_pulldown: '/gym-portal/gym-photos/lat_pulldown.jpg',
+  chest_press: '/gym-portal/gym-photos/chest_press.jpg',
+  shoulder_press: '/gym-portal/gym-photos/shoulder_press.jpg',
+  shoulder_press_b: '/gym-portal/gym-photos/shoulder_press.jpg',
+  incline_pec_fly: '/gym-portal/gym-photos/incline_pec_fly.jpg',
+  cable_lateral_raise: '/gym-portal/gym-photos/cable_lateral_raise.jpg',
+  cable_lateral_raise_b: '/gym-portal/gym-photos/cable_lateral_raise.jpg',
+  leg_press: '/gym-portal/gym-photos/leg_press.jpg',
+  seated_leg_curl: '/gym-portal/gym-photos/seated_leg_curl.jpg',
+  abdominal_crunch: '/gym-portal/gym-photos/abdominal_crunch.jpg',
+  abdominal_crunch_b: '/gym-portal/gym-photos/abdominal_crunch.jpg',
+  hip_thrust: '/gym-portal/gym-photos/hip_thrust.jpg',
+  pull_over: '/gym-portal/gym-photos/pull_over.jpg',
+  linear_back_row: '/gym-portal/gym-photos/linear_back_row.jpg',
+  leg_extension: '/gym-portal/gym-photos/leg_extension.jpg',
+  ham_curl: '/gym-portal/gym-photos/ham_curl.jpg',
+  biceps_curl: '/gym-portal/gym-photos/biceps_curl.jpg',
+  cable_face_pull: '/gym-portal/gym-photos/cable_face_pull.jpg',
+}
 
 interface ExerciseModalProps {
   exercise: Exercise
@@ -15,6 +37,18 @@ function getInstagramEmbedUrl(instagramUrl: string): string | null {
 
 export default function ExerciseModal({ exercise, currentWeight, onClose }: ExerciseModalProps) {
   const embedUrl = exercise.instagramUrl ? getInstagramEmbedUrl(exercise.instagramUrl) : null
+  const [showEquipment, setShowEquipment] = useState(false)
+  const equipmentPhoto = EQUIPMENT_PHOTOS[exercise.id] || null
+
+  useEffect(() => {
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    document.documentElement.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prev
+      document.documentElement.style.overflow = ''
+    }
+  }, [])
 
   return (
     <motion.div
@@ -38,7 +72,7 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
           borderRadius: '24px 24px 0 0',
           maxHeight: '90vh',
           overflowY: 'auto',
-          paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 24px)'
+          paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 80px)'
         }}
       >
         {/* Handle */}
@@ -61,7 +95,7 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
               </span>
               <h2 className="text-xl font-black text-white leading-tight">{exercise.name_ru}</h2>
               {exercise.name_en && (
-                <p className="text-white/30 text-xs font-medium tracking-widest uppercase mt-0.5">{exercise.name_en}</p>
+                <p className="text-white/55 text-sm font-semibold tracking-widest uppercase mt-0.5">{exercise.name_en}</p>
               )}
               <p className="text-white/50 text-sm mt-1">{exercise.muscle_emoji} {exercise.muscle_primary}</p>
             </div>
@@ -78,17 +112,19 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
           <div className="mb-4 rounded-2xl overflow-hidden" style={{ background: 'rgba(99,102,241,0.08)' }}>
             {embedUrl ? (
               <div style={{ position: 'relative', width: '100%' }}>
-                <iframe
-                  src={embedUrl}
-                  width="100%"
-                  height="520"
-                  frameBorder={0}
-                  scrolling="no"
-                  allowTransparency={true}
-                  title={`${exercise.name_ru} — @appyoucan`}
-                  style={{ display: 'block', border: 'none', borderRadius: 16 }}
-                  loading="lazy"
-                />
+                <div style={{ overflow: 'hidden', borderRadius: 16, height: 460 }}>
+                  <iframe
+                    src={embedUrl}
+                    width="100%"
+                    height="540"
+                    frameBorder={0}
+                    scrolling="no"
+                    allowTransparency={true}
+                    title={`${exercise.name_ru} — @appyoucan`}
+                    style={{ marginTop: -60, display: 'block', border: 'none' }}
+                    loading="lazy"
+                  />
+                </div>
                 <div
                   className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-1.5 py-2"
                   style={{ background: 'linear-gradient(0deg, rgba(28,28,39,0.9) 0%, transparent 100%)' }}
@@ -147,6 +183,30 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
             <p className="text-indigo-400 text-xs font-semibold mb-2 uppercase tracking-wider">💡 Научный совет</p>
             <p className="text-white/80 text-sm leading-relaxed">{exercise.tips_ru}</p>
           </div>
+
+          {/* Equipment photo */}
+          {equipmentPhoto && (
+            <div className="mt-4">
+              <button
+                onClick={() => setShowEquipment(prev => !prev)}
+                className="w-full flex items-center justify-between p-3 rounded-xl"
+                style={{ background: 'rgba(255,255,255,0.04)' }}
+              >
+                <span className="text-white/70 text-sm font-semibold">📸 Тренажёр в зале</span>
+                <span className="text-white/40">{showEquipment ? '▲' : '▼'}</span>
+              </button>
+              {showEquipment && (
+                <div className="mt-2 rounded-xl overflow-hidden">
+                  <img
+                    src={equipmentPhoto}
+                    alt={exercise.name_en}
+                    className="w-full object-cover"
+                    style={{ maxHeight: 280, objectPosition: 'center top' }}
+                  />
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </motion.div>
     </motion.div>

@@ -292,6 +292,9 @@ export default function WorkoutPage() {
                       </span>
                     )}
                   </div>
+                  {ex.name_en && (
+                    <span className="text-white/35 text-xs font-medium tracking-wider uppercase truncate block">{ex.name_en}</span>
+                  )}
                   <span className="text-white/40 text-xs">{ex.muscle_primary}</span>
                 </div>
 
