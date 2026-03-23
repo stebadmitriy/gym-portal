@@ -227,6 +227,13 @@ const SECTIONS: Section[] = [
               <p className="text-white/60 text-xs mt-0.5">Ходьба разгоняет кровь, ускоряет вывод лактата и улучшает восстановление мышц. Не сидеть после тяжёлых ног!</p>
             </div>
           </div>
+          <div className="flex gap-3 p-3 rounded-xl" style={{ background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.2)' }}>
+            <span className="text-xl flex-shrink-0">🍑</span>
+            <div>
+              <p className="text-white font-semibold text-sm">Ягодичный мост (Hip Thrust) — добавлен в программу</p>
+              <p className="text-white/60 text-xs mt-0.5">Максимальная активация ягодиц при минимальной нагрузке на позвоночник. Завершает V-образный силуэт в профиль. Добавлен в конец Тренировки A после жима ногами.</p>
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -269,6 +276,105 @@ const SECTIONS: Section[] = [
             </div>
           ))}
         </div>
+      </div>
+    )
+  },
+  {
+    id: 'supplements',
+    icon: '💊',
+    title: 'Добавки (40+ протокол)',
+    content: (
+      <div className="space-y-4">
+        <div className="p-3 rounded-xl" style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.2)' }}>
+          <p className="font-bold text-emerald-400 mb-1">💡 Принцип: меньше, но правильно</p>
+          <p className="text-xs text-white/70">После 40 лет синтез белка менее эффективен, кортизол выше, восстановление медленнее. 4 добавки закрывают 90% дефицита без вреда.</p>
+        </div>
+
+        {/* Schedule table */}
+        <div>
+          <p className="font-bold text-indigo-300 mb-2">📋 График приёма</p>
+          <div className="space-y-2">
+            {[
+              {
+                time: '🌅 Утро (с едой)',
+                items: [
+                  { name: 'Витамин D3 + K2', dose: '2000-4000 МЕ + 100 мкг', why: 'жирорастворимый → нужна еда' },
+                  { name: 'HMB', dose: '1 г', why: 'антикатаболик с утра' },
+                ],
+                bg: 'rgba(245,158,11,0.08)',
+                border: 'rgba(245,158,11,0.2)',
+              },
+              {
+                time: '🌞 Обед',
+                items: [
+                  { name: 'HMB', dose: '1 г', why: 'поддержание уровня в крови' },
+                ],
+                bg: 'rgba(99,102,241,0.08)',
+                border: 'rgba(99,102,241,0.2)',
+              },
+              {
+                time: '💪 После тренировки',
+                items: [
+                  { name: 'Протеин (сывороточный)', dose: '25-30 г', why: 'быстрый синтез белка' },
+                  { name: 'Креатин моногидрат', dose: '5 г', why: 'лучше усваивается после нагрузки' },
+                ],
+                bg: 'rgba(168,85,247,0.08)',
+                border: 'rgba(168,85,247,0.2)',
+              },
+              {
+                time: '🌙 Перед сном',
+                items: [
+                  { name: 'Магний (глицинат)', dose: '300-400 мг', why: 'улучшает сон, снижает кортизол' },
+                  { name: 'HMB', dose: '1 г', why: 'защита мышц во время голодания ночью' },
+                  { name: 'Казеин (опционально)', dose: '30 г', why: 'медленный белок на 7-8 ч сна' },
+                ],
+                bg: 'rgba(16,185,129,0.08)',
+                border: 'rgba(16,185,129,0.2)',
+              },
+            ].map(slot => (
+              <div key={slot.time} className="p-3 rounded-xl" style={{ background: slot.bg, border: `1px solid ${slot.border}` }}>
+                <p className="font-bold text-white text-xs mb-2">{slot.time}</p>
+                <div className="space-y-1.5">
+                  {slot.items.map(item => (
+                    <div key={item.name} className="flex items-start justify-between gap-2">
+                      <div className="flex-1 min-w-0">
+                        <span className="text-white font-semibold text-xs">{item.name}</span>
+                        <span className="text-white/40 text-xs block">{item.why}</span>
+                      </div>
+                      <span className="text-white/80 text-xs font-bold flex-shrink-0">{item.dose}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* HMB detail */}
+        <div className="p-3 rounded-xl" style={{ background: 'rgba(255,255,255,0.04)' }}>
+          <p className="font-bold text-white text-sm mb-2">🔬 HMB — главная добавка после 40</p>
+          <ul className="text-xs text-white/70 space-y-1 pl-3 list-disc">
+            <li>Метаболит лейцина — тормозит распад мышечного белка</li>
+            <li>Особенно важен в 40+: синтез белка снижен, риск катаболизма выше</li>
+            <li>Безопасная доза: 3 г/день (1+1+1)</li>
+            <li>Форма: Calcium HMB или MyHMB</li>
+            <li>Бренды: NOW Sports, Optimum Nutrition, Nutricost, Transparent Labs</li>
+          </ul>
+        </div>
+
+        {/* Synergy note */}
+        <div className="p-3 rounded-xl" style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.2)' }}>
+          <p className="font-bold text-indigo-300 mb-1">⚡ Синергия добавок</p>
+          <p className="text-xs text-white/70">Все 4 добавки работают через разные механизмы и не конкурируют между собой:</p>
+          <ul className="text-xs text-white/70 space-y-0.5 pl-3 list-disc mt-1">
+            <li><span className="text-white">Креатин</span> → АТФ (топливо для мышц)</li>
+            <li><span className="text-white">HMB</span> → антикатаболизм (защита)</li>
+            <li><span className="text-white">D3+K2</span> → тестостерон + иммунитет</li>
+            <li><span className="text-white">Магний</span> → сон + кортизол + 300+ ферментов</li>
+          </ul>
+        </div>
+
+        <p className="text-white/30 text-xs text-center">Все добавки — общий рацион, не лекарства. Перед приёмом проконсультируйся с врачом.</p>
       </div>
     )
   },
