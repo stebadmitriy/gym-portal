@@ -1,0 +1,20 @@
+{
+  "name": "Gym Prime Portal",
+  "description": "Personal fitness PWA for iPhone — Russian UI, dark theme, V-taper training program",
+  "brand": {
+    "primary": "#6366f1",
+    "secondary": "#8b5cf6",
+    "accent": "#ec4899",
+    "background": "#0a0a0f",
+    "surface": "rgba(255,255,255,0.04)",
+    "text": "#ffffff",
+    "textMuted": "rgba(255,255,255,0.5)",
+    "font": "Inter",
+    "borderRadius": "16px"
+  },
+  "framework": "react-tailwind",
+  "tokenFormat": "tailwind",
+  "platform": "mobile-first (iPhone PWA)",
+  "locale": "ru",
+  "designStyle": "Gradient Energy — dark, premium, energetic fitness aesthetic with indigo-violet gradients"
+}

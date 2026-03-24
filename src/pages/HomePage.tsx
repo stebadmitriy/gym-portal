@@ -16,6 +16,18 @@ const SCIENCE_TIPS = [
   { icon: '🔥', text: 'RIR (повторения в запасе) точнее %1ПМ для управления интенсивностью у опытных атлетов' },
 ]
 
+// Muscle group accent colors for exercise chips
+const MUSCLE_COLORS: Record<string, string> = {
+  'Спина': '#6366f1',
+  'Грудь': '#ec4899',
+  'Плечи': '#f59e0b',
+  'Бицепс': '#10b981',
+  'Трицепс': '#14b8a6',
+  'Ноги': '#f97316',
+  'Пресс': '#8b5cf6',
+  'Ягодицы': '#ef4444',
+}
+
 export default function HomePage() {
   const navigate = useNavigate()
   const { programState, weights, todaySteps, saveSteps, saveTodayWeight } = useProgramStore()
@@ -57,40 +69,63 @@ export default function HomePage() {
     <div className="min-h-screen bg-[#0a0a0f] pb-28">
       {/* Header */}
       <div
-        className="px-5 pt-safe pb-5"
+        className="px-5 pb-5"
         style={{
-          background: 'linear-gradient(180deg, rgba(99,102,241,0.15) 0%, transparent 100%)',
+          background: 'linear-gradient(180deg, rgba(99,102,241,0.18) 0%, transparent 100%)',
           paddingTop: `calc(env(safe-area-inset-top, 0px) + 20px)`
         }}
       >
         <div className="flex items-start justify-between">
           <div>
-            <p className="text-white/50 text-sm font-medium">{todayName}</p>
-            <h1 className="text-2xl font-black text-white mt-0.5">
-              Неделя {programState.total_week}
-            </h1>
-            <div className="flex items-center gap-2 mt-1">
+            <p className="text-white/50 text-sm font-medium tracking-wide">{todayName}</p>
+            <h1 className="text-3xl font-black text-white mt-0.5 tracking-tight">
+              Неделя{' '}
               <span
-                className="text-xs font-semibold px-2.5 py-1 rounded-full"
-                style={{ background: blockInfo.color + '30', color: blockInfo.color }}
+                style={{
+                  background: 'linear-gradient(135deg, #a5b4fc, #c4b5fd)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  filter: 'drop-shadow(0 0 12px rgba(139,92,246,0.5))',
+                }}
+              >
+                {programState.total_week}
+              </span>
+            </h1>
+            <div className="flex items-center gap-2 mt-1.5">
+              <span
+                className="text-xs font-bold px-3 py-1 rounded-full border"
+                style={{
+                  background: blockInfo.color + '20',
+                  color: blockInfo.color,
+                  borderColor: blockInfo.color + '50',
+                  boxShadow: `0 0 10px ${blockInfo.color}30`,
+                }}
               >
                 {blockInfo.nameRu}
               </span>
-              <span className="text-white/40 text-xs">Неделя {weekInBlock}/{blockInfo.weeks}</span>
+              <span className="text-white/40 text-xs">{weekInBlock}/{blockInfo.weeks} нед</span>
             </div>
           </div>
-          <div className="text-3xl">🏋️</div>
+          <motion.div
+            className="text-4xl"
+            animate={{ rotate: [0, -8, 8, -4, 4, 0] }}
+            transition={{ duration: 2, repeat: Infinity, repeatDelay: 5 }}
+          >
+            🏋️
+          </motion.div>
         </div>
 
         {/* Cycle progress bar */}
         <div className="mt-4">
-          <div className="flex justify-between text-xs text-white/40 mb-1.5">
+          <div className="flex justify-between text-xs text-white/40 mb-2">
             <span>Цикл прогресс</span>
-            <span>{programState.total_week % 9 || 9}/9 нед</span>
+            <span className="text-white/60 font-medium">{programState.total_week % 9 || 9}/9 нед</span>
           </div>
-          <div className="h-1.5 rounded-full bg-white/10">
+          <div className="h-2 rounded-full bg-white/8 overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
             <motion.div
-              className="h-full rounded-full gradient-primary"
+              className="h-full rounded-full"
+              style={{ background: 'linear-gradient(90deg, #6366f1, #8b5cf6, #a78bfa)' }}
               initial={{ width: 0 }}
               animate={{ width: `${cycleProgress}%` }}
               transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -104,52 +139,101 @@ export default function HomePage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="card p-5"
+          className="relative overflow-hidden rounded-2xl p-5"
+          style={{
+            background: '#1c1c27',
+            border: activeWorkout
+              ? '1px solid transparent'
+              : '1px solid rgba(255,255,255,0.08)',
+            backgroundImage: activeWorkout
+              ? 'linear-gradient(#1c1c27, #1c1c27), linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4)'
+              : undefined,
+            backgroundOrigin: activeWorkout ? 'border-box' : undefined,
+            backgroundClip: activeWorkout ? 'padding-box, border-box' : undefined,
+          }}
         >
-          <div className="flex items-center justify-between mb-3">
+          {/* Subtle glow backdrop when active */}
+          {activeWorkout && (
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background: 'radial-gradient(ellipse at top right, rgba(99,102,241,0.12) 0%, transparent 60%)',
+              }}
+            />
+          )}
+
+          <div className="relative flex items-center justify-between mb-3">
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs font-semibold text-white/40 uppercase tracking-wider">
+                <span className="text-xs font-bold text-white/40 uppercase tracking-widest">
                   {activeWorkout ? 'ТРЕНИРОВКА ИДЁТ' : 'СЛЕДУЮЩАЯ'}
                 </span>
                 {activeWorkout && (
-                  <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                  <span className="flex items-center gap-1">
+                    <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+                    <span className="text-green-400 text-xs font-semibold">LIVE</span>
+                  </span>
                 )}
               </div>
-              <h2 className="text-xl font-bold">
+              <h2 className="text-2xl font-black tracking-tight">
                 Тренировка {nextWorkout}
               </h2>
               <p className="text-white/50 text-sm mt-0.5">
                 {estimates.exerciseCount} упражнений · ~{estimates.durationMin} мин · ~{estimates.calories} ккал
               </p>
             </div>
-            <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl"
-              style={{ background: 'linear-gradient(135deg, #6366f130, #8b5cf630)' }}
+            <motion.div
+              whileTap={{ scale: 0.92 }}
+              className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0"
+              style={{
+                background: 'linear-gradient(135deg, rgba(99,102,241,0.25), rgba(139,92,246,0.25))',
+                border: '1px solid rgba(139,92,246,0.3)',
+                boxShadow: '0 4px 16px rgba(99,102,241,0.2)',
+              }}
             >
               {nextWorkout === 'A' ? '💪' : '🔗'}
-            </div>
+            </motion.div>
           </div>
 
-          {/* Exercise preview */}
+          {/* Exercise preview chips with muscle-group color accents */}
           <div className="flex flex-wrap gap-1.5 mb-4">
-            {getExercisesByWorkout(nextWorkout).slice(0, 4).map(ex => (
-              <span
-                key={ex.id}
-                className="text-xs px-2 py-1 rounded-full"
-                style={{ background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.6)' }}
-              >
-                {ex.muscle_emoji} {ex.muscle_primary}
-              </span>
-            ))}
+            {getExercisesByWorkout(nextWorkout).slice(0, 4).map(ex => {
+              const accentColor = MUSCLE_COLORS[ex.muscle_primary] || '#6366f1'
+              return (
+                <span
+                  key={ex.id}
+                  className="text-xs px-2.5 py-1 rounded-full flex items-center gap-1.5"
+                  style={{
+                    background: 'rgba(255,255,255,0.06)',
+                    color: 'rgba(255,255,255,0.7)',
+                    borderLeft: `3px solid ${accentColor}`,
+                    borderRadius: '0 20px 20px 0',
+                    paddingLeft: '8px',
+                  }}
+                >
+                  <span>{ex.muscle_emoji}</span>
+                  <span>{ex.muscle_primary}</span>
+                </span>
+              )
+            })}
           </div>
 
-          <button
+          <motion.button
             onClick={handleStartWorkout}
-            className="btn-primary w-full py-3.5 text-white font-semibold text-base flex items-center justify-center gap-2"
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.97 }}
+            className="btn-primary w-full text-white font-bold text-base flex items-center justify-center gap-2"
+            style={{
+              boxShadow: activeWorkout
+                ? '0 4px 20px rgba(16,185,129,0.4)'
+                : '0 4px 20px rgba(99,102,241,0.4)',
+              background: activeWorkout
+                ? 'linear-gradient(135deg, #059669, #10b981)'
+                : 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+            }}
           >
             {activeWorkout ? '▶️ Продолжить тренировку' : '🚀 Начать тренировку →'}
-          </button>
+          </motion.button>
         </motion.div>
 
         {/* Steps Card */}
@@ -159,9 +243,27 @@ export default function HomePage() {
           transition={{ delay: 0.1 }}
           className="card p-5"
         >
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-xl">🚶</span>
-            <h3 className="font-semibold">Шаги сегодня</h3>
+          <div className="flex items-center justify-between mb-3">
+            <div className="flex items-center gap-2">
+              <span className="text-xl">🚶</span>
+              <h3 className="font-semibold">Шаги сегодня</h3>
+            </div>
+            {/* Large step count display */}
+            <div className="text-right">
+              <span
+                className="text-2xl font-black"
+                style={{
+                  background: 'linear-gradient(135deg, #f59e0b, #f97316)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  fontFeatureSettings: '"tnum"',
+                }}
+              >
+                {todaySteps.toLocaleString('ru-RU')}
+              </span>
+              <p className="text-white/40 text-xs">/ {stepGoal.toLocaleString('ru-RU')}</p>
+            </div>
           </div>
 
           <div className="flex items-center gap-3 mb-3">
@@ -173,10 +275,10 @@ export default function HomePage() {
               placeholder="0"
               className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-lg font-semibold placeholder-white/30"
             />
-            <span className="text-white/40 text-sm">/ {stepGoal.toLocaleString()}</span>
           </div>
 
-          <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+          {/* Thicker progress bar */}
+          <div className="h-3 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.06)' }}>
             <motion.div
               className="h-full rounded-full"
               style={{ background: 'linear-gradient(90deg, #f59e0b, #f97316)' }}
@@ -210,8 +312,10 @@ export default function HomePage() {
               placeholder="83.0"
               className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-lg font-semibold placeholder-white/30"
             />
-            <span className="text-white/40">кг</span>
-            <button
+            <span className="text-white/40 font-medium">кг</span>
+            <motion.button
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.94 }}
               onClick={() => {
                 const w = parseFloat(weightInput)
                 if (w > 0) {
@@ -219,11 +323,15 @@ export default function HomePage() {
                   setWeightInput('')
                 }
               }}
-              className="px-4 py-3 rounded-xl font-semibold text-sm"
-              style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }}
+              className="px-5 py-3 rounded-full font-bold text-sm text-white whitespace-nowrap"
+              style={{
+                background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+                boxShadow: '0 4px 14px rgba(99,102,241,0.4)',
+                minWidth: 64,
+              }}
             >
-              ✓
-            </button>
+              Сохранить
+            </motion.button>
           </div>
         </motion.div>
 
@@ -251,48 +359,60 @@ export default function HomePage() {
           </p>
         </motion.div>
 
-        {/* Tip of the Day */}
+        {/* Tip of the Day — with indigo left-border accent */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25 }}
-          className="card p-5"
-          style={{ borderColor: 'rgba(99,102,241,0.2)' }}
+          className="overflow-hidden rounded-2xl p-5"
+          style={{
+            background: '#1c1c27',
+            border: '1px solid rgba(99,102,241,0.25)',
+            borderLeft: '4px solid #6366f1',
+            boxShadow: '-4px 0 16px rgba(99,102,241,0.15)',
+          }}
         >
           <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-semibold text-indigo-400 uppercase tracking-wider">Наука дня</span>
+            <span
+              className="text-xs font-bold uppercase tracking-widest"
+              style={{ color: '#a5b4fc' }}
+            >
+              Наука дня
+            </span>
           </div>
-          <div className="flex gap-3">
-            <span className="text-2xl">{SCIENCE_TIPS[tipIndex].icon}</span>
-            <p className="text-sm text-white/70 leading-relaxed">{SCIENCE_TIPS[tipIndex].text}</p>
+          <div className="flex gap-3 items-start">
+            <span className="text-3xl leading-none">{SCIENCE_TIPS[tipIndex].icon}</span>
+            <p className="text-sm text-white/75 leading-relaxed">{SCIENCE_TIPS[tipIndex].text}</p>
           </div>
         </motion.div>
 
-        {/* Block overview */}
+        {/* Block overview — compact 2×2 stat grid */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
           className="card p-5"
         >
-          <h3 className="font-semibold mb-3 text-white/80 text-sm uppercase tracking-wider">Текущий блок</h3>
-          <div className="space-y-2">
-            <div className="flex justify-between">
-              <span className="text-white/50 text-sm">Блок</span>
-              <span className="text-white font-medium text-sm">{blockInfo.nameRu}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-white/50 text-sm">Подходы × Повторения</span>
-              <span className="text-white font-medium text-sm">{blockInfo.sets}×{blockInfo.repsRange}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-white/50 text-sm">RIR (запас)</span>
-              <span className="text-white font-medium text-sm">{blockInfo.rir}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-white/50 text-sm">Интенсивность</span>
-              <span className="text-white font-medium text-sm">{blockInfo.intensity}</span>
-            </div>
+          <h3 className="font-bold mb-3 text-white/60 text-xs uppercase tracking-widest">Текущий блок</h3>
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              { label: 'Блок', value: blockInfo.nameRu },
+              { label: 'Подходы × Повт', value: `${blockInfo.sets}×${blockInfo.repsRange}` },
+              { label: 'RIR (запас)', value: String(blockInfo.rir) },
+              { label: 'Интенсивность', value: blockInfo.intensity },
+            ].map((stat, i) => (
+              <div
+                key={i}
+                className="rounded-xl p-3"
+                style={{
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid rgba(255,255,255,0.06)',
+                }}
+              >
+                <p className="text-white/40 text-xs mb-1">{stat.label}</p>
+                <p className="text-white font-bold text-sm leading-tight">{stat.value}</p>
+              </div>
+            ))}
           </div>
         </motion.div>
       </div>

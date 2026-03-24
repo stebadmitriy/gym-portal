@@ -5,6 +5,7 @@ interface Section {
   id: string
   icon: string
   title: string
+  badge?: { label: string; color: string; bg: string }
   content: React.ReactNode
 }
 
@@ -14,26 +15,69 @@ function AccordionItem({ section, isOpen, onToggle }: {
   onToggle: () => void
 }) {
   return (
-    <div
-      className="card overflow-hidden"
-      style={{ borderColor: isOpen ? 'rgba(99,102,241,0.35)' : 'rgba(255,255,255,0.08)' }}
+    <motion.div
+      whileTap={{ scale: 0.995 }}
+      className="overflow-hidden rounded-2xl"
+      style={{
+        background: 'rgba(255,255,255,0.03)',
+        border: isOpen
+          ? '1px solid rgba(99,102,241,0.4)'
+          : '1px solid rgba(255,255,255,0.07)',
+        boxShadow: isOpen
+          ? '0 0 0 1px rgba(99,102,241,0.1), 0 8px 32px rgba(99,102,241,0.08)'
+          : 'none',
+        transition: 'border-color 0.2s, box-shadow 0.2s'
+      }}
     >
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between px-5 py-4 text-left"
+        className="w-full flex items-center justify-between px-4 py-4 text-left"
       >
-        <div className="flex items-center gap-3">
-          <span className="text-2xl">{section.icon}</span>
-          <span className="text-base font-bold text-white">{section.title}</span>
+        <div className="flex items-center gap-3 min-w-0">
+          {/* Icon container */}
+          <div
+            className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 text-xl"
+            style={{
+              background: isOpen
+                ? 'linear-gradient(135deg, rgba(99,102,241,0.25), rgba(139,92,246,0.15))'
+                : 'rgba(255,255,255,0.06)',
+              border: isOpen ? '1px solid rgba(99,102,241,0.3)' : '1px solid rgba(255,255,255,0.06)'
+            }}
+          >
+            {section.icon}
+          </div>
+          <div className="min-w-0">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-sm font-bold text-white">{section.title}</span>
+              {section.badge && (
+                <span
+                  className="text-xs font-semibold px-2 py-0.5 rounded-full"
+                  style={{ background: section.badge.bg, color: section.badge.color }}
+                >
+                  {section.badge.label}
+                </span>
+              )}
+            </div>
+          </div>
         </div>
-        <motion.span
+        <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.2 }}
-          className="text-white/40 text-lg flex-shrink-0 ml-2"
+          className="flex-shrink-0 ml-3 w-6 h-6 rounded-full flex items-center justify-center"
+          style={{
+            background: isOpen ? 'rgba(99,102,241,0.2)' : 'rgba(255,255,255,0.06)',
+            color: isOpen ? '#a5b4fc' : 'rgba(255,255,255,0.3)',
+            fontSize: '10px'
+          }}
         >
           ▼
-        </motion.span>
+        </motion.div>
       </button>
+
+      {/* Divider visible when open */}
+      {isOpen && (
+        <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.3), transparent)', margin: '0 16px' }} />
+      )}
 
       <AnimatePresence initial={false}>
         {isOpen && (
@@ -45,13 +89,13 @@ function AccordionItem({ section, isOpen, onToggle }: {
             transition={{ duration: 0.25, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <div className="px-5 pb-5 text-sm text-white/75 leading-relaxed space-y-2">
+            <div className="px-4 pb-5 pt-4 text-sm text-white/75 leading-relaxed space-y-2">
               {section.content}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   )
 }
 
@@ -60,6 +104,7 @@ const SECTIONS: Section[] = [
     id: 'technique',
     icon: '🎯',
     title: 'Техника',
+    badge: { label: 'БАЗА', color: '#6366f1', bg: 'rgba(99,102,241,0.15)' },
     content: (
       <div className="space-y-4">
         <div>
@@ -106,6 +151,7 @@ const SECTIONS: Section[] = [
     id: 'nutrition',
     icon: '🍽️',
     title: 'Питание',
+    badge: { label: 'КЛЮЧЕВОЕ', color: '#10b981', bg: 'rgba(16,185,129,0.15)' },
     content: (
       <div className="space-y-4">
         {/* Calorie targets */}
@@ -198,6 +244,7 @@ const SECTIONS: Section[] = [
     id: 'legs',
     icon: '🦵',
     title: 'Ноги и гормоны',
+    badge: { label: 'ГОРМОНЫ', color: '#f59e0b', bg: 'rgba(245,158,11,0.15)' },
     content: (
       <div className="space-y-3">
         <div className="p-3 rounded-xl" style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.2)' }}>
@@ -242,6 +289,7 @@ const SECTIONS: Section[] = [
     id: 'muscle-science',
     icon: '🧬',
     title: 'Наука о росте мышц',
+    badge: { label: 'НАУКА', color: '#818cf8', bg: 'rgba(99,102,241,0.15)' },
     content: (
       <div className="space-y-3">
         <div className="grid grid-cols-1 gap-2">
@@ -283,6 +331,7 @@ const SECTIONS: Section[] = [
     id: 'supplements',
     icon: '💊',
     title: 'Добавки (40+ протокол)',
+    badge: { label: '40+ ПРОТОКОЛ', color: '#10b981', bg: 'rgba(16,185,129,0.15)' },
     content: (
       <div className="space-y-4">
         <div className="p-3 rounded-xl" style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.2)' }}>
@@ -382,6 +431,7 @@ const SECTIONS: Section[] = [
     id: 'periodization',
     icon: '📅',
     title: 'Периодизация программы',
+    badge: { label: 'ЦИКЛ 9 НЕД', color: '#8b5cf6', bg: 'rgba(139,92,246,0.15)' },
     content: (
       <div className="space-y-3">
         <p className="text-white/60 text-xs">
@@ -450,18 +500,24 @@ export default function InfoPage() {
     <div className="min-h-screen bg-[#0a0a0f] pb-28">
       {/* Header */}
       <div
-        className="px-5 pb-4"
+        className="px-5 pb-5"
         style={{
-          background: 'linear-gradient(180deg, rgba(99,102,241,0.15) 0%, transparent 100%)',
+          background: 'linear-gradient(180deg, rgba(99,102,241,0.18) 0%, transparent 100%)',
           paddingTop: `calc(env(safe-area-inset-top, 0px) + 20px)`
         }}
       >
+        <div className="flex items-center gap-2 mb-1">
+          <span className="text-xs font-bold uppercase tracking-widest text-indigo-400">БАЗА ЗНАНИЙ</span>
+        </div>
         <h1 className="text-2xl font-black text-white">Инфо</h1>
         <p className="text-white/40 text-sm mt-1">Наука и знания для максимального результата</p>
       </div>
 
+      {/* Gradient divider */}
+      <div style={{ height: '1px', background: 'linear-gradient(90deg, transparent, rgba(99,102,241,0.25), transparent)', margin: '0 20px 16px' }} />
+
       {/* Accordion sections */}
-      <div className="px-4 space-y-3">
+      <div className="px-4 space-y-2.5">
         {SECTIONS.map(section => (
           <AccordionItem
             key={section.id}
