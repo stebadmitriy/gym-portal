@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useWorkoutStore } from '../stores/workoutStore'
 import { useProgramStore } from '../stores/programStore'
-import { getExercisesByWorkout, getExerciseById } from '../lib/exercises'
+import { getExercisesByWorkout, getExerciseById, getExercisesForWorkout } from '../lib/exercises'
 import { getBlockForWeek, getRestTime, getWorkoutEstimates } from '../lib/program'
 import { Exercise } from '../types'
 import RestTimerOverlay from '../components/RestTimerOverlay'
@@ -60,7 +60,7 @@ export default function WorkoutPage() {
     startWorkout
   } = useWorkoutStore()
 
-  const { programState, weights, updateWeight } = useProgramStore()
+  const { programState, weights, updateWeight, customProgram } = useProgramStore()
   const [workoutPhase, setWorkoutPhase] = useState<WorkoutPhase>('preview')
   const [showTip, setShowTip] = useState<string | null>(null)
   const [showGif, setShowGif] = useState(true)
@@ -76,18 +76,18 @@ export default function WorkoutPage() {
 
   const { block, weekInBlock, blockInfo } = getBlockForWeek(programState.total_week)
   const workoutType = programState.next_workout_type
-  const previewExercises = getExercisesByWorkout(workoutType)
+  const previewExercises = getExercisesForWorkout(workoutType, customProgram)
   const estimates = getWorkoutEstimates(workoutType, block)
 
   // Compute effective exercises list (with swaps applied)
-  const baseExercises = activeWorkout ? getExercisesByWorkout(activeWorkout.workout_type) : previewExercises
+  const baseExercises = activeWorkout ? getExercisesForWorkout(activeWorkout.workout_type, customProgram) : previewExercises
   const exercises = baseExercises.map((ex, i) => swappedExercises[i] ?? ex)
 
   // Initialize workout on mount (but don't start elapsed timer yet)
   useEffect(() => {
     if (!activeWorkout) {
       const type = programState.next_workout_type
-      const exList = getExercisesByWorkout(type)
+      const exList = getExercisesForWorkout(type, customProgram)
       startWorkout(type, programState.total_week, exList, weights, block)
     }
   }, [])
@@ -174,7 +174,7 @@ export default function WorkoutPage() {
 
   const handleSwap = (altId: string) => {
     // Build a pseudo Exercise from either main list or inline data
-    const mainList = getExercisesByWorkout(activeWorkout.workout_type)
+    const mainList = getExercisesForWorkout(activeWorkout.workout_type, customProgram)
     const resolved = resolveAlternative(altId, mainList)
     if (!resolved) return
 
@@ -212,7 +212,7 @@ export default function WorkoutPage() {
 
   // Alternative options for current exercise
   const currentAlternatives = (currentExercise?.alternatives ?? [])
-    .map(id => resolveAlternative(id, getExercisesByWorkout(activeWorkout.workout_type)))
+    .map(id => resolveAlternative(id, getExercisesForWorkout(activeWorkout.workout_type, customProgram)))
     .filter(Boolean) as { id: string; name_ru: string; muscle_primary: string; tips_ru: string }[]
 
   // Workout type color theming

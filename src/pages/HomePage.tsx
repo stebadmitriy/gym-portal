@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useProgramStore } from '../stores/programStore'
 import { useWorkoutStore } from '../stores/workoutStore'
 import { getBlockForWeek, getWorkoutEstimates, formatBlockName } from '../lib/program'
-import { getExercisesByWorkout } from '../lib/exercises'
+import { getExercisesByWorkout, getExercisesForWorkout } from '../lib/exercises'
 import { getSettings } from '../lib/storage'
 
 const SCIENCE_TIPS = [
@@ -30,7 +30,7 @@ const MUSCLE_COLORS: Record<string, string> = {
 
 export default function HomePage() {
   const navigate = useNavigate()
-  const { programState, weights, todaySteps, saveSteps, saveTodayWeight } = useProgramStore()
+  const { programState, weights, todaySteps, saveSteps, saveTodayWeight, customProgram } = useProgramStore()
   const { startWorkout, activeWorkout } = useWorkoutStore()
 
   const [stepsInput, setStepsInput] = useState(todaySteps > 0 ? String(todaySteps) : '')
@@ -47,7 +47,7 @@ export default function HomePage() {
   const todayName = dayNames[today.getDay()]
 
   const handleStartWorkout = () => {
-    const exercises = getExercisesByWorkout(nextWorkout)
+    const exercises = getExercisesForWorkout(nextWorkout, customProgram)
     if (!activeWorkout) {
       startWorkout(nextWorkout, programState.total_week, exercises, weights, block)
     }
@@ -197,7 +197,7 @@ export default function HomePage() {
 
           {/* Exercise preview chips with muscle-group color accents */}
           <div className="flex flex-wrap gap-1.5 mb-4">
-            {getExercisesByWorkout(nextWorkout).slice(0, 4).map(ex => {
+            {getExercisesForWorkout(nextWorkout, customProgram).slice(0, 4).map(ex => {
               const accentColor = MUSCLE_COLORS[ex.muscle_primary] || '#6366f1'
               return (
                 <span
