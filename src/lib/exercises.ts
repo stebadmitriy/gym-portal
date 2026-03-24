@@ -1,4 +1,5 @@
-import { Exercise } from '../types'
+import { Exercise, CustomProgram } from '../types'
+import { EXERCISE_LIBRARY } from './exerciseLibrary'
 
 export const EXERCISES: Exercise[] = [
   // ─── Workout A ────────────────────────────────────────────────────────────
@@ -372,6 +373,44 @@ export const EXERCISES: Exercise[] = [
     ],
   },
 ]
+
+export function getExercisesForWorkout(
+  slot: 'A' | 'B',
+  customProgram: CustomProgram | null
+): Exercise[] {
+  if (!customProgram) {
+    return EXERCISES.filter(ex => ex.workout_slot === slot)
+      .sort((a, b) => a.exercise_order - b.exercise_order)
+  }
+
+  const ids = customProgram[slot]
+  return ids.map((id, index) => {
+    const defaultEx = EXERCISES.find(ex => ex.id === id || ex.id === id.replace(/_b$/, ''))
+    if (defaultEx) return { ...defaultEx, exercise_order: index + 1, workout_slot: slot }
+
+    const libEx = EXERCISE_LIBRARY.find(ex => ex.id === id)
+    if (libEx) {
+      return {
+        id: libEx.id,
+        name_ru: libEx.name_ru,
+        name_en: libEx.name_en,
+        muscle_primary: libEx.muscle_group,
+        muscle_emoji: libEx.muscle_emoji,
+        is_compound: libEx.is_compound,
+        increment_kg: 2.5,
+        tempo: '3-1-1',
+        workout_slot: slot,
+        exercise_order: index + 1,
+        sets: 3,
+        reps: '10-12',
+        tips_ru: libEx.tips_ru,
+        instagramUrl: libEx.primaryVideo.url,
+        alternatives: libEx.altVideos.map(v => v.url),
+      } as Exercise
+    }
+    return null
+  }).filter(Boolean) as Exercise[]
+}
 
 export const getExercisesByWorkout = (workout: 'A' | 'B'): Exercise[] => {
   return EXERCISES

@@ -1,8 +1,9 @@
 import { create } from 'zustand'
-import { ProgramState, WorkoutType } from '../types'
-import { getProgramState, setProgramState, getWeight, setWeight, getWorkouts, saveWorkout, getMeasurements, saveMeasurement, getTodayMeasurement } from '../lib/storage'
+import { ProgramState, WorkoutType, CustomProgram } from '../types'
+import { getProgramState, setProgramState, getWeight, setWeight, getWorkouts, saveWorkout, getMeasurements, saveMeasurement, getTodayMeasurement, getCustomProgram, setCustomProgram as saveCustomProgramStorage, clearCustomProgram as clearCustomProgramStorage } from '../lib/storage'
 import { getBlockForWeek, advanceProgramState } from '../lib/program'
 import { Workout, Measurement } from '../types'
+import { EXERCISES } from '../lib/exercises'
 
 interface ProgramStoreState {
   programState: ProgramState
@@ -11,6 +12,7 @@ interface ProgramStoreState {
   todaySteps: number
   weights: Record<string, number>
   isLoaded: boolean
+  customProgram: CustomProgram | null
 
   loadAll: () => void
   updateWeight: (exerciseId: string, weight: number) => void
@@ -20,6 +22,9 @@ interface ProgramStoreState {
   saveSteps: (steps: number) => void
   saveTodayWeight: (weight: number) => void
   resetProgram: () => void
+  swapExercise: (slot: 'A' | 'B', oldId: string, newId: string) => void
+  saveCustomProgram: (program: CustomProgram) => void
+  clearCustomProgram: () => void
 }
 
 export const useProgramStore = create<ProgramStoreState>((set, get) => ({
@@ -32,6 +37,7 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
   todaySteps: 0,
   weights: {},
   isLoaded: false,
+  customProgram: getCustomProgram(),
 
   loadAll: () => {
     const programState = getProgramState()
@@ -56,13 +62,16 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
       }
     }
 
+    const customProgram = getCustomProgram()
+
     set({
       programState,
       workouts,
       measurements,
       todaySteps: todayMeasurement?.steps_today || 0,
       weights,
-      isLoaded: true
+      isLoaded: true,
+      customProgram,
     })
   },
 
@@ -131,5 +140,38 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
     }
     keysToRemove.forEach(k => localStorage.removeItem(k))
     set({ programState: defaultState, workouts: [], weights: {} })
-  }
+  },
+
+  swapExercise: (slot, oldId, newId) => {
+    const { customProgram } = get()
+    const defaultIds = {
+      A: EXERCISES.filter(e => e.workout_slot === 'A')
+                 .sort((a, b) => a.exercise_order - b.exercise_order)
+                 .map(e => e.id),
+      B: EXERCISES.filter(e => e.workout_slot === 'B')
+                 .sort((a, b) => a.exercise_order - b.exercise_order)
+                 .map(e => e.id),
+    }
+    const base = customProgram ?? {
+      A: defaultIds.A,
+      B: defaultIds.B,
+      createdAt: new Date().toISOString(),
+    }
+    const updated: CustomProgram = {
+      ...base,
+      [slot]: base[slot].map(id => id === oldId ? newId : id),
+    }
+    saveCustomProgramStorage(updated)
+    set({ customProgram: updated })
+  },
+
+  saveCustomProgram: (program) => {
+    saveCustomProgramStorage(program)
+    set({ customProgram: program })
+  },
+
+  clearCustomProgram: () => {
+    clearCustomProgramStorage()
+    set({ customProgram: null })
+  },
 }))
