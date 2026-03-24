@@ -11,9 +11,12 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     is_compound: true,
     primaryVideo: { url: 'https://www.instagram.com/p/DVbhSbdCPxJ/', title: 'Most Effective Lat Pulldown Variation' },
     altVideos: [
-      { url: 'https://www.instagram.com/p/DVJs_ENDw47/' },
-      { url: 'https://www.instagram.com/p/DVY0xyxkrNY/' },
-      { url: 'https://www.instagram.com/p/DVEQGX0lesb/' },
+      { url: 'https://www.instagram.com/p/DVkM3JHEeIh/', title: 'The Best Cable Pulldown Variations' },
+      { url: 'https://www.instagram.com/p/DVY0xyxkrNY/', title: 'The Best Cable Pulldown Variations' },
+      { url: 'https://www.instagram.com/p/DTF4DeEFFzI/', title: 'Doing Lat Pulldowns Wrong? Stop and Watch This!' },
+      { url: 'https://www.instagram.com/p/DUhYaBNkRRd/', title: 'Lat Pulldown Mistakes You Must Avoid' },
+      { url: 'https://www.instagram.com/p/DTzBu7FDnEX/', title: 'Perfect Your Form - Lat Pulldown Secrets' },
+      { url: 'https://www.instagram.com/p/DVEQGX0lesb/', title: 'Stop Overextending – Protect Your Spine' },
     ],
     equipmentPhotoKey: 'lat_pulldown',
     tips_ru: 'Тяни локти вниз и к телу, думай о сжатии лопаток. Не отклоняйся назад — это нагружает поясницу, а не широчайшие. Полная амплитуда — ключ к росту. Из видео: средний хват — оптимальный баланс между широким и узким: он максимизирует активацию широчайших и сохраняет контроль через ромбовидные. Темп: 2 сек вниз — 1 сек сжатие — 3 сек медленный эксцентрик.'
@@ -27,8 +30,9 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     is_compound: true,
     primaryVideo: { url: 'https://www.instagram.com/p/DVXBcGoDYM-/', title: 'Pull-Up Form Check' },
     altVideos: [
-      { url: 'https://www.instagram.com/p/DUBJ81wgXVA/' },
-      { url: 'https://www.instagram.com/p/DT9eB_uExMS/' },
+      { url: 'https://www.instagram.com/p/DR5AwcfDhJr/', title: 'Pull-Up Form Check' },
+      { url: 'https://www.instagram.com/p/DTbsxXvFKkP/', title: 'Not All Pull-Ups Hit the Same Muscles' },
+      { url: 'https://www.instagram.com/p/DUUmZBUD5M3/', title: 'The Perfect Pull-Up Form - Avoid These Mistakes' },
     ],
     tips_ru: 'Начинай с мёртвого виса, полностью выпрямляя руки. Тяни грудь к перекладине, контролируй опускание. Пронированный хват больше нагружает широчайшие.'
   },
@@ -43,10 +47,10 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     is_compound: true,
     primaryVideo: { url: 'https://www.instagram.com/p/DVEkVcXE3G-/', title: '3 Cable Row Grips' },
     altVideos: [
-      { url: 'https://www.instagram.com/p/DU6Z1SajFu5/' },
-      { url: 'https://www.instagram.com/p/DUqfde-gR6c/' },
-      { url: 'https://www.instagram.com/p/DUYd135jLb9/' },
-      { url: 'https://www.instagram.com/p/DUUmZBUD5M3/' },
+      { url: 'https://www.instagram.com/p/DU6Z1SajFu5/', title: 'Stop Using the Wrong Cable Row Handle' },
+      { url: 'https://www.instagram.com/p/DUqfde-gR6c/', title: 'These 4 Cable Row Grips Change Everything' },
+      { url: 'https://www.instagram.com/p/DUYd135jLb9/', title: 'Stop Using the Wrong Cable Row Handle' },
+      { url: 'https://www.instagram.com/p/DTNvpMkCMf3/', title: '3 Grips. 3 Targets. One Strong Back.' },
     ],
     equipmentPhotoKey: 'linear_back_row',
     tips_ru: 'Держи спину прямой, не раскачивайся. Тяни локти к бёдрам, сжимай лопатки в конечной точке. Узкий параллельный хват сильнее активирует нижние трапеции. Из видео: каждый хват смещает нагрузку на разный отдел спины — верхний, средний, широчайшие или общая толщина. Ротируй хваты между тренировками для сбалансированного развития всей спины.'
@@ -58,10 +62,11 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'back_thickness',
     muscle_emoji: '🏋️',
     is_compound: false,
-    primaryVideo: { url: 'https://www.instagram.com/p/DVsD18Cildf/' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DUBJ81wgXVA/', title: 'Perfect Cable Pullover = Maximum Lat Activation' },
     altVideos: [
-      { url: 'https://www.instagram.com/p/DUdZogRDJaa/' },
-      { url: 'https://www.instagram.com/p/DUgTmJ1jK7A/' },
+      { url: 'https://www.instagram.com/p/DVpdud0kXp4/', title: 'Cable Exercises Comparison' },
+      { url: 'https://www.instagram.com/p/DUgTmJ1jK7A/', title: 'Two Lat Pullover Styles – Two Totally Different Results' },
+      { url: 'https://www.instagram.com/p/DUdZogRDJaa/', title: 'Train Your Back the Right Way with Just Dumbbells' },
     ],
     equipmentPhotoKey: 'pull_over',
     tips_ru: 'Держи локти слегка согнутыми, изолируй широчайшие. Не подключай бицепсы — концентрируйся на ощущении растяжения под мышками. Отлично подходит для финишной прокачки. Из видео: смена хвата кардинально меняет зону нагрузки — нижние широчайшие для V-тейпера, верхние для ширины, средние для толщины. Тяни локти вниз и слегка назад, держи грудь вертикально для максимального вовлечения широчайших.'
@@ -74,10 +79,7 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_emoji: '🏋️',
     is_compound: true,
     primaryVideo: { url: 'https://www.instagram.com/p/DVoSYCTDI8P/', title: 'How to Deadlift with Perfect Form' },
-    altVideos: [
-      { url: 'https://www.instagram.com/p/DVmCMK2jdrF/' },
-      { url: 'https://www.instagram.com/p/DU4EWWYjnWr/' },
-    ],
+    altVideos: [],
     tips_ru: 'Спина нейтральная, гриф близко к голени. Толкай пол от себя — не тяни. Лопатки назад и вниз. Самое мощное упражнение для общего развития силы и массы. Из видео: ноги на ширине бёдер, гриф у голени, грудь вверх — вовлеки корпус перед подъёмом. Гриф должен скользить вплотную к телу, бёдра и колени разгибаются одновременно. Главные ошибки: округлённая поясница, гриф уходит вперёд, бёдра поднимаются быстрее плеч.'
   },
   {
@@ -87,12 +89,11 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'back_thickness',
     muscle_emoji: '🏋️',
     is_compound: true,
-    primaryVideo: { url: 'https://www.instagram.com/p/DUhYaBNkRRd/' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DUIc1r_jt6r/', title: 'Key Points for Perfect Seated Cable Rows' },
     altVideos: [
-      { url: 'https://www.instagram.com/p/DURs7ZGmM-8/' },
-      { url: 'https://www.instagram.com/p/DUIc1r_jt6r/' },
-      { url: 'https://www.instagram.com/p/DTzBu7FDnEX/' },
-      { url: 'https://www.instagram.com/p/DTyLUnskfLN/' },
+      { url: 'https://www.instagram.com/p/DURs7ZGmM-8/', title: 'Landmine Row Mistakes You Must Avoid' },
+      { url: 'https://www.instagram.com/p/DU4EWWYjnWr/', title: 'Different Handle = Different Results' },
+      { url: 'https://www.instagram.com/p/DVJs_ENDw47/', title: 'Know the Difference - Smith Machine Row Techniques' },
     ],
     tips_ru: 'Сиди прямо, не округляй поясницу. Тяни рукоятку к пупку, сводя лопатки. Контролируй движение в обоих направлениях — эксцентрик так же важен.'
   },
@@ -103,30 +104,13 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'back_thickness',
     muscle_emoji: '🏋️',
     is_compound: true,
-    primaryVideo: { url: 'https://www.instagram.com/p/DTxlitCCLIi/' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DSvdqjzEvpz/', title: 'Chest Supported Rows: Build a Complete Back' },
     altVideos: [
-      { url: 'https://www.instagram.com/p/DTvPEl6Ewxy/' },
-      { url: 'https://www.instagram.com/p/DTeKDypFWTu/' },
-      { url: 'https://www.instagram.com/p/DTbsxXvFKkP/' },
+      { url: 'https://www.instagram.com/p/DTxlitCCLIi/', title: 'Rope Pulling Exercises Explained' },
+      { url: 'https://www.instagram.com/p/DTvPEl6Ewxy/', title: 'How to Target Back Muscles with Cable Rows' },
+      { url: 'https://www.instagram.com/p/DTeKDypFWTu/', title: 'How to Target Back Muscles With Dumbbells' },
     ],
     tips_ru: 'Упор в грудь исключает раскачку и читинг. Полная концентрация на широчайших и ромбовидных. Идеально для тех, у кого есть проблемы с поясницей. Из видео: разные хваты и углы позволяют акцентировать толщину, детализацию или общий контроль спины — ротируй варианты еженедельно для полноценного развития.'
-  },
-  {
-    id: 'back_extension',
-    name_ru: 'Гиперэкстензия',
-    name_en: 'Back Extension',
-    muscle_group: 'back_thickness',
-    muscle_emoji: '🏋️',
-    is_compound: true,
-    primaryVideo: { url: 'https://www.instagram.com/p/DTNvpMkCMf3/' },
-    altVideos: [
-      { url: 'https://www.instagram.com/p/DTF4DeEFFzI/' },
-      { url: 'https://www.instagram.com/p/DS-tQxpkTHk/' },
-      { url: 'https://www.instagram.com/p/DSvdqjzEvpz/' },
-      { url: 'https://www.instagram.com/p/DSsPRX8iPsI/' },
-      { url: 'https://www.instagram.com/p/DR5AwcfDhJr/' },
-    ],
-    tips_ru: 'Нейтральная спина, контролируй движение. Можно добавить вес у груди для прогрессии. Укрепляет разгибатели спины и ягодичные.'
   },
 
   // ===================== TRAPS =====================
@@ -302,6 +286,7 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     altVideos: [
       { url: 'https://www.instagram.com/p/DTW2zmoCGTI/' },
       { url: 'https://www.instagram.com/p/DTRZh9JCbA6/' },
+      { url: 'https://www.instagram.com/p/DVmCMK2jdrF/', title: 'Rear Delt Fly – Perfect Form for Maximum Muscle Activation' },
     ],
     equipmentPhotoKey: 'cable_lateral_raise',
     tips_ru: 'Локоть держи на уровне плеча — не ниже. Задние дельты отвечают за здоровье плечевого сустава и V-образный силуэт сзади. Часто недотренированы — уделяй им особое внимание. Из видео: один тренажёр по-разному нагружает задние дельты, верхнюю спину и широчайшие в зависимости от положения локтей и амплитуды. Для задних дельт: 3–4 подхода × 12–15 повторений с точной техникой.'
