@@ -11,6 +11,7 @@ import ExercisesPage from './pages/ExercisesPage'
 import SettingsPage from './pages/SettingsPage'
 import WorkoutSummaryPage from './pages/WorkoutSummaryPage'
 import InfoPage from './pages/InfoPage'
+import ProgramBuilderPage from './pages/ProgramBuilderPage'
 import BottomNav from './components/BottomNav'
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
@@ -99,6 +100,14 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <InfoPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/program-builder"
+          element={
+            <ProtectedRoute>
+              <ProgramBuilderPage />
             </ProtectedRoute>
           }
         />
