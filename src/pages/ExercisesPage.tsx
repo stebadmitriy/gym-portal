@@ -1,10 +1,12 @@
 import { useState, useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { EXERCISE_LIBRARY, MUSCLE_GROUP_LABELS, MUSCLE_GROUP_EMOJI, VTAPER_TARGETS } from '../lib/exerciseLibrary'
 import { EXERCISES } from '../lib/exercises'
 import { useProgramStore } from '../stores/programStore'
 import { LibraryExercise, MuscleGroup, Exercise } from '../types'
 import ExerciseModal from '../components/ExerciseModal'
+import SwapExerciseSheet from '../components/SwapExerciseSheet'
 
 // Strip _b suffix to normalize program exercise IDs against library IDs
 const programExerciseIds = new Set(EXERCISES.map(ex => ex.id.replace(/_b$/, '')))
@@ -162,10 +164,16 @@ function VTaperCard() {
 }
 
 export default function ExercisesPage() {
-  const { weights } = useProgramStore()
+  const { weights, customProgram, clearCustomProgram } = useProgramStore()
+  const navigate = useNavigate()
   const [muscleFilter, setMuscleFilter] = useState<MuscleGroup | 'all'>('all')
   const [programFilter, setProgramFilter] = useState<'all' | 'in_program'>('all')
   const [selectedLibExercise, setSelectedLibExercise] = useState<LibraryExercise | null>(null)
+  const [swapping, setSwapping] = useState<{
+    id: string
+    slot: 'A' | 'B'
+    muscleGroup: string
+  } | null>(null)
 
   const muscleGroups = useMemo(
     () => Array.from(new Set(EXERCISE_LIBRARY.map(ex => ex.muscle_group))),
@@ -189,15 +197,40 @@ export default function ExercisesPage() {
     <div className="min-h-screen bg-[#0a0a0f] pb-28">
       {/* Header */}
       <div
-        className="px-5 pb-4"
+        className="px-5 pb-4 flex items-start justify-between"
         style={{ paddingTop: `calc(env(safe-area-inset-top, 0px) + 20px)` }}
       >
-        <h1 className="text-2xl font-black text-white">Упражнения</h1>
-        <p className="text-white/40 text-sm mt-1">{EXERCISE_LIBRARY.length} упражнений в библиотеке</p>
+        <div>
+          <h1 className="text-2xl font-black text-white">Упражнения</h1>
+          <p className="text-white/40 text-sm mt-1">{EXERCISE_LIBRARY.length} упражнений в библиотеке</p>
+        </div>
+        <button
+          onClick={() => navigate('/program-builder')}
+          className="text-xs px-3 py-1.5 rounded-xl font-semibold mt-1"
+          style={{ background: 'rgba(99,102,241,0.15)', color: '#a5b4fc' }}
+        >
+          🛠 Конструктор
+        </button>
       </div>
 
       {/* V-Taper Balance Card */}
       <VTaperCard />
+
+      {/* Custom program active banner */}
+      {customProgram && (
+        <div
+          className="mx-5 mb-3 flex items-center justify-between px-4 py-3 rounded-2xl"
+          style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.2)' }}
+        >
+          <span className="text-indigo-300 text-sm font-medium">✏️ Используется своя программа</span>
+          <button
+            onClick={clearCustomProgram}
+            className="text-xs text-white/50 underline"
+          >
+            Сбросить
+          </button>
+        </div>
+      )}
 
       {/* Sticky filters */}
       <div
@@ -382,6 +415,20 @@ export default function ExercisesPage() {
                         </span>
                       </div>
                     )}
+                    {inProgram && (
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          const slotA = customProgram?.A ?? EXERCISES.filter(ex => ex.workout_slot === 'A').map(ex => ex.id)
+                          const slot = slotA.includes(exercise.id) ? 'A' : 'B'
+                          setSwapping({ id: exercise.id, slot, muscleGroup: exercise.muscle_group })
+                        }}
+                        className="text-xs px-2 py-1 rounded-lg font-semibold"
+                        style={{ background: 'rgba(99,102,241,0.15)', color: '#a5b4fc' }}
+                      >
+                        ⇄
+                      </button>
+                    )}
                     <div
                       className="flex items-center gap-1 px-2 py-0.5 rounded-full"
                       style={{
@@ -431,6 +478,17 @@ export default function ExercisesPage() {
           />
         )}
       </AnimatePresence>
+
+      {/* Swap Exercise Sheet */}
+      {swapping && (
+        <SwapExerciseSheet
+          isOpen={!!swapping}
+          onClose={() => setSwapping(null)}
+          exerciseId={swapping.id}
+          slot={swapping.slot}
+          muscleGroup={swapping.muscleGroup}
+        />
+      )}
     </div>
   )
 }
