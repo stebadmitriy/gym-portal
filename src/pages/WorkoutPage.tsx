@@ -215,40 +215,64 @@ export default function WorkoutPage() {
     .map(id => resolveAlternative(id, getExercisesByWorkout(activeWorkout.workout_type)))
     .filter(Boolean) as { id: string; name_ru: string; muscle_primary: string; tips_ru: string }[]
 
+  // Workout type color theming
+  const workoutColor = activeWorkout.workout_type === 'A' ? '#6366f1' : '#8b5cf6'
+  const workoutColorLight = activeWorkout.workout_type === 'A' ? 'rgba(99,102,241,0.15)' : 'rgba(139,92,246,0.15)'
+  const workoutGradient = activeWorkout.workout_type === 'A'
+    ? 'linear-gradient(135deg, #6366f1, #8b5cf6)'
+    : 'linear-gradient(135deg, #8b5cf6, #a855f7)'
+
   // ─── PREVIEW SCREEN ─────────────────────────────────────────────────────────
   if (workoutPhase === 'preview') {
     return (
       <div className="min-h-screen bg-[#0a0a0f] flex flex-col pb-28" style={{ paddingTop: 'env(safe-area-inset-top, 0px)' }}>
-        {/* Header */}
+        {/* Header with gradient energy */}
         <div
-          className="px-4 pt-6 pb-4"
-          style={{ background: 'linear-gradient(180deg, rgba(99,102,241,0.15) 0%, transparent 100%)' }}
+          className="px-4 pt-6 pb-5"
+          style={{ background: `linear-gradient(180deg, ${workoutColorLight} 0%, rgba(10,10,15,0) 100%)` }}
         >
-          <div className="flex items-center gap-2 mb-1">
+          {/* Block + week row */}
+          <div className="flex items-center gap-2 mb-3">
             <span
-              className="text-xs font-semibold px-2 py-0.5 rounded-full"
+              className="text-xs font-bold px-3 py-1 rounded-full tracking-wide"
               style={{
-                background: block === 'strength' ? '#f59e0b30' : '#6366f130',
-                color: block === 'strength' ? '#f59e0b' : '#8b5cf6'
+                background: block === 'strength' ? 'rgba(245,158,11,0.15)' : workoutColorLight,
+                color: block === 'strength' ? '#f59e0b' : workoutColor,
+                border: `1px solid ${block === 'strength' ? 'rgba(245,158,11,0.3)' : `${workoutColor}40`}`
               }}
             >
               {blockLabel}
             </span>
-            <span className="text-white/40 text-xs">Неделя {programState.total_week} · Блок: {blockInfo.nameRu}</span>
+            <span className="text-white/40 text-xs">Неделя {programState.total_week} · {blockInfo.nameRu}</span>
           </div>
-          <h1 className="text-3xl font-extrabold text-white mb-1">
-            Тренировка {workoutType}
-          </h1>
-          <div className="flex items-center gap-4 text-white/50 text-sm">
-            <span>⏱ ~{estimates.durationMin} мин</span>
-            <span>🔥 ~{estimates.calories} ккал</span>
-            <span>💪 {estimates.exerciseCount} упр.</span>
+
+          {/* Workout type large pill + title */}
+          <div className="flex items-center gap-4 mb-3">
+            <div
+              className="w-16 h-16 rounded-2xl flex items-center justify-center font-black text-3xl flex-shrink-0"
+              style={{
+                background: workoutGradient,
+                boxShadow: `0 0 24px ${workoutColor}50`
+              }}
+            >
+              {workoutType}
+            </div>
+            <div>
+              <h1 className="text-2xl font-extrabold text-white leading-tight">
+                Тренировка {workoutType}
+              </h1>
+              <div className="flex items-center gap-3 text-white/50 text-xs mt-1">
+                <span>⏱ ~{estimates.durationMin} мин</span>
+                <span>🔥 ~{estimates.calories} ккал</span>
+                <span>💪 {estimates.exerciseCount} упр.</span>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Exercise list */}
         <div className="flex-1 px-4 overflow-y-auto">
-          <p className="text-white/40 text-xs uppercase tracking-widest mb-3 mt-2">Программа тренировки</p>
+          <p className="text-white/40 text-xs uppercase tracking-widest mb-3">Программа тренировки</p>
           <div className="space-y-2">
             {previewExercises.map((ex, i) => (
               <motion.div
@@ -256,13 +280,15 @@ export default function WorkoutPage() {
                 initial={{ opacity: 0, x: -16 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.05 }}
-                className="flex items-center gap-3 p-3 rounded-2xl cursor-pointer active:scale-98 transition-transform"
+                whileTap={{ scale: 0.98 }}
+                className="flex items-center gap-3 p-3 rounded-2xl cursor-pointer transition-transform"
                 onClick={() => setSelectedPreviewExercise(ex)}
                 style={{
                   background: ex.is_compound
-                    ? 'rgba(99,102,241,0.1)'
+                    ? 'rgba(99,102,241,0.08)'
                     : 'rgba(255,255,255,0.04)',
-                  border: `1px solid ${ex.is_compound ? 'rgba(99,102,241,0.2)' : 'rgba(255,255,255,0.06)'}`
+                  border: `1px solid ${ex.is_compound ? 'rgba(99,102,241,0.25)' : 'rgba(255,255,255,0.07)'}`,
+                  borderLeft: `3px solid ${ex.is_compound ? workoutColor : 'rgba(255,255,255,0.15)'}`
                 }}
               >
                 {/* Number */}
@@ -270,9 +296,9 @@ export default function WorkoutPage() {
                   className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0"
                   style={{
                     background: ex.is_compound
-                      ? 'rgba(99,102,241,0.3)'
+                      ? `${workoutColor}30`
                       : 'rgba(255,255,255,0.08)',
-                    color: ex.is_compound ? '#a5b4fc' : '#fff'
+                    color: ex.is_compound ? workoutColor : '#fff'
                   }}
                 >
                   {i + 1}
@@ -287,7 +313,7 @@ export default function WorkoutPage() {
                     <span className="text-white font-semibold text-sm truncate">{ex.name_ru}</span>
                     {ex.is_compound && (
                       <span className="text-xs px-1.5 py-0.5 rounded-full flex-shrink-0"
-                        style={{ background: 'rgba(99,102,241,0.2)', color: '#a5b4fc' }}>
+                        style={{ background: `${workoutColor}20`, color: '#a5b4fc' }}>
                         база
                       </span>
                     )}
@@ -312,9 +338,13 @@ export default function WorkoutPage() {
         <div className="px-4 pt-4 pb-2">
           <motion.button
             onClick={() => setWorkoutPhase('active')}
-            className="w-full py-5 rounded-2xl font-extrabold text-xl text-white tracking-wide"
-            style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7)' }}
+            className="w-full py-5 rounded-2xl font-extrabold text-xl text-white tracking-widest"
+            style={{
+              background: workoutGradient,
+              boxShadow: `0 4px 32px ${workoutColor}60`
+            }}
             whileTap={{ scale: 0.97 }}
+            whileHover={{ scale: 1.01 }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -338,33 +368,58 @@ export default function WorkoutPage() {
   }
 
   // ─── ACTIVE WORKOUT SCREEN ───────────────────────────────────────────────────
+  const progressPct = (completedExercises.size / exercises.length) * 100
+
   return (
     <div className="min-h-screen bg-[#0a0a0f] pb-24 flex flex-col">
       {/* Sticky header */}
       <div
-        className="sticky top-0 z-30 px-4 pt-safe pb-3"
+        className="sticky top-0 z-30 px-4 pb-3"
         style={{
-          background: 'rgba(10,10,15,0.95)',
-          backdropFilter: 'blur(20px)',
-          borderBottom: '1px solid rgba(255,255,255,0.06)',
+          background: 'rgba(10,10,15,0.96)',
+          backdropFilter: 'blur(24px)',
+          borderBottom: '1px solid rgba(255,255,255,0.07)',
           paddingTop: `calc(env(safe-area-inset-top, 0px) + 12px)`
         }}
       >
-        <div className="flex items-center justify-between mb-2">
-          <div>
-            <span
-              className="text-xs font-semibold px-2 py-0.5 rounded-full mr-2"
+        <div className="flex items-center justify-between mb-2.5">
+          <div className="flex items-center gap-2">
+            {/* Prominent workout type pill */}
+            <div
+              className="w-9 h-9 rounded-xl flex items-center justify-center font-black text-base flex-shrink-0"
               style={{
-                background: activeWorkout.block === 'strength' ? '#f59e0b30' : '#6366f130',
-                color: activeWorkout.block === 'strength' ? '#f59e0b' : '#8b5cf6'
+                background: workoutGradient,
+                boxShadow: `0 0 12px ${workoutColor}50`
               }}
             >
-              {activeWorkout.block === 'strength' ? 'Сила' : activeWorkout.block === 'deload' ? 'Разгрузка' : 'Гипертрофия'}
-            </span>
-            <span className="text-white/40 text-xs">Тренировка {activeWorkout.workout_type}</span>
+              {activeWorkout.workout_type}
+            </div>
+            <div>
+              <div className="flex items-center gap-1.5">
+                <span
+                  className="text-xs font-bold px-2 py-0.5 rounded-full"
+                  style={{
+                    background: activeWorkout.block === 'strength' ? 'rgba(245,158,11,0.15)' : `${workoutColor}20`,
+                    color: activeWorkout.block === 'strength' ? '#f59e0b' : workoutColor,
+                  }}
+                >
+                  {activeWorkout.block === 'strength' ? 'Сила' : activeWorkout.block === 'deload' ? 'Разгрузка' : 'Гипертрофия'}
+                </span>
+                {/* Prominent set counter */}
+                <span
+                  className="text-xs font-bold px-2 py-0.5 rounded-full"
+                  style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.7)' }}
+                >
+                  Подход {completedSetsCount + 1}/{totalSetsCount}
+                </span>
+              </div>
+            </div>
           </div>
           <div className="flex items-center gap-3">
-            <span className="text-white/60 font-mono text-sm">
+            <span
+              className="font-mono text-sm font-bold"
+              style={{ color: workoutColor }}
+            >
               ⏱ {formatTime(activeWorkout.elapsedSeconds)}
             </span>
             <span className="text-white/40 text-xs">
@@ -373,14 +428,13 @@ export default function WorkoutPage() {
           </div>
         </div>
 
-        {/* Progress bar */}
-        <div className="h-1.5 rounded-full bg-white/10">
+        {/* Thicker animated progress bar */}
+        <div className="h-2 rounded-full bg-white/08 overflow-hidden">
           <motion.div
-            className="h-full rounded-full gradient-primary"
-            animate={{
-              width: `${(completedExercises.size / exercises.length) * 100}%`
-            }}
-            transition={{ duration: 0.4 }}
+            className="h-full rounded-full"
+            style={{ background: workoutGradient }}
+            animate={{ width: `${progressPct}%` }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
           />
         </div>
         <p className="text-xs text-white/40 mt-1">
@@ -396,17 +450,19 @@ export default function WorkoutPage() {
             const isDone = originalId ? completedExercises.has(originalId) : false
             const isCurrent = i === activeWorkout.currentExerciseIndex
             return (
-              <button
+              <motion.button
                 key={ex.id + '_' + i}
                 onClick={() => setCurrentExercise(i)}
+                whileTap={{ scale: 0.93 }}
                 className="flex-shrink-0 flex flex-col items-center gap-1 px-3 py-2 rounded-xl transition-all"
                 style={{
                   background: isCurrent
-                    ? 'linear-gradient(135deg, #6366f1, #8b5cf6)'
+                    ? workoutGradient
                     : isDone
                     ? 'rgba(16, 185, 129, 0.15)'
                     : 'rgba(255,255,255,0.06)',
                   border: isCurrent ? 'none' : `1px solid ${isDone ? 'rgba(16,185,129,0.3)' : 'rgba(255,255,255,0.08)'}`,
+                  boxShadow: isCurrent ? `0 0 14px ${workoutColor}50` : 'none',
                   minWidth: 64
                 }}
               >
@@ -414,7 +470,7 @@ export default function WorkoutPage() {
                 <span className="text-xs text-white/70 leading-none text-center" style={{ fontSize: 10 }}>
                   {i + 1}
                 </span>
-              </button>
+              </motion.button>
             )
           })}
         </div>
@@ -423,11 +479,18 @@ export default function WorkoutPage() {
       {/* Current exercise */}
       {currentExercise && (
         <div className="flex-1 px-4">
+          {/* Exercise card with glowing border for active */}
           <motion.div
             key={currentExercise.id + '_' + currentExerciseIndex}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="card p-5 mb-4"
+            className="mb-4 rounded-2xl p-5"
+            style={{
+              background: '#1c1c27',
+              border: `1px solid ${workoutColor}50`,
+              boxShadow: `0 0 0 1px ${workoutColor}20, 0 4px 24px ${workoutColor}15`,
+              borderLeft: `3px solid ${workoutColor}`
+            }}
           >
             <div className="flex items-start justify-between mb-1">
               <div className="flex-1 min-w-0">
@@ -436,9 +499,9 @@ export default function WorkoutPage() {
                     {currentExerciseIndex + 1}/{exercises.length}
                   </span>
                   <span
-                    className="text-xs px-2 py-0.5 rounded-full"
+                    className="text-xs px-2 py-0.5 rounded-full font-semibold"
                     style={{
-                      background: currentExercise.is_compound ? 'rgba(99,102,241,0.2)' : 'rgba(245,158,11,0.2)',
+                      background: currentExercise.is_compound ? `${workoutColor}25` : 'rgba(245,158,11,0.2)',
                       color: currentExercise.is_compound ? '#a5b4fc' : '#fbbf24'
                     }}
                   >
@@ -460,13 +523,14 @@ export default function WorkoutPage() {
 
               {/* Swap button */}
               {currentAlternatives.length > 0 && (
-                <button
+                <motion.button
                   onClick={() => setShowSwapModal(true)}
+                  whileTap={{ scale: 0.95 }}
                   className="flex-shrink-0 ml-3 px-3 py-1.5 rounded-xl text-xs font-semibold"
                   style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.6)' }}
                 >
                   🔄 Заменить
-                </button>
+                </motion.button>
               )}
             </div>
 
@@ -513,7 +577,7 @@ export default function WorkoutPage() {
                     >
                       <div
                         className="p-3 rounded-xl text-sm text-white/70 leading-relaxed mb-3"
-                        style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.2)' }}
+                        style={{ background: `${workoutColor}15`, border: `1px solid ${workoutColor}30` }}
                       >
                         {currentExercise.tips_ru}
                       </div>
@@ -593,17 +657,27 @@ export default function WorkoutPage() {
               const key = `${originalId}_${set.set_number}`
               const w = inputWeights[key] ?? set.weight_kg ?? 20
               const r = inputReps[key] ?? set.target_reps
+              // Active set = next uncompleted set
+              const isActiveSet = !set.completed && exerciseSets.filter(s => !s.completed)[0]?.set_number === set.set_number
 
               return (
                 <motion.div
                   key={set.set_number}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  className="card p-4"
+                  className="rounded-2xl p-4"
                   style={{
-                    borderColor: set.completed
-                      ? 'rgba(16, 185, 129, 0.3)'
-                      : 'rgba(255,255,255,0.08)'
+                    background: set.completed
+                      ? 'rgba(16,185,129,0.08)'
+                      : isActiveSet
+                      ? `${workoutColor}18`
+                      : '#1c1c27',
+                    border: set.completed
+                      ? '1px solid rgba(16,185,129,0.3)'
+                      : isActiveSet
+                      ? `1px solid ${workoutColor}50`
+                      : '1px solid rgba(255,255,255,0.08)',
+                    boxShadow: isActiveSet ? `0 0 0 1px ${workoutColor}20` : 'none'
                   }}
                 >
                   <div className="flex items-center gap-3">
@@ -612,9 +686,11 @@ export default function WorkoutPage() {
                       className="w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0"
                       style={{
                         background: set.completed
-                          ? 'rgba(16,185,129,0.2)'
+                          ? 'rgba(16,185,129,0.25)'
+                          : isActiveSet
+                          ? `${workoutColor}30`
                           : 'rgba(255,255,255,0.08)',
-                        color: set.completed ? '#10b981' : 'white'
+                        color: set.completed ? '#10b981' : isActiveSet ? workoutColor : 'white'
                       }}
                     >
                       {set.completed ? '✓' : set.set_number}
@@ -622,77 +698,93 @@ export default function WorkoutPage() {
 
                     {/* Weight */}
                     <div className="flex items-center gap-1.5 flex-1">
-                      <button
+                      <motion.button
                         onClick={() => {
                           const newW = Math.max(0, w - currentExercise.increment_kg)
                           setInputWeights(prev => ({ ...prev, [key]: newW }))
                         }}
+                        whileTap={{ scale: 0.88 }}
                         className="w-8 h-8 rounded-lg flex items-center justify-center text-white/60 text-lg"
                         style={{ background: 'rgba(255,255,255,0.08)' }}
                         disabled={set.completed}
                       >
                         −
-                      </button>
+                      </motion.button>
                       <div className="flex-1 text-center">
-                        <div className="text-white font-bold text-lg">{w}</div>
+                        <div
+                          className="font-bold text-lg"
+                          style={{ color: set.completed ? 'rgba(255,255,255,0.5)' : 'white' }}
+                        >
+                          {w}
+                        </div>
                         <div className="text-white/30 text-xs">кг</div>
                       </div>
-                      <button
+                      <motion.button
                         onClick={() => {
                           const newW = w + currentExercise.increment_kg
                           setInputWeights(prev => ({ ...prev, [key]: newW }))
                         }}
+                        whileTap={{ scale: 0.88 }}
                         className="w-8 h-8 rounded-lg flex items-center justify-center text-white/60 text-lg"
                         style={{ background: 'rgba(255,255,255,0.08)' }}
                         disabled={set.completed}
                       >
                         +
-                      </button>
+                      </motion.button>
                     </div>
 
                     {/* Reps */}
                     <div className="flex items-center gap-1.5">
-                      <button
+                      <motion.button
                         onClick={() => {
                           const newR = Math.max(1, r - 1)
                           setInputReps(prev => ({ ...prev, [key]: newR }))
                         }}
+                        whileTap={{ scale: 0.88 }}
                         className="w-8 h-8 rounded-lg flex items-center justify-center text-white/60"
                         style={{ background: 'rgba(255,255,255,0.08)' }}
                         disabled={set.completed}
                       >
                         −
-                      </button>
+                      </motion.button>
                       <div className="text-center w-8">
-                        <div className="text-white font-bold">{r}</div>
+                        <div
+                          className="font-bold"
+                          style={{ color: set.completed ? 'rgba(255,255,255,0.5)' : 'white' }}
+                        >
+                          {r}
+                        </div>
                         <div className="text-white/30 text-xs">повт</div>
                       </div>
-                      <button
+                      <motion.button
                         onClick={() => {
                           const newR = r + 1
                           setInputReps(prev => ({ ...prev, [key]: newR }))
                         }}
+                        whileTap={{ scale: 0.88 }}
                         className="w-8 h-8 rounded-lg flex items-center justify-center text-white/60"
                         style={{ background: 'rgba(255,255,255,0.08)' }}
                         disabled={set.completed}
                       >
                         +
-                      </button>
+                      </motion.button>
                     </div>
 
                     {/* Complete button */}
-                    <button
+                    <motion.button
                       onClick={() => !set.completed && handleCompleteSet(set.set_number)}
-                      className="w-10 h-10 rounded-xl flex items-center justify-center text-lg transition-all active:scale-95 flex-shrink-0"
+                      whileTap={{ scale: 0.9 }}
+                      className="w-10 h-10 rounded-xl flex items-center justify-center text-lg flex-shrink-0"
                       style={{
                         background: set.completed
-                          ? 'rgba(16,185,129,0.2)'
-                          : 'linear-gradient(135deg, #6366f1, #8b5cf6)',
-                        color: set.completed ? '#10b981' : 'white'
+                          ? 'rgba(16,185,129,0.25)'
+                          : workoutGradient,
+                        color: set.completed ? '#10b981' : 'white',
+                        boxShadow: set.completed ? 'none' : `0 0 12px ${workoutColor}50`
                       }}
                     >
                       ✓
-                    </button>
+                    </motion.button>
                   </div>
                 </motion.div>
               )
@@ -702,30 +794,33 @@ export default function WorkoutPage() {
           {/* Navigation */}
           <div className="flex gap-3 mb-4">
             {activeWorkout.currentExerciseIndex > 0 && (
-              <button
+              <motion.button
                 onClick={() => setCurrentExercise(activeWorkout.currentExerciseIndex - 1)}
+                whileTap={{ scale: 0.97 }}
                 className="flex-1 py-3 rounded-xl font-semibold text-white/60"
                 style={{ background: 'rgba(255,255,255,0.06)' }}
               >
                 ← Назад
-              </button>
+              </motion.button>
             )}
             {activeWorkout.currentExerciseIndex < exercises.length - 1 ? (
-              <button
+              <motion.button
                 onClick={() => setCurrentExercise(activeWorkout.currentExerciseIndex + 1)}
+                whileTap={{ scale: 0.97 }}
                 className="flex-1 py-3 rounded-xl font-semibold text-white"
-                style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }}
+                style={{ background: workoutGradient }}
               >
                 Следующее →
-              </button>
+              </motion.button>
             ) : (
-              <button
+              <motion.button
                 onClick={handleFinish}
+                whileTap={{ scale: 0.97 }}
                 className="flex-1 py-3 rounded-xl font-bold text-white"
                 style={{ background: 'linear-gradient(135deg, #10b981, #059669)' }}
               >
                 🏁 Завершить тренировку
-              </button>
+              </motion.button>
             )}
           </div>
 
@@ -735,13 +830,18 @@ export default function WorkoutPage() {
               animate={{ opacity: 1, scale: 1 }}
               className="mb-4"
             >
-              <button
+              <motion.button
                 onClick={handleFinish}
-                className="w-full py-4 rounded-xl font-bold text-white text-lg"
-                style={{ background: 'linear-gradient(135deg, #10b981, #059669)' }}
+                whileTap={{ scale: 0.97 }}
+                whileHover={{ scale: 1.01 }}
+                className="w-full py-5 rounded-2xl font-bold text-white text-lg"
+                style={{
+                  background: 'linear-gradient(135deg, #10b981, #059669)',
+                  boxShadow: '0 4px 24px rgba(16,185,129,0.4)'
+                }}
               >
                 🎉 Все подходы выполнены! Завершить
-              </button>
+              </motion.button>
             </motion.div>
           )}
         </div>
@@ -768,7 +868,7 @@ export default function WorkoutPage() {
             {/* Backdrop */}
             <motion.div
               className="fixed inset-0 z-40"
-              style={{ background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)' }}
+              style={{ background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(6px)' }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -792,10 +892,11 @@ export default function WorkoutPage() {
 
               <div className="space-y-2 mb-4">
                 {currentAlternatives.map(alt => (
-                  <button
+                  <motion.button
                     key={alt.id}
                     onClick={() => handleSwap(alt.id)}
-                    className="w-full text-left p-3 rounded-2xl transition-all active:scale-98"
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full text-left p-3 rounded-2xl transition-all"
                     style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}
                   >
                     <div className="flex items-start justify-between">
@@ -806,7 +907,7 @@ export default function WorkoutPage() {
                       </div>
                       <span className="text-indigo-400 text-sm ml-3 flex-shrink-0 mt-0.5">→</span>
                     </div>
-                  </button>
+                  </motion.button>
                 ))}
               </div>
 
@@ -818,13 +919,14 @@ export default function WorkoutPage() {
                 ℹ️ Замена только на эту тренировку. В следующий раз вернётся оригинал.
               </div>
 
-              <button
+              <motion.button
                 onClick={() => setShowSwapModal(false)}
+                whileTap={{ scale: 0.97 }}
                 className="w-full py-3 rounded-xl text-white/60 font-semibold"
                 style={{ background: 'rgba(255,255,255,0.06)' }}
               >
                 Отмена
-              </button>
+              </motion.button>
             </motion.div>
           </>
         )}
