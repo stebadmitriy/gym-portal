@@ -1,4 +1,4 @@
-import { Workout, ProgramState, ExerciseWeight, Measurement, Settings } from '../types'
+import { Workout, ProgramState, ExerciseWeight, Measurement, Settings, CustomProgram } from '../types'
 
 const KEYS = {
   PIN_HASH: 'gym_pin_hash',
@@ -176,4 +176,22 @@ export const resetAll = (): void => {
     }
   }
   keysToRemove.forEach(k => localStorage.removeItem(k))
+}
+
+// Custom Program
+const CUSTOM_PROGRAM_KEY = 'gym_custom_program'
+
+export function getCustomProgram(): CustomProgram | null {
+  try {
+    const raw = localStorage.getItem(CUSTOM_PROGRAM_KEY)
+    return raw ? JSON.parse(raw) : null
+  } catch { return null }
+}
+
+export function setCustomProgram(program: CustomProgram): void {
+  localStorage.setItem(CUSTOM_PROGRAM_KEY, JSON.stringify(program))
+}
+
+export function clearCustomProgram(): void {
+  localStorage.removeItem(CUSTOM_PROGRAM_KEY)
 }

@@ -111,3 +111,9 @@ export interface LibraryExercise {
   equipmentPhotoKey?: string
   tips_ru: string
 }
+
+export interface CustomProgram {
+  A: string[]  // ordered list of exercise IDs for Workout A
+  B: string[]  // ordered list of exercise IDs for Workout B
+  createdAt: string
+}
