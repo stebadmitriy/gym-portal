@@ -223,7 +223,7 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
       { url: 'https://www.instagram.com/p/DTiWpwtiOqR/' },
       { url: 'https://www.instagram.com/p/DTYJ588DMFF/' },
     ],
-    tips_ru: 'Тренажёр обеспечивает постоянное натяжение и полную изоляцию груди. Задержись на 1 секунду в сжатом положении. Идеален для заключительного упражнения в грудной тренировке.'
+    tips_ru: 'Тренажёр обеспечивает постоянное натяжение и полную изоляцию груди. Задержись на 1 секунду в сжатом положении. Идеален для заключительного упражнения в грудной тренировке. Из видео: сведение — не про тяжёлый вес, а про контроль и натяжение. Замедли движение, слегка согни локти и концентрируйся на сжатии груди. Если больше чувствуешь плечи — исправь технику.'
   },
 
   // ===================== SHOULDERS LATERAL =====================
@@ -512,7 +512,7 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
       { url: 'https://www.instagram.com/p/DVSR6FVgWd8/' },
     ],
     equipmentPhotoKey: 'biceps_curl',
-    tips_ru: 'Не раскачивайся. Полная амплитуда: полное разгибание внизу и полное сгибание вверх. Супинируй запястье в верхней точке для максимальной активации короткой головки. 3 сек вниз.'
+    tips_ru: 'Не раскачивайся. Полная амплитуда: полное разгибание внизу и полное сгибание вверх. Супинируй запястье в верхней точке для максимальной активации короткой головки. 3 сек вниз. Из видео: сидячий вариант исключает читинг — постоянное натяжение, медленный эксцентрик и жёсткое сжатие вверху активируют бицепс без включения плеч и поясницы. 3–4 подхода, 10–15 повторений, 2–3 раза в неделю.'
   },
   {
     id: 'concentration_curl',
@@ -526,7 +526,7 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
       { url: 'https://www.instagram.com/p/DUtgGmLj47K/' },
       { url: 'https://www.instagram.com/p/DUmmKWJlE1G/' },
     ],
-    tips_ru: 'Лучшее упражнение для пика бицепса по данным ACE. Локоть зафиксирован на внутренней поверхности бедра — это устраняет читинг. Супинируй в верхней точке.'
+    tips_ru: 'Лучшее упражнение для пика бицепса по данным ACE. Локоть зафиксирован на внутренней поверхности бедра — это устраняет читинг. Супинируй в верхней точке. Из видео: не раскачивайся и не давай локтю дрейфовать — медленные 2–3 сек вниз, полное растяжение, жёсткое сжатие вверху без участия плеча. Изоляция — это контроль, не инерция.'
   },
   {
     id: 'hammer_curl',
@@ -606,13 +606,13 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'abs',
     muscle_emoji: '🔥',
     is_compound: false,
-    primaryVideo: { url: 'https://www.instagram.com/p/DVChZI9lDHZ/', title: 'Kneeling Cable Crunches' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DUM9e-VjIgx/', title: 'Perfect Crunch Technique Explained' },
     altVideos: [
       { url: 'https://www.instagram.com/p/DVmCQdvAeHP/' },
       { url: 'https://www.instagram.com/p/DVH4mRcFVb_/' },
     ],
     equipmentPhotoKey: 'abdominal_crunch',
-    tips_ru: 'Округляй поясницу — именно это активирует прямую мышцу живота. Не тяни руками, движение только корпусом. Медленно контролируй возврат. Тренируй пресс как любую другую мышцу — с прогрессией веса.'
+    tips_ru: 'Округляй поясницу — именно это активирует прямую мышцу живота. Не тяни руками, движение только корпусом. Медленно контролируй возврат. Тренируй пресс как любую другую мышцу — с прогрессией веса. Из видео: держи шею нейтральной, работает корпус, а не шея. Движение с контролем, а не инерцией — качество повторений важнее количества.'
   },
   {
     id: 'cable_crunch',
@@ -621,10 +621,10 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'abs',
     muscle_emoji: '🔥',
     is_compound: false,
-    primaryVideo: { url: 'https://www.instagram.com/p/DUzRyr8lK0A/' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DVChZI9lDHZ/', title: 'How to Do Kneeling Cable Crunches the Right Way' },
     altVideos: [
-      { url: 'https://www.instagram.com/p/DUpAGGgk-93/' },
       { url: 'https://www.instagram.com/p/DUgvK1Vj_On/' },
+      { url: 'https://www.instagram.com/p/DUzRyr8lK0A/' },
       { url: 'https://www.instagram.com/p/DUZ2ni9F9iT/' },
     ],
     tips_ru: 'Кабельная версия позволяет прогрессировать с весом — это ключ к росту пресса. Тяни локти к бёдрам, полностью скругляя спину. Держи бёдра неподвижными.'
@@ -636,10 +636,10 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'abs',
     muscle_emoji: '🔥',
     is_compound: false,
-    primaryVideo: { url: 'https://www.instagram.com/p/DUM9e-VjIgx/' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DT54PEIlKNP/', title: 'No Gym Abs Workout You Can Do at Home' },
     altVideos: [
       { url: 'https://www.instagram.com/p/DUBqpFglID0/' },
-      { url: 'https://www.instagram.com/p/DT54PEIlKNP/' },
+      { url: 'https://www.instagram.com/p/DTlxpXslKSw/' },
     ],
     tips_ru: 'Не раскачивайся — контролируй движение. Поднимай до параллели с полом, со временем — выше. Лучшее упражнение для нижней части пресса и сгибателей бедра.'
   },
@@ -650,9 +650,9 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'abs',
     muscle_emoji: '🔥',
     is_compound: false,
-    primaryVideo: { url: 'https://www.instagram.com/p/DTlxpXslKSw/' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DTa3k6FDPAo/', title: 'Total Core Burn - Lower, Upper, Full Abs & Obliques' },
     altVideos: [
-      { url: 'https://www.instagram.com/p/DTa3k6FDPAo/' },
+      { url: 'https://www.instagram.com/p/DTlxpXslKSw/' },
       { url: 'https://www.instagram.com/p/DSq85DDFBQq/' },
     ],
     tips_ru: 'Одно из лучших упражнений для пресса по данным ЭМГ. Держи поясницу нейтральной — не прогибайся. Начинай с укороченной амплитудой и постепенно увеличивай.'
@@ -671,7 +671,7 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
       { url: 'https://www.instagram.com/p/DUtEQ83j3RV/' },
       { url: 'https://www.instagram.com/p/DUZpOeEDKNO/' },
     ],
-    tips_ru: 'Сгибание и разгибание запястий, обратные сгибания. Сильные предплечья улучшают хват и косвенно усиливают все тяговые упражнения. Не игнорируй эту группу.'
+    tips_ru: 'Сгибание и разгибание запястий, обратные сгибания. Сильные предплечья улучшают хват и косвенно усиливают все тяговые упражнения. Не игнорируй эту группу. Из видео: предплечья дают рукам объём, силу хвата и мощный вид со всех углов. Тренируй 2–3 раза в неделю с контролем каждого повторения — это детали, которые завершают вид рук.'
   },
 ]
 
