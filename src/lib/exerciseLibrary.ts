@@ -234,14 +234,14 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'shoulders_lateral',
     muscle_emoji: '🔱',
     is_compound: false,
-    primaryVideo: { url: 'https://www.instagram.com/p/DV3wsCnjUq0/' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DVhbejJje7f/', title: 'Build 3D Shoulders Using Only a Cable Machine' },
     altVideos: [
       { url: 'https://www.instagram.com/p/DVL-XDUk9cl/' },
-      { url: 'https://www.instagram.com/p/DUl5OXxjFk7/' },
       { url: 'https://www.instagram.com/p/DUUEdhkFNEv/' },
+      { url: 'https://www.instagram.com/p/DVByC39E4jp/' },
     ],
     equipmentPhotoKey: 'cable_lateral_raise',
-    tips_ru: 'Поднимай до параллели с полом — выше не нужно (это уже трапеции). Кабель даёт постоянное натяжение, что лучше для гипертрофии, чем гантели. Наклонись слегка в сторону для максимального растяжения. Из видео: варианты тяги гантелей стоя прорабатывают разные пучки дельт и трапеции — передние, боковые и задние — в зависимости от угла подъёма. 3–4 подхода, 8–12 повторений.'
+    tips_ru: 'Поднимай до параллели с полом — выше не нужно (это уже трапеции). Кабель даёт постоянное натяжение через всю амплитуду, что лучше для гипертрофии, чем гантели. Наклонись слегка в сторону для максимального растяжения в нижней точке.'
   },
   {
     id: 'dumbbell_lateral_raise',
@@ -250,10 +250,10 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'shoulders_lateral',
     muscle_emoji: '🔱',
     is_compound: false,
-    primaryVideo: { url: 'https://www.instagram.com/p/DVhbejJje7f/' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DUl5OXxjFk7/', title: 'Build 3D Shoulders with These 3 Dumbbell Moves' },
     altVideos: [
       { url: 'https://www.instagram.com/p/DVByC39E4jp/' },
-      { url: 'https://www.instagram.com/p/DUrWSM5jv1_/' },
+      { url: 'https://www.instagram.com/p/DV3wsCnjUq0/' },
     ],
     tips_ru: 'Ставь большой палец слегка вниз (как будто выливаешь воду). Локоть немного согнут. Не раскачивайся — это читинг, который снижает нагрузку на дельты.'
   },
@@ -269,8 +269,9 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     primaryVideo: { url: 'https://www.instagram.com/p/DWAUGaalCyz/', title: '5 Shoulder Exercises for 3D Growth' },
     altVideos: [
       { url: 'https://www.instagram.com/p/DT3FnDTlNFS/' },
-      { url: 'https://www.instagram.com/p/DT1BALkkx_4/' },
       { url: 'https://www.instagram.com/p/DToqx8-kijp/' },
+      { url: 'https://www.instagram.com/p/DUrWSM5jv1_/' },
+      { url: 'https://www.instagram.com/p/DTRZh9JCbA6/' },
     ],
     equipmentPhotoKey: 'shoulder_press',
     tips_ru: 'Жми вверх и слегка вперёд — не строго вертикально. Не запрокидывай голову назад. Жим над головой отлично развивает передние и средние дельты, но бокового подъёма не заменяет.'
@@ -287,7 +288,6 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     primaryVideo: { url: 'https://www.instagram.com/p/DV6OAHpCXMc/', title: 'Rear Delt Fly Mistakes' },
     altVideos: [
       { url: 'https://www.instagram.com/p/DTW2zmoCGTI/' },
-      { url: 'https://www.instagram.com/p/DTRZh9JCbA6/' },
       { url: 'https://www.instagram.com/p/DVmCMK2jdrF/', title: 'Rear Delt Fly – Perfect Form for Maximum Muscle Activation' },
     ],
     equipmentPhotoKey: 'cable_lateral_raise',
@@ -300,9 +300,9 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'shoulders_rear',
     muscle_emoji: '🔱',
     is_compound: false,
-    primaryVideo: { url: 'https://www.instagram.com/p/DVWeLDjCWcy/', title: 'Rope Pulling Exercises' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DUpUEFLjV-9/', title: 'Face Pull: Traps or Rear Delts? It\'s All About Elbows' },
     altVideos: [
-      { url: 'https://www.instagram.com/p/DToqx8-kijp/' },
+      { url: 'https://www.instagram.com/p/DVWeLDjCWcy/', title: 'Rope Pulling Exercises' },
     ],
     equipmentPhotoKey: 'cable_face_pull',
     tips_ru: 'Тяни к лицу, разводя руки наружу в верхней точке. Это упражнение защищает вращательную манжету плеча и исправляет округлённую осанку. Делай в каждой тренировке. Из видео: локти широко и горизонтально — акцент на задние дельты; лёгкий подъём локтей с сильным сведением лопаток — акцент на верхние трапеции. Маленькие корректировки — огромная разница в мышечной активации.'
@@ -314,9 +314,9 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'shoulders_front',
     muscle_emoji: '🔱',
     is_compound: true,
-    primaryVideo: { url: 'https://www.instagram.com/p/DUpUEFLjV-9/' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DV3wsCnjUq0/', title: 'Dumbbell Upright Rows That Target Delts & Traps' },
     altVideos: [],
-    tips_ru: 'Широкий хват снижает нагрузку на запястья и переносит акцент с трапеций на дельты. Не поднимай выше уровня подбородка. Контролируй опускание. Из видео: тяга каната к лицу — точечное упражнение. Путь локтей и контроль лопаток определяют, куда смещается нагрузка — на задние дельты или верхние трапеции. 12–15 повторений с медленным темпом и 1–2 сек сжатием в точке сокращения.'
+    tips_ru: 'Широкий хват снижает нагрузку на запястья и переносит акцент с трапеций на дельты. Не поднимай выше уровня подбородка. Контролируй опускание. Из видео: тяга гантелей к подбородку в разных вариантах нагружает передние дельты и верхние трапеции, боковые дельты, задние дельты — в зависимости от угла подъёма. 3–4 подхода, 8–12 повторений.'
   },
 
   // ===================== LEGS QUADS =====================
