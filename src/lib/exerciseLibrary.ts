@@ -169,10 +169,12 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'chest',
     muscle_emoji: '💪',
     is_compound: false,
-    primaryVideo: { url: 'https://www.instagram.com/p/DVGtBddle4i/' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DU7Eagyjsur/', title: 'Cable Fly Trick for a Bigger Chest' },
     altVideos: [
+      { url: 'https://www.instagram.com/p/DUn_bG3j_sc/' },
       { url: 'https://www.instagram.com/p/DVCvM90jf-R/' },
       { url: 'https://www.instagram.com/p/DU9OYhwiiCg/' },
+      { url: 'https://www.instagram.com/p/DVGtBddle4i/' },
     ],
     tips_ru: 'Кабельная версия обеспечивает постоянное натяжение через всю амплитуду. Меняй угол блоков для акцента на верхнюю, среднюю или нижнюю грудь. Из видео: верхняя грудь — блок снизу вверх (угол >90°); средняя — прямо горизонтально; нижняя — блок сверху вниз (угол <90°). Если тренируешь всегда в одном угле — прокачиваешь только часть груди.'
   },
@@ -183,10 +185,10 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'chest',
     muscle_emoji: '💪',
     is_compound: true,
-    primaryVideo: { url: 'https://www.instagram.com/p/DU7Eagyjsur/' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DVTlN1AEQZH/', title: 'Best Dumbbell Bench Press Tutorial' },
     altVideos: [
+      { url: 'https://www.instagram.com/p/DVd3338ASdO/' },
       { url: 'https://www.instagram.com/p/DUsFbphFNUq/' },
-      { url: 'https://www.instagram.com/p/DUn_bG3j_sc/' },
     ],
     tips_ru: 'Гантели дают большую амплитуду, чем штанга. Опускай их до уровня груди для максимального растяжения. Своди руки в верхней точке — дожимай до конца.'
   },
@@ -197,11 +199,11 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'chest',
     muscle_emoji: '💪',
     is_compound: true,
-    primaryVideo: { url: 'https://www.instagram.com/p/DUQntmuCYvO/' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DUHWKYwFSAY/', title: 'Bench Press Variations (Save Your Shoulders!)' },
     altVideos: [
+      { url: 'https://www.instagram.com/p/DVLvfMAjVIo/' },
+      { url: 'https://www.instagram.com/p/DT2h21ZCJS1/' },
       { url: 'https://www.instagram.com/p/DUOJeV7D8dh/' },
-      { url: 'https://www.instagram.com/p/DUJb5mfjRLB/' },
-      { url: 'https://www.instagram.com/p/DUHWKYwFSAY/' },
     ],
     tips_ru: 'Угол 30° оптимален для верхней грудной — больше не нужно. Хват чуть уже, чем в обычном жиме. Отличный выбор для формирования V-образного контура грудной клетки.'
   },
@@ -212,10 +214,10 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     muscle_group: 'chest',
     muscle_emoji: '💪',
     is_compound: false,
-    primaryVideo: { url: 'https://www.instagram.com/p/DUEqCY3AfmV/' },
+    primaryVideo: { url: 'https://www.instagram.com/p/DUQntmuCYvO/', title: 'Common Chest Fly Mistakes You Must Avoid' },
     altVideos: [
+      { url: 'https://www.instagram.com/p/DUJb5mfjRLB/' },
       { url: 'https://www.instagram.com/p/DT3hNdDgm9R/' },
-      { url: 'https://www.instagram.com/p/DT2h21ZCJS1/' },
       { url: 'https://www.instagram.com/p/DT0JlXeFReH/' },
       { url: 'https://www.instagram.com/p/DTnQ-2pDjoA/' },
       { url: 'https://www.instagram.com/p/DTiWpwtiOqR/' },
