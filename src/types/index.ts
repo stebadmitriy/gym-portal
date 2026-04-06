@@ -1,4 +1,4 @@
-export type WorkoutType = 'A' | 'B'
+export type WorkoutType = 'A' | 'B' | 'C'
 export type BlockType = 'hypertrophy' | 'strength' | 'deload'
 export type FeedbackType = 'hard' | 'normal' | 'easy'
 
@@ -16,7 +16,6 @@ export interface Exercise {
   sets: number
   reps: string
   muscle_emoji: string
-  gifUrl?: string
   instagramUrl?: string
   alternatives?: string[]
 }
@@ -115,5 +114,6 @@ export interface LibraryExercise {
 export interface CustomProgram {
   A: string[]  // ordered list of exercise IDs for Workout A
   B: string[]  // ordered list of exercise IDs for Workout B
+  C: string[]  // ordered list of exercise IDs for Workout C
   createdAt: string
 }
