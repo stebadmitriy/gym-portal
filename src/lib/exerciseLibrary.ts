@@ -112,6 +112,20 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     ],
     tips_ru: 'Упор в грудь исключает раскачку и читинг. Полная концентрация на широчайших и ромбовидных. Идеально для тех, у кого есть проблемы с поясницей. Из видео: разные хваты и углы позволяют акцентировать толщину, детализацию или общий контроль спины — ротируй варианты еженедельно для полноценного развития.'
   },
+  {
+    id: 'bent_over_row',
+    name_ru: 'Тяга штанги в наклоне',
+    name_en: 'Bent Over Row',
+    muscle_group: 'back_thickness',
+    muscle_emoji: '🔝',
+    is_compound: true,
+    tips_ru: 'Наклон ~45°, спина нейтральная. Тяни к животу, локти вдоль тела. Сожми лопатки в верхней точке.',
+    primaryVideo: { url: 'https://www.instagram.com/reel/DT8oOXdD1zS/', title: 'Barbell Row Variations Explained' },
+    altVideos: [
+      { url: 'https://www.instagram.com/reel/DT9eB_uExMS/', title: 'T-Bar Rows Done Right' },
+      { url: 'https://www.instagram.com/reel/DURs7ZGmM-8/', title: 'Landmine Row Mistakes' },
+    ],
+  },
 
   // ===================== TRAPS =====================
   {
@@ -318,6 +332,20 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     altVideos: [],
     tips_ru: 'Широкий хват снижает нагрузку на запястья и переносит акцент с трапеций на дельты. Не поднимай выше уровня подбородка. Контролируй опускание. Из видео: тяга гантелей к подбородку в разных вариантах нагружает передние дельты и верхние трапеции, боковые дельты, задние дельты — в зависимости от угла подъёма. 3–4 подхода, 8–12 повторений.'
   },
+  {
+    id: 'military_press',
+    name_ru: 'Военный жим стоя',
+    name_en: 'Military Press',
+    muscle_group: 'shoulders_front',
+    muscle_emoji: '🎯',
+    is_compound: true,
+    tips_ru: 'Штанга у подбородка на старте. Жми вертикально, убирая голову. Кор в напряжении. Локти чуть впереди грифа.',
+    primaryVideo: { url: 'https://www.instagram.com/reel/DUrWSM5jv1_/', title: 'Perfect Your Overhead Press Form' },
+    altVideos: [
+      { url: 'https://www.instagram.com/reel/DToqx8-kijp/', title: 'Overhead Press Tips' },
+      { url: 'https://www.instagram.com/reel/DUUEdhkFNEv/', title: 'Shoulder Press Variations' },
+    ],
+  },
 
   // ===================== LEGS QUADS =====================
   {
@@ -393,6 +421,33 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     ],
     tips_ru: 'Широкая постановка ног усиливает нагрузку на внутреннюю поверхность бедра и ягодичные. Смит-машина позволяет сместить центр тяжести и глубже уйти в приседание.'
   },
+  {
+    id: 'squat',
+    name_ru: 'Приседания',
+    name_en: 'Squat',
+    muscle_group: 'legs_quads',
+    muscle_emoji: '🦵',
+    is_compound: true,
+    tips_ru: 'Стопы на ширине плеч, носки чуть врозь. Спина нейтральная. Колени над носками. Садись до параллели или ниже.',
+    primaryVideo: { url: 'https://www.instagram.com/reel/DTqZMvSEqyD/', title: 'The PERFECT Squat' },
+    altVideos: [
+      { url: 'https://www.instagram.com/reel/DUWzspwDenA/', title: 'Stop Squatting Wrong — Do This Instead' },
+      { url: 'https://www.instagram.com/reel/DV_IXcCAkWT/', title: '5 Barbell Squat Variations' },
+    ],
+  },
+  {
+    id: 'lunges',
+    name_ru: 'Выпады',
+    name_en: 'Lunges',
+    muscle_group: 'legs_quads',
+    muscle_emoji: '🦵',
+    is_compound: true,
+    tips_ru: 'Шаг вперёд, заднее колено почти касается пола. Колено передней ноги над носком. Корпус прямо. Чередуй ноги.',
+    primaryVideo: { url: 'https://www.instagram.com/reel/DVY01e-gU4u/', title: '5 Best Glute Exercises Including Reverse Lunge' },
+    altVideos: [
+      { url: 'https://www.instagram.com/reel/DVwi66liOve/', title: 'Lunge Variations for Legs' },
+    ],
+  },
 
   // ===================== LEGS HAMSTRINGS =====================
   {
@@ -436,6 +491,19 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
       { url: 'https://www.instagram.com/p/DS1LOpfiv9R/' },
     ],
     tips_ru: 'Наклон до растяжения в задней поверхности бедра — не глубже. Спина прямая, гриф скользит вдоль ног. Наилучший выбор для изолированной прокачки бицепса бедра с растяжкой.'
+  },
+  {
+    id: 'rdl',
+    name_ru: 'Румынская тяга',
+    name_en: 'Romanian Deadlift',
+    muscle_group: 'legs_hamstrings',
+    muscle_emoji: '🦵',
+    is_compound: true,
+    tips_ru: 'Штанга близко к голеням. Отводи таз назад — не сгибай колени сильно. Почувствуй растяжение бицепса бедра — стоп.',
+    primaryVideo: { url: 'https://www.instagram.com/reel/DVeTnK8kqOm/', title: 'RDL vs Squat: Key Differences' },
+    altVideos: [
+      { url: 'https://www.instagram.com/reel/DVY01e-gU4u/', title: '5 Best Glute & Hamstring Exercises' },
+    ],
   },
 
   // ===================== GLUTES =====================
@@ -596,6 +664,19 @@ export const EXERCISE_LIBRARY: LibraryExercise[] = [
     primaryVideo: { url: 'https://www.instagram.com/p/DVKV7KQGCB8/', title: 'Stop Doing Triceps Kickbacks Wrong' },
     altVideos: [],
     tips_ru: 'Плечо параллельно полу — иначе гравитация почти не нагружает трицепс. Полное разгибание с задержкой 1 сек. Лучше работает с лёгкими весами и правильной техникой. Из видео: зафиксируй плечо и не давай ему опускаться. Корпус стабилен с наклоном в тазобедренных суставах. Полное разгибание с 1 сек сжатием наверху — меньше импульса, больше напряжения. Техника важнее веса.'
+  },
+  {
+    id: 'dips',
+    name_ru: 'Отжимания на брусьях',
+    name_en: 'Dips',
+    muscle_group: 'triceps',
+    muscle_emoji: '🔱',
+    is_compound: true,
+    tips_ru: 'Держись прямо для трицепса (наклон вперёд — акцент на грудь). Опускайся до 90° в локте. Полное разгибание наверху.',
+    primaryVideo: { url: 'https://www.instagram.com/reel/DVq4dqWlJih/', title: 'Push-Up Variations: Chest, Shoulders & Triceps' },
+    altVideos: [
+      { url: 'https://www.instagram.com/reel/DUOJeV7D8dh/', title: '5 Smith Machine Variations for Chest & Triceps' },
+    ],
   },
 
   // ===================== ABS =====================
