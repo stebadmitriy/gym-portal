@@ -104,19 +104,13 @@ export const calculateNextWeight = (
 }
 
 export const advanceProgramState = (current: ProgramState): ProgramState => {
-  const nextWorkout = current.next_workout_type === 'A' ? 'B' : 'A'
-  const { block } = getBlockForWeek(current.total_week)
-
-  // Every 2 workouts = 1 week (A+B)
-  // After B, advance week
-  let nextWeek = current.total_week
-  if (current.next_workout_type === 'B') {
-    nextWeek = current.total_week + 1
-  }
+  const rotation: Record<WorkoutType, WorkoutType> = { A: 'B', B: 'C', C: 'A' }
+  const nextWorkout = rotation[current.next_workout_type]
+  const nextWeek = current.next_workout_type === 'C' ? current.total_week + 1 : current.total_week
 
   return {
     total_week: nextWeek,
-    next_workout_type: nextWorkout as WorkoutType,
+    next_workout_type: nextWorkout,
     last_workout_date: new Date().toISOString().split('T')[0]
   }
 }

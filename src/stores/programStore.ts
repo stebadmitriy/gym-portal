@@ -1,15 +1,14 @@
 import { create } from 'zustand'
 import { ProgramState, WorkoutType, CustomProgram } from '../types'
-import { getProgramState, setProgramState, getWeight, setWeight, getWorkouts, saveWorkout, getMeasurements, saveMeasurement, getTodayMeasurement, getCustomProgram, setCustomProgram as saveCustomProgramStorage, clearCustomProgram as clearCustomProgramStorage } from '../lib/storage'
+import { getProgramState, setProgramState, setWeight, getWorkouts, saveWorkout, getMeasurements, saveMeasurement, getTodayMeasurement, getCustomProgram, setCustomProgram as saveCustomProgramStorage, clearCustomProgram as clearCustomProgramStorage } from '../lib/storage'
 import { getBlockForWeek, advanceProgramState } from '../lib/program'
 import { Workout, Measurement } from '../types'
-import { EXERCISES } from '../lib/exercises'
+import { DEFAULT_IDS_A, DEFAULT_IDS_B, DEFAULT_IDS_C } from '../lib/exercises'
 
 interface ProgramStoreState {
   programState: ProgramState
   workouts: Workout[]
   measurements: Measurement[]
-  todaySteps: number
   weights: Record<string, number>
   isLoaded: boolean
   customProgram: CustomProgram | null
@@ -19,10 +18,9 @@ interface ProgramStoreState {
   getExerciseWeight: (exerciseId: string) => number
   completeWorkout: (workout: Workout) => void
   advanceProgram: () => void
-  saveSteps: (steps: number) => void
   saveTodayWeight: (weight: number) => void
   resetProgram: () => void
-  swapExercise: (slot: 'A' | 'B', oldId: string, newId: string) => void
+  swapExercise: (slot: WorkoutType, oldId: string, newId: string) => void
   saveCustomProgram: (program: CustomProgram) => void
   clearCustomProgram: () => void
 }
@@ -34,7 +32,6 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
   },
   workouts: [],
   measurements: [],
-  todaySteps: 0,
   weights: {},
   isLoaded: false,
   customProgram: getCustomProgram(),
@@ -43,7 +40,6 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
     const programState = getProgramState()
     const workouts = getWorkouts()
     const measurements = getMeasurements()
-    const todayMeasurement = getTodayMeasurement()
 
     // Load all weights from localStorage
     const weights: Record<string, number> = {}
@@ -68,7 +64,6 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
       programState,
       workouts,
       measurements,
-      todaySteps: todayMeasurement?.steps_today || 0,
       weights,
       isLoaded: true,
       customProgram,
@@ -101,17 +96,6 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
     set({ programState: next })
   },
 
-  saveSteps: (steps: number) => {
-    const today = new Date().toISOString().split('T')[0]
-    const existing = getTodayMeasurement()
-    saveMeasurement({
-      ...existing,
-      recorded_at: today,
-      steps_today: steps
-    })
-    set({ todaySteps: steps })
-  },
-
   saveTodayWeight: (weight: number) => {
     const today = new Date().toISOString().split('T')[0]
     const existing = getTodayMeasurement()
@@ -142,25 +126,20 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
     set({ programState: defaultState, workouts: [], weights: {} })
   },
 
-  swapExercise: (slot, oldId, newId) => {
-    const { customProgram } = get()
-    const defaultIds = {
-      A: EXERCISES.filter(e => e.workout_slot === 'A')
-                 .sort((a, b) => a.exercise_order - b.exercise_order)
-                 .map(e => e.id),
-      B: EXERCISES.filter(e => e.workout_slot === 'B')
-                 .sort((a, b) => a.exercise_order - b.exercise_order)
-                 .map(e => e.id),
-    }
-    const base = customProgram ?? {
-      A: defaultIds.A,
-      B: defaultIds.B,
-      createdAt: new Date().toISOString(),
-    }
+  swapExercise: (slot: WorkoutType, oldId, newId) => {
+    const currentA = get().customProgram?.A ?? DEFAULT_IDS_A
+    const currentB = get().customProgram?.B ?? DEFAULT_IDS_B
+    const currentC = get().customProgram?.C ?? DEFAULT_IDS_C
+    const cp = get().customProgram
     const updated: CustomProgram = {
-      ...base,
-      [slot]: base[slot].map(id => id === oldId ? newId : id),
+      A: currentA,
+      B: currentB,
+      C: currentC,
+      createdAt: cp?.createdAt ?? new Date().toISOString(),
     }
+    if (slot === 'A') updated.A = currentA.map(id => id === oldId ? newId : id)
+    else if (slot === 'B') updated.B = currentB.map(id => id === oldId ? newId : id)
+    else updated.C = currentC.map(id => id === oldId ? newId : id)
     saveCustomProgramStorage(updated)
     set({ customProgram: updated })
   },
