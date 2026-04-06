@@ -3,12 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useProgramStore } from '../stores/programStore'
 import { EXERCISE_LIBRARY, MUSCLE_GROUP_LABELS, MUSCLE_GROUP_EMOJI } from '../lib/exerciseLibrary'
 import { EXERCISES } from '../lib/exercises'
+import { WorkoutType } from '../types'
 
 interface SwapExerciseSheetProps {
   isOpen: boolean
   onClose: () => void
   exerciseId: string
-  slot: 'A' | 'B'
+  slot: WorkoutType
   muscleGroup: string
 }
 
@@ -42,6 +43,7 @@ export default function SwapExerciseSheet({
   const programIds = new Set([
     ...(customProgram?.A ?? EXERCISES.filter(e => e.workout_slot === 'A').map(e => e.id)),
     ...(customProgram?.B ?? EXERCISES.filter(e => e.workout_slot === 'B').map(e => e.id)),
+    ...(customProgram?.C ?? EXERCISES.filter(e => e.workout_slot === 'C').map(e => e.id)),
   ])
 
   const alternatives = EXERCISE_LIBRARY.filter(ex => ex.muscle_group === muscleGroup)

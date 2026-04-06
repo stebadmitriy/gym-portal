@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { EXERCISE_LIBRARY, MUSCLE_GROUP_LABELS, MUSCLE_GROUP_EMOJI, VTAPER_TARGETS } from '../lib/exerciseLibrary'
 import { EXERCISES } from '../lib/exercises'
 import { useProgramStore } from '../stores/programStore'
-import { LibraryExercise, MuscleGroup, Exercise } from '../types'
+import { LibraryExercise, MuscleGroup, Exercise, WorkoutType } from '../types'
 import ExerciseModal from '../components/ExerciseModal'
 import SwapExerciseSheet from '../components/SwapExerciseSheet'
 
@@ -171,7 +171,7 @@ export default function ExercisesPage() {
   const [selectedLibExercise, setSelectedLibExercise] = useState<LibraryExercise | null>(null)
   const [swapping, setSwapping] = useState<{
     id: string
-    slot: 'A' | 'B'
+    slot: WorkoutType
     muscleGroup: string
   } | null>(null)
 
@@ -420,7 +420,8 @@ export default function ExercisesPage() {
                         onClick={(e) => {
                           e.stopPropagation()
                           const slotA = customProgram?.A ?? EXERCISES.filter(ex => ex.workout_slot === 'A').map(ex => ex.id)
-                          const slot = slotA.includes(exercise.id) ? 'A' : 'B'
+                          const slotB = customProgram?.B ?? EXERCISES.filter(ex => ex.workout_slot === 'B').map(ex => ex.id)
+                          const slot: WorkoutType = slotA.includes(exercise.id) ? 'A' : slotB.includes(exercise.id) ? 'B' : 'C'
                           setSwapping({ id: exercise.id, slot, muscleGroup: exercise.muscle_group })
                         }}
                         className="text-xs px-2 py-1 rounded-lg font-semibold"

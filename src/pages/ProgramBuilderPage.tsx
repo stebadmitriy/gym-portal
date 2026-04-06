@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { useProgramStore } from '../stores/programStore'
 import { EXERCISES } from '../lib/exercises'
 import { EXERCISE_LIBRARY, MUSCLE_GROUP_LABELS, MUSCLE_GROUP_EMOJI, VTAPER_TARGETS } from '../lib/exerciseLibrary'
-import { CustomProgram, MuscleGroup } from '../types'
+import { CustomProgram, MuscleGroup, WorkoutType } from '../types'
 
 export default function ProgramBuilderPage() {
   const navigate = useNavigate()
@@ -12,7 +12,10 @@ export default function ProgramBuilderPage() {
 
   // Initialize draft from custom program or defaults
   const [draft, setDraft] = useState<CustomProgram>(() => {
-    if (customProgram) return { ...customProgram }
+    const defaultC = EXERCISES.filter(e => e.workout_slot === 'C')
+      .sort((a, b) => a.exercise_order - b.exercise_order)
+      .map(e => e.id)
+    if (customProgram) return { ...customProgram, C: customProgram.C ?? defaultC }
     return {
       A: EXERCISES.filter(e => e.workout_slot === 'A')
                  .sort((a, b) => a.exercise_order - b.exercise_order)
@@ -20,18 +23,19 @@ export default function ProgramBuilderPage() {
       B: EXERCISES.filter(e => e.workout_slot === 'B')
                  .sort((a, b) => a.exercise_order - b.exercise_order)
                  .map(e => e.id),
+      C: defaultC,
       createdAt: new Date().toISOString(),
     }
   })
 
-  const [activeSlot, setActiveSlot] = useState<'A' | 'B'>('A')
+  const [activeSlot, setActiveSlot] = useState<WorkoutType>('A')
   const [muscleFilter, setMuscleFilter] = useState<string>('all')
 
   // Current slot exercise IDs
   const currentIds = draft[activeSlot]
 
   // All exercise IDs in both slots
-  const allDraftIds = new Set([...draft.A, ...draft.B])
+  const allDraftIds = new Set([...draft.A, ...draft.B, ...draft.C])
 
   // Get exercise display data by ID
   const getExerciseData = (id: string) => {
@@ -102,7 +106,7 @@ export default function ProgramBuilderPage() {
 
         {/* A/B Tabs */}
         <div className="flex gap-2">
-          {(['A', 'B'] as const).map(slot => (
+          {(['A', 'B', 'C'] as WorkoutType[]).map(slot => (
             <button
               key={slot}
               onClick={() => setActiveSlot(slot)}
