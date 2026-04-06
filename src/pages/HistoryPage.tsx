@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useProgramStore } from '../stores/programStore'
-import { getExerciseById } from '../lib/exercises'
+import { EXERCISES } from '../lib/exercises'
 import { formatBlockName } from '../lib/program'
 import { Workout } from '../types'
 
@@ -204,7 +204,7 @@ export default function HistoryPage() {
                                   style={{ borderTop: `1px solid ${leftBorderColor}20` }}
                                 >
                                   {exerciseIds.map(exerciseId => {
-                                    const exercise = getExerciseById(exerciseId)
+                                    const exercise = EXERCISES.find(e => e.id === exerciseId)
                                     const exSets = sets.filter(s => s.exercise_id === exerciseId)
 
                                     return (

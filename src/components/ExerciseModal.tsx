@@ -201,10 +201,20 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
               <span
                 className="text-xs font-bold px-2.5 py-1 rounded-full mb-2.5 inline-block"
                 style={{
-                  background: exercise.workout_slot === 'A' ? 'rgba(99,102,241,0.18)' : 'rgba(245,158,11,0.18)',
-                  color: exercise.workout_slot === 'A' ? '#a5b4fc' : '#fbbf24',
+                  background: exercise.workout_slot === 'A'
+                    ? 'rgba(99,102,241,0.18)'
+                    : exercise.workout_slot === 'C'
+                    ? 'rgba(16,185,129,0.18)'
+                    : 'rgba(245,158,11,0.18)',
+                  color: exercise.workout_slot === 'A'
+                    ? '#a5b4fc'
+                    : exercise.workout_slot === 'C'
+                    ? '#34d399'
+                    : '#fbbf24',
                   border: exercise.workout_slot === 'A'
                     ? '1px solid rgba(99,102,241,0.3)'
+                    : exercise.workout_slot === 'C'
+                    ? '1px solid rgba(16,185,129,0.3)'
                     : '1px solid rgba(245,158,11,0.3)',
                 }}
               >
@@ -303,11 +313,11 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                   </div>
                 )}
 
-                <div style={{ overflow: 'hidden', borderRadius: 16, height: 460 }}>
+                <div style={{ overflow: 'hidden', borderRadius: 16, height: 510 }}>
                   <iframe
                     src={mainEmbedUrl}
                     width="100%"
-                    height="540"
+                    height="590"
                     frameBorder={0}
                     scrolling="no"
                     allowTransparency={true}
@@ -447,11 +457,11 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                                 <VideoSkeleton />
                               </div>
                             )}
-                            <div style={{ overflow: 'hidden', borderRadius: 16, height: 460 }}>
+                            <div style={{ overflow: 'hidden', borderRadius: 16, height: 510 }}>
                               <iframe
                                 src={altEmbedUrl}
                                 width="100%"
-                                height="540"
+                                height="590"
                                 frameBorder={0}
                                 scrolling="no"
                                 allowTransparency={true}
@@ -648,12 +658,14 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                       className="rounded-2xl overflow-hidden"
                       style={{ border: '1px solid rgba(255,255,255,0.07)' }}
                     >
-                      <img
-                        src={equipmentPhoto}
-                        alt={exercise.name_en}
-                        className="w-full object-cover"
-                        style={{ maxHeight: 280, objectPosition: 'center top' }}
-                      />
+                      <a href={equipmentPhoto} target="_blank" rel="noopener noreferrer">
+                        <img
+                          src={equipmentPhoto}
+                          alt={exercise.name_en}
+                          className="w-full object-cover"
+                          style={{ maxHeight: 280, objectPosition: 'center top' }}
+                        />
+                      </a>
                     </div>
                   </motion.div>
                 )}

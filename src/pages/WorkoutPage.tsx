@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useWorkoutStore } from '../stores/workoutStore'
 import { useProgramStore } from '../stores/programStore'
-import { getExercisesByWorkout, getExerciseById, getExercisesForWorkout } from '../lib/exercises'
+import { getExercisesByWorkout, getExercisesForWorkout } from '../lib/exercises'
 import { getBlockForWeek, getRestTime, getWorkoutEstimates } from '../lib/program'
 import { Exercise } from '../types'
 import RestTimerOverlay from '../components/RestTimerOverlay'
@@ -187,7 +187,6 @@ export default function WorkoutPage() {
       name_ru: resolved.name_ru,
       muscle_primary: resolved.muscle_primary,
       tips_ru: resolved.tips_ru,
-      gifUrl: mainList.find(e => e.id === altId)?.gifUrl,
     }
 
     setSwappedExercises(prev => ({ ...prev, [currentExerciseIndex]: swapped }))
@@ -588,67 +587,6 @@ export default function WorkoutPage() {
             )}
           </motion.div>
 
-          {/* Exercise GIF */}
-          {currentExercise.gifUrl && (
-            <div className="mb-4">
-              <button
-                onClick={() => setShowGif(v => !v)}
-                className="flex items-center gap-2 text-sm text-white/50 mb-2 w-full"
-              >
-                <span>{showGif ? '▲ Скрыть технику' : '▼ Показать технику'}</span>
-              </button>
-              <AnimatePresence>
-                {showGif && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    className="overflow-hidden"
-                  >
-                    <div
-                      className="rounded-2xl overflow-hidden relative"
-                      style={{ background: 'rgba(255,255,255,0.05)', maxHeight: 220 }}
-                    >
-                      {/* Skeleton loader */}
-                      {!gifLoaded[currentExercise.gifUrl] && (
-                        <div
-                          className="absolute inset-0 animate-pulse"
-                          style={{ background: 'rgba(255,255,255,0.06)', borderRadius: 'inherit' }}
-                        />
-                      )}
-                      <img
-                        src={currentExercise.gifUrl}
-                        alt={currentExercise.name_ru}
-                        loading="lazy"
-                        onLoad={() => setGifLoaded(prev => ({ ...prev, [currentExercise.gifUrl!]: true }))}
-                        className="w-full object-cover"
-                        style={{
-                          maxHeight: 220,
-                          opacity: gifLoaded[currentExercise.gifUrl] ? 1 : 0,
-                          transition: 'opacity 0.3s'
-                        }}
-                      />
-                      <a
-                        href={currentExercise.instagramUrl ?? 'https://www.instagram.com/appyoucan/'}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="absolute bottom-2 right-2 text-xs px-2.5 py-1.5 rounded-full flex items-center gap-1.5 font-semibold"
-                        style={{
-                          background: currentExercise.instagramUrl
-                            ? 'linear-gradient(135deg, rgba(131,58,180,0.85), rgba(253,29,29,0.85), rgba(252,176,69,0.85))'
-                            : 'rgba(0,0,0,0.55)',
-                          color: 'white',
-                          backdropFilter: 'blur(4px)'
-                        }}
-                      >
-                        {currentExercise.instagramUrl ? '▶ Смотреть видео' : '📱 @appyoucan'}
-                      </a>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          )}
 
           {/* Sets */}
           <div className="space-y-3 mb-4">

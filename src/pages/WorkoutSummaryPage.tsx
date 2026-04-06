@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useWorkoutStore } from '../stores/workoutStore'
 import { useProgramStore } from '../stores/programStore'
 import { getBlockForWeek, calculateNextWeight } from '../lib/program'
-import { getExerciseById } from '../lib/exercises'
+import { EXERCISES } from '../lib/exercises'
 import { FeedbackType, Workout } from '../types'
 
 // Muscle group color palette for exercise breakdown
@@ -85,7 +85,7 @@ export default function WorkoutSummaryPage() {
 
     // Update weights based on feedback
     exerciseMap.forEach((sets, exerciseId) => {
-      const exercise = getExerciseById(exerciseId)
+      const exercise = EXERCISES.find(e => e.id === exerciseId)
       if (!exercise || exercise.increment_kg === 0) return
 
       const completedWeights = sets.filter(s => s.completed).map(s => s.weight_kg)
@@ -310,7 +310,7 @@ export default function WorkoutSummaryPage() {
         <h3 className="font-bold text-white/70 mb-3 text-xs uppercase tracking-widest">Разбивка по упражнениям</h3>
         <div className="space-y-2">
           {Array.from(exerciseMap.entries()).map(([exerciseId, sets], idx) => {
-            const exercise = getExerciseById(exerciseId)
+            const exercise = EXERCISES.find(e => e.id === exerciseId)
             if (!exercise) return null
             const completedCount = sets.filter(s => s.completed).length
             const maxWeight = Math.max(...sets.filter(s => s.completed).map(s => s.weight_kg), 0)
