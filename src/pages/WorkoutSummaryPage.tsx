@@ -215,7 +215,7 @@ export default function WorkoutSummaryPage() {
             >
               {Math.round(totalVolume)}
             </div>
-            <div className="text-white/40 text-xs mt-1">кг×повт</div>
+            <div className="text-white/40 text-xs mt-1">объём (кг)</div>
           </div>
           <div className="text-center">
             <div

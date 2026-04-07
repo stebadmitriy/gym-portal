@@ -55,13 +55,12 @@ export default function HomePage() {
   )
 
   const handleStartWorkout = (slot: WorkoutType) => {
-    if (slot !== nextWorkout) return
     const exercises = getExercisesForWorkout(slot, customProgram)
     const { block } = getBlockForWeek(programState.total_week)
     if (!activeWorkout) {
       startWorkout(slot, programState.total_week, exercises, weights, block)
     }
-    navigate('/workout')
+    navigate(`/workout?slot=${slot}`)
   }
 
   return (
@@ -117,15 +116,15 @@ export default function HomePage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.07 }}
-              onClick={() => isActive && handleStartWorkout(slot)}
+              onClick={() => handleStartWorkout(slot)}
               className="relative overflow-hidden rounded-2xl p-5"
               style={{
                 background: isDone ? 'rgba(16,185,129,0.06)' : isActive ? '#1c1c27' : 'rgba(255,255,255,0.02)',
                 border: isActive
                   ? `1px solid ${meta.color}50`
                   : isDone ? '1px solid rgba(16,185,129,0.25)' : '1px solid rgba(255,255,255,0.06)',
-                opacity: isPending ? 0.55 : 1,
-                cursor: isActive ? 'pointer' : 'default',
+                opacity: isPending ? 0.65 : 1,
+                cursor: 'pointer',
                 boxShadow: isActive ? `0 0 24px ${meta.color}18` : 'none',
               }}
             >
@@ -188,21 +187,21 @@ export default function HomePage() {
                 })}
               </div>
 
-              {isActive && (
-                <motion.button
-                  whileHover={{ scale: 1.01 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="btn-primary w-full text-white font-bold text-sm flex items-center justify-center gap-2"
-                  style={{
-                    background: activeWorkout
-                      ? 'linear-gradient(135deg, #059669, #10b981)'
-                      : `linear-gradient(135deg, ${meta.color}, ${meta.color}cc)`,
-                    boxShadow: `0 4px 20px ${meta.color}40`,
-                  }}
-                >
-                  {activeWorkout ? '▶️ Продолжить' : '🚀 Начать →'}
-                </motion.button>
-              )}
+              <motion.button
+                whileHover={{ scale: 1.01 }}
+                whileTap={{ scale: 0.97 }}
+                className="btn-primary w-full text-white font-bold text-sm flex items-center justify-center gap-2"
+                style={{
+                  background: isDone
+                    ? 'rgba(16,185,129,0.35)'
+                    : isActive
+                    ? (activeWorkout ? 'linear-gradient(135deg, #059669, #10b981)' : `linear-gradient(135deg, ${meta.color}, ${meta.color}cc)`)
+                    : `${meta.color}45`,
+                  boxShadow: isActive ? `0 4px 20px ${meta.color}40` : 'none',
+                }}
+              >
+                {isDone ? '🔁 Повторить' : isActive && activeWorkout ? '▶️ Продолжить' : '🚀 Начать →'}
+              </motion.button>
             </motion.div>
           )
         })}

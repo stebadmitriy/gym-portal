@@ -1,16 +1,32 @@
 import { useState, useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useWorkoutStore } from '../stores/workoutStore'
 import { useProgramStore } from '../stores/programStore'
 import { getExercisesByWorkout, getExercisesForWorkout } from '../lib/exercises'
 import { getBlockForWeek, getRestTime, getWorkoutEstimates } from '../lib/program'
-import { Exercise } from '../types'
+import { Exercise, WorkoutType } from '../types'
 import RestTimerOverlay from '../components/RestTimerOverlay'
 import TempoGuide from '../components/TempoGuide'
 import ExerciseModal from '../components/ExerciseModal'
 
 type WorkoutPhase = 'preview' | 'active' | 'finished'
+
+// YouTube helpers
+function isYouTubeShorts(url: string): boolean {
+  return url.includes('youtube.com/shorts/')
+}
+
+function getYouTubeEmbedUrl(url: string): string | null {
+  if (!url) return null
+  let match = url.match(/youtube\.com\/watch\?(?:.*&)?v=([^&]+)/)
+  if (match) return `https://www.youtube.com/embed/${match[1]}?loop=1&playlist=${match[1]}&rel=0&modestbranding=1`
+  match = url.match(/youtube\.com\/shorts\/([^?&/]+)/)
+  if (match) return `https://www.youtube.com/embed/${match[1]}?loop=1&playlist=${match[1]}&rel=0&modestbranding=1`
+  match = url.match(/youtu\.be\/([^?&/]+)/)
+  if (match) return `https://www.youtube.com/embed/${match[1]}?loop=1&playlist=${match[1]}&rel=0&modestbranding=1`
+  return null
+}
 
 // Inline alternative exercise data for exercises not in the main list
 const ALTERNATIVE_EXERCISES: Record<string, { name_ru: string; muscle_primary: string; tips_ru: string }> = {
@@ -46,6 +62,8 @@ function resolveAlternative(id: string, mainExercises: Exercise[]): { id: string
 
 export default function WorkoutPage() {
   const navigate = useNavigate()
+  const location = useLocation()
+  const urlSlot = (new URLSearchParams(location.search).get('slot') as WorkoutType) || null
   const {
     activeWorkout,
     restTimer,
@@ -63,6 +81,7 @@ export default function WorkoutPage() {
   const { programState, weights, updateWeight, customProgram } = useProgramStore()
   const [workoutPhase, setWorkoutPhase] = useState<WorkoutPhase>('preview')
   const [showTip, setShowTip] = useState<string | null>(null)
+  const [showVideo, setShowVideo] = useState(true)
   const [showGif, setShowGif] = useState(true)
   const [gifLoaded, setGifLoaded] = useState<Record<string, boolean>>({})
   const [showSwapModal, setShowSwapModal] = useState(false)
@@ -75,7 +94,7 @@ export default function WorkoutPage() {
   const restRef = useRef<NodeJS.Timeout | null>(null)
 
   const { block, weekInBlock, blockInfo } = getBlockForWeek(programState.total_week)
-  const workoutType = programState.next_workout_type
+  const workoutType = (activeWorkout?.workout_type || urlSlot || programState.next_workout_type) as WorkoutType
   const previewExercises = getExercisesForWorkout(workoutType, customProgram)
   const estimates = getWorkoutEstimates(workoutType, block)
 
@@ -86,7 +105,7 @@ export default function WorkoutPage() {
   // Initialize workout on mount (but don't start elapsed timer yet)
   useEffect(() => {
     if (!activeWorkout) {
-      const type = programState.next_workout_type
+      const type = urlSlot || programState.next_workout_type
       const exList = getExercisesForWorkout(type, customProgram)
       startWorkout(type, programState.total_week, exList, weights, block)
     }
@@ -214,12 +233,14 @@ export default function WorkoutPage() {
     .map(id => resolveAlternative(id, getExercisesForWorkout(activeWorkout.workout_type, customProgram)))
     .filter(Boolean) as { id: string; name_ru: string; muscle_primary: string; tips_ru: string }[]
 
-  // Workout type color theming
-  const workoutColor = activeWorkout.workout_type === 'A' ? '#6366f1' : '#8b5cf6'
-  const workoutColorLight = activeWorkout.workout_type === 'A' ? 'rgba(99,102,241,0.15)' : 'rgba(139,92,246,0.15)'
+  // Workout type color theming (A=indigo, B=amber, C=emerald)
+  const workoutColor = activeWorkout.workout_type === 'A' ? '#6366f1' : activeWorkout.workout_type === 'C' ? '#10b981' : '#f59e0b'
+  const workoutColorLight = activeWorkout.workout_type === 'A' ? 'rgba(99,102,241,0.15)' : activeWorkout.workout_type === 'C' ? 'rgba(16,185,129,0.15)' : 'rgba(245,158,11,0.15)'
   const workoutGradient = activeWorkout.workout_type === 'A'
     ? 'linear-gradient(135deg, #6366f1, #8b5cf6)'
-    : 'linear-gradient(135deg, #8b5cf6, #a855f7)'
+    : activeWorkout.workout_type === 'C'
+    ? 'linear-gradient(135deg, #10b981, #059669)'
+    : 'linear-gradient(135deg, #f59e0b, #d97706)'
 
   // ─── PREVIEW SCREEN ─────────────────────────────────────────────────────────
   if (workoutPhase === 'preview') {
@@ -586,6 +607,60 @@ export default function WorkoutPage() {
               </div>
             )}
           </motion.div>
+
+          {/* YouTube Video for current exercise */}
+          {currentExercise.instagramUrl && (() => {
+            const embedUrl = getYouTubeEmbedUrl(currentExercise.instagramUrl)
+            const isShorts = isYouTubeShorts(currentExercise.instagramUrl)
+            if (!embedUrl) return null
+            return (
+              <div className="mb-4">
+                <button
+                  onClick={() => setShowVideo(v => !v)}
+                  className="flex items-center gap-2 text-sm mb-2 w-full"
+                  style={{ color: workoutColor }}
+                >
+                  <span>📹</span>
+                  <span className="font-semibold">Техника выполнения</span>
+                  <span className="text-white/30 ml-auto">{showVideo ? '▲' : '▼'}</span>
+                </button>
+                <AnimatePresence>
+                  {showVideo && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      style={{ overflow: 'hidden' }}
+                    >
+                      <div
+                        className="rounded-2xl overflow-hidden"
+                        style={{ border: `1px solid ${workoutColor}25`, background: `${workoutColor}08` }}
+                      >
+                        <div style={{
+                          position: 'relative',
+                          paddingBottom: isShorts ? '177.78%' : '56.25%',
+                          height: 0,
+                          borderRadius: 16,
+                          overflow: 'hidden',
+                        }}>
+                          <iframe
+                            key={currentExercise.id}
+                            src={embedUrl}
+                            title={currentExercise.name_ru}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            )
+          })()}
 
 
           {/* Sets */}

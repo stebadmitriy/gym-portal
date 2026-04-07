@@ -107,7 +107,7 @@ function VideoSkeleton() {
 }
 
 export default function ExerciseModal({ exercise, currentWeight, onClose }: ExerciseModalProps) {
-  const { programState } = useProgramStore()
+  const { programState, updateWeight } = useProgramStore()
   const totalWeek = programState.total_week
 
   // All videos: primary + alternatives
@@ -129,6 +129,7 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
   const isPinned = !!pinnedUrl
   const currentVariantIndex = allVideos.indexOf(mainVideoUrl ?? '')
 
+  const [localWeight, setLocalWeight] = useState(currentWeight)
   const [showEquipment, setShowEquipment] = useState(false)
   const [showAlternatives, setShowAlternatives] = useState(false)
   const [activeAltIndex, setActiveAltIndex] = useState(0)
@@ -166,6 +167,7 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
     setActiveAltIndex(0)
     setMainVideoLoaded(false)
     setAltVideoLoaded(false)
+    setLocalWeight(currentWeight)
     setPinnedUrl(localStorage.getItem(`gymPrime_primaryVideo_${exercise.id}`))
   }, [exercise.id])
 
@@ -545,25 +547,56 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
               </div>
             </div>
 
-            {/* Weight */}
+            {/* Weight — editable */}
             <div
-              className="p-3.5 rounded-2xl flex items-center gap-3"
+              className="col-span-2 p-3.5 rounded-2xl"
               style={{
                 background: 'linear-gradient(135deg, rgba(16,185,129,0.12), rgba(16,185,129,0.05))',
                 border: '1px solid rgba(16,185,129,0.18)',
               }}
             >
-              <span
-                className="w-8 h-8 rounded-xl flex items-center justify-center text-base flex-shrink-0"
-                style={{ background: 'rgba(16,185,129,0.2)' }}
-              >
-                🏋️
-              </span>
-              <div className="min-w-0">
-                <div className="text-white font-black text-sm leading-tight">
-                  {currentWeight > 0 ? `${currentWeight} кг` : '—'}
+              <div className="flex items-center gap-2 mb-2">
+                <span
+                  className="w-7 h-7 rounded-lg flex items-center justify-center text-sm flex-shrink-0"
+                  style={{ background: 'rgba(16,185,129,0.2)' }}
+                >
+                  🏋️
+                </span>
+                <div className="text-white/35 text-[10px]">Рабочий вес</div>
+              </div>
+              <div className="flex items-center gap-3">
+                <motion.button
+                  whileTap={{ scale: 0.88 }}
+                  onClick={() => {
+                    const step = exercise.increment_kg > 0 ? exercise.increment_kg : 2.5
+                    const nw = Math.max(0, localWeight - step)
+                    setLocalWeight(nw)
+                    updateWeight(exercise.id, nw)
+                  }}
+                  className="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-lg flex-shrink-0"
+                  style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.7)' }}
+                >
+                  −
+                </motion.button>
+                <div className="flex-1 text-center">
+                  <div className="text-white font-black text-xl leading-tight">
+                    {localWeight > 0 ? `${localWeight}` : '—'}
+                  </div>
+                  <div className="text-white/40 text-xs">кг</div>
                 </div>
-                <div className="text-white/35 text-[10px] mt-0.5 leading-tight">Рабочий вес</div>
+                <motion.button
+                  whileTap={{ scale: 0.88 }}
+                  onClick={() => {
+                    const step = exercise.increment_kg > 0 ? exercise.increment_kg : 2.5
+                    const nw = localWeight + step
+                    setLocalWeight(nw)
+                    updateWeight(exercise.id, nw)
+                  }}
+                  className="w-9 h-9 rounded-xl flex items-center justify-center font-bold text-lg flex-shrink-0"
+                  style={{ background: 'rgba(16,185,129,0.3)', color: '#10b981' }}
+                >
+                  +
+                </motion.button>
               </div>
             </div>
 
