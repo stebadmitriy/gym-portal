@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Exercise } from '../types'
 import { useProgramStore } from '../stores/programStore'
-import { pinVideo, unpinVideo, getBlockWeekLabel } from '../lib/exerciseLibrary'
+import { pinVideo, unpinVideo } from '../lib/exerciseLibrary'
 
 const EQUIPMENT_PHOTOS: Record<string, string> = {
   lat_pulldown: '/gym-portal/gym-photos/lat_pulldown.jpg',
@@ -49,10 +49,24 @@ interface ExerciseModalProps {
   onClose: () => void
 }
 
-function getInstagramEmbedUrl(instagramUrl: string): string | null {
-  const match = instagramUrl.match(/instagram\.com\/(?:p|reel)\/([^/?#]+)/)
-  if (!match) return null
-  return `https://www.instagram.com/p/${match[1]}/embed/`
+function getYouTubeEmbedUrl(url: string): string | null {
+  if (!url) return null
+  // Full URL: youtube.com/watch?v=ID
+  let match = url.match(/youtube\.com\/watch\?(?:.*&)?v=([^&]+)/)
+  if (match) {
+    return `https://www.youtube.com/embed/${match[1]}?loop=1&playlist=${match[1]}&rel=0&modestbranding=1`
+  }
+  // Shorts: youtube.com/shorts/ID
+  match = url.match(/youtube\.com\/shorts\/([^?&/]+)/)
+  if (match) {
+    return `https://www.youtube.com/embed/${match[1]}?loop=1&playlist=${match[1]}&rel=0&modestbranding=1`
+  }
+  // youtu.be/ID
+  match = url.match(/youtu\.be\/([^?&/]+)/)
+  if (match) {
+    return `https://www.youtube.com/embed/${match[1]}?loop=1&playlist=${match[1]}&rel=0&modestbranding=1`
+  }
+  return null
 }
 
 // Inline video loading skeleton
@@ -106,7 +120,7 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
 
   // Which video is currently "main"
   const mainVideoUrl = pinnedUrl || (allVideos[blockIndex % allVideos.length] ?? exercise.instagramUrl)
-  const mainEmbedUrl = mainVideoUrl ? getInstagramEmbedUrl(mainVideoUrl) : null
+  const mainEmbedUrl = mainVideoUrl ? getYouTubeEmbedUrl(mainVideoUrl) : null
 
   const isPinned = !!pinnedUrl
   const currentVariantIndex = allVideos.indexOf(mainVideoUrl ?? '')
@@ -252,14 +266,14 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
             </motion.button>
           </div>
 
-          {/* Instagram Video Embed */}
+          {/* YouTube Video Embed */}
           <div
             className="mb-4 rounded-2xl overflow-hidden"
             style={{ background: 'rgba(99,102,241,0.06)', border: '1px solid rgba(99,102,241,0.12)' }}
           >
             {mainEmbedUrl ? (
               <div style={{ position: 'relative', width: '100%' }}>
-                {/* Rotation info bar */}
+                {/* Info bar */}
                 {allVideos.length > 1 && (
                   <div
                     className="absolute top-0 left-0 right-0 flex items-center justify-between px-3 py-2"
@@ -289,7 +303,7 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                             border: '1px solid rgba(99,102,241,0.25)',
                           }}
                         >
-                          📅 {getBlockWeekLabel(blockIndex)} · {(currentVariantIndex >= 0 ? currentVariantIndex : 0) + 1}/{allVideos.length}
+                          {(currentVariantIndex >= 0 ? currentVariantIndex : 0) + 1}/{allVideos.length}
                         </span>
                       )}
                     </div>
@@ -306,34 +320,28 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                   </div>
                 )}
 
-                {/* Loading skeleton shown until iframe fires onLoad */}
+                {/* Loading skeleton */}
                 {!mainVideoLoaded && (
                   <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
                     <VideoSkeleton />
                   </div>
                 )}
 
-                <div style={{ overflow: 'hidden', borderRadius: 16, height: 510 }}>
+                {/* 16:9 aspect ratio container */}
+                <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, borderRadius: 16, overflow: 'hidden' }}>
                   <iframe
                     src={mainEmbedUrl}
-                    width="100%"
-                    height="590"
-                    frameBorder={0}
-                    scrolling="no"
-                    allowTransparency={true}
-                    title={`${exercise.name_ru} — @appyoucan`}
-                    style={{ marginTop: -60, display: 'block', border: 'none' }}
+                    title={exercise.name_ru}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
                     loading="lazy"
                     onLoad={() => setMainVideoLoaded(true)}
                   />
                 </div>
 
-                <div
-                  className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-3 py-2"
-                  style={{ background: 'linear-gradient(0deg, rgba(19,19,30,0.92) 0%, transparent 100%)' }}
-                >
-                  <span className="text-white/35 text-xs font-medium">@appyoucan</span>
-                  {allVideos.length > 1 && !isPinned && (
+                {allVideos.length > 1 && !isPinned && (
+                  <div className="flex justify-end px-3 py-2">
                     <motion.button
                       whileTap={{ scale: 0.9 }}
                       onClick={() => handlePin(exercise.instagramUrl!)}
@@ -346,8 +354,8 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                     >
                       📌 Закрепить
                     </motion.button>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
             ) : (
               <div className="flex items-center justify-center" style={{ minHeight: 160 }}>
@@ -445,7 +453,7 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                     {/* The active alternative video */}
                     {(() => {
                       const altUrl = exercise.alternatives[activeAltIndex]
-                      const altEmbedUrl = getInstagramEmbedUrl(altUrl)
+                      const altEmbedUrl = getYouTubeEmbedUrl(altUrl)
                       return altEmbedUrl ? (
                         <div
                           className="rounded-2xl overflow-hidden"
@@ -457,25 +465,17 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                                 <VideoSkeleton />
                               </div>
                             )}
-                            <div style={{ overflow: 'hidden', borderRadius: 16, height: 510 }}>
+                            {/* 16:9 aspect ratio */}
+                            <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, borderRadius: 16, overflow: 'hidden' }}>
                               <iframe
                                 src={altEmbedUrl}
-                                width="100%"
-                                height="590"
-                                frameBorder={0}
-                                scrolling="no"
-                                allowTransparency={true}
-                                title={`Alternative ${activeAltIndex + 1}`}
-                                style={{ marginTop: -60, display: 'block', border: 'none' }}
+                                title={`Альтернатива ${activeAltIndex + 1}`}
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
                                 loading="lazy"
                                 onLoad={() => setAltVideoLoaded(true)}
                               />
-                            </div>
-                            <div
-                              className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-1.5 py-2"
-                              style={{ background: 'linear-gradient(0deg, rgba(19,19,30,0.9) 0%, transparent 100%)' }}
-                            >
-                              <span className="text-white/35 text-xs">@appyoucan · Вариант {activeAltIndex + 1}</span>
                             </div>
                           </div>
                         </div>
