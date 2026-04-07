@@ -152,6 +152,7 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
   },
 
   resetProgram: () => {
+    // Local-only reset — does NOT touch Supabase
     const defaultState: ProgramState = {
       total_week: 1,
       next_workout_type: 'A',
@@ -166,7 +167,7 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
     }
     keysToRemove.forEach(k => localStorage.removeItem(k))
     set({ programState: defaultState, workouts: [], weights: {} })
-    syncProgramStateToSupabase(defaultState)
+    // No Supabase sync — local reset only
   },
 
   swapExercise: (slot: WorkoutType, oldId, newId) => {

@@ -132,8 +132,8 @@ export default function SettingsPage() {
     }
     setDbResetLoading(true)
     try {
-      await resetSupabaseData()
-      resetProgram()
+      await resetSupabaseData() // wipes Supabase
+      resetProgram()            // wipes localStorage too
       setDbResetSuccess(true)
       setDbResetPin('')
       setTimeout(() => {
@@ -397,7 +397,7 @@ export default function SettingsPage() {
               : '⚠️ Нажми ещё раз для подтверждения'}
           </motion.button>
           <p className="text-white/25 text-xs mt-2 text-center">
-            Удалит все тренировки и веса. Необратимо!
+            Сбрасывает только это устройство. Облако (Supabase) не затрагивается — данные загрузятся снова при следующем открытии.
           </p>
 
           <div className="mt-4" style={{ borderTop: '1px solid rgba(239,68,68,0.12)', paddingTop: '16px' }}>
@@ -431,7 +431,7 @@ export default function SettingsPage() {
                 >
                   <div className="pt-4 space-y-3">
                     <p className="text-white/40 text-xs leading-relaxed">
-                      Удалит все тренировки, веса и измерения из Supabase + localStorage. Введи PIN для подтверждения.
+                      ☠️ Удаляет все данные из облака (Supabase) и с этого устройства. Восстановить невозможно. Введи PIN для подтверждения.
                     </p>
                     <input
                       type="password"
