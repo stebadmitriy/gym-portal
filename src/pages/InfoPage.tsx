@@ -386,67 +386,174 @@ const SECTIONS: Section[] = [
     badge: { label: '5 ПОЗИЦИЙ', color: '#10b981', bg: 'rgba(16,185,129,0.15)' },
     content: (
       <div className="space-y-3">
-        {[
-          {
-            name: 'Креатин моногидрат',
-            dose: '5 г/день',
-            timing: 'Ежедневно в любое время, лучше после тренировки',
-            effect: 'Увеличивает силу и объём мышц за счёт насыщения фосфокреатином. Одна из немногих добавок с железной доказательной базой.',
-            icon: '⚡',
-            color: '#6366f1',
-          },
-          {
-            name: 'HMB (β-гидрокси β-метилбутират)',
-            dose: '3 г/день (3×1 г)',
-            timing: 'По 1 г с каждым основным приёмом пищи',
-            effect: 'Защищает мышцы от распада при калорийном дефиците. Особенно эффективен в период сушки или при редких тренировках.',
-            icon: '🛡️',
-            color: '#10b981',
-          },
-          {
-            name: 'Витамин D3 + K2',
-            dose: '2000–5000 IU D3 + 100–200 мкг K2',
-            timing: 'Утром с жирной едой',
-            effect: 'D3 поддерживает уровень тестостерона и иммунитет. K2 направляет кальций в кости, а не в сосуды. Синергичная пара.',
-            icon: '☀️',
-            color: '#f59e0b',
-          },
-          {
-            name: 'Омега-3',
-            dose: '2–3 г EPA/DHA в день',
-            timing: 'Во время еды (снижает "рыбную" отрыжку)',
-            effect: 'Противовоспалительный эффект ускоряет восстановление после тренировок. Улучшает инсулинорезистентность и здоровье суставов.',
-            icon: '🐟',
-            color: '#06b6d4',
-          },
-          {
-            name: 'Магний глицинат',
-            dose: '400 мг перед сном',
-            timing: 'За 30–60 мин до сна',
-            effect: 'Улучшает качество сна и ночную регенерацию. Глицинатная форма хорошо усваивается и не вызывает слабительного эффекта.',
-            icon: '🌙',
-            color: '#8b5cf6',
-          },
-        ].map(supp => (
-          <div
-            key={supp.name}
-            className="rounded-xl p-3 space-y-1"
-            style={{ background: `${supp.color}12`, border: `1px solid ${supp.color}30` }}
-          >
-            <div className="flex items-center gap-2 flex-wrap">
-              <span>{supp.icon}</span>
-              <span className="font-bold text-white text-sm">{supp.name}</span>
-              <span
-                className="text-xs font-semibold px-2 py-0.5 rounded-full ml-auto"
-                style={{ background: `${supp.color}25`, color: supp.color }}
-              >
-                {supp.dose}
-              </span>
+
+        {/* HMB */}
+        <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(16,185,129,0.3)' }}>
+          <div className="flex items-center justify-between px-4 py-3" style={{ background: 'rgba(16,185,129,0.12)' }}>
+            <div className="flex items-center gap-2">
+              <span className="text-xl">🛡️</span>
+              <span className="font-black text-white text-sm">HMB</span>
+              <span className="text-white/50 text-xs">(β-гидрокси-β-метилбутират)</span>
             </div>
-            <p className="text-white/50 text-xs">{supp.timing}</p>
-            <p className="text-white/70 text-xs leading-relaxed">{supp.effect}</p>
+            <span className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ background: 'rgba(16,185,129,0.25)', color: '#34d399' }}>3 г/день</span>
           </div>
-        ))}
+          <div className="px-4 py-3 space-y-2" style={{ background: 'rgba(16,185,129,0.05)' }}>
+            <p className="text-white/85 text-xs leading-relaxed">
+              Ваш главный «телохранитель» мышц при калорийности 2100 ккал. Защищает мышечную ткань от распада при дефиците калорий.
+            </p>
+            <div className="p-2.5 rounded-xl" style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.2)' }}>
+              <p className="text-emerald-400 text-xs font-bold mb-1">⏰ Схема приёма</p>
+              <p className="text-white/70 text-xs leading-relaxed">
+                HMB быстро выводится почками — дозу нужно <span className="text-white font-semibold">разделить на 3 приёма по 1 г</span>: с завтраком, обедом и ужином/перед сном. Это поддерживает стабильную концентрацию в крови.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Creatine */}
+        <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(99,102,241,0.3)' }}>
+          <div className="flex items-center justify-between px-4 py-3" style={{ background: 'rgba(99,102,241,0.12)' }}>
+            <div className="flex items-center gap-2">
+              <span className="text-xl">⚡</span>
+              <span className="font-black text-white text-sm">Креатин моногидрат</span>
+            </div>
+            <span className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ background: 'rgba(99,102,241,0.25)', color: '#a5b4fc' }}>5 г/день</span>
+          </div>
+          <div className="px-4 py-3 space-y-2" style={{ background: 'rgba(99,102,241,0.05)' }}>
+            <p className="text-white/85 text-xs leading-relaxed">
+              Необходим для придания мышцам наполненного вида и поддержания силы на тренировках. Одна из немногих добавок с железной доказательной базой.
+            </p>
+            <div className="p-2.5 rounded-xl" style={{ background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.2)' }}>
+              <p className="text-indigo-300 text-xs font-bold mb-1">⏰ Схема приёма</p>
+              <ul className="text-white/70 text-xs space-y-1">
+                <li>🏋️ <span className="text-white font-semibold">В тренировочные дни</span> — сразу после тренировки с белком или углеводами</li>
+                <li>🛋️ <span className="text-white font-semibold">В дни отдыха</span> — утром с едой</li>
+                <li>ℹ️ Фаза «загрузки» не обязательна</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Protein */}
+        <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(245,158,11,0.3)' }}>
+          <div className="flex items-center justify-between px-4 py-3" style={{ background: 'rgba(245,158,11,0.12)' }}>
+            <div className="flex items-center gap-2">
+              <span className="text-xl">💪</span>
+              <span className="font-black text-white text-sm">Белок</span>
+              <span className="text-white/50 text-xs">(Сывороточный + Казеин)</span>
+            </div>
+            <span className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ background: 'rgba(245,158,11,0.25)', color: '#fbbf24' }}>150–182 г/день</span>
+          </div>
+          <div className="px-4 py-3 space-y-2" style={{ background: 'rgba(245,158,11,0.05)' }}>
+            <p className="text-white/85 text-xs leading-relaxed">
+              Основной строительный материал для расширения плечевого пояса и верха груди.
+            </p>
+            <div className="grid grid-cols-3 gap-2 my-1">
+              <div className="text-center p-2 rounded-xl" style={{ background: 'rgba(245,158,11,0.12)' }}>
+                <div className="text-amber-400 font-black text-base">1.8–2.2</div>
+                <div className="text-white/50 text-xs">г/кг веса</div>
+              </div>
+              <div className="text-center p-2 rounded-xl" style={{ background: 'rgba(245,158,11,0.12)' }}>
+                <div className="text-amber-400 font-black text-base">30–40 г</div>
+                <div className="text-white/50 text-xs">за приём</div>
+              </div>
+              <div className="text-center p-2 rounded-xl" style={{ background: 'rgba(245,158,11,0.12)' }}>
+                <div className="text-amber-400 font-black text-base">каждые</div>
+                <div className="text-white/50 text-xs">3–4 часа</div>
+              </div>
+            </div>
+            <div className="p-2.5 rounded-xl" style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.2)' }}>
+              <p className="text-red-400 text-xs font-bold mb-1">🌙 Ночная доза — критически важно после 40 лет</p>
+              <p className="text-white/70 text-xs leading-relaxed">
+                <span className="text-white font-semibold">40 г медленного белка (казеин)</span> за 30–60 мин до сна. Подходит: порция протеина, 200 г нежирного творога или греческого йогурта. Стимулирует ночной синтез белка, который в вашем возрасте обычно снижен.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Vitamin D3+K2 */}
+        <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(234,179,8,0.3)' }}>
+          <div className="flex items-center justify-between px-4 py-3" style={{ background: 'rgba(234,179,8,0.1)' }}>
+            <div className="flex items-center gap-2">
+              <span className="text-xl">☀️</span>
+              <span className="font-black text-white text-sm">Витамин D3 + K2</span>
+            </div>
+            <span className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ background: 'rgba(234,179,8,0.2)', color: '#fde047' }}>2000–5000 IU</span>
+          </div>
+          <div className="px-4 py-3 space-y-2" style={{ background: 'rgba(234,179,8,0.04)' }}>
+            <p className="text-white/85 text-xs leading-relaxed">
+              Поддерживает уровень тестостерона и здоровье суставов при 15 000 шагов в день.
+            </p>
+            <div className="flex gap-2">
+              <div className="flex-1 p-2 rounded-xl text-center" style={{ background: 'rgba(234,179,8,0.1)' }}>
+                <div className="text-yellow-300 font-black text-sm">2000–5000 IU</div>
+                <div className="text-white/50 text-xs">Витамин D3</div>
+              </div>
+              <div className="flex-1 p-2 rounded-xl text-center" style={{ background: 'rgba(234,179,8,0.1)' }}>
+                <div className="text-yellow-300 font-black text-sm">100–200 мкг</div>
+                <div className="text-white/50 text-xs">Витамин K2</div>
+              </div>
+            </div>
+            <div className="p-2.5 rounded-xl" style={{ background: 'rgba(234,179,8,0.1)', border: '1px solid rgba(234,179,8,0.2)' }}>
+              <p className="text-yellow-300 text-xs font-bold mb-1">⏰ Схема приёма</p>
+              <p className="text-white/70 text-xs leading-relaxed">
+                Утром во время завтрака. <span className="text-white font-semibold">Важно:</span> D3 — жирорастворимый витамин, завтрак должен содержать жиры (яйца, авокадо, масло).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Magnesium */}
+        <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(139,92,246,0.3)' }}>
+          <div className="flex items-center justify-between px-4 py-3" style={{ background: 'rgba(139,92,246,0.12)' }}>
+            <div className="flex items-center gap-2">
+              <span className="text-xl">🌙</span>
+              <span className="font-black text-white text-sm">Магний</span>
+              <span className="text-white/50 text-xs">(Глицинат или Цитрат)</span>
+            </div>
+            <span className="text-xs font-bold px-2.5 py-1 rounded-full" style={{ background: 'rgba(139,92,246,0.25)', color: '#c4b5fd' }}>400 мг/день</span>
+          </div>
+          <div className="px-4 py-3 space-y-2" style={{ background: 'rgba(139,92,246,0.05)' }}>
+            <p className="text-white/85 text-xs leading-relaxed">
+              Для восстановления центральной нервной системы и улучшения качества сна.
+            </p>
+            <div className="p-2.5 rounded-xl" style={{ background: 'rgba(139,92,246,0.1)', border: '1px solid rgba(139,92,246,0.2)' }}>
+              <p className="text-purple-300 text-xs font-bold mb-1">⏰ Схема приёма</p>
+              <p className="text-white/70 text-xs leading-relaxed">
+                За 30–60 минут до сна. Магний способствует <span className="text-white font-semibold">глубокой фазе сна</span>, во время которой происходит максимальный выброс гормона роста, отвечающего за сжигание жира на животе.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Schedule */}
+        <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.12)' }}>
+          <div className="px-4 py-3" style={{ background: 'rgba(255,255,255,0.07)' }}>
+            <p className="font-black text-white text-sm">📋 Итоговый график приёма</p>
+          </div>
+          <div className="px-4 py-3 space-y-2.5" style={{ background: 'rgba(255,255,255,0.03)' }}>
+            {[
+              { time: '🌅 Завтрак', items: ['Витамин D3+K2', '1 г HMB'], color: '#f59e0b' },
+              { time: '☀️ Обед', items: ['1 г HMB'], color: '#10b981' },
+              { time: '🏋️ После тренировки', items: ['5 г Креатина', '30–40 г сывороточного протеина (если не набираете норму из еды)'], color: '#6366f1' },
+              { time: '🌙 Перед сном', items: ['400 мг Магния', '1 г HMB', '40 г Казеина (или 200 г творога)'], color: '#8b5cf6' },
+            ].map(row => (
+              <div key={row.time} className="flex gap-3 p-3 rounded-xl" style={{ background: `${row.color}0f`, border: `1px solid ${row.color}25` }}>
+                <div className="min-w-[110px]">
+                  <p className="text-white font-bold text-xs">{row.time}</p>
+                </div>
+                <div className="flex flex-wrap gap-1">
+                  {row.items.map(item => (
+                    <span key={item} className="text-xs px-2 py-0.5 rounded-full" style={{ background: `${row.color}20`, color: 'rgba(255,255,255,0.8)' }}>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     )
   },

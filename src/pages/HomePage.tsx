@@ -228,11 +228,47 @@ export default function HomePage() {
           <p className="text-xs text-amber-400/80 mt-3">🚶 10 мин прогулки после еды = жиросжигание без стресса!</p>
         </motion.div>
 
+        {/* Supplement schedule */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.28 }}
+          className="overflow-hidden rounded-2xl"
+          style={{ background: '#1c1c27', border: '1px solid rgba(139,92,246,0.25)' }}
+        >
+          <div
+            className="px-5 py-3 flex items-center gap-2"
+            style={{ background: 'linear-gradient(90deg, rgba(139,92,246,0.2), rgba(99,102,241,0.1))', borderBottom: '1px solid rgba(255,255,255,0.07)' }}
+          >
+            <span className="text-lg">💊</span>
+            <span className="text-xs font-black uppercase tracking-widest" style={{ color: '#c4b5fd' }}>График приёма добавок</span>
+          </div>
+          <div className="px-5 py-4 space-y-2.5">
+            {[
+              { time: '🌅 Завтрак', items: 'Витамин D3+K2 · 1 г HMB', color: '#f59e0b' },
+              { time: '☀️ Обед', items: '1 г HMB', color: '#10b981' },
+              { time: '🏋️ После тренировки', items: '5 г Креатина · 30–40 г протеина', color: '#6366f1' },
+              { time: '🌙 Перед сном', items: '400 мг Магния · 1 г HMB · 40 г Казеина', color: '#8b5cf6' },
+            ].map(row => (
+              <div key={row.time} className="flex items-start gap-3">
+                <div
+                  className="w-2 h-2 rounded-full mt-1.5 flex-shrink-0"
+                  style={{ background: row.color, boxShadow: `0 0 6px ${row.color}` }}
+                />
+                <div className="flex-1 min-w-0">
+                  <p className="text-white/50 text-xs font-semibold">{row.time}</p>
+                  <p className="text-white/85 text-sm font-medium">{row.items}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Science tip */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.33 }}
           className="overflow-hidden rounded-2xl p-5"
           style={{
             background: '#1c1c27',
