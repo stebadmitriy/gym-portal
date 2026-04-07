@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
@@ -65,6 +66,7 @@ const ChartGradientDefs = () => (
 )
 
 export default function ProgressPage() {
+  const navigate = useNavigate()
   const { workouts, programState, weights, measurements } = useProgramStore()
   const [selectedExerciseId, setSelectedExerciseId] = useState(EXERCISES[0]?.id || '')
   const { block, weekInBlock, blockInfo } = getBlockForWeek(programState.total_week)
@@ -136,8 +138,25 @@ export default function ProgressPage() {
           paddingTop: `calc(env(safe-area-inset-top, 0px) + 20px)`,
         }}
       >
-        <h1 className="text-3xl font-black text-white tracking-tight">Прогресс</h1>
-        <p className="text-white/40 text-sm mt-1">Твой путь к V-тейпу</p>
+        <div className="flex items-end justify-between">
+          <div>
+            <h1 className="text-3xl font-black text-white tracking-tight">Прогресс</h1>
+            <p className="text-white/40 text-sm mt-1">Твой путь к V-тейпу</p>
+          </div>
+          <motion.button
+            whileTap={{ scale: 0.94 }}
+            onClick={() => navigate('/history')}
+            className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm font-semibold mb-1"
+            style={{
+              background: 'rgba(99,102,241,0.15)',
+              border: '1px solid rgba(99,102,241,0.3)',
+              color: '#a5b4fc',
+            }}
+          >
+            <span>📋</span>
+            <span>История</span>
+          </motion.button>
+        </div>
       </div>
 
       <div className="px-5 space-y-5">
