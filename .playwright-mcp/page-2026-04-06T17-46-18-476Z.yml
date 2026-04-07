@@ -1,0 +1,103 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Гид" [ref=e9] [cursor=pointer]
+        - generic [ref=e11]:
+          - link:
+            - /url: /
+            - generic:
+              - generic:
+                - img
+      - search [ref=e13]:
+        - generic [ref=e14]:
+          - generic [ref=e15]:
+            - combobox [expanded] [ref=e17]
+            - button [ref=e20] [cursor=pointer]
+          - button "Search" [ref=e21] [cursor=pointer]
+  - navigation [ref=e28]
+  - main [ref=e30]:
+    - generic [ref=e37]:
+      - generic [ref=e53]:
+        - heading "Andrew Kwong (DeltaBolic)" [level=1] [ref=e55]
+        - generic [ref=e56]:
+          - generic [ref=e58]: "@DeltaBolic"
+          - generic [ref=e59]: •
+          - generic [ref=e60]:
+            - generic "2,63 миллиона подписчиков" [ref=e61]: 2,63 млн подписчиков
+            - generic [ref=e62]: •
+            - generic [ref=e63]: 875 видео
+        - generic [ref=e65] [cursor=pointer]:
+          - generic [ref=e66]: Easy-to-understand exercise tips to put on muscle and lose fat.
+          - button "Описание. Easy-to-understand exercise tips to put on muscle and lose fПодробнее…" [ref=e67]:
+            - generic [ref=e68]: …ещё
+        - generic [ref=e69]:
+          - link "deltabolic.com" [ref=e72] [cursor=pointer]:
+            - /url: https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqa1pubW9HemZVLXBTeUtnUlYzakl6ejNGNnh0Z3xBQ3Jtc0tud1hTQTRzNVpQVE9Pc1I2QzJXRU1kSERKbzB4YzN4TkdxOTIxR1dST0g2S210RWNyU0JCSGhqR0owVXlpM2U1TmZVWlpSTS1ESENqREFwYVhWQWxWdnFmM2ttZU1qM3F2MG9CR2VQMlV4TlJRakFROA&q=https%3A%2F%2Fdeltabolic.com
+          - button "и ещё 2 ссылки" [ref=e75] [cursor=pointer]
+        - button "Подписаться" [ref=e79] [cursor=pointer]:
+          - generic [ref=e80]: Подписаться
+      - tablist [ref=e87]:
+        - button [ref=e88] [cursor=pointer]:
+          - generic [ref=e89]:
+            - img
+        - tablist [ref=e93]:
+          - tab "Главная" [ref=e94] [cursor=pointer]:
+            - generic [ref=e95]: Главная
+          - tab "Видео" [ref=e96] [cursor=pointer]:
+            - generic [ref=e97]: Видео
+          - tab "Shorts" [ref=e98] [cursor=pointer]:
+            - generic [ref=e99]: Shorts
+          - tab "Записи" [ref=e100] [cursor=pointer]:
+            - generic [ref=e101]: Записи
+          - generic [ref=e103]:
+            - button "Поиск" [ref=e105] [cursor=pointer]
+            - textbox "Поиск" [ref=e113]:
+              - /placeholder: ""
+              - text: cable fly upper chest low cable
+        - button [ref=e117] [cursor=pointer]:
+          - generic [ref=e118]:
+            - img
+    - generic [ref=e122]:
+      - generic [ref=e126]:
+        - link [ref=e128] [cursor=pointer]:
+          - /url: /watch?v=CYviQI1Mnwg
+        - generic [ref=e130] [cursor=pointer]:
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - heading "Cable Fly Mistake! STOP DOING THIS! 13 секунд" [level=3] [ref=e133]:
+                - link "Cable Fly Mistake! STOP DOING THIS! 13 секунд" [ref=e134]:
+                  - /url: /watch?v=CYviQI1Mnwg
+                  - text: Cable Fly Mistake! STOP DOING THIS!
+              - button "Меню действий" [ref=e138]
+            - generic [ref=e141]:
+              - generic [ref=e142]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e146]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e147]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e148]: •
+              - generic [ref=e149]:
+                - generic [ref=e150]: 2 млн просмотров
+                - generic [ref=e151]: •3 года назад
+          - generic [ref=e152]: "❌ STOP MAKING THIS Cable Fly Mistake! For a full workout plan with form tips, visit https://deltabolic.com ► Alpha Lion Supplements: http://dbolc.com/7gFWq (Use code \"DELTA\" for 15%..."
+      - generic [ref=e156]:
+        - link [ref=e158] [cursor=pointer]:
+          - /url: /watch?v=AJhU25QU7A0
+        - generic [ref=e160] [cursor=pointer]:
+          - generic [ref=e161]:
+            - generic [ref=e162]:
+              - heading "Cable Chest Fly Variations (KNOW THE DIFFERENCE!) 6 секунд" [level=3] [ref=e163]:
+                - link "Cable Chest Fly Variations (KNOW THE DIFFERENCE!) 6 секунд" [ref=e164]:
+                  - /url: /watch?v=AJhU25QU7A0
+                  - text: Cable Chest Fly Variations (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e168]
+            - generic [ref=e171]:
+              - generic [ref=e172]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e176]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e177]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e178]: •
+              - generic [ref=e179]:
+                - generic [ref=e180]: 4 млн просмотров
+                - generic [ref=e181]: •1 год назад
+          - generic [ref=e182]: Cable Chest Fly Variations – KNOW THE DIFFERENCE! 🔹 High-to-Low Cable Fly – Position the cables high and bring them down in an arc to emphasize the lower chest fibers. 🔹 Mid-Level...

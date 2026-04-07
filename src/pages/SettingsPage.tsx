@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useAuthStore } from '../stores/authStore'
 import { useProgramStore } from '../stores/programStore'
-import { getSettings, saveSettings } from '../lib/storage'
+import { getSettings, saveSettings, verifyPin } from '../lib/storage'
 import { Settings, MealTime } from '../types'
+import { resetSupabaseData } from '../lib/supabase'
 
 function SectionHeader({ icon, label }: { icon: string; label: string }) {
   return (
@@ -52,6 +53,13 @@ export default function SettingsPage() {
   const [pinSuccess, setPinSuccess] = useState(false)
   const [resetConfirm, setResetConfirm] = useState(0) // 0: none, 1: first click, 2: confirmed
   const [notifRequested, setNotifRequested] = useState(false)
+
+  // DB reset with PIN
+  const [showDbReset, setShowDbReset] = useState(false)
+  const [dbResetPin, setDbResetPin] = useState('')
+  const [dbResetError, setDbResetError] = useState('')
+  const [dbResetSuccess, setDbResetSuccess] = useState(false)
+  const [dbResetLoading, setDbResetLoading] = useState(false)
 
   const handleSaveSettings = (updated: Settings) => {
     setSettings(updated)
@@ -113,6 +121,29 @@ export default function SettingsPage() {
     } else if (resetConfirm === 1) {
       resetProgram()
       setResetConfirm(0)
+    }
+  }
+
+  const handleDbReset = async () => {
+    setDbResetError('')
+    if (!verifyPin(dbResetPin)) {
+      setDbResetError('Неверный PIN')
+      return
+    }
+    setDbResetLoading(true)
+    try {
+      await resetSupabaseData()
+      resetProgram()
+      setDbResetSuccess(true)
+      setDbResetPin('')
+      setTimeout(() => {
+        setDbResetSuccess(false)
+        setShowDbReset(false)
+      }, 2000)
+    } catch {
+      setDbResetError('Ошибка сброса БД. Проверь соединение.')
+    } finally {
+      setDbResetLoading(false)
     }
   }
 
@@ -368,6 +399,74 @@ export default function SettingsPage() {
           <p className="text-white/25 text-xs mt-2 text-center">
             Удалит все тренировки и веса. Необратимо!
           </p>
+
+          <div className="mt-4" style={{ borderTop: '1px solid rgba(239,68,68,0.12)', paddingTop: '16px' }}>
+            <motion.button
+              whileTap={{ scale: 0.98 }}
+              onClick={() => { setShowDbReset(!showDbReset); setDbResetError(''); setDbResetPin('') }}
+              className="w-full py-3 rounded-xl text-sm font-semibold transition-all flex items-center justify-center gap-2"
+              style={{
+                background: showDbReset ? 'rgba(239,68,68,0.18)' : 'rgba(239,68,68,0.06)',
+                color: '#fca5a5',
+                border: '1px solid rgba(239,68,68,0.2)',
+              }}
+            >
+              🗄️ Сбросить облачную БД
+              <motion.span
+                animate={{ rotate: showDbReset ? 180 : 0 }}
+                transition={{ duration: 0.2 }}
+                className="text-white/30 text-xs"
+              >
+                ▼
+              </motion.span>
+            </motion.button>
+
+            <AnimatePresence>
+              {showDbReset && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  className="overflow-hidden"
+                >
+                  <div className="pt-4 space-y-3">
+                    <p className="text-white/40 text-xs leading-relaxed">
+                      Удалит все тренировки, веса и измерения из Supabase + localStorage. Введи PIN для подтверждения.
+                    </p>
+                    <input
+                      type="password"
+                      inputMode="numeric"
+                      maxLength={4}
+                      value={dbResetPin}
+                      onChange={e => setDbResetPin(e.target.value)}
+                      placeholder="Введи PIN"
+                      className={`${inputClass} ${inputFocusStyle}`}
+                      style={inputStyle}
+                    />
+                    {dbResetError && (
+                      <div className="flex items-center gap-2 px-3 py-2 rounded-lg" style={{ background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.2)' }}>
+                        <span className="text-red-400 text-sm">⚠️ {dbResetError}</span>
+                      </div>
+                    )}
+                    {dbResetSuccess && (
+                      <div className="flex items-center gap-2 px-3 py-2 rounded-lg" style={{ background: 'rgba(16,185,129,0.1)', border: '1px solid rgba(16,185,129,0.2)' }}>
+                        <span className="text-green-400 text-sm">✓ БД сброшена успешно</span>
+                      </div>
+                    )}
+                    <motion.button
+                      whileTap={{ scale: 0.97 }}
+                      onClick={handleDbReset}
+                      disabled={dbResetLoading || dbResetPin.length !== 4}
+                      className="w-full py-3 rounded-xl text-white font-semibold text-sm disabled:opacity-40"
+                      style={{ background: 'linear-gradient(135deg, #dc2626, #ef4444)' }}
+                    >
+                      {dbResetLoading ? '⏳ Сброс...' : '🗑️ Подтвердить сброс БД'}
+                    </motion.button>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
         </SectionCard>
 
         <GradientDivider />

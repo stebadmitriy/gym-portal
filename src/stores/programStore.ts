@@ -1,9 +1,19 @@
 import { create } from 'zustand'
 import { ProgramState, WorkoutType, CustomProgram } from '../types'
-import { getProgramState, setProgramState, setWeight, getWorkouts, saveWorkout, getMeasurements, saveMeasurement, getTodayMeasurement, getCustomProgram, setCustomProgram as saveCustomProgramStorage, clearCustomProgram as clearCustomProgramStorage } from '../lib/storage'
+import {
+  getProgramState, setProgramState, setWeight, getWorkouts, saveWorkout,
+  getMeasurements, saveMeasurement, getTodayMeasurement,
+  getCustomProgram, setCustomProgram as saveCustomProgramStorage,
+  clearCustomProgram as clearCustomProgramStorage,
+} from '../lib/storage'
 import { getBlockForWeek, advanceProgramState } from '../lib/program'
 import { Workout, Measurement } from '../types'
 import { DEFAULT_IDS_A, DEFAULT_IDS_B, DEFAULT_IDS_C } from '../lib/exercises'
+import {
+  syncWorkoutToSupabase, syncWeightToSupabase,
+  syncProgramStateToSupabase, syncMeasurementToSupabase,
+  loadFromSupabase,
+} from '../lib/supabase'
 
 interface ProgramStoreState {
   programState: ProgramState
@@ -37,11 +47,11 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
   customProgram: getCustomProgram(),
 
   loadAll: () => {
+    // 1. Load from localStorage immediately (instant UI)
     const programState = getProgramState()
     const workouts = getWorkouts()
     const measurements = getMeasurements()
 
-    // Load all weights from localStorage
     const weights: Record<string, number> = {}
     const prefix = 'gym_weights_'
     for (let i = 0; i < localStorage.length; i++) {
@@ -59,22 +69,50 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
     }
 
     const customProgram = getCustomProgram()
+    set({ programState, workouts, measurements, weights, isLoaded: true, customProgram })
 
-    set({
-      programState,
-      workouts,
-      measurements,
-      weights,
-      isLoaded: true,
-      customProgram,
+    // 2. Async: fetch from Supabase and merge (Supabase is source of truth)
+    loadFromSupabase().then(snapshot => {
+      if (!snapshot) return
+
+      const merged: Partial<ProgramStoreState> = {}
+
+      // Use Supabase workouts if they exist, otherwise keep localStorage
+      if (snapshot.workouts.length > 0) {
+        merged.workouts = snapshot.workouts
+        // Also persist to localStorage for offline use
+        snapshot.workouts.forEach(w => saveWorkout(w))
+      }
+
+      // Merge weights: Supabase wins per exercise if present
+      if (Object.keys(snapshot.weights).length > 0) {
+        const mergedWeights = { ...weights, ...snapshot.weights }
+        merged.weights = mergedWeights
+        // Persist Supabase weights to localStorage
+        Object.entries(snapshot.weights).forEach(([id, kg]) => setWeight(id, kg))
+      }
+
+      // Use Supabase program state if it exists
+      if (snapshot.programState) {
+        merged.programState = snapshot.programState
+        setProgramState(snapshot.programState)
+      }
+
+      // Merge measurements
+      if (snapshot.measurements.length > 0) {
+        merged.measurements = snapshot.measurements
+      }
+
+      if (Object.keys(merged).length > 0) {
+        set(merged as Partial<ProgramStoreState>)
+      }
     })
   },
 
   updateWeight: (exerciseId: string, weight: number) => {
     setWeight(exerciseId, weight)
-    set(state => ({
-      weights: { ...state.weights, [exerciseId]: weight }
-    }))
+    set(state => ({ weights: { ...state.weights, [exerciseId]: weight } }))
+    syncWeightToSupabase(exerciseId, weight)
   },
 
   getExerciseWeight: (exerciseId: string) => {
@@ -87,6 +125,7 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
     set(state => ({
       workouts: [workout, ...state.workouts.filter(w => w.id !== workout.id)]
     }))
+    syncWorkoutToSupabase(workout)
   },
 
   advanceProgram: () => {
@@ -94,18 +133,22 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
     const next = advanceProgramState(programState)
     setProgramState(next)
     set({ programState: next })
+    syncProgramStateToSupabase(next)
   },
 
   saveTodayWeight: (weight: number) => {
     const today = new Date().toISOString().split('T')[0]
     const existing = getTodayMeasurement()
-    saveMeasurement({
+    const measurement: Measurement = {
       ...existing,
+      id: existing?.id || crypto.randomUUID(),
       recorded_at: today,
-      weight_kg: weight
-    })
+      weight_kg: weight,
+    }
+    saveMeasurement(measurement)
     const measurements = getMeasurements()
     set({ measurements })
+    syncMeasurementToSupabase(measurement)
   },
 
   resetProgram: () => {
@@ -114,7 +157,6 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
       next_workout_type: 'A',
     }
     setProgramState(defaultState)
-    // Clear weights
     const keysToRemove: string[] = []
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i)
@@ -124,6 +166,7 @@ export const useProgramStore = create<ProgramStoreState>((set, get) => ({
     }
     keysToRemove.forEach(k => localStorage.removeItem(k))
     set({ programState: defaultState, workouts: [], weights: {} })
+    syncProgramStateToSupabase(defaultState)
   },
 
   swapExercise: (slot: WorkoutType, oldId, newId) => {

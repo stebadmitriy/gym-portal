@@ -1,0 +1,122 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Гид" [ref=e9] [cursor=pointer]
+        - generic [ref=e11]:
+          - link "Главная страница YouTube" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e16]: BY
+        - button "Пропустить" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: Пропустить
+      - generic [ref=e25]:
+        - search [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - combobox "Введите запрос" [expanded] [ref=e30]
+              - button [ref=e33] [cursor=pointer]
+            - button "Search" [ref=e34] [cursor=pointer]
+        - generic [ref=e37]:
+          - button "Голосовой поиск" [ref=e39] [cursor=pointer]
+          - tooltip "tooltip"
+  - navigation [ref=e50]
+  - main [ref=e52]:
+    - generic [ref=e59]:
+      - generic [ref=e75]:
+        - heading "Andrew Kwong (DeltaBolic)" [level=1] [ref=e77]
+        - generic [ref=e78]:
+          - generic [ref=e80]: "@DeltaBolic"
+          - generic [ref=e81]: •
+          - generic [ref=e82]:
+            - generic "2,63 миллиона подписчиков" [ref=e83]: 2,63 млн подписчиков
+            - generic [ref=e84]: •
+            - generic [ref=e85]: 875 видео
+        - generic [ref=e87] [cursor=pointer]:
+          - generic [ref=e88]: Easy-to-understand exercise tips to put on muscle and lose fat.
+          - button "Описание. Easy-to-understand exercise tips to put on muscle and lose fПодробнее…" [ref=e89]:
+            - generic [ref=e90]: …ещё
+        - generic [ref=e91]:
+          - link "deltabolic.com" [ref=e94] [cursor=pointer]:
+            - /url: https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqbWhqZk9CY19seGR4dlVfWFF1RGFCZzktYjdQd3xBQ3Jtc0tuQS0xWjJUdGxLb2J2Tm9XM3ZieTJsOXhRaUZQVXhMWW9oa2t1NUYzcWZydV9VZDB6MUVFc3lmaEN5SVhGQ1JKelVmb1NOa2U0MzNvcDdYal90bnNqbXNIdFFJRWVGa2VtTElSbGlUaW1sc0ozOUNXdw&q=https%3A%2F%2Fdeltabolic.com
+          - button "и ещё 2 ссылки" [ref=e97] [cursor=pointer]
+        - button "Подписаться" [ref=e101] [cursor=pointer]:
+          - generic [ref=e102]: Подписаться
+      - tablist [ref=e109]:
+        - tablist [ref=e113]:
+          - tab "Главная" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115]: Главная
+          - tab "Видео" [ref=e116] [cursor=pointer]:
+            - generic [ref=e117]: Видео
+          - tab "Shorts" [ref=e118] [cursor=pointer]:
+            - generic [ref=e119]: Shorts
+          - tab "Записи" [ref=e120] [cursor=pointer]:
+            - generic [ref=e121]: Записи
+          - generic [ref=e123]:
+            - button "Поиск" [ref=e125] [cursor=pointer]
+            - textbox "Поиск" [ref=e133]:
+              - /placeholder: ""
+              - text: hip thrust
+    - generic [ref=e140]:
+      - generic [ref=e144]:
+        - link [ref=e146] [cursor=pointer]:
+          - /url: /watch?v=CvuVYMFd11g
+        - generic [ref=e148] [cursor=pointer]:
+          - generic [ref=e149]:
+            - generic [ref=e150]:
+              - heading "❌ FIX THIS Hip Thrust Mistake! 7 секунд" [level=3] [ref=e151]:
+                - link "❌ FIX THIS Hip Thrust Mistake! 7 секунд" [ref=e152]:
+                  - /url: /watch?v=CvuVYMFd11g
+                  - text: ❌ FIX THIS Hip Thrust Mistake!
+              - button "Меню действий" [ref=e156]
+            - generic [ref=e159]:
+              - generic [ref=e160]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e164]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e165]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e166]: •
+              - generic [ref=e167]:
+                - generic [ref=e168]: 778 тыс. просмотров
+                - generic [ref=e169]: •11 месяцев назад
+          - generic [ref=e170]: ❌ FIX THIS Hip Thrust Mistake! If your goal is to grow your glutes, foot placement is key. Planting your feet too far forward shifts the load to your hamstrings. If you plant them Too far...
+      - generic [ref=e174]:
+        - link [ref=e176] [cursor=pointer]:
+          - /url: /watch?v=96uDbymTaHM
+        - generic [ref=e178] [cursor=pointer]:
+          - generic [ref=e179]:
+            - generic [ref=e180]:
+              - heading "Hip Thrust Variations (KNOW THE DIFFERENCE!) 19 секунд" [level=3] [ref=e181]:
+                - link "Hip Thrust Variations (KNOW THE DIFFERENCE!) 19 секунд" [ref=e182]:
+                  - /url: /watch?v=96uDbymTaHM
+                  - text: Hip Thrust Variations (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e186]
+            - generic [ref=e189]:
+              - generic [ref=e190]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e194]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e195]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e196]: •
+              - generic [ref=e197]:
+                - generic [ref=e198]: 1,6 млн просмотров
+                - generic [ref=e199]: •1 год назад
+          - generic [ref=e200]: If you place your feet behind your knees, you'll work more of your quadriceps. If you place your feet in front of the knees, you'll work more of the hamstrings. If you place your feet directly...
+      - generic [ref=e204]:
+        - link [ref=e206] [cursor=pointer]:
+          - /url: /watch?v=8rXdAAwm8Rs
+        - generic [ref=e208] [cursor=pointer]:
+          - generic [ref=e209]:
+            - generic [ref=e210]:
+              - heading "Hyperextension (KNOW THE DIFFERENCE!) 6 секунд" [level=3] [ref=e211]:
+                - link "Hyperextension (KNOW THE DIFFERENCE!) 6 секунд" [ref=e212]:
+                  - /url: /watch?v=8rXdAAwm8Rs
+                  - text: Hyperextension (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e216]
+            - generic [ref=e219]:
+              - generic [ref=e220]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e224]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e225]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e226]: •
+              - generic [ref=e227]:
+                - generic [ref=e228]: 4,6 млн просмотров
+                - generic [ref=e229]: •1 год назад
+          - generic [ref=e230]: Hyperextension (KNOW THE DIFFERENCE!) If you perform hyperextensions with a straight back, you'll primarily target your lower back. Rounding your upper back reduces lower back engagement and...

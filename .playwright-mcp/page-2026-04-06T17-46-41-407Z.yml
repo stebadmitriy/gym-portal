@@ -1,0 +1,812 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Гид" [ref=e9] [cursor=pointer]:
+          - generic [ref=e12]:
+            - img
+        - generic [ref=e13]:
+          - link "Главная страница YouTube" [ref=e14] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e19]:
+              - img
+          - generic [ref=e20]: BY
+        - button "Пропустить" [ref=e24] [cursor=pointer]:
+          - generic [ref=e25]: Пропустить
+      - generic [ref=e29]:
+        - search [ref=e30]:
+          - generic [ref=e31]:
+            - generic [ref=e32]:
+              - combobox "Введите запрос" [expanded] [ref=e34]
+              - button [ref=e37] [cursor=pointer]
+            - button "Search" [ref=e38] [cursor=pointer]:
+              - generic [ref=e41]:
+                - img
+        - generic [ref=e43]:
+          - button "Голосовой поиск" [ref=e45] [cursor=pointer]:
+            - generic [ref=e49]:
+              - img
+          - tooltip "tooltip"
+      - generic [ref=e54]:
+        - button "Настройки" [ref=e59] [cursor=pointer]:
+          - generic [ref=e62]:
+            - img
+        - link "Войти" [ref=e65] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Dru%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252F%2540DeltaBolic%252Fsearch%253Fquery%253Drear%252Bdelt%252Bcable%252Bcrossover&hl=ru&ec=65620
+          - generic [ref=e69]:
+            - img
+          - generic [ref=e70]: Войти
+  - navigation [ref=e74]:
+    - generic [ref=e75]:
+      - link "Главная" [ref=e77] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e80]:
+          - img
+        - generic [ref=e81]: Главная
+      - link "Shorts" [ref=e83] [cursor=pointer]:
+        - /url: /shorts/
+        - generic [ref=e86]:
+          - img
+        - generic [ref=e87]: Shorts
+      - link "Подписки" [ref=e89] [cursor=pointer]:
+        - /url: /feed/subscriptions
+        - generic [ref=e92]:
+          - img
+        - generic [ref=e93]: Подписки
+      - link "Вы" [ref=e95] [cursor=pointer]:
+        - /url: /feed/you
+        - generic [ref=e98]:
+          - img
+        - generic [ref=e99]: Вы
+  - generic [ref=e100]:
+    - main [ref=e101]:
+      - generic [ref=e108]:
+        - generic [ref=e124]:
+          - heading "Andrew Kwong (DeltaBolic)" [level=1] [ref=e126]
+          - generic [ref=e127]:
+            - generic [ref=e129]: "@DeltaBolic"
+            - generic [ref=e130]: •
+            - generic [ref=e131]:
+              - generic "2,63 миллиона подписчиков" [ref=e132]: 2,63 млн подписчиков
+              - generic [ref=e133]: •
+              - generic [ref=e134]: 875 видео
+          - generic [ref=e136] [cursor=pointer]:
+            - generic [ref=e137]: Easy-to-understand exercise tips to put on muscle and lose fat.
+            - button "Описание. Easy-to-understand exercise tips to put on muscle and lose fПодробнее…" [ref=e138]:
+              - generic [ref=e139]: …ещё
+          - generic [ref=e140]:
+            - link "deltabolic.com" [ref=e143] [cursor=pointer]:
+              - /url: https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqa3k2N0pIUWN4T2xjVGJETUFQRkVQM1dNRU4yUXxBQ3Jtc0ttTFlsWWE1WjJMMmxEdVk0YlRTZFZDQktHN0E3WnV5NWxiRWxIdG9iUzB0MlpFWmJ4MmhEX2hBakppYVE1RFFhSkRucDd6S1pHeHRXZVRKUG1KZllnRzhzbkJVS2lseGRVYXY5YVpUWE8zSWNtY1hCbw&q=https%3A%2F%2Fdeltabolic.com
+            - button "и ещё 2 ссылки" [ref=e146] [cursor=pointer]
+          - button "Подписаться" [ref=e150] [cursor=pointer]:
+            - generic [ref=e151]: Подписаться
+        - tablist [ref=e158]:
+          - tablist [ref=e162]:
+            - tab "Главная" [ref=e163] [cursor=pointer]:
+              - generic [ref=e164]: Главная
+            - tab "Видео" [ref=e165] [cursor=pointer]:
+              - generic [ref=e166]: Видео
+            - tab "Shorts" [ref=e167] [cursor=pointer]:
+              - generic [ref=e168]: Shorts
+            - tab "Записи" [ref=e169] [cursor=pointer]:
+              - generic [ref=e170]: Записи
+            - generic [ref=e172]:
+              - button "Поиск" [ref=e174] [cursor=pointer]:
+                - generic [ref=e177]:
+                  - img
+              - textbox "Поиск" [ref=e184]:
+                - /placeholder: ""
+                - text: rear delt cable crossover
+      - generic [ref=e191]:
+        - generic [ref=e195]:
+          - link [ref=e197] [cursor=pointer]:
+            - /url: /watch?v=FeERX9UwspY
+            - img [ref=e199]
+            - img [ref=e202]:
+              - generic [ref=e203]: 0:11
+            - generic:
+              - generic: Текущее видео
+              - generic:
+                - img
+          - generic [ref=e204] [cursor=pointer]:
+            - generic [ref=e205]:
+              - generic [ref=e206]:
+                - heading "The PERFECT Rear Delt Cable Fly 11 секунд" [level=3] [ref=e207]:
+                  - link "The PERFECT Rear Delt Cable Fly 11 секунд" [ref=e208]:
+                    - /url: /watch?v=FeERX9UwspY
+                    - text: The PERFECT Rear Delt Cable Fly
+                - button "Меню действий" [ref=e212]:
+                  - generic [ref=e215]:
+                    - img
+              - generic [ref=e217]:
+                - generic [ref=e218]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e222]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e223]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e224]: •
+                - generic [ref=e225]:
+                  - generic [ref=e226]: 1,3 млн просмотров
+                  - generic [ref=e227]: •7 месяцев назад
+            - generic [ref=e228]: SIZE and SHRED Training Program 👉🏻 deltabolic.com The PERFECT Rear Delt Fly 1. Set the cable pulley slightly above head height. 2. Grab the cable ball or a D-handle with a neutral grip....
+        - generic [ref=e232]:
+          - link [ref=e234] [cursor=pointer]:
+            - /url: /watch?v=cGXBVOc5xIk
+            - img [ref=e236]
+            - img [ref=e239]:
+              - generic [ref=e240]: 0:11
+            - generic:
+              - generic: Текущее видео
+              - generic:
+                - img
+          - generic [ref=e241] [cursor=pointer]:
+            - generic [ref=e242]:
+              - generic [ref=e243]:
+                - heading "✅The PERFECT Cross-Cable Rear Delt Fly 11 секунд" [level=3] [ref=e244]:
+                  - link "✅The PERFECT Cross-Cable Rear Delt Fly 11 секунд" [ref=e245]:
+                    - /url: /watch?v=cGXBVOc5xIk
+                    - text: ✅The PERFECT Cross-Cable Rear Delt Fly
+                - button "Меню действий" [ref=e249]:
+                  - generic [ref=e252]:
+                    - img
+              - generic [ref=e254]:
+                - generic [ref=e255]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e259]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e260]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e261]: •
+                - generic [ref=e262]:
+                  - generic [ref=e263]: 619 тыс. просмотров
+                  - generic [ref=e264]: •4 месяца назад
+            - generic [ref=e265]: Outfit from @dfyne.official Use code DELTA for 10% off at https://dfyne.com?sca_ref=9775890.oU7ZIzut40 Size & Shred Training program 👉🏻 deltabolic.com ✅ The PERFECT Cross-Cable...
+        - generic [ref=e269]:
+          - link [ref=e271] [cursor=pointer]:
+            - /url: /watch?v=7tgx6QHB0-A
+            - img [ref=e273]
+            - img [ref=e276]:
+              - generic [ref=e277]: 0:11
+            - generic:
+              - generic: Текущее видео
+              - generic:
+                - img
+          - generic [ref=e278] [cursor=pointer]:
+            - generic [ref=e279]:
+              - generic [ref=e280]:
+                - heading "❌ Rear Delt Machine Flyes Mistakes (FIX THESE!) 11 секунд" [level=3] [ref=e281]:
+                  - link "❌ Rear Delt Machine Flyes Mistakes (FIX THESE!) 11 секунд" [ref=e282]:
+                    - /url: /watch?v=7tgx6QHB0-A
+                    - text: ❌ Rear Delt Machine Flyes Mistakes (FIX THESE!)
+                - button "Меню действий" [ref=e286]:
+                  - generic [ref=e289]:
+                    - img
+              - generic [ref=e291]:
+                - generic [ref=e292]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e296]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e297]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e298]: •
+                - generic [ref=e299]:
+                  - generic [ref=e300]: 4,7 млн просмотров
+                  - generic [ref=e301]: •1 год назад
+            - generic [ref=e302]: "Rear Delt Machine Fly Mistakes and How to Fix Them Mistake 1: Using the neutral grip handle The neutral grip handle shifts some of the emphasis away from the rear delts and to your side delts...."
+        - generic [ref=e306]:
+          - link [ref=e308] [cursor=pointer]:
+            - /url: /watch?v=WcXfHh28KGU&pp=0gcJCdkKAYcqIYzv
+          - generic [ref=e310] [cursor=pointer]:
+            - generic [ref=e311]:
+              - generic [ref=e312]:
+                - heading "Cable Rope Pull Variations (KNOW THE DIFFERENCE!) 14 секунд" [level=3] [ref=e313]:
+                  - link "Cable Rope Pull Variations (KNOW THE DIFFERENCE!) 14 секунд" [ref=e314]:
+                    - /url: /watch?v=WcXfHh28KGU&pp=0gcJCdkKAYcqIYzv
+                    - text: Cable Rope Pull Variations (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e318]:
+                  - generic [ref=e321]:
+                    - img
+              - generic [ref=e323]:
+                - generic [ref=e324]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e328]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e329]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e330]: •
+                - generic [ref=e331]:
+                  - generic [ref=e332]: 3,8 млн просмотров
+                  - generic [ref=e333]: •1 год назад
+            - generic [ref=e334]: If you hold the rope like this and pull towards your forehead, you'll target the lateral and rear delts. If you hold the rope like this and pull towards your shoulders, you'll target the rear...
+        - generic [ref=e338]:
+          - link [ref=e340] [cursor=pointer]:
+            - /url: /watch?v=LsT-bR_zxLo
+          - generic [ref=e342] [cursor=pointer]:
+            - generic [ref=e343]:
+              - generic [ref=e344]:
+                - heading "The PERFECT Dumbbell Rear Delt Fly (DO THIS!) 11 секунд" [level=3] [ref=e345]:
+                  - link "The PERFECT Dumbbell Rear Delt Fly (DO THIS!) 11 секунд" [ref=e346]:
+                    - /url: /watch?v=LsT-bR_zxLo
+                    - text: The PERFECT Dumbbell Rear Delt Fly (DO THIS!)
+                - button "Меню действий" [ref=e350]:
+                  - generic [ref=e353]:
+                    - img
+              - generic [ref=e355]:
+                - generic [ref=e356]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e360]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e361]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e362]: •
+                - generic [ref=e363]:
+                  - generic [ref=e364]: 5 млн просмотров
+                  - generic [ref=e365]: •1 год назад
+            - generic [ref=e366]: The PERFECT Rear Delt Fly Form 1) Bend Forward Appropriately Lean forward to at least a 90-degree angle from vertical, or even slightly more. Avoid standing too upright, as this shifts tension...
+        - generic [ref=e370]:
+          - link [ref=e372] [cursor=pointer]:
+            - /url: /watch?v=v2ESoWx17tk
+          - generic [ref=e374] [cursor=pointer]:
+            - generic [ref=e375]:
+              - generic [ref=e376]:
+                - heading "Cable Shoulder Exercise Variations (KNOW THE DIFFERENCE!) 21 секунда" [level=3] [ref=e377]:
+                  - link "Cable Shoulder Exercise Variations (KNOW THE DIFFERENCE!) 21 секунда" [ref=e378]:
+                    - /url: /watch?v=v2ESoWx17tk
+                    - text: Cable Shoulder Exercise Variations (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e382]:
+                  - generic [ref=e385]:
+                    - img
+              - generic [ref=e387]:
+                - generic [ref=e388]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e392]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e393]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e394]: •
+                - generic [ref=e395]:
+                  - generic [ref=e396]: 946 тыс. просмотров
+                  - generic [ref=e397]: •1 год назад
+            - generic [ref=e398]: If you raise the cable handle in front, you'll target the front and a bit of the side delts. If you turn to your side and raise the handle to the side, you'll work the lateral (side) delts....
+        - generic [ref=e402]:
+          - link [ref=e404] [cursor=pointer]:
+            - /url: /watch?v=cXn9j-Uah7k
+          - generic [ref=e406] [cursor=pointer]:
+            - generic [ref=e407]:
+              - generic [ref=e408]:
+                - heading "✅Do Facepulls LIKE THIS to Target the Rear Delts! 12 секунд" [level=3] [ref=e409]:
+                  - link "✅Do Facepulls LIKE THIS to Target the Rear Delts! 12 секунд" [ref=e410]:
+                    - /url: /watch?v=cXn9j-Uah7k
+                    - text: ✅Do Facepulls LIKE THIS to Target the Rear Delts!
+                - button "Меню действий" [ref=e414]:
+                  - generic [ref=e417]:
+                    - img
+              - generic [ref=e419]:
+                - generic [ref=e420]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e424]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e425]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e426]: •
+                - generic [ref=e427]:
+                  - generic [ref=e428]: 947 тыс. просмотров
+                  - generic [ref=e429]: •1 год назад
+            - generic [ref=e430]: The conventional standing facepull is excellent for targeting the rear delts, but standing can limit how much weight you can handle since the cable might pull you forward and compromise your...
+        - generic [ref=e434]:
+          - link [ref=e436] [cursor=pointer]:
+            - /url: /watch?v=IeOqdw9WI90
+          - generic [ref=e438] [cursor=pointer]:
+            - generic [ref=e439]:
+              - generic [ref=e440]:
+                - heading "4 Facepull Mistakes You Need to FIX! 11 секунд" [level=3] [ref=e441]:
+                  - link "4 Facepull Mistakes You Need to FIX! 11 секунд" [ref=e442]:
+                    - /url: /watch?v=IeOqdw9WI90
+                    - text: 4 Facepull Mistakes You Need to FIX!
+                - button "Меню действий" [ref=e446]:
+                  - generic [ref=e449]:
+                    - img
+              - generic [ref=e451]:
+                - generic [ref=e452]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e456]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e457]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e458]: •
+                - generic [ref=e459]:
+                  - generic [ref=e460]: 15 млн просмотров
+                  - generic [ref=e461]: •1 год назад
+            - generic [ref=e462]: "4 Face Pull Mistakes (And How to Fix Them!) 🔴 Mistake #1: Overhand Grip An overhand grip isn’t necessarily wrong, but an underhand grip is more optimal for isolating the rear delts. ..."
+        - generic [ref=e466]:
+          - link [ref=e468] [cursor=pointer]:
+            - /url: /watch?v=LJN-sT_6OYY
+          - generic [ref=e470] [cursor=pointer]:
+            - generic [ref=e471]:
+              - generic [ref=e472]:
+                - 'heading "STOP Making This Facepull Mistake! #facepull #facepulls 11 секунд" [level=3] [ref=e473]':
+                  - 'link "STOP Making This Facepull Mistake! #facepull #facepulls 11 секунд" [ref=e474]':
+                    - /url: /watch?v=LJN-sT_6OYY
+                    - text: "STOP Making This Facepull Mistake! #facepull #facepulls"
+                - button "Меню действий" [ref=e478]:
+                  - generic [ref=e481]:
+                    - img
+              - generic [ref=e483]:
+                - generic [ref=e484]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e488]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e489]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e490]: •
+                - generic [ref=e491]:
+                  - generic [ref=e492]: 3,2 млн просмотров
+                  - generic [ref=e493]: •3 года назад
+            - generic [ref=e494]: "Stop keeping your shoulder blades fixed during facepulls! For a Full Gym Workout & Diet Plan: https://seriousshred.com I’ll answer your questions or coach you 1:1 here: https://stan.store/del..."
+        - generic [ref=e498]:
+          - link [ref=e500] [cursor=pointer]:
+            - /url: /watch?v=TxoDSfcObdU
+          - generic [ref=e502] [cursor=pointer]:
+            - generic [ref=e503]:
+              - generic [ref=e504]:
+                - heading "STOP DOING THIS during Rear Delt Machine Flyes! 12 секунд" [level=3] [ref=e505]:
+                  - link "STOP DOING THIS during Rear Delt Machine Flyes! 12 секунд" [ref=e506]:
+                    - /url: /watch?v=TxoDSfcObdU
+                    - text: STOP DOING THIS during Rear Delt Machine Flyes!
+                - button "Меню действий" [ref=e510]:
+                  - generic [ref=e513]:
+                    - img
+              - generic [ref=e515]:
+                - generic [ref=e516]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e520]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e521]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e522]: •
+                - generic [ref=e523]:
+                  - generic [ref=e524]: 1,1 млн просмотров
+                  - generic [ref=e525]: •3 года назад
+            - generic [ref=e526]: "Stop brining the handles too far back passed your shoulders! For a Full Gym Workout & Diet Plan: https://seriousshred.com I’ll answer your questions or coach you 1:1 here: https://stan.store/d..."
+        - generic [ref=e530]:
+          - link [ref=e532] [cursor=pointer]:
+            - /url: /watch?v=S5jNFL_jzBU
+          - generic [ref=e534] [cursor=pointer]:
+            - generic [ref=e535]:
+              - generic [ref=e536]:
+                - heading "Cable Row Variations (KNOW THE DIFFERENCE!) 16 секунд" [level=3] [ref=e537]:
+                  - link "Cable Row Variations (KNOW THE DIFFERENCE!) 16 секунд" [ref=e538]:
+                    - /url: /watch?v=S5jNFL_jzBU
+                    - text: Cable Row Variations (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e542]:
+                  - generic [ref=e545]:
+                    - img
+              - generic [ref=e547]:
+                - generic [ref=e548]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e552]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e553]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e554]: •
+                - generic [ref=e555]:
+                  - generic [ref=e556]: 2,1 млн просмотров
+                  - generic [ref=e557]: •1 год назад
+            - generic [ref=e558]: "When performing cable rows, your body angle affects muscle engagement: 1) Upright posture: Primarily targets the lats and lower-to-middle traps. 2) Leaning forward: Places greater emphasis..."
+        - generic [ref=e562]:
+          - link [ref=e564] [cursor=pointer]:
+            - /url: /watch?v=AChrml938t8
+          - generic [ref=e566] [cursor=pointer]:
+            - generic [ref=e567]:
+              - generic [ref=e568]:
+                - heading "STOP DOING THIS Rear Delt Fly MISTAKE! 14 секунд" [level=3] [ref=e569]:
+                  - link "STOP DOING THIS Rear Delt Fly MISTAKE! 14 секунд" [ref=e570]:
+                    - /url: /watch?v=AChrml938t8
+                    - text: STOP DOING THIS Rear Delt Fly MISTAKE!
+                - button "Меню действий" [ref=e574]:
+                  - generic [ref=e577]:
+                    - img
+              - generic [ref=e579]:
+                - generic [ref=e580]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e584]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e585]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e586]: •
+                - generic [ref=e587]:
+                  - generic [ref=e588]: 913 тыс. просмотров
+                  - generic [ref=e589]: •3 года назад
+            - generic [ref=e590]: "🛑 STOP shrugging your shoulders during rear delt flyes! For a full workout mand diet plan, visit https://Deltabolic.com ► Superhuman Supplements: https://glnk.io/zl913/httpswwwinstagramcomd..."
+        - generic [ref=e594]:
+          - link [ref=e596] [cursor=pointer]:
+            - /url: /watch?v=8thtiUfdbf4
+          - generic [ref=e598] [cursor=pointer]:
+            - generic [ref=e599]:
+              - generic [ref=e600]:
+                - heading "Rear Delt Machine Fly Mistake (DON'T DO THIS!) 6 секунд" [level=3] [ref=e601]:
+                  - link "Rear Delt Machine Fly Mistake (DON'T DO THIS!) 6 секунд" [ref=e602]:
+                    - /url: /watch?v=8thtiUfdbf4
+                    - text: Rear Delt Machine Fly Mistake (DON'T DO THIS!)
+                - button "Меню действий" [ref=e606]:
+                  - generic [ref=e609]:
+                    - img
+              - generic [ref=e611]:
+                - generic [ref=e612]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e616]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e617]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e618]: •
+                - generic [ref=e619]:
+                  - generic [ref=e620]: 1,5 млн просмотров
+                  - generic [ref=e621]: •1 год назад
+            - generic [ref=e622]: A common mistake when performing the rear delt machine fly is squeezing your shoulder blades together, which shifts the focus to your traps. While this is fine if you're targeting your traps,...
+        - generic [ref=e626]:
+          - link [ref=e628] [cursor=pointer]:
+            - /url: /watch?v=y0hMULM33NQ
+          - generic [ref=e630] [cursor=pointer]:
+            - generic [ref=e631]:
+              - generic [ref=e632]:
+                - 'heading "Rear Delt Fly Mistake (STOP DOING THIS!) #reardeltflys #reardelts 11 секунд" [level=3] [ref=e633]':
+                  - 'link "Rear Delt Fly Mistake (STOP DOING THIS!) #reardeltflys #reardelts 11 секунд" [ref=e634]':
+                    - /url: /watch?v=y0hMULM33NQ
+                    - text: "Rear Delt Fly Mistake (STOP DOING THIS!) #reardeltflys #reardelts"
+                - button "Меню действий" [ref=e638]:
+                  - generic [ref=e641]:
+                    - img
+              - generic [ref=e643]:
+                - generic [ref=e644]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e648]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e649]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e650]: •
+                - generic [ref=e651]:
+                  - generic [ref=e652]: 1,9 млн просмотров
+                  - generic [ref=e653]: •3 года назад
+            - generic [ref=e654]: "❌ Stop squeezing your shoulder blades together during rear delt flys! For a Full Gym Workout & Diet Plan: https://seriousshred.com I’ll answer your questions or coach you 1:1 here: https://s..."
+        - generic [ref=e658]:
+          - link [ref=e660] [cursor=pointer]:
+            - /url: /watch?v=ZlCoMaFcqE0
+          - generic [ref=e662] [cursor=pointer]:
+            - generic [ref=e663]:
+              - generic [ref=e664]:
+                - heading "Cable Shoulder Exercise Variations 21 секунда" [level=3] [ref=e665]:
+                  - link "Cable Shoulder Exercise Variations 21 секунда" [ref=e666]:
+                    - /url: /watch?v=ZlCoMaFcqE0
+                    - text: Cable Shoulder Exercise Variations
+                - button "Меню действий" [ref=e670]:
+                  - generic [ref=e673]:
+                    - img
+              - generic [ref=e675]:
+                - generic [ref=e676]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e680]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e681]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e682]: •
+                - generic [ref=e683]:
+                  - generic [ref=e684]: 551 тыс. просмотров
+                  - generic [ref=e685]: •10 месяцев назад
+            - generic [ref=e686]: Cable Shoulder Exercise Variations – Know the Difference! 🧠 Same machine, different angles = completely different results. 1️⃣ Single Arm Overhead Press (Front Delts) Set the cable...
+        - generic [ref=e690]:
+          - link [ref=e692] [cursor=pointer]:
+            - /url: /watch?v=SPNirFrCiqY
+          - generic [ref=e694] [cursor=pointer]:
+            - generic [ref=e695]:
+              - generic [ref=e696]:
+                - heading "Rope Pulling Exercises (KNOW THE DIFFERENCE!) 20 секунд" [level=3] [ref=e697]:
+                  - link "Rope Pulling Exercises (KNOW THE DIFFERENCE!) 20 секунд" [ref=e698]:
+                    - /url: /watch?v=SPNirFrCiqY
+                    - text: Rope Pulling Exercises (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e702]:
+                  - generic [ref=e705]:
+                    - img
+              - generic [ref=e707]:
+                - generic [ref=e708]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e712]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e713]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e714]: •
+                - generic [ref=e715]:
+                  - generic [ref=e716]: 1,5 млн просмотров
+                  - generic [ref=e717]: •8 месяцев назад
+            - generic [ref=e718]: "If you sit on the floor in front of a cable pulley and use a rope attachment, your posture and pulling angle will shift the muscle emphasis: Sit upright or lean slightly forward and pull down..."
+        - generic [ref=e722]:
+          - link [ref=e724] [cursor=pointer]:
+            - /url: /watch?v=9ilIKuy6B0g
+          - generic [ref=e726] [cursor=pointer]:
+            - generic [ref=e727]:
+              - generic [ref=e728]:
+                - heading "🛑 STOP Making This Cable Lateral Raise Mistake! 6 секунд" [level=3] [ref=e729]:
+                  - link "🛑 STOP Making This Cable Lateral Raise Mistake! 6 секунд" [ref=e730]:
+                    - /url: /watch?v=9ilIKuy6B0g
+                    - text: 🛑 STOP Making This Cable Lateral Raise Mistake!
+                - button "Меню действий" [ref=e734]:
+                  - generic [ref=e737]:
+                    - img
+              - generic [ref=e739]:
+                - generic [ref=e740]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e744]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e745]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e746]: •
+                - generic [ref=e747]:
+                  - generic [ref=e748]: 2,7 млн просмотров
+                  - generic [ref=e749]: •1 год назад
+            - generic [ref=e750]: 🛑 STOP Making This Cable Lateral Raise Mistake! A common mistake in the cable lateral raise is shrugging your shoulders as you lift the handle, which shifts tension to the traps instead...
+        - generic [ref=e754]:
+          - link [ref=e756] [cursor=pointer]:
+            - /url: /watch?v=LjP2Ut-Rczs
+          - generic [ref=e758] [cursor=pointer]:
+            - generic [ref=e759]:
+              - generic [ref=e760]:
+                - heading "Cable Row Attachments (KNOW THE DIFFERENCE!) 19 секунд" [level=3] [ref=e761]:
+                  - link "Cable Row Attachments (KNOW THE DIFFERENCE!) 19 секунд" [ref=e762]:
+                    - /url: /watch?v=LjP2Ut-Rczs
+                    - text: Cable Row Attachments (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e766]:
+                  - generic [ref=e769]:
+                    - img
+              - generic [ref=e771]:
+                - generic [ref=e772]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e776]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e777]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e778]: •
+                - generic [ref=e779]:
+                  - generic [ref=e780]: 20 млн просмотров
+                  - generic [ref=e781]: •1 год назад
+            - generic [ref=e782]: "The attachment and pulling angle on cable rows make a huge difference in muscle activation: 🔹 V-Handle Attachment – Pull low towards your belly button to target your lats. 🔹 Medium..."
+        - generic [ref=e786]:
+          - link [ref=e788] [cursor=pointer]:
+            - /url: /watch?v=a9vQ_hwIksU
+          - generic [ref=e790] [cursor=pointer]:
+            - generic [ref=e791]:
+              - generic [ref=e792]:
+                - heading "✅ The PERFECT Pec Dec Fly 16 секунд" [level=3] [ref=e793]:
+                  - link "✅ The PERFECT Pec Dec Fly 16 секунд" [ref=e794]:
+                    - /url: /watch?v=a9vQ_hwIksU
+                    - text: ✅ The PERFECT Pec Dec Fly
+                - button "Меню действий" [ref=e798]:
+                  - generic [ref=e801]:
+                    - img
+              - generic [ref=e803]:
+                - generic [ref=e804]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e808]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e809]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e810]: •
+                - generic [ref=e811]:
+                  - generic [ref=e812]: 3,5 млн просмотров
+                  - generic [ref=e813]: •8 месяцев назад
+            - generic [ref=e814]: ✅ The PERFECT Pec Deck Fly 1️⃣ Neutral Grip – Hold the handles with a neutral wrist. Avoid bending or flexing your wrists to keep tension on your chest, not your joints. 2️⃣ Slight...
+        - generic [ref=e818]:
+          - link [ref=e820] [cursor=pointer]:
+            - /url: /watch?v=7iXk2Eylbv4
+          - generic [ref=e822] [cursor=pointer]:
+            - generic [ref=e823]:
+              - generic [ref=e824]:
+                - heading "Варианты упражнений по перетягиванию каната (ЗНАЙТЕ РАЗНИЦУ!) 15 секунд" [level=3] [ref=e825]:
+                  - link "Варианты упражнений по перетягиванию каната (ЗНАЙТЕ РАЗНИЦУ!) 15 секунд" [ref=e826]:
+                    - /url: /watch?v=7iXk2Eylbv4
+                    - text: Варианты упражнений по перетягиванию каната (ЗНАЙТЕ РАЗНИЦУ!)
+                - button "Меню действий" [ref=e830]:
+                  - generic [ref=e833]:
+                    - img
+              - generic [ref=e835]:
+                - generic [ref=e836]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e840]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e841]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e842]: •
+                - generic [ref=e843]:
+                  - generic [ref=e844]: 1,1 млн просмотров
+                  - generic [ref=e845]: •6 месяцев назад
+            - generic [ref=e846]: Программа тренировок Size & Shred 👉🏻 deltabolic.com Варианты упражнений на перетягивание каната — почувствуйте...
+        - generic [ref=e850]:
+          - link [ref=e852] [cursor=pointer]:
+            - /url: /watch?v=OzRsPluXgdM
+          - generic [ref=e854] [cursor=pointer]:
+            - generic [ref=e855]:
+              - generic [ref=e856]:
+                - heading "3 Cable Exercises for a BIGGER Back 20 секунд" [level=3] [ref=e857]:
+                  - link "3 Cable Exercises for a BIGGER Back 20 секунд" [ref=e858]:
+                    - /url: /watch?v=OzRsPluXgdM
+                    - text: 3 Cable Exercises for a BIGGER Back
+                - button "Меню действий" [ref=e862]:
+                  - generic [ref=e865]:
+                    - img
+              - generic [ref=e867]:
+                - generic [ref=e868]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e872]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e873]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e874]: •
+                - generic [ref=e875]:
+                  - generic [ref=e876]: 4,3 млн просмотров
+                  - generic [ref=e877]: •10 месяцев назад
+            - generic [ref=e878]: 3 Cable Exercises for a BIGGER Back 1) Close-Grip Pulldown (V-Handle) Targets the entire lat, with extra emphasis on the lower lats 2) Close-Grip Seated Row (V-Handle) Works the whole lat...
+        - generic [ref=e882]:
+          - link [ref=e884] [cursor=pointer]:
+            - /url: /watch?v=tGXIQR89-JE
+          - generic [ref=e886] [cursor=pointer]:
+            - generic [ref=e887]:
+              - generic [ref=e888]:
+                - heading "Выполняйте разводку на кабеле вот так, чтобы грудь стала больше 26 секунд" [level=3] [ref=e889]:
+                  - link "Выполняйте разводку на кабеле вот так, чтобы грудь стала больше 26 секунд" [ref=e890]:
+                    - /url: /watch?v=tGXIQR89-JE
+                    - text: Выполняйте разводку на кабеле вот так, чтобы грудь стала больше
+                - button "Меню действий" [ref=e894]:
+                  - generic [ref=e897]:
+                    - img
+              - generic [ref=e899]:
+                - generic [ref=e900]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e904]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e905]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e906]: •
+                - generic [ref=e907]:
+                  - generic [ref=e908]: 6,6 млн просмотров
+                  - generic [ref=e909]: •3 года назад
+            - generic [ref=e910]: ✅ Прокачайте верхнюю, среднюю и нижнюю части грудных мышц для БОЛЬШОЙ, пропорциональной груди! Посетите...
+        - generic [ref=e914]:
+          - link [ref=e916] [cursor=pointer]:
+            - /url: /watch?v=_Akq1z8i3fM
+          - generic [ref=e918] [cursor=pointer]:
+            - generic [ref=e919]:
+              - generic [ref=e920]:
+                - heading "Накачайте 3D-плечи (ударьте по каждой голове!) 25 секунд" [level=3] [ref=e921]:
+                  - link "Накачайте 3D-плечи (ударьте по каждой голове!) 25 секунд" [ref=e922]:
+                    - /url: /watch?v=_Akq1z8i3fM
+                    - text: Накачайте 3D-плечи (ударьте по каждой голове!)
+                - button "Меню действий" [ref=e926]:
+                  - generic [ref=e929]:
+                    - img
+              - generic [ref=e931]:
+                - generic [ref=e932]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e936]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e937]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e938]: •
+                - generic [ref=e939]:
+                  - generic [ref=e940]: 3 млн просмотров
+                  - generic [ref=e941]: •5 месяцев назад
+            - generic [ref=e942]: Я официально в команде @dfyne.official! 🔥 Ознакомьтесь с их потрясающей коллекцией спортивной одежды на сайте...
+        - generic [ref=e946]:
+          - link [ref=e948] [cursor=pointer]:
+            - /url: /watch?v=JvQXicu2v7E
+          - generic [ref=e950] [cursor=pointer]:
+            - generic [ref=e951]:
+              - generic [ref=e952]:
+                - heading "Rear Delt Fly Machine Mistake 🚫 6 секунд" [level=3] [ref=e953]:
+                  - link "Rear Delt Fly Machine Mistake 🚫 6 секунд" [ref=e954]:
+                    - /url: /watch?v=JvQXicu2v7E
+                    - text: Rear Delt Fly Machine Mistake 🚫
+                - button "Меню действий" [ref=e958]:
+                  - generic [ref=e961]:
+                    - img
+              - generic [ref=e963]:
+                - generic [ref=e964]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e968]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e969]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e970]: •
+                - generic [ref=e971]:
+                  - generic [ref=e972]: 879 тыс. просмотров
+                  - generic [ref=e973]: •2 месяца назад
+            - generic [ref=e974]: Rear Delt Fly Machine Mistake 🚫 A common mistake on the rear delt fly (pec deck) is squeezing your shoulder blades together. This shifts the work to your traps (unless that’s your goal)...
+        - generic [ref=e978]:
+          - link [ref=e980] [cursor=pointer]:
+            - /url: /watch?v=6wHaXpM6JgE
+          - generic [ref=e982] [cursor=pointer]:
+            - generic [ref=e983]:
+              - generic [ref=e984]:
+                - heading "Shoulder Cable Workout (DO THESE!) 17 секунд" [level=3] [ref=e985]:
+                  - link "Shoulder Cable Workout (DO THESE!) 17 секунд" [ref=e986]:
+                    - /url: /watch?v=6wHaXpM6JgE
+                    - text: Shoulder Cable Workout (DO THESE!)
+                - button "Меню действий" [ref=e990]:
+                  - generic [ref=e993]:
+                    - img
+              - generic [ref=e995]:
+                - generic [ref=e996]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1000]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1001]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1002]: •
+                - generic [ref=e1003]:
+                  - generic [ref=e1004]: 326 тыс. просмотров
+                  - generic [ref=e1005]: •3 месяца назад
+            - generic [ref=e1006]: Outfit from @dfyne.official. Use code DELTA for 10% off at https://dfyne.com?sca_ref=9775890.oU7ZIzut40 Size & Shred Training program 👉🏻 deltabolic.com Shoulder Cable Workout (DO THESE!)...
+        - generic [ref=e1010]:
+          - link [ref=e1012] [cursor=pointer]:
+            - /url: /watch?v=CYviQI1Mnwg
+          - generic [ref=e1014] [cursor=pointer]:
+            - generic [ref=e1015]:
+              - generic [ref=e1016]:
+                - heading "Cable Fly Mistake! STOP DOING THIS! 13 секунд" [level=3] [ref=e1017]:
+                  - link "Cable Fly Mistake! STOP DOING THIS! 13 секунд" [ref=e1018]:
+                    - /url: /watch?v=CYviQI1Mnwg
+                    - text: Cable Fly Mistake! STOP DOING THIS!
+                - button "Меню действий" [ref=e1022]:
+                  - generic [ref=e1025]:
+                    - img
+              - generic [ref=e1027]:
+                - generic [ref=e1028]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1032]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1033]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1034]: •
+                - generic [ref=e1035]:
+                  - generic [ref=e1036]: 2 млн просмотров
+                  - generic [ref=e1037]: •3 года назад
+            - generic [ref=e1038]: "❌ STOP MAKING THIS Cable Fly Mistake! For a full workout plan with form tips, visit https://deltabolic.com ► Alpha Lion Supplements: http://dbolc.com/7gFWq (Use code \"DELTA\" for 15%..."
+        - generic [ref=e1042]:
+          - link [ref=e1044] [cursor=pointer]:
+            - /url: /watch?v=XFnxc7gOIh8
+          - generic [ref=e1046] [cursor=pointer]:
+            - generic [ref=e1047]:
+              - generic [ref=e1048]:
+                - heading "Chest Fly Machine Variations (KNOW THE DIFFERENCE!) 12 секунд" [level=3] [ref=e1049]:
+                  - link "Chest Fly Machine Variations (KNOW THE DIFFERENCE!) 12 секунд" [ref=e1050]:
+                    - /url: /watch?v=XFnxc7gOIh8
+                    - text: Chest Fly Machine Variations (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e1054]:
+                  - generic [ref=e1057]:
+                    - img
+              - generic [ref=e1059]:
+                - generic [ref=e1060]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1064]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1065]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1066]: •
+                - generic [ref=e1067]:
+                  - generic [ref=e1068]: 1,5 млн просмотров
+                  - generic [ref=e1069]: •1 год назад
+            - generic [ref=e1070]: If you lean your torso forward, you'll target the upper region of your chest. If you lean your torso back, you'll target the lower region of your chest. And if you keep your torso upright,...
+        - generic [ref=e1074]:
+          - link [ref=e1076] [cursor=pointer]:
+            - /url: /watch?v=QelgBRgIsjY
+          - generic [ref=e1078] [cursor=pointer]:
+            - generic [ref=e1079]:
+              - generic [ref=e1080]:
+                - heading "Low Cable Row Variations (KNOW THE DIFFERENCE!) 18 секунд" [level=3] [ref=e1081]:
+                  - link "Low Cable Row Variations (KNOW THE DIFFERENCE!) 18 секунд" [ref=e1082]:
+                    - /url: /watch?v=QelgBRgIsjY
+                    - text: Low Cable Row Variations (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e1086]:
+                  - generic [ref=e1089]:
+                    - img
+              - generic [ref=e1091]:
+                - generic [ref=e1092]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1096]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1097]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1098]: •
+                - generic [ref=e1099]:
+                  - generic [ref=e1100]: 1,6 млн просмотров
+                  - generic [ref=e1101]: •1 год назад
+            - generic [ref=e1102]: Low-to-High Cable Row Variations If you use a narrow underhand grip and perform low-to-high cable rows, pulling toward your belly button, you'll emphasize the middle-to-lower lats. A medium...
+        - generic [ref=e1106]:
+          - link [ref=e1108] [cursor=pointer]:
+            - /url: /watch?v=CxrV_l1JFdU&pp=0gcJCdkKAYcqIYzv
+          - generic [ref=e1110] [cursor=pointer]:
+            - generic [ref=e1111]:
+              - generic [ref=e1112]:
+                - heading "Build a BIGGER Chest (Cables Only) 6 секунд" [level=3] [ref=e1113]:
+                  - link "Build a BIGGER Chest (Cables Only) 6 секунд" [ref=e1114]:
+                    - /url: /watch?v=CxrV_l1JFdU&pp=0gcJCdkKAYcqIYzv
+                    - text: Build a BIGGER Chest (Cables Only)
+                - button "Меню действий" [ref=e1118]:
+                  - generic [ref=e1121]:
+                    - img
+              - generic [ref=e1123]:
+                - generic [ref=e1124]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1128]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1129]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1130]: •
+                - generic [ref=e1131]:
+                  - generic [ref=e1132]: 436 тыс. просмотров
+                  - generic [ref=e1133]: •7 месяцев назад
+            - generic [ref=e1134]: Size & Shred Training program 👉🏻 deltabolic.com Build a BIGGER Chest (Cables Only) 1️⃣ High-to-Low Cable Press (Lean Forward ~45°) – Emphasizes the middle muscle fibers of the...
+        - generic [ref=e1138]:
+          - link [ref=e1140] [cursor=pointer]:
+            - /url: /watch?v=Nxwict54-Q0
+          - generic [ref=e1142] [cursor=pointer]:
+            - generic [ref=e1143]:
+              - generic [ref=e1144]:
+                - heading "Machine Shoulder Press Variations (KNOW THE DIFFERENCE!) 13 секунд" [level=3] [ref=e1145]:
+                  - link "Machine Shoulder Press Variations (KNOW THE DIFFERENCE!) 13 секунд" [ref=e1146]:
+                    - /url: /watch?v=Nxwict54-Q0
+                    - text: Machine Shoulder Press Variations (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e1150]:
+                  - generic [ref=e1153]:
+                    - img
+              - generic [ref=e1155]:
+                - generic [ref=e1156]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1160]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1161]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1162]: •
+                - generic [ref=e1163]:
+                  - generic [ref=e1164]: 1,5 млн просмотров
+                  - generic [ref=e1165]: •1 год назад
+            - generic [ref=e1166]: If you use a neutral grip, you'll target the front of the shoulders (anterior deltoid). If you use a pronated grip, you'll work the front and side parts of the shoulders (anterior and lateral...
+    - text: •

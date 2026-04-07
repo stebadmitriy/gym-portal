@@ -1,0 +1,164 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Гид" [ref=e9] [cursor=pointer]
+        - generic [ref=e11]:
+          - link "Главная страница YouTube" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e16]: BY
+        - button "Пропустить" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: Пропустить
+      - generic [ref=e25]:
+        - search [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - combobox "Введите запрос" [expanded] [ref=e30]
+              - button [ref=e33] [cursor=pointer]
+            - button "Search" [ref=e34] [cursor=pointer]
+        - generic [ref=e37]:
+          - button "Голосовой поиск" [ref=e39] [cursor=pointer]
+          - tooltip "tooltip"
+  - navigation [ref=e50]
+  - main [ref=e52]:
+    - generic [ref=e59]:
+      - generic [ref=e75]:
+        - heading "Andrew Kwong (DeltaBolic)" [level=1] [ref=e77]
+        - generic [ref=e78]:
+          - generic [ref=e80]: "@DeltaBolic"
+          - generic [ref=e81]: •
+          - generic [ref=e82]:
+            - generic "2,63 миллиона подписчиков" [ref=e83]: 2,63 млн подписчиков
+            - generic [ref=e84]: •
+            - generic [ref=e85]: 875 видео
+        - generic [ref=e87] [cursor=pointer]:
+          - generic [ref=e88]: Easy-to-understand exercise tips to put on muscle and lose fat.
+          - button "Описание. Easy-to-understand exercise tips to put on muscle and lose fПодробнее…" [ref=e89]:
+            - generic [ref=e90]: …ещё
+        - generic [ref=e91]:
+          - link "deltabolic.com" [ref=e94] [cursor=pointer]:
+            - /url: https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqbjItS0NfMXdZVHRwUy1la0x2Ul8zV1piLXpMUXxBQ3Jtc0tsVjEzaHBTUnUyWHNURHdqa042b1V0V3lXYTZOWWZTVXRTUVNRdnl5Q1NKVWdOWE5ZSGpyTm1yVVgydGI1U2ljSm9lcFAxQVBoNTV1NXNSWHlBTFRNOXRZckJKZnFaU05zNmczUG93Q0VfUWNDejQ5SQ&q=https%3A%2F%2Fdeltabolic.com
+          - button "и ещё 2 ссылки" [ref=e97] [cursor=pointer]
+        - button "Подписаться" [ref=e101] [cursor=pointer]:
+          - generic [ref=e102]: Подписаться
+      - tablist [ref=e109]:
+        - tablist [ref=e113]:
+          - tab "Главная" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115]: Главная
+          - tab "Видео" [ref=e116] [cursor=pointer]:
+            - generic [ref=e117]: Видео
+          - tab "Shorts" [ref=e118] [cursor=pointer]:
+            - generic [ref=e119]: Shorts
+          - tab "Записи" [ref=e120] [cursor=pointer]:
+            - generic [ref=e121]: Записи
+          - generic [ref=e123]:
+            - button "Поиск" [ref=e125] [cursor=pointer]
+            - textbox "Поиск" [ref=e133]:
+              - /placeholder: ""
+              - text: pull up wide grip
+    - generic [ref=e141]:
+      - generic [ref=e145]:
+        - link [ref=e147] [cursor=pointer]:
+          - /url: /watch?v=eDP_OOhMTZ4
+        - generic [ref=e149] [cursor=pointer]:
+          - generic [ref=e150]:
+            - generic [ref=e151]:
+              - heading "The Perfect Pull-Up (FIX THESE!) 17 секунд" [level=3] [ref=e152]:
+                - link "The Perfect Pull-Up (FIX THESE!) 17 секунд" [ref=e153]:
+                  - /url: /watch?v=eDP_OOhMTZ4
+                  - text: The Perfect Pull-Up (FIX THESE!)
+              - button "Меню действий" [ref=e157]
+            - generic [ref=e160]:
+              - generic [ref=e161]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e165]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e166]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e167]: •
+              - generic [ref=e168]:
+                - generic [ref=e169]: 21 млн просмотров
+                - generic [ref=e170]: •1 год назад
+          - generic [ref=e171]: "5 Form Tips for the Perfect Pull-Up 1. Shoulders Down and Back: Keep your shoulders down and back at the top of the movement to engage your lats while avoiding excessive involvement of your..."
+      - generic [ref=e175]:
+        - link [ref=e177] [cursor=pointer]:
+          - /url: /watch?v=kLmFCtNDut4
+        - generic [ref=e179] [cursor=pointer]:
+          - generic [ref=e180]:
+            - generic [ref=e181]:
+              - heading "Pull-Up Variations (KNOW THE DIFFERENCE!) 20 секунд" [level=3] [ref=e182]:
+                - link "Pull-Up Variations (KNOW THE DIFFERENCE!) 20 секунд" [ref=e183]:
+                  - /url: /watch?v=kLmFCtNDut4
+                  - text: Pull-Up Variations (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e187]
+            - generic [ref=e190]:
+              - generic [ref=e191]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e195]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e196]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e197]: •
+              - generic [ref=e198]:
+                - generic [ref=e199]: 1,5 млн просмотров
+                - generic [ref=e200]: •8 месяцев назад
+          - generic [ref=e201]: Pull-Up Variations – Know the Difference! ✅ Standard Grip Pull-Ups Targets the lats the most. A balanced back-builder with moderate biceps activation. ✅ Close-Grip Pull-Ups More biceps...
+      - generic [ref=e205]:
+        - link [ref=e207] [cursor=pointer]:
+          - /url: /watch?v=RH6xvz3qOCc
+        - generic [ref=e209] [cursor=pointer]:
+          - generic [ref=e210]:
+            - generic [ref=e211]:
+              - 'heading "Pullups: Muscles Worked (DO THIS FOR STRONGER PULLUPS) #shorts 13 секунд" [level=3] [ref=e212]':
+                - 'link "Pullups: Muscles Worked (DO THIS FOR STRONGER PULLUPS) #shorts 13 секунд" [ref=e213]':
+                  - /url: /watch?v=RH6xvz3qOCc
+                  - text: "Pullups: Muscles Worked (DO THIS FOR STRONGER PULLUPS) #shorts"
+              - button "Меню действий" [ref=e217]
+            - generic [ref=e220]:
+              - generic [ref=e221]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e225]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e226]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e227]: •
+              - generic [ref=e228]:
+                - generic [ref=e229]: 746 тыс. просмотров
+                - generic [ref=e230]: •4 года назад
+          - generic [ref=e231]: "For the FULL WORKOUT and DIET plan: https://seriousshred.com ► Sign-Up for Amazon Price Free 30-Day Trial: https://amzn.to/33kpB19 ► Try Audible Plus Free for 30 Days: https://amzn.to/3tfRW3A..."
+      - generic [ref=e235]:
+        - link [ref=e237] [cursor=pointer]:
+          - /url: /watch?v=6YGGFTKlDDw
+        - generic [ref=e239] [cursor=pointer]:
+          - generic [ref=e240]:
+            - generic [ref=e241]:
+              - heading "❌ Pull Up Mistake (DON'T DO THIS!) 6 секунд" [level=3] [ref=e242]:
+                - link "❌ Pull Up Mistake (DON'T DO THIS!) 6 секунд" [ref=e243]:
+                  - /url: /watch?v=6YGGFTKlDDw
+                  - text: ❌ Pull Up Mistake (DON'T DO THIS!)
+              - button "Меню действий" [ref=e247]
+            - generic [ref=e250]:
+              - generic [ref=e251]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e255]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e256]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e257]: •
+              - generic [ref=e258]:
+                - generic [ref=e259]: 14 млн просмотров
+                - generic [ref=e260]: •1 год назад
+          - generic [ref=e261]: Stop shrugging your shoulders during pull-ups! Shrugging overactivates your traps, reducing tension in your lats and making the exercise less effective. While your lats will still work, they...
+      - generic [ref=e265]:
+        - link [ref=e267] [cursor=pointer]:
+          - /url: /watch?v=S481pmnNTYY
+        - generic [ref=e269] [cursor=pointer]:
+          - generic [ref=e270]:
+            - generic [ref=e271]:
+              - heading "❌ FIX THIS Lat Pulldown Mistake! 7 секунд" [level=3] [ref=e272]:
+                - link "❌ FIX THIS Lat Pulldown Mistake! 7 секунд" [ref=e273]:
+                  - /url: /watch?v=S481pmnNTYY
+                  - text: ❌ FIX THIS Lat Pulldown Mistake!
+              - button "Меню действий" [ref=e277]
+            - generic [ref=e280]:
+              - generic [ref=e281]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e285]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e286]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e287]: •
+              - generic [ref=e288]:
+                - generic [ref=e289]: 11 млн просмотров
+                - generic [ref=e290]: •1 год назад
+          - generic [ref=e291]: "A common misconception is that you should keep your shoulders depressed throughout the entire lat pulldown. However, this actually limits a key component of the movement: the lat stretch, which..."

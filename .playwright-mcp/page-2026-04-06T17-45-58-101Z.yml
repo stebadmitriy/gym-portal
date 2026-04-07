@@ -1,0 +1,122 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Гид" [ref=e9] [cursor=pointer]
+        - generic [ref=e11]:
+          - link "Главная страница YouTube" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e16]: BY
+        - button "Пропустить" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: Пропустить
+      - generic [ref=e25]:
+        - search [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - combobox "Введите запрос" [expanded] [ref=e30]
+              - button [ref=e33] [cursor=pointer]
+            - button "Search" [ref=e34] [cursor=pointer]
+        - generic [ref=e37]:
+          - button "Голосовой поиск" [ref=e39] [cursor=pointer]
+          - tooltip "tooltip"
+  - navigation [ref=e50]
+  - main [ref=e52]:
+    - generic [ref=e59]:
+      - generic [ref=e75]:
+        - heading "Andrew Kwong (DeltaBolic)" [level=1] [ref=e77]
+        - generic [ref=e78]:
+          - generic [ref=e80]: "@DeltaBolic"
+          - generic [ref=e81]: •
+          - generic [ref=e82]:
+            - generic "2,63 миллиона подписчиков" [ref=e83]: 2,63 млн подписчиков
+            - generic [ref=e84]: •
+            - generic [ref=e85]: 875 видео
+        - generic [ref=e87] [cursor=pointer]:
+          - generic [ref=e88]: Easy-to-understand exercise tips to put on muscle and lose fat.
+          - button "Описание. Easy-to-understand exercise tips to put on muscle and lose fПодробнее…" [ref=e89]:
+            - generic [ref=e90]: …ещё
+        - generic [ref=e91]:
+          - link "deltabolic.com" [ref=e94] [cursor=pointer]:
+            - /url: https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqblpIR1pSV1dkS3ZDMFY4dzlEZEQzU2VjQzg2d3xBQ3Jtc0ttY2NnRUxhaWRRUXVCZUEyTW5lM3FwcXc2X3h3RU80YVlNN3Vqc1ctdXZyTkJVQVVTYlBxMGctQnNfR1otdzRKNzJaYWxxT2dNZnF2MlJfRVg0QTJTREFYZE1TS2NHVjlpUmxGUzNYMUJWUW9PUWttWQ&q=https%3A%2F%2Fdeltabolic.com
+          - button "и ещё 2 ссылки" [ref=e97] [cursor=pointer]
+        - button "Подписаться" [ref=e101] [cursor=pointer]:
+          - generic [ref=e102]: Подписаться
+      - tablist [ref=e109]:
+        - tablist [ref=e113]:
+          - tab "Главная" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115]: Главная
+          - tab "Видео" [ref=e116] [cursor=pointer]:
+            - generic [ref=e117]: Видео
+          - tab "Shorts" [ref=e118] [cursor=pointer]:
+            - generic [ref=e119]: Shorts
+          - tab "Записи" [ref=e120] [cursor=pointer]:
+            - generic [ref=e121]: Записи
+          - generic [ref=e123]:
+            - button "Поиск" [ref=e125] [cursor=pointer]
+            - textbox "Поиск" [ref=e133]:
+              - /placeholder: ""
+              - text: hanging leg raise abs
+    - generic [ref=e140]:
+      - generic [ref=e144]:
+        - link [ref=e146] [cursor=pointer]:
+          - /url: /watch?v=5uB0KaoCF9w
+        - generic [ref=e148] [cursor=pointer]:
+          - generic [ref=e149]:
+            - generic [ref=e150]:
+              - 'heading "❌ Lying Leg Raise Mistake (STOP DOING THIS!) #shorts 12 секунд" [level=3] [ref=e151]':
+                - 'link "❌ Lying Leg Raise Mistake (STOP DOING THIS!) #shorts 12 секунд" [ref=e152]':
+                  - /url: /watch?v=5uB0KaoCF9w
+                  - text: "❌ Lying Leg Raise Mistake (STOP DOING THIS!) #shorts"
+              - button "Меню действий" [ref=e156]
+            - generic [ref=e159]:
+              - generic [ref=e160]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e164]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e165]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e166]: •
+              - generic [ref=e167]:
+                - generic [ref=e168]: 3,1 млн просмотров
+                - generic [ref=e169]: •4 года назад
+          - generic [ref=e170]: A common lying leg raise mistake is arching your back, causing the hip flexors to do more of the work than the abs. Instead, you want to keep your lower back straight to engage the abs more...
+      - generic [ref=e174]:
+        - link [ref=e176] [cursor=pointer]:
+          - /url: /watch?v=aP4HfrLkOLU
+        - generic [ref=e178] [cursor=pointer]:
+          - generic [ref=e179]:
+            - generic [ref=e180]:
+              - heading "Abs Exercise Variations (KNOW THE DIFFERENCE!) 7 секунд" [level=3] [ref=e181]:
+                - link "Abs Exercise Variations (KNOW THE DIFFERENCE!) 7 секунд" [ref=e182]:
+                  - /url: /watch?v=aP4HfrLkOLU
+                  - text: Abs Exercise Variations (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e186]
+            - generic [ref=e189]:
+              - generic [ref=e190]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e194]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e195]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e196]: •
+              - generic [ref=e197]:
+                - generic [ref=e198]: 603 тыс. просмотров
+                - generic [ref=e199]: •1 год назад
+          - generic [ref=e200]: "The upper abs, lower abs, and obliques are engaged in all the following exercises; however, each movement targets specific areas more intensely. Exercise 1: Decline Leg Raise with Hip Lift..."
+      - generic [ref=e204]:
+        - link [ref=e206] [cursor=pointer]:
+          - /url: /watch?v=qxqFtR-HBmU
+        - generic [ref=e208] [cursor=pointer]:
+          - generic [ref=e209]:
+            - generic [ref=e210]:
+              - heading "Want to Build BIGGER Abs?! DO THIS! 18 секунд" [level=3] [ref=e211]:
+                - link "Want to Build BIGGER Abs?! DO THIS! 18 секунд" [ref=e212]:
+                  - /url: /watch?v=qxqFtR-HBmU
+                  - text: Want to Build BIGGER Abs?! DO THIS!
+              - button "Меню действий" [ref=e216]
+            - generic [ref=e219]:
+              - generic [ref=e220]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e224]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e225]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e226]: •
+              - generic [ref=e227]:
+                - generic [ref=e228]: 152 тыс. просмотров
+                - generic [ref=e229]: •4 года назад
+          - generic [ref=e230]: If you want to build bigger abs, you need an abs workout routine that targets the upper abs and lower abs. Our training plan that does exactly that! First, start out a giant set with hanging...

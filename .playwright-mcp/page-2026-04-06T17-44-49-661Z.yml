@@ -1,0 +1,728 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Гид" [ref=e9] [cursor=pointer]
+        - generic [ref=e11]:
+          - link "Главная страница YouTube" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e16]: BY
+        - button "Пропустить" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: Пропустить
+      - generic [ref=e25]:
+        - search [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - combobox "Введите запрос" [expanded] [ref=e30]
+              - button [ref=e33] [cursor=pointer]
+            - button "Search" [ref=e34] [cursor=pointer]
+        - generic [ref=e37]:
+          - button "Голосовой поиск" [ref=e39] [cursor=pointer]
+          - tooltip "tooltip"
+      - generic [ref=e46]:
+        - button "Настройки" [ref=e51] [cursor=pointer]
+        - link "Войти" [ref=e55] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Dru%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252F%2540DeltaBolic%252Fsearch%253Fquery%253Dincline%252Bsmith%252Bmachine&hl=ru&ec=65620
+          - generic [ref=e58]: Войти
+  - navigation [ref=e62]:
+    - generic [ref=e63]:
+      - link "Главная" [ref=e65] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e67]: Главная
+      - link "Shorts" [ref=e69] [cursor=pointer]:
+        - /url: /shorts/
+        - generic [ref=e71]: Shorts
+      - link "Подписки" [ref=e73] [cursor=pointer]:
+        - /url: /feed/subscriptions
+        - generic [ref=e75]: Подписки
+      - link "Вы" [ref=e77] [cursor=pointer]:
+        - /url: /feed/you
+        - generic [ref=e79]: Вы
+  - main [ref=e81]:
+    - generic [ref=e88]:
+      - generic [ref=e104]:
+        - heading "Andrew Kwong (DeltaBolic)" [level=1] [ref=e106]
+        - generic [ref=e107]:
+          - generic [ref=e109]: "@DeltaBolic"
+          - generic [ref=e110]: •
+          - generic [ref=e111]:
+            - generic "2,63 миллиона подписчиков" [ref=e112]: 2,63 млн подписчиков
+            - generic [ref=e113]: •
+            - generic [ref=e114]: 875 видео
+        - generic [ref=e116] [cursor=pointer]:
+          - generic [ref=e117]: Easy-to-understand exercise tips to put on muscle and lose fat.
+          - button "Описание. Easy-to-understand exercise tips to put on muscle and lose fПодробнее…" [ref=e118]:
+            - generic [ref=e119]: …ещё
+        - generic [ref=e120]:
+          - link "deltabolic.com" [ref=e123] [cursor=pointer]:
+            - /url: https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqa0FmT25Ua2FJVDF0bFd0Vndzd0FfZHBsM0xnd3xBQ3Jtc0tucERBaTFfcm1HckdKcVVXS0JvWERZQTU0S0pUQ2lDU1A2Z0FqSXBMRG1xR2xGZ0l0UFVzWXp2ZkNNeGFONjk5Q1dqbWNDSVhRTE95V2daM2F5MGZHM1BZUlpwSTJxZFBLaFgxSXdRczJhQnBuSUlYbw&q=https%3A%2F%2Fdeltabolic.com
+          - button "и ещё 2 ссылки" [ref=e126] [cursor=pointer]
+        - button "Подписаться" [ref=e130] [cursor=pointer]:
+          - generic [ref=e131]: Подписаться
+      - tablist [ref=e138]:
+        - tablist [ref=e142]:
+          - tab "Главная" [ref=e143] [cursor=pointer]:
+            - generic [ref=e144]: Главная
+          - tab "Видео" [ref=e145] [cursor=pointer]:
+            - generic [ref=e146]: Видео
+          - tab "Shorts" [ref=e147] [cursor=pointer]:
+            - generic [ref=e148]: Shorts
+          - tab "Записи" [ref=e149] [cursor=pointer]:
+            - generic [ref=e150]: Записи
+          - generic [ref=e152]:
+            - button "Поиск" [ref=e154] [cursor=pointer]
+            - textbox "Поиск" [ref=e162]:
+              - /placeholder: ""
+              - text: incline smith machine
+    - generic [ref=e169]:
+      - generic [ref=e173]:
+        - link [ref=e175] [cursor=pointer]:
+          - /url: /watch?v=VXaBbUYMfIs
+          - img [ref=e177]
+          - img [ref=e180]:
+            - generic [ref=e181]: 0:13
+          - generic:
+            - generic: Текущее видео
+            - generic:
+              - img
+        - generic [ref=e182] [cursor=pointer]:
+          - generic [ref=e183]:
+            - generic [ref=e184]:
+              - heading "✅ The PERFECT Incline Smith Machine Bench Press 13 секунд" [level=3] [ref=e185]:
+                - link "✅ The PERFECT Incline Smith Machine Bench Press 13 секунд" [ref=e186]:
+                  - /url: /watch?v=VXaBbUYMfIs
+                  - text: ✅ The PERFECT Incline Smith Machine Bench Press
+              - button "Меню действий" [ref=e190]
+            - generic [ref=e193]:
+              - generic [ref=e194]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e198]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e199]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e200]: •
+              - generic [ref=e201]:
+                - generic [ref=e202]: 11 млн просмотров
+                - generic [ref=e203]: •7 месяцев назад
+          - generic [ref=e204]: "✅ The PERFECT Incline Smith Machine Bench Press 1️⃣ Grip Width: Use a grip about 1.5× shoulder width. 2️⃣ Grip Style: I recommend a thumbless grip only on the Smith machine. This..."
+      - generic [ref=e208]:
+        - link [ref=e210] [cursor=pointer]:
+          - /url: /watch?v=E7ngsffMPR0
+          - img [ref=e212]
+          - img [ref=e215]:
+            - generic [ref=e216]: 0:13
+          - generic:
+            - generic: Текущее видео
+            - generic:
+              - img
+        - generic [ref=e217] [cursor=pointer]:
+          - generic [ref=e218]:
+            - generic [ref=e219]:
+              - heading "✅ The PERFECT Smith Machine Shoulder Press 13 секунд" [level=3] [ref=e220]:
+                - link "✅ The PERFECT Smith Machine Shoulder Press 13 секунд" [ref=e221]:
+                  - /url: /watch?v=E7ngsffMPR0
+                  - text: ✅ The PERFECT Smith Machine Shoulder Press
+              - button "Меню действий" [ref=e225]
+            - generic [ref=e228]:
+              - generic [ref=e229]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e233]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e234]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e235]: •
+              - generic [ref=e236]:
+                - generic [ref=e237]: 2,6 млн просмотров
+                - generic [ref=e238]: •8 месяцев назад
+          - generic [ref=e239]: "✅ The PERFECT Smith Machine Shoulder Press 1️⃣ Grip Width: Use a grip slightly wider than shoulder width (around 1.25–1.5x) to keep your forearms vertical and aligned. 2️⃣ Thumbless..."
+      - generic [ref=e243]:
+        - link [ref=e245] [cursor=pointer]:
+          - /url: /watch?v=gQ3afio08V8
+          - img [ref=e247]
+          - img [ref=e250]:
+            - generic [ref=e251]: 0:13
+          - generic:
+            - generic: Текущее видео
+            - generic:
+              - img
+        - generic [ref=e252] [cursor=pointer]:
+          - generic [ref=e253]:
+            - generic [ref=e254]:
+              - heading "❌ 5 Smith Machine Bench Press Mistakes (Fix These!) 13 секунд" [level=3] [ref=e255]:
+                - link "❌ 5 Smith Machine Bench Press Mistakes (Fix These!) 13 секунд" [ref=e256]:
+                  - /url: /watch?v=gQ3afio08V8
+                  - text: ❌ 5 Smith Machine Bench Press Mistakes (Fix These!)
+              - button "Меню действий" [ref=e260]
+            - generic [ref=e263]:
+              - generic [ref=e264]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e268]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e269]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e270]: •
+              - generic [ref=e271]:
+                - generic [ref=e272]: 6,3 млн просмотров
+                - generic [ref=e273]: •10 месяцев назад
+          - generic [ref=e274]: "❌ 5 Smith Machine Bench Press Mistakes (Fix These!) Mistake #1: Bar too high (eye level setup) Unlike free weights, the Smith machine follows a strict vertical path. Setting the bar at eye..."
+      - generic [ref=e278]:
+        - link [ref=e280] [cursor=pointer]:
+          - /url: /watch?v=98HWfiRonkE&pp=0gcJCdkKAYcqIYzv
+        - generic [ref=e282] [cursor=pointer]:
+          - generic [ref=e283]:
+            - generic [ref=e284]:
+              - heading "The Perfect Incline Bench Press‼️ 13 секунд" [level=3] [ref=e285]:
+                - link "The Perfect Incline Bench Press‼️ 13 секунд" [ref=e286]:
+                  - /url: /watch?v=98HWfiRonkE&pp=0gcJCdkKAYcqIYzv
+                  - text: The Perfect Incline Bench Press‼️
+              - button "Меню действий" [ref=e290]
+            - generic [ref=e293]:
+              - generic [ref=e294]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e298]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e299]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e300]: •
+              - generic [ref=e301]:
+                - generic [ref=e302]: 5 млн просмотров
+                - generic [ref=e303]: •1 год назад
+          - generic [ref=e304]: Incline Bench Press Form Tips 1. Use a Full Grip, Not a Thumbless Grip Always wrap your thumbs around the bar to ensure a secure grip and prevent the bar from slipping out of your hands....
+      - generic [ref=e308]:
+        - link [ref=e310] [cursor=pointer]:
+          - /url: /watch?v=iKCJCydYYrE
+        - generic [ref=e312] [cursor=pointer]:
+          - generic [ref=e313]:
+            - generic [ref=e314]:
+              - heading "✅ The PERFECT Smith Machine Squat 10 секунд" [level=3] [ref=e315]:
+                - link "✅ The PERFECT Smith Machine Squat 10 секунд" [ref=e316]:
+                  - /url: /watch?v=iKCJCydYYrE
+                  - text: ✅ The PERFECT Smith Machine Squat
+              - button "Меню действий" [ref=e320]
+            - generic [ref=e323]:
+              - generic [ref=e324]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e328]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e329]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e330]: •
+              - generic [ref=e331]:
+                - generic [ref=e332]: 2,7 млн просмотров
+                - generic [ref=e333]: •9 месяцев назад
+          - generic [ref=e334]: "✅ The PERFECT Smith Machine Squat Hand Placement: Position your hands as close to your shoulders as your mobility comfortably allows. Pull the bar into your traps and squeeze your shoulder..."
+      - generic [ref=e338]:
+        - link [ref=e340] [cursor=pointer]:
+          - /url: /watch?v=2fFIRmW5Quw
+        - generic [ref=e342] [cursor=pointer]:
+          - generic [ref=e343]:
+            - generic [ref=e344]:
+              - heading "Smith Machine Row Variations (KNOW THE DIFFERENCE!) 17 секунд" [level=3] [ref=e345]:
+                - link "Smith Machine Row Variations (KNOW THE DIFFERENCE!) 17 секунд" [ref=e346]:
+                  - /url: /watch?v=2fFIRmW5Quw
+                  - text: Smith Machine Row Variations (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e350]
+            - generic [ref=e353]:
+              - generic [ref=e354]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e358]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e359]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e360]: •
+              - generic [ref=e361]:
+                - generic [ref=e362]: 2,4 млн просмотров
+                - generic [ref=e363]: •1 год назад
+          - generic [ref=e364]: Don’t miss out—once it’s gone, it’s gone! 👀💨 Smith Machine Row Variations (KNOW THE DIFFERENCE!) If you use an underhand, narrow grip and pull the bar towards your belly button,...
+      - generic [ref=e368]:
+        - link [ref=e370] [cursor=pointer]:
+          - /url: /watch?v=_TgzORKssAs
+        - generic [ref=e372] [cursor=pointer]:
+          - generic [ref=e373]:
+            - generic [ref=e374]:
+              - heading "Bench Angle & Muscles Worked (KNOW THE DIFFERENCE!) 15 секунд" [level=3] [ref=e375]:
+                - link "Bench Angle & Muscles Worked (KNOW THE DIFFERENCE!) 15 секунд" [ref=e376]:
+                  - /url: /watch?v=_TgzORKssAs
+                  - text: Bench Angle & Muscles Worked (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e380]
+            - generic [ref=e383]:
+              - generic [ref=e384]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e388]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e389]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e390]: •
+              - generic [ref=e391]:
+                - generic [ref=e392]: 4 млн просмотров
+                - generic [ref=e393]: •1 год назад
+          - generic [ref=e394]: When performing a flat dumbbell bench press, you primarily target the entire chest, with some activation in the shoulders. As you incline the bench to around 30 degrees, the upper chest becomes...
+      - generic [ref=e398]:
+        - link [ref=e400] [cursor=pointer]:
+          - /url: /watch?v=LM9C8z7g6K4
+        - generic [ref=e402] [cursor=pointer]:
+          - generic [ref=e403]:
+            - generic [ref=e404]:
+              - heading "🎯 TARGET ALL HEADS of the Shoulder on the Smith Machine! 14 секунд" [level=3] [ref=e405]:
+                - link "🎯 TARGET ALL HEADS of the Shoulder on the Smith Machine! 14 секунд" [ref=e406]:
+                  - /url: /watch?v=LM9C8z7g6K4
+                  - text: 🎯 TARGET ALL HEADS of the Shoulder on the Smith Machine!
+              - button "Меню действий" [ref=e410]
+            - generic [ref=e413]:
+              - generic [ref=e414]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e418]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e419]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e420]: •
+              - generic [ref=e421]:
+                - generic [ref=e422]: 2 млн просмотров
+                - generic [ref=e423]: •1 год назад
+          - generic [ref=e424]: 🎯 TARGET All Heads of the Shoulders on the Smith Machine! Overhead Press – Primarily hits the front delts, with some side delt activation. Upright Row (pulling up to lower chest) –...
+      - generic [ref=e428]:
+        - link [ref=e430] [cursor=pointer]:
+          - /url: /watch?v=UOhEq8-6iNk
+        - generic [ref=e432] [cursor=pointer]:
+          - generic [ref=e433]:
+            - generic [ref=e434]:
+              - heading "Smith Machine Squat Variation - Quads vs Glutes 7 секунд" [level=3] [ref=e435]:
+                - link "Smith Machine Squat Variation - Quads vs Glutes 7 секунд" [ref=e436]:
+                  - /url: /watch?v=UOhEq8-6iNk
+                  - text: Smith Machine Squat Variation - Quads vs Glutes
+              - button "Меню действий" [ref=e440]
+            - generic [ref=e443]:
+              - generic [ref=e444]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e448]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e449]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e450]: •
+              - generic [ref=e451]:
+                - generic [ref=e452]: 2,1 млн просмотров
+                - generic [ref=e453]: •9 месяцев назад
+          - generic [ref=e454]: Smith Machine Squat Variation – Targeting Quads vs Glutes The Smith machine squat activates all the major leg muscles, but how you position your feet can shift the focus. Heels elevated:...
+      - generic [ref=e458]:
+        - link [ref=e460] [cursor=pointer]:
+          - /url: /watch?v=8fXfwG4ftaQ
+        - generic [ref=e462] [cursor=pointer]:
+          - generic [ref=e463]:
+            - generic [ref=e464]:
+              - heading "The PERFECT Incline Dumbbell Chest Press 12 секунд" [level=3] [ref=e465]:
+                - link "The PERFECT Incline Dumbbell Chest Press 12 секунд" [ref=e466]:
+                  - /url: /watch?v=8fXfwG4ftaQ
+                  - text: The PERFECT Incline Dumbbell Chest Press
+              - button "Меню действий" [ref=e470]
+            - generic [ref=e473]:
+              - generic [ref=e474]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e478]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e479]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e480]: •
+              - generic [ref=e481]:
+                - generic [ref=e482]: 5,9 млн просмотров
+                - generic [ref=e483]: •1 год назад
+          - generic [ref=e484]: Perfect Your Incline Dumbbell Chest Press with These Form Tips! 1️⃣ Set the Bench Right – A 30-degree incline is ideal for targeting your upper chest. A higher incline shifts more work...
+      - generic [ref=e488]:
+        - link [ref=e490] [cursor=pointer]:
+          - /url: /watch?v=Gruq177Psnk
+        - generic [ref=e492] [cursor=pointer]:
+          - generic [ref=e493]:
+            - generic [ref=e494]:
+              - heading "Incline Chest Press Mistake (STOP DOING THIS!) 12 секунд" [level=3] [ref=e495]:
+                - link "Incline Chest Press Mistake (STOP DOING THIS!) 12 секунд" [ref=e496]:
+                  - /url: /watch?v=Gruq177Psnk
+                  - text: Incline Chest Press Mistake (STOP DOING THIS!)
+              - button "Меню действий" [ref=e500]
+            - generic [ref=e503]:
+              - generic [ref=e504]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e508]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e509]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e510]: •
+              - generic [ref=e511]:
+                - generic [ref=e512]: 6,1 млн просмотров
+                - generic [ref=e513]: •3 года назад
+          - generic [ref=e514]: "❌ STOP PRESSING IN A VERTICAL PATH! For a Full Gym Workout & Diet Plan: https://seriousshred.com ► Support me on PATREON: https://www.patreon.com/deltabolic ► Sign-Up for Amazon Price..."
+      - generic [ref=e518]:
+        - link [ref=e520] [cursor=pointer]:
+          - /url: /watch?v=CxrV_l1JFdU
+        - generic [ref=e522] [cursor=pointer]:
+          - generic [ref=e523]:
+            - generic [ref=e524]:
+              - heading "Build a BIGGER Chest (Cables Only) 6 секунд" [level=3] [ref=e525]:
+                - link "Build a BIGGER Chest (Cables Only) 6 секунд" [ref=e526]:
+                  - /url: /watch?v=CxrV_l1JFdU
+                  - text: Build a BIGGER Chest (Cables Only)
+              - button "Меню действий" [ref=e530]
+            - generic [ref=e533]:
+              - generic [ref=e534]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e538]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e539]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e540]: •
+              - generic [ref=e541]:
+                - generic [ref=e542]: 436 тыс. просмотров
+                - generic [ref=e543]: •7 месяцев назад
+          - generic [ref=e544]: Size & Shred Training program 👉🏻 deltabolic.com Build a BIGGER Chest (Cables Only) 1️⃣ High-to-Low Cable Press (Lean Forward ~45°) – Emphasizes the middle muscle fibers of the...
+      - generic [ref=e548]:
+        - link [ref=e550] [cursor=pointer]:
+          - /url: /watch?v=LwsG-1xgP2E&pp=0gcJCdkKAYcqIYzv
+        - generic [ref=e552] [cursor=pointer]:
+          - generic [ref=e553]:
+            - generic [ref=e554]:
+              - heading "Smith Machine Leg Workout (DO THESE!) 27 секунд" [level=3] [ref=e555]:
+                - link "Smith Machine Leg Workout (DO THESE!) 27 секунд" [ref=e556]:
+                  - /url: /watch?v=LwsG-1xgP2E&pp=0gcJCdkKAYcqIYzv
+                  - text: Smith Machine Leg Workout (DO THESE!)
+              - button "Меню действий" [ref=e560]
+            - generic [ref=e563]:
+              - generic [ref=e564]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e568]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e569]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e570]: •
+              - generic [ref=e571]:
+                - generic [ref=e572]: 1 млн просмотров
+                - generic [ref=e573]: •11 месяцев назад
+          - generic [ref=e574]: Smith Machine Leg Exercises (KNOW THE DIFFERENCE!) ✅ Let your knees travel past your toes while keeping your torso upright — this puts more emphasis on your quads. ✅ Keep your knees...
+      - generic [ref=e578]:
+        - link [ref=e580] [cursor=pointer]:
+          - /url: /watch?v=wjNw3Gw15aM
+        - generic [ref=e582] [cursor=pointer]:
+          - generic [ref=e583]:
+            - generic [ref=e584]:
+              - heading "Incline Bench Press Mistake (STOP DOING THIS!) 11 секунд" [level=3] [ref=e585]:
+                - link "Incline Bench Press Mistake (STOP DOING THIS!) 11 секунд" [ref=e586]:
+                  - /url: /watch?v=wjNw3Gw15aM
+                  - text: Incline Bench Press Mistake (STOP DOING THIS!)
+              - button "Меню действий" [ref=e590]
+            - generic [ref=e593]:
+              - generic [ref=e594]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e598]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e599]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e600]: •
+              - generic [ref=e601]:
+                - generic [ref=e602]: 1,8 млн просмотров
+                - generic [ref=e603]: •3 года назад
+          - generic [ref=e604]: "❌ STOP FLARING YOUR ELBOWS! For a Full Gym Workout & Diet Plan: https://deltabolic.com I’ll answer your questions or coach you 1:1 here: https://stan.store/deltabolic Business Inquiries:..."
+      - generic [ref=e608]:
+        - link [ref=e610] [cursor=pointer]:
+          - /url: /watch?v=Qu7-ceCvq7w
+        - generic [ref=e612] [cursor=pointer]:
+          - generic [ref=e613]:
+            - generic [ref=e614]:
+              - heading "The PERFECT Machine Chest Press 11 секунд" [level=3] [ref=e615]:
+                - link "The PERFECT Machine Chest Press 11 секунд" [ref=e616]:
+                  - /url: /watch?v=Qu7-ceCvq7w
+                  - text: The PERFECT Machine Chest Press
+              - button "Меню действий" [ref=e620]
+            - generic [ref=e623]:
+              - generic [ref=e624]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e628]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e629]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e630]: •
+              - generic [ref=e631]:
+                - generic [ref=e632]: 1 млн просмотров
+                - generic [ref=e633]: •1 год назад
+          - generic [ref=e634]: Chest Press Machine Form Tips 1) Use a Thumbless Grip – A thumbless (suicide) grip lets you position the entire handle at the base of your palm, where you generate the most power. It also...
+      - generic [ref=e638]:
+        - link [ref=e640] [cursor=pointer]:
+          - /url: /watch?v=5SSdbmIjNj4
+        - generic [ref=e642] [cursor=pointer]:
+          - generic [ref=e643]:
+            - generic [ref=e644]:
+              - heading "Bench Press Variations (KNOW THE DIFFERENCE!) 6 секунд" [level=3] [ref=e645]:
+                - link "Bench Press Variations (KNOW THE DIFFERENCE!) 6 секунд" [ref=e646]:
+                  - /url: /watch?v=5SSdbmIjNj4
+                  - text: Bench Press Variations (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e650]
+            - generic [ref=e653]:
+              - generic [ref=e654]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e658]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e659]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e660]: •
+              - generic [ref=e661]:
+                - generic [ref=e662]: 4,5 млн просмотров
+                - generic [ref=e663]: •1 год назад
+          - generic [ref=e664]: Bench Press Variations (KNOW THE DIFFERENCE!) A wide-grip bench press with your elbows flared out at 90 degrees puts excessive stress on your shoulders and increases the risk of injury. While...
+      - generic [ref=e668]:
+        - link [ref=e670] [cursor=pointer]:
+          - /url: /watch?v=MRmeUet5VUw
+        - generic [ref=e672] [cursor=pointer]:
+          - generic [ref=e673]:
+            - generic [ref=e674]:
+              - heading "Incline Bench Press Mistake (STOP DOING THIS!) 11 секунд" [level=3] [ref=e675]:
+                - link "Incline Bench Press Mistake (STOP DOING THIS!) 11 секунд" [ref=e676]:
+                  - /url: /watch?v=MRmeUet5VUw
+                  - text: Incline Bench Press Mistake (STOP DOING THIS!)
+              - button "Меню действий" [ref=e680]
+            - generic [ref=e683]:
+              - generic [ref=e684]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e688]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e689]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e690]: •
+              - generic [ref=e691]:
+                - generic [ref=e692]: 2,7 млн просмотров
+                - generic [ref=e693]: •3 года назад
+          - generic [ref=e694]: "Visit https://deltabolic.com for the full training and nutrition program! I’ll answer your questions or coach you 1:1 here: https://stan.store/deltabolic Business Inquiries: deltabolic@gmai..."
+      - generic [ref=e698]:
+        - link [ref=e700] [cursor=pointer]:
+          - /url: /watch?v=NxCntzwABlY
+        - generic [ref=e702] [cursor=pointer]:
+          - generic [ref=e703]:
+            - generic [ref=e704]:
+              - heading "Smith Machine Squat Variations (KNOW THE DIFFERENCE!) 25 секунд" [level=3] [ref=e705]:
+                - link "Smith Machine Squat Variations (KNOW THE DIFFERENCE!) 25 секунд" [ref=e706]:
+                  - /url: /watch?v=NxCntzwABlY
+                  - text: Smith Machine Squat Variations (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e710]
+            - generic [ref=e713]:
+              - generic [ref=e714]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e718]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e719]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e720]: •
+              - generic [ref=e721]:
+                - generic [ref=e722]: 1,9 млн просмотров
+                - generic [ref=e723]: •9 месяцев назад
+          - generic [ref=e724]: Smith Machine Squat Variations (KNOW THE DIFFERENCE!) Most of your leg muscles are active during a squat—but where you place your feet shifts the emphasis toward specific ones. ✅ Feet...
+      - generic [ref=e728]:
+        - link [ref=e730] [cursor=pointer]:
+          - /url: /watch?v=0m8-vmy05SI
+        - generic [ref=e732] [cursor=pointer]:
+          - generic [ref=e733]:
+            - generic [ref=e734]:
+              - heading "Chest Press Machine Variations (KNOW THE DIFFERENCE!) 13 секунд" [level=3] [ref=e735]:
+                - link "Chest Press Machine Variations (KNOW THE DIFFERENCE!) 13 секунд" [ref=e736]:
+                  - /url: /watch?v=0m8-vmy05SI
+                  - text: Chest Press Machine Variations (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e740]
+            - generic [ref=e743]:
+              - generic [ref=e744]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e748]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e749]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e750]: •
+              - generic [ref=e751]:
+                - generic [ref=e752]: 330 тыс. просмотров
+                - generic [ref=e753]: •1 год назад
+          - generic [ref=e754]: If you use a pronated grip, you'll work your whole chest. If you move the seat up and lean your torso back, you'll work more lower chest. If you use a neutral grip, you'll shift more workload...
+      - generic [ref=e758]:
+        - link [ref=e760] [cursor=pointer]:
+          - /url: /watch?v=LNH_lPYJnpw
+        - generic [ref=e762] [cursor=pointer]:
+          - generic [ref=e763]:
+            - generic [ref=e764]:
+              - heading "Cable Chest Press Variations (KNOW THE DIFFERENCE!) 20 секунд" [level=3] [ref=e765]:
+                - link "Cable Chest Press Variations (KNOW THE DIFFERENCE!) 20 секунд" [ref=e766]:
+                  - /url: /watch?v=LNH_lPYJnpw
+                  - text: Cable Chest Press Variations (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e770]
+            - generic [ref=e773]:
+              - generic [ref=e774]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e778]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e779]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e780]: •
+              - generic [ref=e781]:
+                - generic [ref=e782]: 364 тыс. просмотров
+                - generic [ref=e783]: •1 год назад
+          - generic [ref=e784]: If you set the pulley high and press the handles on a downward angle, you'll target the lower muscle fibers of the chest. If you set the pulley at chest height and press the handle straight...
+      - generic [ref=e788]:
+        - link [ref=e790] [cursor=pointer]:
+          - /url: /watch?v=6zWoAllRufg&pp=0gcJCdkKAYcqIYzv
+        - generic [ref=e792] [cursor=pointer]:
+          - generic [ref=e793]:
+            - generic [ref=e794]:
+              - heading "Bench Press Grip Widths & Muscles Worked 13 секунд" [level=3] [ref=e795]:
+                - link "Bench Press Grip Widths & Muscles Worked 13 секунд" [ref=e796]:
+                  - /url: /watch?v=6zWoAllRufg&pp=0gcJCdkKAYcqIYzv
+                  - text: Bench Press Grip Widths & Muscles Worked
+              - button "Меню действий" [ref=e800]
+            - generic [ref=e803]:
+              - generic [ref=e804]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e808]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e809]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e810]: •
+              - generic [ref=e811]:
+                - generic [ref=e812]: 6,5 млн просмотров
+                - generic [ref=e813]: •1 год назад
+          - generic [ref=e814]: Varying your bench press grip width shifts the focus on different muscle groups. The main muscles involved are the chest, shoulders (specifically the anterior deltoids), and triceps. A narrow...
+      - generic [ref=e818]:
+        - link [ref=e820] [cursor=pointer]:
+          - /url: /watch?v=XFYMLdlaq04
+        - generic [ref=e822] [cursor=pointer]:
+          - generic [ref=e823]:
+            - generic [ref=e824]:
+              - heading "Руководство по жиму лежа на тренажере Смита 12 секунд" [level=3] [ref=e825]:
+                - link "Руководство по жиму лежа на тренажере Смита 12 секунд" [ref=e826]:
+                  - /url: /watch?v=XFYMLdlaq04
+                  - text: Руководство по жиму лежа на тренажере Смита
+              - button "Меню действий" [ref=e830]
+            - generic [ref=e833]:
+              - generic [ref=e834]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e838]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e839]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e840]: •
+              - generic [ref=e841]:
+                - generic [ref=e842]: 254 тыс. просмотров
+                - generic [ref=e843]: •2 недели назад
+          - generic [ref=e844]: Программа тренировок для увеличения мышечной массы и снижения веса 👉🏻 deltabolic.com Руководство по жиму лежа...
+      - generic [ref=e848]:
+        - link [ref=e850] [cursor=pointer]:
+          - /url: /watch?v=2awX3rTGa1k
+        - generic [ref=e852] [cursor=pointer]:
+          - generic [ref=e853]:
+            - generic [ref=e854]:
+              - heading "Machine Chest Press MISTAKE! 9 секунд" [level=3] [ref=e855]:
+                - link "Machine Chest Press MISTAKE! 9 секунд" [ref=e856]:
+                  - /url: /watch?v=2awX3rTGa1k
+                  - text: Machine Chest Press MISTAKE!
+              - button "Меню действий" [ref=e860]
+            - generic [ref=e863]:
+              - generic [ref=e864]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e868]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e869]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e870]: •
+              - generic [ref=e871]:
+                - generic [ref=e872]: 1,9 млн просмотров
+                - generic [ref=e873]: •1 год назад
+          - generic [ref=e874]: A machine chest press mistake is having your elbows higher than the handle, increasing the risk of shoulder injury. Instead, keep your elbows below the handle for a safer press. For a Size...
+      - generic [ref=e878]:
+        - link [ref=e880] [cursor=pointer]:
+          - /url: /watch?v=Nxwict54-Q0
+        - generic [ref=e882] [cursor=pointer]:
+          - generic [ref=e883]:
+            - generic [ref=e884]:
+              - heading "Machine Shoulder Press Variations (KNOW THE DIFFERENCE!) 13 секунд" [level=3] [ref=e885]:
+                - link "Machine Shoulder Press Variations (KNOW THE DIFFERENCE!) 13 секунд" [ref=e886]:
+                  - /url: /watch?v=Nxwict54-Q0
+                  - text: Machine Shoulder Press Variations (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e890]
+            - generic [ref=e893]:
+              - generic [ref=e894]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e898]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e899]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e900]: •
+              - generic [ref=e901]:
+                - generic [ref=e902]: 1,5 млн просмотров
+                - generic [ref=e903]: •1 год назад
+          - generic [ref=e904]: If you use a neutral grip, you'll target the front of the shoulders (anterior deltoid). If you use a pronated grip, you'll work the front and side parts of the shoulders (anterior and lateral...
+      - generic [ref=e908]:
+        - link [ref=e910] [cursor=pointer]:
+          - /url: /watch?v=qTxF0PhK294
+        - generic [ref=e912] [cursor=pointer]:
+          - generic [ref=e913]:
+            - generic [ref=e914]:
+              - heading "❌ You're Doing Machine Chest Flyes WRONG! 8 секунд" [level=3] [ref=e915]:
+                - link "❌ You're Doing Machine Chest Flyes WRONG! 8 секунд" [ref=e916]:
+                  - /url: /watch?v=qTxF0PhK294
+                  - text: ❌ You're Doing Machine Chest Flyes WRONG!
+              - button "Меню действий" [ref=e920]
+            - generic [ref=e923]:
+              - generic [ref=e924]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e928]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e929]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e930]: •
+              - generic [ref=e931]:
+                - generic [ref=e932]: 6 млн просмотров
+                - generic [ref=e933]: •10 месяцев назад
+          - generic [ref=e934]: ❌ You're Doing Machine Chest Flyes WRONG! A common mistake on the chest fly machine is performing the exercise with your elbows at shoulder height, which can increase the risk of shoulder...
+      - generic [ref=e938]:
+        - link [ref=e940] [cursor=pointer]:
+          - /url: /watch?v=AJhU25QU7A0
+        - generic [ref=e942] [cursor=pointer]:
+          - generic [ref=e943]:
+            - generic [ref=e944]:
+              - heading "Cable Chest Fly Variations (KNOW THE DIFFERENCE!) 6 секунд" [level=3] [ref=e945]:
+                - link "Cable Chest Fly Variations (KNOW THE DIFFERENCE!) 6 секунд" [ref=e946]:
+                  - /url: /watch?v=AJhU25QU7A0
+                  - text: Cable Chest Fly Variations (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e950]
+            - generic [ref=e953]:
+              - generic [ref=e954]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e958]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e959]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e960]: •
+              - generic [ref=e961]:
+                - generic [ref=e962]: 4 млн просмотров
+                - generic [ref=e963]: •1 год назад
+          - generic [ref=e964]: Cable Chest Fly Variations – KNOW THE DIFFERENCE! 🔹 High-to-Low Cable Fly – Position the cables high and bring them down in an arc to emphasize the lower chest fibers. 🔹 Mid-Level...
+      - generic [ref=e968]:
+        - link [ref=e970] [cursor=pointer]:
+          - /url: /watch?v=fXFN8_1Bh6k
+        - generic [ref=e972] [cursor=pointer]:
+          - generic [ref=e973]:
+            - generic [ref=e974]:
+              - heading "❌ Incline Bicep Curl Mistake (DON'T DO THIS!) 8 секунд" [level=3] [ref=e975]:
+                - link "❌ Incline Bicep Curl Mistake (DON'T DO THIS!) 8 секунд" [ref=e976]:
+                  - /url: /watch?v=fXFN8_1Bh6k
+                  - text: ❌ Incline Bicep Curl Mistake (DON'T DO THIS!)
+              - button "Меню действий" [ref=e980]
+            - generic [ref=e983]:
+              - generic [ref=e984]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e988]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e989]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e990]: •
+              - generic [ref=e991]:
+                - generic [ref=e992]: 1,8 млн просмотров
+                - generic [ref=e993]: •1 год назад
+          - generic [ref=e994]: "A common mistake in the incline bicep curl is letting your elbows drift forward and your upper arms move. This shifts tension to your front delts and defeats the purpose of the exercise: emphasizin..."
+      - generic [ref=e998]:
+        - link [ref=e1000] [cursor=pointer]:
+          - /url: /watch?v=aP4HfrLkOLU
+        - generic [ref=e1002] [cursor=pointer]:
+          - generic [ref=e1003]:
+            - generic [ref=e1004]:
+              - heading "Abs Exercise Variations (KNOW THE DIFFERENCE!) 7 секунд" [level=3] [ref=e1005]:
+                - link "Abs Exercise Variations (KNOW THE DIFFERENCE!) 7 секунд" [ref=e1006]:
+                  - /url: /watch?v=aP4HfrLkOLU
+                  - text: Abs Exercise Variations (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e1010]
+            - generic [ref=e1013]:
+              - generic [ref=e1014]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e1018]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e1019]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e1020]: •
+              - generic [ref=e1021]:
+                - generic [ref=e1022]: 603 тыс. просмотров
+                - generic [ref=e1023]: •1 год назад
+          - generic [ref=e1024]: "The upper abs, lower abs, and obliques are engaged in all the following exercises; however, each movement targets specific areas more intensely. Exercise 1: Decline Leg Raise with Hip Lift..."
+      - generic [ref=e1028]:
+        - link [ref=e1030] [cursor=pointer]:
+          - /url: /watch?v=a-UFQE4oxWY
+        - generic [ref=e1032] [cursor=pointer]:
+          - generic [ref=e1033]:
+            - generic [ref=e1034]:
+              - heading "❌ Decline Bench Press Mistake (AVOID THIS!) 11 секунд" [level=3] [ref=e1035]:
+                - link "❌ Decline Bench Press Mistake (AVOID THIS!) 11 секунд" [ref=e1036]:
+                  - /url: /watch?v=a-UFQE4oxWY
+                  - text: ❌ Decline Bench Press Mistake (AVOID THIS!)
+              - button "Меню действий" [ref=e1040]
+            - generic [ref=e1043]:
+              - generic [ref=e1044]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e1048]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e1049]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e1050]: •
+              - generic [ref=e1051]:
+                - generic [ref=e1052]: 1,7 млн просмотров
+                - generic [ref=e1053]: •3 года назад
+          - generic [ref=e1054]: ❌ Avoid doing THIS to prevent shoulder injury! ✅ Move the bar in a curved path down to your lower chest for greater chest activation! For a training plan with form tips, visit deltabolic.co...
+      - generic [ref=e1058]:
+        - link [ref=e1060] [cursor=pointer]:
+          - /url: /watch?v=Uf2To5LoYBE
+        - generic [ref=e1062] [cursor=pointer]:
+          - generic [ref=e1063]:
+            - generic [ref=e1064]:
+              - heading "✅ Incline Bench Press LIKE THIS! 13 секунд" [level=3] [ref=e1065]:
+                - link "✅ Incline Bench Press LIKE THIS! 13 секунд" [ref=e1066]:
+                  - /url: /watch?v=Uf2To5LoYBE
+                  - text: ✅ Incline Bench Press LIKE THIS!
+              - button "Меню действий" [ref=e1070]
+            - generic [ref=e1073]:
+              - generic [ref=e1074]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e1078]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e1079]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e1080]: •
+              - generic [ref=e1081]:
+                - generic [ref=e1082]: 535 тыс. просмотров
+                - generic [ref=e1083]: •3 месяца назад
+          - generic [ref=e1084]: Size & Shred Training program 👉🏻 deltabolic.com ✅ Incline Bench Press LIKE THIS! 1) Use a full grip — thumbs wrapped around the bar (avoid thumbless grip) 2) Lift your chest —...

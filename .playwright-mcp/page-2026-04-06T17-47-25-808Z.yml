@@ -1,0 +1,143 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Гид" [ref=e9] [cursor=pointer]
+        - generic [ref=e11]:
+          - link "Главная страница YouTube" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e16]: BY
+        - button "Пропустить" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: Пропустить
+      - generic [ref=e25]:
+        - search [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - combobox "Введите запрос" [expanded] [ref=e30]
+              - button [ref=e33] [cursor=pointer]
+            - button "Search" [ref=e34] [cursor=pointer]
+        - generic [ref=e37]:
+          - button "Голосовой поиск" [ref=e39] [cursor=pointer]
+          - tooltip "tooltip"
+  - navigation [ref=e50]
+  - main [ref=e52]:
+    - generic [ref=e59]:
+      - generic [ref=e75]:
+        - heading "Andrew Kwong (DeltaBolic)" [level=1] [ref=e77]
+        - generic [ref=e78]:
+          - generic [ref=e80]: "@DeltaBolic"
+          - generic [ref=e81]: •
+          - generic [ref=e82]:
+            - generic "2,63 миллиона подписчиков" [ref=e83]: 2,63 млн подписчиков
+            - generic [ref=e84]: •
+            - generic [ref=e85]: 875 видео
+        - generic [ref=e87] [cursor=pointer]:
+          - generic [ref=e88]: Easy-to-understand exercise tips to put on muscle and lose fat.
+          - button "Описание. Easy-to-understand exercise tips to put on muscle and lose fПодробнее…" [ref=e89]:
+            - generic [ref=e90]: …ещё
+        - generic [ref=e91]:
+          - link "deltabolic.com" [ref=e94] [cursor=pointer]:
+            - /url: https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqbkNFdFdpSWl2RThCbWFsaFVTblJGc3Z1WGtvUXxBQ3Jtc0tuQjBuV0pkQVU5T0hiQ0JFOVJPbFNsTzE2UWlsMGNZZFJJZ3VzNjNxdFVITGZ3Y3FQRlpuV2RzcmhTX19Hd2tSaEdUTlJWUUdfTWlQSHlWTjQ0WTZQb3Fjd243MWtiWUlpb04tRHhsQ3hyTkZhb3Z1SQ&q=https%3A%2F%2Fdeltabolic.com
+          - button "и ещё 2 ссылки" [ref=e97] [cursor=pointer]
+        - button "Подписаться" [ref=e101] [cursor=pointer]:
+          - generic [ref=e102]: Подписаться
+      - tablist [ref=e109]:
+        - tablist [ref=e113]:
+          - tab "Главная" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115]: Главная
+          - tab "Видео" [ref=e116] [cursor=pointer]:
+            - generic [ref=e117]: Видео
+          - tab "Shorts" [ref=e118] [cursor=pointer]:
+            - generic [ref=e119]: Shorts
+          - tab "Записи" [ref=e120] [cursor=pointer]:
+            - generic [ref=e121]: Записи
+          - generic [ref=e123]:
+            - button "Поиск" [ref=e125] [cursor=pointer]
+            - textbox "Поиск" [ref=e133]:
+              - /placeholder: ""
+              - text: lat pulldown wide grip
+    - generic [ref=e141]:
+      - generic [ref=e145]:
+        - link [ref=e147] [cursor=pointer]:
+          - /url: /watch?v=bNmvKpJSWKM&pp=0gcJCdkKAYcqIYzv
+        - generic [ref=e149] [cursor=pointer]:
+          - generic [ref=e150]:
+            - generic [ref=e151]:
+              - heading "✅ The PERFECT Lat Pulldown (DO THIS!) 13 секунд" [level=3] [ref=e152]:
+                - link "✅ The PERFECT Lat Pulldown (DO THIS!) 13 секунд" [ref=e153]:
+                  - /url: /watch?v=bNmvKpJSWKM&pp=0gcJCdkKAYcqIYzv
+                  - text: ✅ The PERFECT Lat Pulldown (DO THIS!)
+              - button "Меню действий" [ref=e157]
+            - generic [ref=e160]:
+              - generic [ref=e161]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e165]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e166]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e167]: •
+              - generic [ref=e168]:
+                - generic [ref=e169]: 8 млн просмотров
+                - generic [ref=e170]: •1 год назад
+          - generic [ref=e171]: "Perfect Your Lat Pulldown Form with These Key Tips: 1️⃣ Secure Your Position – Adjust the thigh pad so it rests firmly on your thighs for optimal stability and leverage. 2️⃣ Go Thumbless..."
+      - generic [ref=e175]:
+        - link [ref=e177] [cursor=pointer]:
+          - /url: /watch?v=51ql2-2kLfA
+        - generic [ref=e179] [cursor=pointer]:
+          - generic [ref=e180]:
+            - generic [ref=e181]:
+              - heading "Lat Pulldown Mistakes (FIX THESE!) 11 секунд" [level=3] [ref=e182]:
+                - link "Lat Pulldown Mistakes (FIX THESE!) 11 секунд" [ref=e183]:
+                  - /url: /watch?v=51ql2-2kLfA
+                  - text: Lat Pulldown Mistakes (FIX THESE!)
+              - button "Меню действий" [ref=e187]
+            - generic [ref=e190]:
+              - generic [ref=e191]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e195]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e196]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e197]: •
+              - generic [ref=e198]:
+                - generic [ref=e199]: 4,4 млн просмотров
+                - generic [ref=e200]: •1 год назад
+          - generic [ref=e201]: 1) Use a thumbless grip – While a full grip isn’t necessarily wrong, a thumbless grip reduces arm involvement and helps isolate the back muscles, leading to better lat activation. 2) Depress...
+      - generic [ref=e205]:
+        - link [ref=e207] [cursor=pointer]:
+          - /url: /watch?v=S481pmnNTYY
+        - generic [ref=e209] [cursor=pointer]:
+          - generic [ref=e210]:
+            - generic [ref=e211]:
+              - heading "❌ FIX THIS Lat Pulldown Mistake! 7 секунд" [level=3] [ref=e212]:
+                - link "❌ FIX THIS Lat Pulldown Mistake! 7 секунд" [ref=e213]:
+                  - /url: /watch?v=S481pmnNTYY
+                  - text: ❌ FIX THIS Lat Pulldown Mistake!
+              - button "Меню действий" [ref=e217]
+            - generic [ref=e220]:
+              - generic [ref=e221]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e225]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e226]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e227]: •
+              - generic [ref=e228]:
+                - generic [ref=e229]: 11 млн просмотров
+                - generic [ref=e230]: •1 год назад
+          - generic [ref=e231]: "A common misconception is that you should keep your shoulders depressed throughout the entire lat pulldown. However, this actually limits a key component of the movement: the lat stretch, which..."
+      - generic [ref=e235]:
+        - link [ref=e237] [cursor=pointer]:
+          - /url: /watch?v=5s6KGLTMgoI
+        - generic [ref=e239] [cursor=pointer]:
+          - generic [ref=e240]:
+            - generic [ref=e241]:
+              - heading "Lat Pulldown Mistakes (FIX THESE!) 11 секунд" [level=3] [ref=e242]:
+                - link "Lat Pulldown Mistakes (FIX THESE!) 11 секунд" [ref=e243]:
+                  - /url: /watch?v=5s6KGLTMgoI
+                  - text: Lat Pulldown Mistakes (FIX THESE!)
+              - button "Меню действий" [ref=e247]
+            - generic [ref=e250]:
+              - generic [ref=e251]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e255]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e256]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e257]: •
+              - generic [ref=e258]:
+                - generic [ref=e259]: 5,8 млн просмотров
+                - generic [ref=e260]: •1 год назад
+          - generic [ref=e261]: "Stop Making These Lat Pulldown Mistakes! Mistake #1: Shrugging your shoulders at the bottom of the pull. This takes the focus off your lats and puts it on your traps. Instead, keep your shoulders..."

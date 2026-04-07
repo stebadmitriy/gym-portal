@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "mcp__mcp-registry__search_mcp_registry"
+      "mcp__mcp-registry__search_mcp_registry",
+      "WebFetch(domain:www.youtube.com)",
+      "WebSearch",
+      "WebFetch(domain:www.noxinfluencer.com)",
+      "WebFetch(domain:playboard.co)"
     ]
   }
 }

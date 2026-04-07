@@ -1,0 +1,904 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Гид" [ref=e9] [cursor=pointer]:
+          - generic [ref=e12]:
+            - img
+        - generic [ref=e13]:
+          - link "Главная страница YouTube" [ref=e14] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e19]:
+              - img
+          - generic [ref=e20]: BY
+        - button "Пропустить" [ref=e24] [cursor=pointer]:
+          - generic [ref=e25]: Пропустить
+      - generic [ref=e29]:
+        - search [ref=e30]:
+          - generic [ref=e31]:
+            - generic [ref=e32]:
+              - combobox "Введите запрос" [expanded] [ref=e34]
+              - button [ref=e37] [cursor=pointer]
+            - button "Search" [ref=e38] [cursor=pointer]:
+              - generic [ref=e41]:
+                - img
+        - generic [ref=e43]:
+          - button "Голосовой поиск" [ref=e45] [cursor=pointer]:
+            - generic [ref=e49]:
+              - img
+          - tooltip "tooltip"
+      - generic [ref=e54]:
+        - button "Настройки" [ref=e59] [cursor=pointer]:
+          - generic [ref=e62]:
+            - img
+        - link "Войти" [ref=e65] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Dru%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252F%2540DeltaBolic%252Fsearch%253Fquery%253Dupright%252Brow%252Bbarbell&hl=ru&ec=65620
+          - generic [ref=e69]:
+            - img
+          - generic [ref=e70]: Войти
+  - navigation [ref=e74]:
+    - generic [ref=e75]:
+      - link "Главная" [ref=e77] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e80]:
+          - img
+        - generic [ref=e81]: Главная
+      - link "Shorts" [ref=e83] [cursor=pointer]:
+        - /url: /shorts/
+        - generic [ref=e86]:
+          - img
+        - generic [ref=e87]: Shorts
+      - link "Подписки" [ref=e89] [cursor=pointer]:
+        - /url: /feed/subscriptions
+        - generic [ref=e92]:
+          - img
+        - generic [ref=e93]: Подписки
+      - link "Вы" [ref=e95] [cursor=pointer]:
+        - /url: /feed/you
+        - generic [ref=e98]:
+          - img
+        - generic [ref=e99]: Вы
+  - generic [ref=e100]:
+    - main [ref=e101]:
+      - generic [ref=e108]:
+        - generic [ref=e124]:
+          - heading "Andrew Kwong (DeltaBolic)" [level=1] [ref=e126]
+          - generic [ref=e127]:
+            - generic [ref=e129]: "@DeltaBolic"
+            - generic [ref=e130]: •
+            - generic [ref=e131]:
+              - generic "2,63 миллиона подписчиков" [ref=e132]: 2,63 млн подписчиков
+              - generic [ref=e133]: •
+              - generic [ref=e134]: 875 видео
+          - generic [ref=e136] [cursor=pointer]:
+            - generic [ref=e137]: Easy-to-understand exercise tips to put on muscle and lose fat.
+            - button "Описание. Easy-to-understand exercise tips to put on muscle and lose fПодробнее…" [ref=e138]:
+              - generic [ref=e139]: …ещё
+          - generic [ref=e140]:
+            - link "deltabolic.com" [ref=e143] [cursor=pointer]:
+              - /url: https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqbm91dDJkdFVpelhxOGpGcWRacWlxUFE1RlVTUXxBQ3Jtc0trSzhBWXJZbHNhcWRKUTZJSlJyVmRVM3plOV9kUTF6eXJUOUJid2I2RWY4SEtSSDhydnZEZERqSWtDc205RFdSd2s0RU5qTjZ4WGJqd0NsMXJZYW1wdE9VTmVwRWI2YlF5dXduUl9hZk85bERNOGcybw&q=https%3A%2F%2Fdeltabolic.com
+            - button "и ещё 2 ссылки" [ref=e146] [cursor=pointer]
+          - button "Подписаться" [ref=e150] [cursor=pointer]:
+            - generic [ref=e151]: Подписаться
+        - tablist [ref=e158]:
+          - tablist [ref=e162]:
+            - tab "Главная" [ref=e163] [cursor=pointer]:
+              - generic [ref=e164]: Главная
+            - tab "Видео" [ref=e165] [cursor=pointer]:
+              - generic [ref=e166]: Видео
+            - tab "Shorts" [ref=e167] [cursor=pointer]:
+              - generic [ref=e168]: Shorts
+            - tab "Записи" [ref=e169] [cursor=pointer]:
+              - generic [ref=e170]: Записи
+            - generic [ref=e172]:
+              - button "Поиск" [ref=e174] [cursor=pointer]:
+                - generic [ref=e177]:
+                  - img
+              - textbox "Поиск" [ref=e184]:
+                - /placeholder: ""
+                - text: upright row barbell
+      - generic [ref=e191]:
+        - generic [ref=e195]:
+          - link [ref=e197] [cursor=pointer]:
+            - /url: /watch?v=AWsGWt-VMl8
+            - img [ref=e199]
+            - img [ref=e202]:
+              - generic [ref=e203]: 0:12
+            - generic:
+              - generic: Текущее видео
+              - generic:
+                - img
+          - generic [ref=e204] [cursor=pointer]:
+            - generic [ref=e205]:
+              - generic [ref=e206]:
+                - heading "ПЕРЕСТАНЬТЕ ДЕЛАТЬ ЭТУ ОШИБКУ В ВЕРТИКАЛЬНОЙ ТЯГЕ‼️ 12 секунд" [level=3] [ref=e207]:
+                  - link "ПЕРЕСТАНЬТЕ ДЕЛАТЬ ЭТУ ОШИБКУ В ВЕРТИКАЛЬНОЙ ТЯГЕ‼️ 12 секунд" [ref=e208]:
+                    - /url: /watch?v=AWsGWt-VMl8
+                    - text: ПЕРЕСТАНЬТЕ ДЕЛАТЬ ЭТУ ОШИБКУ В ВЕРТИКАЛЬНОЙ ТЯГЕ‼️
+                - button "Меню действий" [ref=e212]:
+                  - generic [ref=e215]:
+                    - img
+              - generic [ref=e217]:
+                - generic [ref=e218]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e222]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e223]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e224]: •
+                - generic [ref=e225]:
+                  - generic [ref=e226]: 2,8 млн просмотров
+                  - generic [ref=e227]: •3 года назад
+            - generic [ref=e228]: "► Полный план тренировок и питания: https://seriousshred.com ❌ Перестаньте использовать узкий хват для вертикальных..."
+        - generic [ref=e232]:
+          - link [ref=e234] [cursor=pointer]:
+            - /url: /watch?v=IYfLFuGKFLI
+            - img [ref=e236]
+            - img [ref=e239]:
+              - generic [ref=e240]: 0:10
+            - generic:
+              - generic: Текущее видео
+              - generic:
+                - img
+          - generic [ref=e241] [cursor=pointer]:
+            - generic [ref=e242]:
+              - generic [ref=e243]:
+                - heading "STOP Doing Upright Rows LIKE THIS! 10 секунд" [level=3] [ref=e244]:
+                  - link "STOP Doing Upright Rows LIKE THIS! 10 секунд" [ref=e245]:
+                    - /url: /watch?v=IYfLFuGKFLI
+                    - text: STOP Doing Upright Rows LIKE THIS!
+                - button "Меню действий" [ref=e249]:
+                  - generic [ref=e252]:
+                    - img
+              - generic [ref=e254]:
+                - generic [ref=e255]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e259]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e260]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e261]: •
+                - generic [ref=e262]:
+                  - generic [ref=e263]: 944 тыс. просмотров
+                  - generic [ref=e264]: •3 года назад
+            - generic [ref=e265]: "❌ Stop pulling too high! Save your shoulders! For a training plan with form tips, visit https://deltabolic.com I’ll answer your questions or coach you 1:1 here: https://stan.store/deltabol..."
+        - generic [ref=e269]:
+          - link [ref=e271] [cursor=pointer]:
+            - /url: /watch?v=-1ye_NmuzS0
+            - img [ref=e273]
+            - img [ref=e276]:
+              - generic [ref=e277]: 0:18
+            - generic:
+              - generic: Текущее видео
+              - generic:
+                - img
+          - generic [ref=e278] [cursor=pointer]:
+            - generic [ref=e279]:
+              - generic [ref=e280]:
+                - heading "Barbell Row Variations (KNOW THE DIFFERENCE!) 18 секунд" [level=3] [ref=e281]:
+                  - link "Barbell Row Variations (KNOW THE DIFFERENCE!) 18 секунд" [ref=e282]:
+                    - /url: /watch?v=-1ye_NmuzS0
+                    - text: Barbell Row Variations (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e286]:
+                  - generic [ref=e289]:
+                    - img
+              - generic [ref=e291]:
+                - generic [ref=e292]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e296]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e297]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e298]: •
+                - generic [ref=e299]:
+                  - generic [ref=e300]: 996 тыс. просмотров
+                  - generic [ref=e301]: •7 месяцев назад
+            - generic [ref=e302]: "Size & Shred Training Program 👉🏻 deltabolic.com Barbell Row Variations (KNOW THE DIFFERENCE!) Torso Parallel to the Ground: Hits the lats and mid-traps the hardest. Torso at ~45°:..."
+        - generic [ref=e306]:
+          - link [ref=e308] [cursor=pointer]:
+            - /url: /watch?v=Z3kjNh5UKqI
+          - generic [ref=e310] [cursor=pointer]:
+            - generic [ref=e311]:
+              - generic [ref=e312]:
+                - heading "Barbell Row Variations (KNOW THE DIFFERENCE!) 17 секунд" [level=3] [ref=e313]:
+                  - link "Barbell Row Variations (KNOW THE DIFFERENCE!) 17 секунд" [ref=e314]:
+                    - /url: /watch?v=Z3kjNh5UKqI
+                    - text: Barbell Row Variations (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e318]:
+                  - generic [ref=e321]:
+                    - img
+              - generic [ref=e323]:
+                - generic [ref=e324]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e328]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e329]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e330]: •
+                - generic [ref=e331]:
+                  - generic [ref=e332]: 1,7 млн просмотров
+                  - generic [ref=e333]: •1 год назад
+            - generic [ref=e334]: The barbell row engages all the muscles of your back to varying degrees, depending on your grip and pull technique. Using an underhand, narrow grip and pulling just below your belly button...
+        - generic [ref=e338]:
+          - link [ref=e340] [cursor=pointer]:
+            - /url: /watch?v=29-4QWdqd-g
+          - generic [ref=e342] [cursor=pointer]:
+            - generic [ref=e343]:
+              - generic [ref=e344]:
+                - heading "Dumbbell Upright Row Variations (KNOW THE DIFFERENCE!) 17 секунд" [level=3] [ref=e345]:
+                  - link "Dumbbell Upright Row Variations (KNOW THE DIFFERENCE!) 17 секунд" [ref=e346]:
+                    - /url: /watch?v=29-4QWdqd-g
+                    - text: Dumbbell Upright Row Variations (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e350]:
+                  - generic [ref=e353]:
+                    - img
+              - generic [ref=e355]:
+                - generic [ref=e356]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e360]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e361]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e362]: •
+                - generic [ref=e363]:
+                  - generic [ref=e364]: 1,3 млн просмотров
+                  - generic [ref=e365]: •1 год назад
+            - generic [ref=e366]: If you perform upright rows with the dumbbells close together, you'll work more of the front delts and upper traps. Holding them wider—about 1.5 times shoulder width—shifts more focus to...
+        - generic [ref=e370]:
+          - link [ref=e372] [cursor=pointer]:
+            - /url: /watch?v=phVtqawIgbk&pp=0gcJCdkKAYcqIYzv
+          - generic [ref=e374] [cursor=pointer]:
+            - generic [ref=e375]:
+              - generic [ref=e376]:
+                - heading "✅ The PERFECT Barbell Row 13 секунд" [level=3] [ref=e377]:
+                  - link "✅ The PERFECT Barbell Row 13 секунд" [ref=e378]:
+                    - /url: /watch?v=phVtqawIgbk&pp=0gcJCdkKAYcqIYzv
+                    - text: ✅ The PERFECT Barbell Row
+                - button "Меню действий" [ref=e382]:
+                  - generic [ref=e385]:
+                    - img
+              - generic [ref=e387]:
+                - generic [ref=e388]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e392]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e393]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e394]: •
+                - generic [ref=e395]:
+                  - generic [ref=e396]: 3 млн просмотров
+                  - generic [ref=e397]: •11 месяцев назад
+            - generic [ref=e398]: ✅ The PERFECT Barbell Row 1️⃣ Use a grip slightly wider than shoulder-width 2️⃣ Hinge to a 45° torso angle—stay stable 3️⃣ Start with your shoulder blades spread, then squeeze...
+        - generic [ref=e402]:
+          - link [ref=e404] [cursor=pointer]:
+            - /url: /watch?v=LM9C8z7g6K4
+          - generic [ref=e406] [cursor=pointer]:
+            - generic [ref=e407]:
+              - generic [ref=e408]:
+                - heading "🎯 TARGET ALL HEADS of the Shoulder on the Smith Machine! 14 секунд" [level=3] [ref=e409]:
+                  - link "🎯 TARGET ALL HEADS of the Shoulder on the Smith Machine! 14 секунд" [ref=e410]:
+                    - /url: /watch?v=LM9C8z7g6K4
+                    - text: 🎯 TARGET ALL HEADS of the Shoulder on the Smith Machine!
+                - button "Меню действий" [ref=e414]:
+                  - generic [ref=e417]:
+                    - img
+              - generic [ref=e419]:
+                - generic [ref=e420]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e424]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e425]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e426]: •
+                - generic [ref=e427]:
+                  - generic [ref=e428]: 2 млн просмотров
+                  - generic [ref=e429]: •1 год назад
+            - generic [ref=e430]: 🎯 TARGET All Heads of the Shoulders on the Smith Machine! Overhead Press – Primarily hits the front delts, with some side delt activation. Upright Row (pulling up to lower chest) –...
+        - generic [ref=e434]:
+          - link [ref=e436] [cursor=pointer]:
+            - /url: /watch?v=HROup6N-olM
+          - generic [ref=e438] [cursor=pointer]:
+            - generic [ref=e439]:
+              - generic [ref=e440]:
+                - heading "ХВАТИТ ЭТОГО ДЕЛАТЬ‼️ (Ошибка при тяге штанги в наклоне) 10 секунд" [level=3] [ref=e441]:
+                  - link "ХВАТИТ ЭТОГО ДЕЛАТЬ‼️ (Ошибка при тяге штанги в наклоне) 10 секунд" [ref=e442]:
+                    - /url: /watch?v=HROup6N-olM
+                    - text: ХВАТИТ ЭТОГО ДЕЛАТЬ‼️ (Ошибка при тяге штанги в наклоне)
+                - button "Меню действий" [ref=e446]:
+                  - generic [ref=e449]:
+                    - img
+              - generic [ref=e451]:
+                - generic [ref=e452]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e456]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e457]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e458]: •
+                - generic [ref=e459]:
+                  - generic [ref=e460]: 3,1 млн просмотров
+                  - generic [ref=e461]: •4 года назад
+            - generic [ref=e462]: "► Полный план тренировок и питания: https://seriousshred.com ❌ Перестаньте пожимать плечами во время тяги штанги..."
+        - generic [ref=e466]:
+          - link [ref=e468] [cursor=pointer]:
+            - /url: /watch?v=7SzAgsAVzMo
+          - generic [ref=e470] [cursor=pointer]:
+            - generic [ref=e471]:
+              - generic [ref=e472]:
+                - heading "Ширина хвата в тяге штанги в наклоне и задействованные мышцы 17 секунд" [level=3] [ref=e473]:
+                  - link "Ширина хвата в тяге штанги в наклоне и задействованные мышцы 17 секунд" [ref=e474]:
+                    - /url: /watch?v=7SzAgsAVzMo
+                    - text: Ширина хвата в тяге штанги в наклоне и задействованные мышцы
+                - button "Меню действий" [ref=e478]:
+                  - generic [ref=e481]:
+                    - img
+              - generic [ref=e483]:
+                - generic [ref=e484]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e488]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e489]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e490]: •
+                - generic [ref=e491]:
+                  - generic [ref=e492]: 2,4 млн просмотров
+                  - generic [ref=e493]: •6 месяцев назад
+            - generic [ref=e494]: Программа тренировок Size & Shred 👉🏻 deltabolic.com Ширина хвата и акцент на мышцы в тяге штанги Тяга штанги в наклон...
+        - generic [ref=e498]:
+          - link [ref=e500] [cursor=pointer]:
+            - /url: /watch?v=PdbAZdPzBgc
+          - generic [ref=e502] [cursor=pointer]:
+            - generic [ref=e503]:
+              - generic [ref=e504]:
+                - heading "Barbell Row Grip Widths & Muscles Worked! 15 секунд" [level=3] [ref=e505]:
+                  - link "Barbell Row Grip Widths & Muscles Worked! 15 секунд" [ref=e506]:
+                    - /url: /watch?v=PdbAZdPzBgc
+                    - text: Barbell Row Grip Widths & Muscles Worked!
+                - button "Меню действий" [ref=e510]:
+                  - generic [ref=e513]:
+                    - img
+              - generic [ref=e515]:
+                - generic [ref=e516]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e520]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e521]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e522]: •
+                - generic [ref=e523]:
+                  - generic [ref=e524]: 4 млн просмотров
+                  - generic [ref=e525]: •1 год назад
+            - generic [ref=e526]: When performing a barbell back row, nearly all the muscles in your back are engaged. However, grip width plays a key role in targeting specific areas. A shoulder-width grip places more emphasis...
+        - generic [ref=e530]:
+          - link [ref=e532] [cursor=pointer]:
+            - /url: /watch?v=03kdsF9ams0
+          - generic [ref=e534] [cursor=pointer]:
+            - generic [ref=e535]:
+              - generic [ref=e536]:
+                - heading "Barbell Row Variations (KNOW THE DIFFERENCE!) 21 секунда" [level=3] [ref=e537]:
+                  - link "Barbell Row Variations (KNOW THE DIFFERENCE!) 21 секунда" [ref=e538]:
+                    - /url: /watch?v=03kdsF9ams0
+                    - text: Barbell Row Variations (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e542]:
+                  - generic [ref=e545]:
+                    - img
+              - generic [ref=e547]:
+                - generic [ref=e548]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e552]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e553]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e554]: •
+                - generic [ref=e555]:
+                  - generic [ref=e556]: 1,1 млн просмотров
+                  - generic [ref=e557]: •1 год назад
+            - generic [ref=e558]: If you use a wide grip and pull the barbell to about chest height, you'll work the lateral delts. If you use a narrow grip and pull the barbell up to your collarbone, you'll work more of your...
+        - generic [ref=e562]:
+          - link [ref=e564] [cursor=pointer]:
+            - /url: /watch?v=LyZH4UGdDTc
+          - generic [ref=e566] [cursor=pointer]:
+            - generic [ref=e567]:
+              - generic [ref=e568]:
+                - heading "🛑 STOP Doing Cable Rows LIKE THIS! 8 секунд" [level=3] [ref=e569]:
+                  - link "🛑 STOP Doing Cable Rows LIKE THIS! 8 секунд" [ref=e570]:
+                    - /url: /watch?v=LyZH4UGdDTc
+                    - text: 🛑 STOP Doing Cable Rows LIKE THIS!
+                - button "Меню действий" [ref=e574]:
+                  - generic [ref=e577]:
+                    - img
+              - generic [ref=e579]:
+                - generic [ref=e580]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e584]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e585]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e586]: •
+                - generic [ref=e587]:
+                  - generic [ref=e588]: 18 млн просмотров
+                  - generic [ref=e589]: •1 год назад
+            - generic [ref=e590]: A common mistake in the cable row is excessive elbow flexion, which shifts tension from the lats to the biceps. This usually happens when you pull the handle too high toward your chest. To...
+        - generic [ref=e594]:
+          - link [ref=e596] [cursor=pointer]:
+            - /url: /watch?v=2fFIRmW5Quw
+          - generic [ref=e598] [cursor=pointer]:
+            - generic [ref=e599]:
+              - generic [ref=e600]:
+                - heading "Smith Machine Row Variations (KNOW THE DIFFERENCE!) 17 секунд" [level=3] [ref=e601]:
+                  - link "Smith Machine Row Variations (KNOW THE DIFFERENCE!) 17 секунд" [ref=e602]:
+                    - /url: /watch?v=2fFIRmW5Quw
+                    - text: Smith Machine Row Variations (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e606]:
+                  - generic [ref=e609]:
+                    - img
+              - generic [ref=e611]:
+                - generic [ref=e612]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e616]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e617]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e618]: •
+                - generic [ref=e619]:
+                  - generic [ref=e620]: 2,4 млн просмотров
+                  - generic [ref=e621]: •1 год назад
+            - generic [ref=e622]: Don’t miss out—once it’s gone, it’s gone! 👀💨 Smith Machine Row Variations (KNOW THE DIFFERENCE!) If you use an underhand, narrow grip and pull the bar towards your belly button,...
+        - generic [ref=e626]:
+          - link [ref=e628] [cursor=pointer]:
+            - /url: /watch?v=Sr2q7i-i8X0
+          - generic [ref=e630] [cursor=pointer]:
+            - generic [ref=e631]:
+              - generic [ref=e632]:
+                - heading "✅ The PERFECT Landmine Row 15 секунд" [level=3] [ref=e633]:
+                  - link "✅ The PERFECT Landmine Row 15 секунд" [ref=e634]:
+                    - /url: /watch?v=Sr2q7i-i8X0
+                    - text: ✅ The PERFECT Landmine Row
+                - button "Меню действий" [ref=e638]:
+                  - generic [ref=e641]:
+                    - img
+              - generic [ref=e643]:
+                - generic [ref=e644]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e648]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e649]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e650]: •
+                - generic [ref=e651]:
+                  - generic [ref=e652]: 4 млн просмотров
+                  - generic [ref=e653]: •7 месяцев назад
+            - generic [ref=e654]: ✅ The PERFECT Landmine Row 1️⃣ Use a thumbless grip – this shifts more load to your back muscles and less to your forearms. 2️⃣ Bend your knees slightly – it keeps you balanced...
+        - generic [ref=e658]:
+          - link [ref=e660] [cursor=pointer]:
+            - /url: /watch?v=nuXHm4LjK3E
+          - generic [ref=e662] [cursor=pointer]:
+            - generic [ref=e663]:
+              - generic [ref=e664]:
+                - heading "Barbell Shoulder Exercise Variations (KNOW THE DIFFERENCE!) 22 секунды" [level=3] [ref=e665]:
+                  - link "Barbell Shoulder Exercise Variations (KNOW THE DIFFERENCE!) 22 секунды" [ref=e666]:
+                    - /url: /watch?v=nuXHm4LjK3E
+                    - text: Barbell Shoulder Exercise Variations (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e670]:
+                  - generic [ref=e673]:
+                    - img
+              - generic [ref=e675]:
+                - generic [ref=e676]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e680]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e681]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e682]: •
+                - generic [ref=e683]:
+                  - generic [ref=e684]: 792 тыс. просмотров
+                  - generic [ref=e685]: •1 год назад
+            - generic [ref=e686]: If you perform overhead barbell presses, you'll target the front and lateral heads of the shoulders. If you raise the barbell in front of you, you'll target the anterior head of the shoulders....
+        - generic [ref=e690]:
+          - link [ref=e692] [cursor=pointer]:
+            - /url: /watch?v=hspEue8skUc
+          - generic [ref=e694] [cursor=pointer]:
+            - generic [ref=e695]:
+              - generic [ref=e696]:
+                - 'heading "Want Bigger Traps? DO THESE! #shorts 18 секунд" [level=3] [ref=e697]':
+                  - 'link "Want Bigger Traps? DO THESE! #shorts 18 секунд" [ref=e698]':
+                    - /url: /watch?v=hspEue8skUc
+                    - text: "Want Bigger Traps? DO THESE! #shorts"
+                - button "Меню действий" [ref=e702]:
+                  - generic [ref=e705]:
+                    - img
+              - generic [ref=e707]:
+                - generic [ref=e708]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e712]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e713]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e714]: •
+                - generic [ref=e715]:
+                  - generic [ref=e716]: 3,4 млн просмотров
+                  - generic [ref=e717]: •4 года назад
+            - generic [ref=e718]: "Full Workout & Diet Plan: https://seriousshred.com ► Sign-Up for Amazon Price Free 30-Day Trial: https://amzn.to/33kpB19 ► Try Audible Plus Free for 30 Days: https://amzn.to/3tfRW3A ►..."
+        - generic [ref=e722]:
+          - link [ref=e724] [cursor=pointer]:
+            - /url: /watch?v=S5jNFL_jzBU&pp=0gcJCdkKAYcqIYzv
+          - generic [ref=e726] [cursor=pointer]:
+            - generic [ref=e727]:
+              - generic [ref=e728]:
+                - heading "Cable Row Variations (KNOW THE DIFFERENCE!) 16 секунд" [level=3] [ref=e729]:
+                  - link "Cable Row Variations (KNOW THE DIFFERENCE!) 16 секунд" [ref=e730]:
+                    - /url: /watch?v=S5jNFL_jzBU&pp=0gcJCdkKAYcqIYzv
+                    - text: Cable Row Variations (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e734]:
+                  - generic [ref=e737]:
+                    - img
+              - generic [ref=e739]:
+                - generic [ref=e740]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e744]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e745]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e746]: •
+                - generic [ref=e747]:
+                  - generic [ref=e748]: 2,1 млн просмотров
+                  - generic [ref=e749]: •1 год назад
+            - generic [ref=e750]: "When performing cable rows, your body angle affects muscle engagement: 1) Upright posture: Primarily targets the lats and lower-to-middle traps. 2) Leaning forward: Places greater emphasis..."
+        - generic [ref=e754]:
+          - link [ref=e756] [cursor=pointer]:
+            - /url: /watch?v=vu_YDt9nGv4
+          - generic [ref=e758] [cursor=pointer]:
+            - generic [ref=e759]:
+              - generic [ref=e760]:
+                - heading "❌ DON'T DO THIS on the Dumbbell Row! 6 секунд" [level=3] [ref=e761]:
+                  - link "❌ DON'T DO THIS on the Dumbbell Row! 6 секунд" [ref=e762]:
+                    - /url: /watch?v=vu_YDt9nGv4
+                    - text: ❌ DON'T DO THIS on the Dumbbell Row!
+                - button "Меню действий" [ref=e766]:
+                  - generic [ref=e769]:
+                    - img
+              - generic [ref=e771]:
+                - generic [ref=e772]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e776]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e777]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e778]: •
+                - generic [ref=e779]:
+                  - generic [ref=e780]: 2 млн просмотров
+                  - generic [ref=e781]: •10 месяцев назад
+            - generic [ref=e782]: ❌ DON’T DO THIS on Dumbbell Rows! A common beginner mistake is shrugging the shoulders while rowing — this overactivates the upper traps and takes tension off the lats. ✅ Instead,...
+        - generic [ref=e786]:
+          - link [ref=e788] [cursor=pointer]:
+            - /url: /watch?v=97l-j9G7qXs
+          - generic [ref=e790] [cursor=pointer]:
+            - generic [ref=e791]:
+              - generic [ref=e792]:
+                - heading "Dumbbell Row Mistake (DON’T DO THIS!) 14 секунд" [level=3] [ref=e793]:
+                  - link "Dumbbell Row Mistake (DON’T DO THIS!) 14 секунд" [ref=e794]:
+                    - /url: /watch?v=97l-j9G7qXs
+                    - text: Dumbbell Row Mistake (DON’T DO THIS!)
+                - button "Меню действий" [ref=e798]:
+                  - generic [ref=e801]:
+                    - img
+              - generic [ref=e803]:
+                - generic [ref=e804]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e808]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e809]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e810]: •
+                - generic [ref=e811]:
+                  - generic [ref=e812]: 2,7 млн просмотров
+                  - generic [ref=e813]: •2 года назад
+            - generic [ref=e814]: Stop holding the dumbbell tilted upward like this on the dumbbell row. Doing so increases biceps involvement and decreases back engagement. Instead,tilt the dumbbell slightly downward to...
+        - generic [ref=e818]:
+          - link [ref=e820] [cursor=pointer]:
+            - /url: /watch?v=wZtTzxbosHo
+          - generic [ref=e822] [cursor=pointer]:
+            - generic [ref=e823]:
+              - generic [ref=e824]:
+                - heading "Want a BIGGER Back? DO THIS! 17 секунд" [level=3] [ref=e825]:
+                  - link "Want a BIGGER Back? DO THIS! 17 секунд" [ref=e826]:
+                    - /url: /watch?v=wZtTzxbosHo
+                    - text: Want a BIGGER Back? DO THIS!
+                - button "Меню действий" [ref=e830]:
+                  - generic [ref=e833]:
+                    - img
+              - generic [ref=e835]:
+                - generic [ref=e836]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e840]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e841]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e842]: •
+                - generic [ref=e843]:
+                  - generic [ref=e844]: 8,5 млн просмотров
+                  - generic [ref=e845]: •3 года назад
+            - generic [ref=e846]: "✅ Do THESE row variations to hit all the back muscles For a Full Gym Workout & Diet Plan: https://deltabolic.com I’ll answer your questions or coach you 1:1 here: https://stan.store/deltabol..."
+        - generic [ref=e850]:
+          - link [ref=e852] [cursor=pointer]:
+            - /url: /watch?v=4LBVP2Oe7fg
+          - generic [ref=e854] [cursor=pointer]:
+            - generic [ref=e855]:
+              - generic [ref=e856]:
+                - heading "✅ The PERFECT Barbell Overhead Press 14 секунд" [level=3] [ref=e857]:
+                  - link "✅ The PERFECT Barbell Overhead Press 14 секунд" [ref=e858]:
+                    - /url: /watch?v=4LBVP2Oe7fg
+                    - text: ✅ The PERFECT Barbell Overhead Press
+                - button "Меню действий" [ref=e862]:
+                  - generic [ref=e865]:
+                    - img
+              - generic [ref=e867]:
+                - generic [ref=e868]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e872]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e873]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e874]: •
+                - generic [ref=e875]:
+                  - generic [ref=e876]: 1,2 млн просмотров
+                  - generic [ref=e877]: •6 месяцев назад
+            - generic [ref=e878]: Size & Shred Training Program 👉🏻 deltabolic.com ✅ The PERFECT Barbell Overhead Press 1️⃣ Set the J-hooks around upper chest height 2️⃣ Grip the bar just outside shoulder-width...
+        - generic [ref=e882]:
+          - link [ref=e884] [cursor=pointer]:
+            - /url: /watch?v=azAYQHhjiSc
+          - generic [ref=e886] [cursor=pointer]:
+            - generic [ref=e887]:
+              - generic [ref=e888]:
+                - heading "Best Landmine Workout for BIGGER Shoulders 20 секунд" [level=3] [ref=e889]:
+                  - link "Best Landmine Workout for BIGGER Shoulders 20 секунд" [ref=e890]:
+                    - /url: /watch?v=azAYQHhjiSc
+                    - text: Best Landmine Workout for BIGGER Shoulders
+                - button "Меню действий" [ref=e894]:
+                  - generic [ref=e897]:
+                    - img
+              - generic [ref=e899]:
+                - generic [ref=e900]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e904]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e905]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e906]: •
+                - generic [ref=e907]:
+                  - generic [ref=e908]: 178 тыс. просмотров
+                  - generic [ref=e909]: •2 года назад
+            - generic [ref=e910]: For a gym full training plan, visit https://deltabolic.com Wanna build bigger shoulders? Here are the best landmine exercises to do that. First is the landmine shoulder press to target the...
+        - generic [ref=e914]:
+          - link [ref=e916] [cursor=pointer]:
+            - /url: /watch?v=KqobVMSpqfE
+          - generic [ref=e918] [cursor=pointer]:
+            - generic [ref=e919]:
+              - generic [ref=e920]:
+                - heading "4 упражнения для плечевого пояса на тренажере Смита, которые вам стоит попробовать 18 секунд" [level=3] [ref=e921]:
+                  - link "4 упражнения для плечевого пояса на тренажере Смита, которые вам стоит попробовать 18 секунд" [ref=e922]:
+                    - /url: /watch?v=KqobVMSpqfE
+                    - text: 4 упражнения для плечевого пояса на тренажере Смита, которые вам стоит попробовать
+                - button "Меню действий" [ref=e926]:
+                  - generic [ref=e929]:
+                    - img
+              - generic [ref=e931]:
+                - generic [ref=e932]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e936]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e937]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e938]: •
+                - generic [ref=e939]:
+                  - generic [ref=e940]: 690 тыс. просмотров
+                  - generic [ref=e941]: •4 дня назад
+            - generic [ref=e942]: Одежда от @dfyne.official - используйте код DELTA для скидки 10% на https://dfyne.com?sca_ref=9775890.oU7ZIzut40 4 упражнения для плеч на...
+        - generic [ref=e946]:
+          - link [ref=e948] [cursor=pointer]:
+            - /url: /watch?v=fLWleJdMXH0&pp=0gcJCdkKAYcqIYzv
+          - generic [ref=e950] [cursor=pointer]:
+            - generic [ref=e951]:
+              - generic [ref=e952]:
+                - heading "Barbell Row Mistake (STOP DOING THIS!) 11 секунд" [level=3] [ref=e953]:
+                  - link "Barbell Row Mistake (STOP DOING THIS!) 11 секунд" [ref=e954]:
+                    - /url: /watch?v=fLWleJdMXH0&pp=0gcJCdkKAYcqIYzv
+                    - text: Barbell Row Mistake (STOP DOING THIS!)
+                - button "Меню действий" [ref=e958]:
+                  - generic [ref=e961]:
+                    - img
+              - generic [ref=e963]:
+                - generic [ref=e964]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e968]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e969]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e970]: •
+                - generic [ref=e971]:
+                  - generic [ref=e972]: 278 тыс. просмотров
+                  - generic [ref=e973]: •4 года назад
+            - generic [ref=e974]: "► Full Workout & Diet Plan: https://seriousshred.com A common barbell row mistake is standing too upright as you pull, shifting away from the lats and to the upper traps. Instead, keep..."
+        - generic [ref=e978]:
+          - link [ref=e980] [cursor=pointer]:
+            - /url: /watch?v=WkFX6_GxAs8
+          - generic [ref=e982] [cursor=pointer]:
+            - generic [ref=e983]:
+              - generic [ref=e984]:
+                - heading "The PERFECT Dumbbell Row 9 секунд" [level=3] [ref=e985]:
+                  - link "The PERFECT Dumbbell Row 9 секунд" [ref=e986]:
+                    - /url: /watch?v=WkFX6_GxAs8
+                    - text: The PERFECT Dumbbell Row
+                - button "Меню действий" [ref=e990]:
+                  - generic [ref=e993]:
+                    - img
+              - generic [ref=e995]:
+                - generic [ref=e996]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1000]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1001]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1002]: •
+                - generic [ref=e1003]:
+                  - generic [ref=e1004]: 5,3 млн просмотров
+                  - generic [ref=e1005]: •1 год назад
+            - generic [ref=e1006]: The PERFECT Dumbbell Row Bench Setup – Use a bench with a slight incline and rest your non-working hand on the raised edge. Placing your hand on a flat bench is too low in my opinion. A...
+        - generic [ref=e1010]:
+          - link [ref=e1012] [cursor=pointer]:
+            - /url: /watch?v=4v59ShSjX2w
+          - generic [ref=e1014] [cursor=pointer]:
+            - generic [ref=e1015]:
+              - generic [ref=e1016]:
+                - heading "✅ BIGGER Back Workout (DO THESE!) 19 секунд" [level=3] [ref=e1017]:
+                  - link "✅ BIGGER Back Workout (DO THESE!) 19 секунд" [ref=e1018]:
+                    - /url: /watch?v=4v59ShSjX2w
+                    - text: ✅ BIGGER Back Workout (DO THESE!)
+                - button "Меню действий" [ref=e1022]:
+                  - generic [ref=e1025]:
+                    - img
+              - generic [ref=e1027]:
+                - generic [ref=e1028]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1032]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1033]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1034]: •
+                - generic [ref=e1035]:
+                  - generic [ref=e1036]: 1,6 млн просмотров
+                  - generic [ref=e1037]: •8 месяцев назад
+            - generic [ref=e1038]: ✅ BIGGER BACK WORKOUT (DO THESE!) 1️⃣ Single-Arm Dumbbell Row Elbows tucked and pulling straight back — emphasizes your lats and teres major 2️⃣ Chest-Supported Row (45° Bench)...
+        - generic [ref=e1042]:
+          - link [ref=e1044] [cursor=pointer]:
+            - /url: /watch?v=LjP2Ut-Rczs
+          - generic [ref=e1046] [cursor=pointer]:
+            - generic [ref=e1047]:
+              - generic [ref=e1048]:
+                - heading "Cable Row Attachments (KNOW THE DIFFERENCE!) 19 секунд" [level=3] [ref=e1049]:
+                  - link "Cable Row Attachments (KNOW THE DIFFERENCE!) 19 секунд" [ref=e1050]:
+                    - /url: /watch?v=LjP2Ut-Rczs
+                    - text: Cable Row Attachments (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e1054]:
+                  - generic [ref=e1057]:
+                    - img
+              - generic [ref=e1059]:
+                - generic [ref=e1060]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1064]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1065]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1066]: •
+                - generic [ref=e1067]:
+                  - generic [ref=e1068]: 20 млн просмотров
+                  - generic [ref=e1069]: •1 год назад
+            - generic [ref=e1070]: "The attachment and pulling angle on cable rows make a huge difference in muscle activation: 🔹 V-Handle Attachment – Pull low towards your belly button to target your lats. 🔹 Medium..."
+        - generic [ref=e1074]:
+          - link [ref=e1076] [cursor=pointer]:
+            - /url: /watch?v=QelgBRgIsjY
+          - generic [ref=e1078] [cursor=pointer]:
+            - generic [ref=e1079]:
+              - generic [ref=e1080]:
+                - heading "Low Cable Row Variations (KNOW THE DIFFERENCE!) 18 секунд" [level=3] [ref=e1081]:
+                  - link "Low Cable Row Variations (KNOW THE DIFFERENCE!) 18 секунд" [ref=e1082]:
+                    - /url: /watch?v=QelgBRgIsjY
+                    - text: Low Cable Row Variations (KNOW THE DIFFERENCE!)
+                - button "Меню действий" [ref=e1086]:
+                  - generic [ref=e1089]:
+                    - img
+              - generic [ref=e1091]:
+                - generic [ref=e1092]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1096]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1097]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1098]: •
+                - generic [ref=e1099]:
+                  - generic [ref=e1100]: 1,6 млн просмотров
+                  - generic [ref=e1101]: •1 год назад
+            - generic [ref=e1102]: Low-to-High Cable Row Variations If you use a narrow underhand grip and perform low-to-high cable rows, pulling toward your belly button, you'll emphasize the middle-to-lower lats. A medium...
+        - generic [ref=e1106]:
+          - link [ref=e1108] [cursor=pointer]:
+            - /url: /watch?v=U2gMn8GXr2A
+          - generic [ref=e1110] [cursor=pointer]:
+            - generic [ref=e1111]:
+              - generic [ref=e1112]:
+                - heading "You're Doing Lateral Raises WRONG — Here's Why It Hurts! 6 секунд" [level=3] [ref=e1113]:
+                  - link "You're Doing Lateral Raises WRONG — Here's Why It Hurts! 6 секунд" [ref=e1114]:
+                    - /url: /watch?v=U2gMn8GXr2A
+                    - text: You're Doing Lateral Raises WRONG — Here's Why It Hurts!
+                - button "Меню действий" [ref=e1118]:
+                  - generic [ref=e1121]:
+                    - img
+              - generic [ref=e1123]:
+                - generic [ref=e1124]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1128]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1129]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1130]: •
+                - generic [ref=e1131]:
+                  - generic [ref=e1132]: 1,8 млн просмотров
+                  - generic [ref=e1133]: •11 месяцев назад
+            - generic [ref=e1134]: ❌ You're Doing Lateral Raises WRONG — Here's Why It Hurts! A common mistake during lateral raises is keeping your arms completely straight and lifting the dumbbells directly out to your...
+        - generic [ref=e1138]:
+          - link [ref=e1140] [cursor=pointer]:
+            - /url: /watch?v=H_QkInZ6t9Q
+          - generic [ref=e1142] [cursor=pointer]:
+            - generic [ref=e1143]:
+              - generic [ref=e1144]:
+                - heading "✅ BIGGER Shoulders Workout 21 секунда" [level=3] [ref=e1145]:
+                  - link "✅ BIGGER Shoulders Workout 21 секунда" [ref=e1146]:
+                    - /url: /watch?v=H_QkInZ6t9Q
+                    - text: ✅ BIGGER Shoulders Workout
+                - button "Меню действий" [ref=e1150]:
+                  - generic [ref=e1153]:
+                    - img
+              - generic [ref=e1155]:
+                - generic [ref=e1156]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1160]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1161]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1162]: •
+                - generic [ref=e1163]:
+                  - generic [ref=e1164]: 2,9 млн просмотров
+                  - generic [ref=e1165]: •8 месяцев назад
+            - generic [ref=e1166]: "✅ BIGGER Shoulders Workout 1) Seated Dumbbell Shoulder Press (70° incline): Targets the front delts with support from the side delts. 3 sets of 8–10 reps 2) Incline Lateral Raises (70°..."
+        - generic [ref=e1170]:
+          - link [ref=e1172] [cursor=pointer]:
+            - /url: /watch?v=P5MXRuWV7Cs
+          - generic [ref=e1174] [cursor=pointer]:
+            - generic [ref=e1175]:
+              - generic [ref=e1176]:
+                - heading "🚫 Stop Doing THIS on Cable Rows! 13 секунд" [level=3] [ref=e1177]:
+                  - link "🚫 Stop Doing THIS on Cable Rows! 13 секунд" [ref=e1178]:
+                    - /url: /watch?v=P5MXRuWV7Cs
+                    - text: 🚫 Stop Doing THIS on Cable Rows!
+                - button "Меню действий" [ref=e1182]:
+                  - generic [ref=e1185]:
+                    - img
+              - generic [ref=e1187]:
+                - generic [ref=e1188]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1192]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1193]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1194]: •
+                - generic [ref=e1195]:
+                  - generic [ref=e1196]: 1,2 млн просмотров
+                  - generic [ref=e1197]: •9 месяцев назад
+            - generic [ref=e1198]: "🚫 Stop Doing THIS on Cable Rows! Fix these mistakes to actually target your back: 1️⃣ Using a full grip A full grip isn’t wrong, but gripping too hard shifts tension to your forearms...."
+        - generic [ref=e1202]:
+          - link [ref=e1204] [cursor=pointer]:
+            - /url: /watch?v=S481pmnNTYY
+          - generic [ref=e1206] [cursor=pointer]:
+            - generic [ref=e1207]:
+              - generic [ref=e1208]:
+                - heading "❌ FIX THIS Lat Pulldown Mistake! 7 секунд" [level=3] [ref=e1209]:
+                  - link "❌ FIX THIS Lat Pulldown Mistake! 7 секунд" [ref=e1210]:
+                    - /url: /watch?v=S481pmnNTYY
+                    - text: ❌ FIX THIS Lat Pulldown Mistake!
+                - button "Меню действий" [ref=e1214]:
+                  - generic [ref=e1217]:
+                    - img
+              - generic [ref=e1219]:
+                - generic [ref=e1220]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1224]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1225]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1226]: •
+                - generic [ref=e1227]:
+                  - generic [ref=e1228]: 11 млн просмотров
+                  - generic [ref=e1229]: •1 год назад
+            - generic [ref=e1230]: "A common misconception is that you should keep your shoulders depressed throughout the entire lat pulldown. However, this actually limits a key component of the movement: the lat stretch, which..."
+        - generic [ref=e1234]:
+          - link [ref=e1236] [cursor=pointer]:
+            - /url: /watch?v=zoN5EH50Dro
+          - generic [ref=e1238] [cursor=pointer]:
+            - generic [ref=e1239]:
+              - generic [ref=e1240]:
+                - heading "Perfect Overhead Press Form (DO THIS!) 11 секунд" [level=3] [ref=e1241]:
+                  - link "Perfect Overhead Press Form (DO THIS!) 11 секунд" [ref=e1242]:
+                    - /url: /watch?v=zoN5EH50Dro
+                    - text: Perfect Overhead Press Form (DO THIS!)
+                - button "Меню действий" [ref=e1246]:
+                  - generic [ref=e1249]:
+                    - img
+              - generic [ref=e1251]:
+                - generic [ref=e1252]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1256]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1257]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1258]: •
+                - generic [ref=e1259]:
+                  - generic [ref=e1260]: 9,9 млн просмотров
+                  - generic [ref=e1261]: •1 год назад
+            - generic [ref=e1262]: "Perfect Barbell Overhead Press Form Tips: 1) Keep Shoulders Depressed: This helps minimize trap engagement, allowing your deltoids to do the heavy lifting. 2) Bar shoulder end directly above..."
+        - generic [ref=e1266]:
+          - link [ref=e1268] [cursor=pointer]:
+            - /url: /watch?v=vqPY3fDessY
+          - generic [ref=e1270] [cursor=pointer]:
+            - generic [ref=e1271]:
+              - generic [ref=e1272]:
+                - heading "Cable Row Grip Widths & Muscles Worked! 14 секунд" [level=3] [ref=e1273]:
+                  - link "Cable Row Grip Widths & Muscles Worked! 14 секунд" [ref=e1274]:
+                    - /url: /watch?v=vqPY3fDessY
+                    - text: Cable Row Grip Widths & Muscles Worked!
+                - button "Меню действий" [ref=e1278]:
+                  - generic [ref=e1281]:
+                    - img
+              - generic [ref=e1283]:
+                - generic [ref=e1284]:
+                  - generic "Andrew Kwong (DeltaBolic)" [ref=e1288]:
+                    - link "Andrew Kwong (DeltaBolic)" [ref=e1289]:
+                      - /url: /@DeltaBolic
+                  - generic [ref=e1290]: •
+                - generic [ref=e1291]:
+                  - generic [ref=e1292]: 2,3 млн просмотров
+                  - generic [ref=e1293]: •1 год назад
+            - generic [ref=e1294]: When performing cable rows, you engage most of your back muscles, but adjusting your grip width can help you emphasize specific areas. A narrow grip with tucked elbows targets the lower back,...
+    - text: •

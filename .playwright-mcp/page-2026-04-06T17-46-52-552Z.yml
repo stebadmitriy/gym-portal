@@ -1,0 +1,143 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Гид" [ref=e9] [cursor=pointer]
+        - generic [ref=e11]:
+          - link "Главная страница YouTube" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e16]: BY
+        - button "Пропустить" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: Пропустить
+      - generic [ref=e25]:
+        - search [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - combobox "Введите запрос" [expanded] [ref=e30]
+              - button [ref=e33] [cursor=pointer]
+            - button "Search" [ref=e34] [cursor=pointer]
+        - generic [ref=e37]:
+          - button "Голосовой поиск" [ref=e39] [cursor=pointer]
+          - tooltip "tooltip"
+  - navigation [ref=e50]
+  - main [ref=e52]:
+    - generic [ref=e59]:
+      - generic [ref=e75]:
+        - heading "Andrew Kwong (DeltaBolic)" [level=1] [ref=e77]
+        - generic [ref=e78]:
+          - generic [ref=e80]: "@DeltaBolic"
+          - generic [ref=e81]: •
+          - generic [ref=e82]:
+            - generic "2,63 миллиона подписчиков" [ref=e83]: 2,63 млн подписчиков
+            - generic [ref=e84]: •
+            - generic [ref=e85]: 875 видео
+        - generic [ref=e87] [cursor=pointer]:
+          - generic [ref=e88]: Easy-to-understand exercise tips to put on muscle and lose fat.
+          - button "Описание. Easy-to-understand exercise tips to put on muscle and lose fПодробнее…" [ref=e89]:
+            - generic [ref=e90]: …ещё
+        - generic [ref=e91]:
+          - link "deltabolic.com" [ref=e94] [cursor=pointer]:
+            - /url: https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqbmNldkEwQVpvVXZ0RVlHeGJrX29pWFppdTVfQXxBQ3Jtc0trdzJuSlNiX19ER1h1OHZpb1E0OWRfM2JuMlVzUkt4bTh6RmNHNlhmRXE1Q0tScnJHQTZLZ0VJZjcwTmZ3cHhLU2pVQ3ljYXZHWm9CdVhpbHlzUjB0WmtsSVoyOUZneW1RaFNiUElueGhTLXJLWk1Daw&q=https%3A%2F%2Fdeltabolic.com
+          - button "и ещё 2 ссылки" [ref=e97] [cursor=pointer]
+        - button "Подписаться" [ref=e101] [cursor=pointer]:
+          - generic [ref=e102]: Подписаться
+      - tablist [ref=e109]:
+        - tablist [ref=e113]:
+          - tab "Главная" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115]: Главная
+          - tab "Видео" [ref=e116] [cursor=pointer]:
+            - generic [ref=e117]: Видео
+          - tab "Shorts" [ref=e118] [cursor=pointer]:
+            - generic [ref=e119]: Shorts
+          - tab "Записи" [ref=e120] [cursor=pointer]:
+            - generic [ref=e121]: Записи
+          - generic [ref=e123]:
+            - button "Поиск" [ref=e125] [cursor=pointer]
+            - textbox "Поиск" [ref=e133]:
+              - /placeholder: ""
+              - text: barbell squat
+    - generic [ref=e141]:
+      - generic [ref=e145]:
+        - link [ref=e147] [cursor=pointer]:
+          - /url: /watch?v=dW3zj79xfrc
+        - generic [ref=e149] [cursor=pointer]:
+          - generic [ref=e150]:
+            - generic [ref=e151]:
+              - heading "✅ The PERFECT Barbell Squat 11 секунд" [level=3] [ref=e152]:
+                - link "✅ The PERFECT Barbell Squat 11 секунд" [ref=e153]:
+                  - /url: /watch?v=dW3zj79xfrc
+                  - text: ✅ The PERFECT Barbell Squat
+              - button "Меню действий" [ref=e157]
+            - generic [ref=e160]:
+              - generic [ref=e161]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e165]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e166]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e167]: •
+              - generic [ref=e168]:
+                - generic [ref=e169]: 786 тыс. просмотров
+                - generic [ref=e170]: •5 месяцев назад
+          - generic [ref=e171]: Size & Shred Training program 👉🏻 deltabolic.com ✅ The PERFECT Barbell Squat 1️⃣ Keep your knees in line with your toes — don’t let them cave in as you rise. 2️⃣ The bar...
+      - generic [ref=e175]:
+        - link [ref=e177] [cursor=pointer]:
+          - /url: /watch?v=iKCJCydYYrE
+        - generic [ref=e179] [cursor=pointer]:
+          - generic [ref=e180]:
+            - generic [ref=e181]:
+              - heading "✅ The PERFECT Smith Machine Squat 10 секунд" [level=3] [ref=e182]:
+                - link "✅ The PERFECT Smith Machine Squat 10 секунд" [ref=e183]:
+                  - /url: /watch?v=iKCJCydYYrE
+                  - text: ✅ The PERFECT Smith Machine Squat
+              - button "Меню действий" [ref=e187]
+            - generic [ref=e190]:
+              - generic [ref=e191]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e195]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e196]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e197]: •
+              - generic [ref=e198]:
+                - generic [ref=e199]: 2,7 млн просмотров
+                - generic [ref=e200]: •9 месяцев назад
+          - generic [ref=e201]: "✅ The PERFECT Smith Machine Squat Hand Placement: Position your hands as close to your shoulders as your mobility comfortably allows. Pull the bar into your traps and squeeze your shoulder..."
+      - generic [ref=e205]:
+        - link [ref=e207] [cursor=pointer]:
+          - /url: /watch?v=Ak1iHbEeeY8
+        - generic [ref=e209] [cursor=pointer]:
+          - generic [ref=e210]:
+            - generic [ref=e211]:
+              - heading "FIX THESE Squat Mistakes! 11 секунд" [level=3] [ref=e212]:
+                - link "FIX THESE Squat Mistakes! 11 секунд" [ref=e213]:
+                  - /url: /watch?v=Ak1iHbEeeY8
+                  - text: FIX THESE Squat Mistakes!
+              - button "Меню действий" [ref=e217]
+            - generic [ref=e220]:
+              - generic [ref=e221]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e225]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e226]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e227]: •
+              - generic [ref=e228]:
+                - generic [ref=e229]: 3,2 млн просмотров
+                - generic [ref=e230]: •1 год назад
+          - generic [ref=e231]: "Squat Mistakes and How to Fix Them MISTAKE #1: Rounding Your Back Rounding your back during a squat places unnecessary stress on your spine, increasing the risk of injury. FIX: Focus on keeping..."
+      - generic [ref=e235]:
+        - link [ref=e237] [cursor=pointer]:
+          - /url: /watch?v=_qv0m3tPd3s
+        - generic [ref=e239] [cursor=pointer]:
+          - generic [ref=e240]:
+            - generic [ref=e241]:
+              - heading "✅ The PERFECT Front Squat 15 секунд" [level=3] [ref=e242]:
+                - link "✅ The PERFECT Front Squat 15 секунд" [ref=e243]:
+                  - /url: /watch?v=_qv0m3tPd3s
+                  - text: ✅ The PERFECT Front Squat
+              - button "Меню действий" [ref=e247]
+            - generic [ref=e250]:
+              - generic [ref=e251]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e255]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e256]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e257]: •
+              - generic [ref=e258]:
+                - generic [ref=e259]: 1,1 млн просмотров
+                - generic [ref=e260]: •7 месяцев назад
+          - generic [ref=e261]: Size & Shred Training Program 👉🏻 deltabolic.com ✅ The PERFECT Front Squat 1) Grip the bar just outside shoulder width 2) Rest it securely across your front delts 3) Bend your wrists...

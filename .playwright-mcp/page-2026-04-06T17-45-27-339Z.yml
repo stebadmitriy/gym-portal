@@ -1,0 +1,143 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Гид" [ref=e9] [cursor=pointer]
+        - generic [ref=e11]:
+          - link "Главная страница YouTube" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e16]: BY
+        - button "Пропустить" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: Пропустить
+      - generic [ref=e25]:
+        - search [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - combobox "Введите запрос" [expanded] [ref=e30]
+              - button [ref=e33] [cursor=pointer]
+            - button "Search" [ref=e34] [cursor=pointer]
+        - generic [ref=e37]:
+          - button "Голосовой поиск" [ref=e39] [cursor=pointer]
+          - tooltip "tooltip"
+  - navigation [ref=e50]
+  - main [ref=e52]:
+    - generic [ref=e59]:
+      - generic [ref=e75]:
+        - heading "Andrew Kwong (DeltaBolic)" [level=1] [ref=e77]
+        - generic [ref=e78]:
+          - generic [ref=e80]: "@DeltaBolic"
+          - generic [ref=e81]: •
+          - generic [ref=e82]:
+            - generic "2,63 миллиона подписчиков" [ref=e83]: 2,63 млн подписчиков
+            - generic [ref=e84]: •
+            - generic [ref=e85]: 875 видео
+        - generic [ref=e87] [cursor=pointer]:
+          - generic [ref=e88]: Easy-to-understand exercise tips to put on muscle and lose fat.
+          - button "Описание. Easy-to-understand exercise tips to put on muscle and lose fПодробнее…" [ref=e89]:
+            - generic [ref=e90]: …ещё
+        - generic [ref=e91]:
+          - link "deltabolic.com" [ref=e94] [cursor=pointer]:
+            - /url: https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqbVVROTZrd2hZYm93RTVnbXR0NkU5MEF6bGpKUXxBQ3Jtc0tsM0tHTzFwMEdUb2dLcjZ2Z1VoS2Jtd3YxVDFuc3BqUzJtaUpMNExJaldWdXZjQ3k5ZWUxUzVwckljQ092UHQtNUw0WDZJdHdpS2xka21PR2tBWHZ3OTM0QzdwTVZycWV2Vk9MMjI5aHVHYm9pcVlPSQ&q=https%3A%2F%2Fdeltabolic.com
+          - button "и ещё 2 ссылки" [ref=e97] [cursor=pointer]
+        - button "Подписаться" [ref=e101] [cursor=pointer]:
+          - generic [ref=e102]: Подписаться
+      - tablist [ref=e109]:
+        - tablist [ref=e113]:
+          - tab "Главная" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115]: Главная
+          - tab "Видео" [ref=e116] [cursor=pointer]:
+            - generic [ref=e117]: Видео
+          - tab "Shorts" [ref=e118] [cursor=pointer]:
+            - generic [ref=e119]: Shorts
+          - tab "Записи" [ref=e120] [cursor=pointer]:
+            - generic [ref=e121]: Записи
+          - generic [ref=e123]:
+            - button "Поиск" [ref=e125] [cursor=pointer]
+            - textbox "Поиск" [ref=e133]:
+              - /placeholder: ""
+              - text: overhead press military
+    - generic [ref=e141]:
+      - generic [ref=e145]:
+        - link [ref=e147] [cursor=pointer]:
+          - /url: /watch?v=zoN5EH50Dro&pp=0gcJCdkKAYcqIYzv
+        - generic [ref=e149] [cursor=pointer]:
+          - generic [ref=e150]:
+            - generic [ref=e151]:
+              - heading "Perfect Overhead Press Form (DO THIS!) 11 секунд" [level=3] [ref=e152]:
+                - link "Perfect Overhead Press Form (DO THIS!) 11 секунд" [ref=e153]:
+                  - /url: /watch?v=zoN5EH50Dro&pp=0gcJCdkKAYcqIYzv
+                  - text: Perfect Overhead Press Form (DO THIS!)
+              - button "Меню действий" [ref=e157]
+            - generic [ref=e160]:
+              - generic [ref=e161]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e165]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e166]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e167]: •
+              - generic [ref=e168]:
+                - generic [ref=e169]: 9,9 млн просмотров
+                - generic [ref=e170]: •1 год назад
+          - generic [ref=e171]: "Perfect Barbell Overhead Press Form Tips: 1) Keep Shoulders Depressed: This helps minimize trap engagement, allowing your deltoids to do the heavy lifting. 2) Bar shoulder end directly above..."
+      - generic [ref=e175]:
+        - link [ref=e177] [cursor=pointer]:
+          - /url: /watch?v=4LBVP2Oe7fg
+        - generic [ref=e179] [cursor=pointer]:
+          - generic [ref=e180]:
+            - generic [ref=e181]:
+              - heading "✅ The PERFECT Barbell Overhead Press 14 секунд" [level=3] [ref=e182]:
+                - link "✅ The PERFECT Barbell Overhead Press 14 секунд" [ref=e183]:
+                  - /url: /watch?v=4LBVP2Oe7fg
+                  - text: ✅ The PERFECT Barbell Overhead Press
+              - button "Меню действий" [ref=e187]
+            - generic [ref=e190]:
+              - generic [ref=e191]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e195]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e196]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e197]: •
+              - generic [ref=e198]:
+                - generic [ref=e199]: 1,2 млн просмотров
+                - generic [ref=e200]: •6 месяцев назад
+          - generic [ref=e201]: Size & Shred Training Program 👉🏻 deltabolic.com ✅ The PERFECT Barbell Overhead Press 1️⃣ Set the J-hooks around upper chest height 2️⃣ Grip the bar just outside shoulder-width...
+      - generic [ref=e205]:
+        - link [ref=e207] [cursor=pointer]:
+          - /url: /watch?v=k6tzKisR3NY
+        - generic [ref=e209] [cursor=pointer]:
+          - generic [ref=e210]:
+            - generic [ref=e211]:
+              - heading "The PERFECT Dumbbell Shoulder Press (DO THIS!) 9 секунд" [level=3] [ref=e212]:
+                - link "The PERFECT Dumbbell Shoulder Press (DO THIS!) 9 секунд" [ref=e213]:
+                  - /url: /watch?v=k6tzKisR3NY
+                  - text: The PERFECT Dumbbell Shoulder Press (DO THIS!)
+              - button "Меню действий" [ref=e217]
+            - generic [ref=e220]:
+              - generic [ref=e221]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e225]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e226]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e227]: •
+              - generic [ref=e228]:
+                - generic [ref=e229]: 12 млн просмотров
+                - generic [ref=e230]: •1 год назад
+          - generic [ref=e231]: "The Perfect Dumbbell Shoulder Press: Key Tips 1️⃣ Adjust the Bench Angle: Set the bench to an incline of roughly 70 degrees. Avoid a fully upright 90-degree angle to reduce unnecessary..."
+      - generic [ref=e235]:
+        - link [ref=e237] [cursor=pointer]:
+          - /url: /watch?v=E7ngsffMPR0
+        - generic [ref=e239] [cursor=pointer]:
+          - generic [ref=e240]:
+            - generic [ref=e241]:
+              - heading "✅ The PERFECT Smith Machine Shoulder Press 13 секунд" [level=3] [ref=e242]:
+                - link "✅ The PERFECT Smith Machine Shoulder Press 13 секунд" [ref=e243]:
+                  - /url: /watch?v=E7ngsffMPR0
+                  - text: ✅ The PERFECT Smith Machine Shoulder Press
+              - button "Меню действий" [ref=e247]
+            - generic [ref=e250]:
+              - generic [ref=e251]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e255]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e256]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e257]: •
+              - generic [ref=e258]:
+                - generic [ref=e259]: 2,6 млн просмотров
+                - generic [ref=e260]: •8 месяцев назад
+          - generic [ref=e261]: "✅ The PERFECT Smith Machine Shoulder Press 1️⃣ Grip Width: Use a grip slightly wider than shoulder width (around 1.25–1.5x) to keep your forearms vertical and aligned. 2️⃣ Thumbless..."

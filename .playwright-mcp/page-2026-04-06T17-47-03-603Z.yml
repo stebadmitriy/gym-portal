@@ -1,0 +1,143 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Гид" [ref=e9] [cursor=pointer]
+        - generic [ref=e11]:
+          - link "Главная страница YouTube" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e16]: BY
+        - button "Пропустить" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: Пропустить
+      - generic [ref=e25]:
+        - search [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - combobox "Введите запрос" [expanded] [ref=e30]
+              - button [ref=e33] [cursor=pointer]
+            - button "Search" [ref=e34] [cursor=pointer]
+        - generic [ref=e37]:
+          - button "Голосовой поиск" [ref=e39] [cursor=pointer]
+          - tooltip "tooltip"
+  - navigation [ref=e50]
+  - main [ref=e52]:
+    - generic [ref=e59]:
+      - generic [ref=e75]:
+        - heading "Andrew Kwong (DeltaBolic)" [level=1] [ref=e77]
+        - generic [ref=e78]:
+          - generic [ref=e80]: "@DeltaBolic"
+          - generic [ref=e81]: •
+          - generic [ref=e82]:
+            - generic "2,63 миллиона подписчиков" [ref=e83]: 2,63 млн подписчиков
+            - generic [ref=e84]: •
+            - generic [ref=e85]: 875 видео
+        - generic [ref=e87] [cursor=pointer]:
+          - generic [ref=e88]: Easy-to-understand exercise tips to put on muscle and lose fat.
+          - button "Описание. Easy-to-understand exercise tips to put on muscle and lose fПодробнее…" [ref=e89]:
+            - generic [ref=e90]: …ещё
+        - generic [ref=e91]:
+          - link "deltabolic.com" [ref=e94] [cursor=pointer]:
+            - /url: https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqbXJ6WE1DdmpMR2V2WWY2Q2JvR2Fzc2hSZ25Nd3xBQ3Jtc0ttd1lnWExwQm1raEpRWnV3bnJGd3Z4Uk1WelByR2N1SnhidXBNZ3Qzakt1VzJidFF3VEMzMk9YTDViU242aFBtaDJmZE5OdWd4a1FRS3M4TG1qZk56T2pIMzh0ajBzRDg5bWYxelJRTmo1TVZGQ0xUNA&q=https%3A%2F%2Fdeltabolic.com
+          - button "и ещё 2 ссылки" [ref=e97] [cursor=pointer]
+        - button "Подписаться" [ref=e101] [cursor=pointer]:
+          - generic [ref=e102]: Подписаться
+      - tablist [ref=e109]:
+        - tablist [ref=e113]:
+          - tab "Главная" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115]: Главная
+          - tab "Видео" [ref=e116] [cursor=pointer]:
+            - generic [ref=e117]: Видео
+          - tab "Shorts" [ref=e118] [cursor=pointer]:
+            - generic [ref=e119]: Shorts
+          - tab "Записи" [ref=e120] [cursor=pointer]:
+            - generic [ref=e121]: Записи
+          - generic [ref=e123]:
+            - button "Поиск" [ref=e125] [cursor=pointer]
+            - textbox "Поиск" [ref=e133]:
+              - /placeholder: ""
+              - text: tricep rope pushdown cable
+    - generic [ref=e141]:
+      - generic [ref=e145]:
+        - link [ref=e147] [cursor=pointer]:
+          - /url: /watch?v=1FjkhpZsaxc
+        - generic [ref=e149] [cursor=pointer]:
+          - generic [ref=e150]:
+            - generic [ref=e151]:
+              - heading "The Perfect Triceps Pushdown (DO THIS!) 9 секунд" [level=3] [ref=e152]:
+                - link "The Perfect Triceps Pushdown (DO THIS!) 9 секунд" [ref=e153]:
+                  - /url: /watch?v=1FjkhpZsaxc
+                  - text: The Perfect Triceps Pushdown (DO THIS!)
+              - button "Меню действий" [ref=e157]
+            - generic [ref=e160]:
+              - generic [ref=e161]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e165]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e166]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e167]: •
+              - generic [ref=e168]:
+                - generic [ref=e169]: 3 млн просмотров
+                - generic [ref=e170]: •1 год назад
+          - generic [ref=e171]: "Triceps Pushdown Form Tips 1) Use a Thumbless Grip: Let the bar rest closer to the base of your palm. This reduces wrist strain, improves leverage, and makes it easier to keep your elbows..."
+      - generic [ref=e175]:
+        - link [ref=e177] [cursor=pointer]:
+          - /url: /watch?v=Rc7-euA8FDI
+        - generic [ref=e179] [cursor=pointer]:
+          - generic [ref=e180]:
+            - generic [ref=e181]:
+              - heading "STOP DOING These Tricep Pushdown Mistakes! 18 секунд" [level=3] [ref=e182]:
+                - link "STOP DOING These Tricep Pushdown Mistakes! 18 секунд" [ref=e183]:
+                  - /url: /watch?v=Rc7-euA8FDI
+                  - text: STOP DOING These Tricep Pushdown Mistakes!
+              - button "Меню действий" [ref=e187]
+            - generic [ref=e190]:
+              - generic [ref=e191]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e195]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e196]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e197]: •
+              - generic [ref=e198]:
+                - generic [ref=e199]: 4,7 млн просмотров
+                - generic [ref=e200]: •4 года назад
+          - generic [ref=e201]: "► Full Workout & Diet Plan: https://seriousshred.com Two common Tricep pushdown mistakes that are killing your triceps gains. The 1st mistake is standing completely straight, which limits..."
+      - generic [ref=e205]:
+        - link [ref=e207] [cursor=pointer]:
+          - /url: /watch?v=9qupVR7pKtk&pp=0gcJCdkKAYcqIYzv
+        - generic [ref=e209] [cursor=pointer]:
+          - generic [ref=e210]:
+            - generic [ref=e211]:
+              - heading "Cable Triceps Exercise Variations (KNOW THE DIFFERENCE!) 22 секунды" [level=3] [ref=e212]:
+                - link "Cable Triceps Exercise Variations (KNOW THE DIFFERENCE!) 22 секунды" [ref=e213]:
+                  - /url: /watch?v=9qupVR7pKtk&pp=0gcJCdkKAYcqIYzv
+                  - text: Cable Triceps Exercise Variations (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e217]
+            - generic [ref=e220]:
+              - generic [ref=e221]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e225]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e226]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e227]: •
+              - generic [ref=e228]:
+                - generic [ref=e229]: 1,6 млн просмотров
+                - generic [ref=e230]: •1 год назад
+          - generic [ref=e231]: "When performing tricep pushdowns with a cable D-handle, all three heads of the triceps are engaged. However, your grip determines which head is emphasized: Overhand grip: Focuses on the lateral..."
+      - generic [ref=e235]:
+        - link [ref=e237] [cursor=pointer]:
+          - /url: /watch?v=WjLJ7zIppXQ
+        - generic [ref=e239] [cursor=pointer]:
+          - generic [ref=e240]:
+            - generic [ref=e241]:
+              - heading "Ошибка при выполнении разгибания на трицепс (ПРЕКРАТИТЕ ЭТО ДЕЛАТЬ!) 10 секунд" [level=3] [ref=e242]:
+                - link "Ошибка при выполнении разгибания на трицепс (ПРЕКРАТИТЕ ЭТО ДЕЛАТЬ!) 10 секунд" [ref=e243]:
+                  - /url: /watch?v=WjLJ7zIppXQ
+                  - text: Ошибка при выполнении разгибания на трицепс (ПРЕКРАТИТЕ ЭТО ДЕЛАТЬ!)
+              - button "Меню действий" [ref=e247]
+            - generic [ref=e250]:
+              - generic [ref=e251]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e255]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e256]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e257]: •
+              - generic [ref=e258]:
+                - generic [ref=e259]: 3,4 млн просмотров
+                - generic [ref=e260]: •3 года назад
+          - generic [ref=e261]: Перестаньте сгибать запястье назад во время разгибаний на трицепс с прямой штангой! Зайдите на https://deltabolic.co...

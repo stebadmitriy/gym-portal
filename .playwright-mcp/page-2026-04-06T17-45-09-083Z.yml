@@ -1,0 +1,168 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Гид" [ref=e9] [cursor=pointer]
+        - generic [ref=e11]:
+          - link "Главная страница YouTube" [ref=e12] [cursor=pointer]:
+            - /url: /
+          - generic [ref=e16]: BY
+        - button "Пропустить" [ref=e20] [cursor=pointer]:
+          - generic [ref=e21]: Пропустить
+      - generic [ref=e25]:
+        - search [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]:
+              - combobox "Введите запрос" [expanded] [ref=e30]
+              - button [ref=e33] [cursor=pointer]
+            - button "Search" [ref=e34] [cursor=pointer]
+        - generic [ref=e37]:
+          - button "Голосовой поиск" [ref=e39] [cursor=pointer]
+          - tooltip "tooltip"
+  - navigation [ref=e50]
+  - main [ref=e52]:
+    - generic [ref=e59]:
+      - generic [ref=e75]:
+        - heading "Andrew Kwong (DeltaBolic)" [level=1] [ref=e77]
+        - generic [ref=e78]:
+          - generic [ref=e80]: "@DeltaBolic"
+          - generic [ref=e81]: •
+          - generic [ref=e82]:
+            - generic "2,63 миллиона подписчиков" [ref=e83]: 2,63 млн подписчиков
+            - generic [ref=e84]: •
+            - generic [ref=e85]: 875 видео
+        - generic [ref=e87] [cursor=pointer]:
+          - generic [ref=e88]: Easy-to-understand exercise tips to put on muscle and lose fat.
+          - button "Описание. Easy-to-understand exercise tips to put on muscle and lose fПодробнее…" [ref=e89]:
+            - generic [ref=e90]: …ещё
+        - generic [ref=e91]:
+          - link "deltabolic.com" [ref=e94] [cursor=pointer]:
+            - /url: https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqa2RoT2N3bUV4b3N1VVVhLXRSVEUtUEQ5YWk1Z3xBQ3Jtc0tsVk5zb3lsMVRHVGFGRkhiZjhKMjJPN3IwZzFuVGU2cTdKUGNtUlV4NXN2d1c2d0kwSk5uUVMwRktPR1hzTG41MTNGc0FFLWVuTDU0Mm9QZlN2MHhPek55SVZMMlZRYTZkLTROOE1YMjJ2TndSbDd1dw&q=https%3A%2F%2Fdeltabolic.com
+          - button "и ещё 2 ссылки" [ref=e97] [cursor=pointer]
+        - button "Подписаться" [ref=e101] [cursor=pointer]:
+          - generic [ref=e102]: Подписаться
+      - tablist [ref=e109]:
+        - tablist [ref=e113]:
+          - tab "Главная" [ref=e114] [cursor=pointer]:
+            - generic [ref=e115]: Главная
+          - tab "Видео" [ref=e116] [cursor=pointer]:
+            - generic [ref=e117]: Видео
+          - tab "Shorts" [ref=e118] [cursor=pointer]:
+            - generic [ref=e119]: Shorts
+          - tab "Записи" [ref=e120] [cursor=pointer]:
+            - generic [ref=e121]: Записи
+          - generic [ref=e123]:
+            - button "Поиск" [ref=e125] [cursor=pointer]
+            - textbox "Поиск" [ref=e133]:
+              - /placeholder: ""
+              - text: lateral raise seated
+    - generic [ref=e141]:
+      - generic [ref=e145]:
+        - link [ref=e147] [cursor=pointer]:
+          - /url: /watch?v=H_QkInZ6t9Q
+          - button [ref=e151]:
+            - generic [ref=e153]: Смотреть позже
+          - button [ref=e155]:
+            - generic [ref=e157]: Добавить в очередь
+        - generic [ref=e159] [cursor=pointer]:
+          - generic [ref=e160]:
+            - generic [ref=e161]:
+              - heading "✅ BIGGER Shoulders Workout 21 секунда" [level=3] [ref=e162]:
+                - link "✅ BIGGER Shoulders Workout 21 секунда" [ref=e163]:
+                  - /url: /watch?v=H_QkInZ6t9Q
+                  - text: ✅ BIGGER Shoulders Workout
+              - button "Меню действий" [ref=e167]
+            - generic [ref=e170]:
+              - generic [ref=e171]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e175]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e176]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e177]: •
+              - generic [ref=e178]:
+                - generic [ref=e179]: 2,9 млн просмотров
+                - generic [ref=e180]: •8 месяцев назад
+          - generic [ref=e181]: "✅ BIGGER Shoulders Workout 1) Seated Dumbbell Shoulder Press (70° incline): Targets the front delts with support from the side delts. 3 sets of 8–10 reps 2) Incline Lateral Raises (70°..."
+      - generic [ref=e185]:
+        - link [ref=e187] [cursor=pointer]:
+          - /url: /watch?v=Kl3LEzQ5Zqs
+        - generic [ref=e189] [cursor=pointer]:
+          - generic [ref=e190]:
+            - generic [ref=e191]:
+              - heading "The Perfect Lateral Raise (DO THIS!) 8 секунд" [level=3] [ref=e192]:
+                - link "The Perfect Lateral Raise (DO THIS!) 8 секунд" [ref=e193]:
+                  - /url: /watch?v=Kl3LEzQ5Zqs
+                  - text: The Perfect Lateral Raise (DO THIS!)
+              - button "Меню действий" [ref=e197]
+            - generic [ref=e200]:
+              - generic [ref=e201]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e205]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e206]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e207]: •
+              - generic [ref=e208]:
+                - generic [ref=e209]: 10 млн просмотров
+                - generic [ref=e210]: •1 год назад
+          - generic [ref=e211]: Lateral Raise Form Tips 1) Use a Thumbless Grip A thumbless grip reduces forearm and grip activation, helping you focus more on your lateral delts. While a full grip isn’t necessarily wrong,...
+      - generic [ref=e215]:
+        - link [ref=e217] [cursor=pointer]:
+          - /url: /watch?v=dybxZJaWxCY
+        - generic [ref=e219] [cursor=pointer]:
+          - generic [ref=e220]:
+            - generic [ref=e221]:
+              - heading "Lateral Raise Mistake (DON’T DO THIS!) 21 секунда" [level=3] [ref=e222]:
+                - link "Lateral Raise Mistake (DON’T DO THIS!) 21 секунда" [ref=e223]:
+                  - /url: /watch?v=dybxZJaWxCY
+                  - text: Lateral Raise Mistake (DON’T DO THIS!)
+              - button "Меню действий" [ref=e227]
+            - generic [ref=e230]:
+              - generic [ref=e231]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e235]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e236]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e237]: •
+              - generic [ref=e238]:
+                - generic [ref=e239]: 5,8 млн просмотров
+                - generic [ref=e240]: •2 года назад
+          - generic [ref=e241]: ❌ STOP DOING LATERAL RAISES LIKE THIS, standing completely straight with your arms fully extended. This posture shifts tension to the front delts, reducing tension on the side delts. It...
+      - generic [ref=e245]:
+        - link [ref=e247] [cursor=pointer]:
+          - /url: /watch?v=xDt3VzkSsl8
+        - generic [ref=e249] [cursor=pointer]:
+          - generic [ref=e250]:
+            - generic [ref=e251]:
+              - heading "Dumbbell Workout for 3D Shoulders 7 секунд" [level=3] [ref=e252]:
+                - link "Dumbbell Workout for 3D Shoulders 7 секунд" [ref=e253]:
+                  - /url: /watch?v=xDt3VzkSsl8
+                  - text: Dumbbell Workout for 3D Shoulders
+              - button "Меню действий" [ref=e257]
+            - generic [ref=e260]:
+              - generic [ref=e261]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e265]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e266]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e267]: •
+              - generic [ref=e268]:
+                - generic [ref=e269]: 9,2 млн просмотров
+                - generic [ref=e270]: •7 месяцев назад
+          - generic [ref=e271]: Dumbbell Workout for 3D Shoulders Dumbbell Shoulder Press – Emphasizes the front delts with support from the side delts Lateral Raise – Isolates and builds the side delts for width Front...
+      - generic [ref=e275]:
+        - link [ref=e277] [cursor=pointer]:
+          - /url: /watch?v=U2gMn8GXr2A
+        - generic [ref=e279] [cursor=pointer]:
+          - generic [ref=e280]:
+            - generic [ref=e281]:
+              - heading "You're Doing Lateral Raises WRONG — Here's Why It Hurts! 6 секунд" [level=3] [ref=e282]:
+                - link "You're Doing Lateral Raises WRONG — Here's Why It Hurts! 6 секунд" [ref=e283]:
+                  - /url: /watch?v=U2gMn8GXr2A
+                  - text: You're Doing Lateral Raises WRONG — Here's Why It Hurts!
+              - button "Меню действий" [ref=e287]
+            - generic [ref=e290]:
+              - generic [ref=e291]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e295]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e296]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e297]: •
+              - generic [ref=e298]:
+                - generic [ref=e299]: 1,8 млн просмотров
+                - generic [ref=e300]: •11 месяцев назад
+          - generic [ref=e301]: ❌ You're Doing Lateral Raises WRONG — Here's Why It Hurts! A common mistake during lateral raises is keeping your arms completely straight and lifting the dumbbells directly out to your...

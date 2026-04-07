@@ -1,0 +1,103 @@
+- generic [ref=e2]:
+  - banner [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "Гид" [ref=e9] [cursor=pointer]
+        - generic [ref=e11]:
+          - link:
+            - /url: /
+            - generic:
+              - generic:
+                - img
+      - search [ref=e13]:
+        - generic [ref=e14]:
+          - generic [ref=e15]:
+            - combobox [expanded] [ref=e17]
+            - button [ref=e20] [cursor=pointer]
+          - button "Search" [ref=e21] [cursor=pointer]
+  - navigation [ref=e28]
+  - main [ref=e30]:
+    - generic [ref=e37]:
+      - generic [ref=e53]:
+        - heading "Andrew Kwong (DeltaBolic)" [level=1] [ref=e55]
+        - generic [ref=e56]:
+          - generic [ref=e58]: "@DeltaBolic"
+          - generic [ref=e59]: •
+          - generic [ref=e60]:
+            - generic "2,63 миллиона подписчиков" [ref=e61]: 2,63 млн подписчиков
+            - generic [ref=e62]: •
+            - generic [ref=e63]: 875 видео
+        - generic [ref=e65] [cursor=pointer]:
+          - generic [ref=e66]: Easy-to-understand exercise tips to put on muscle and lose fat.
+          - button "Описание. Easy-to-understand exercise tips to put on muscle and lose fПодробнее…" [ref=e67]:
+            - generic [ref=e68]: …ещё
+        - generic [ref=e69]:
+          - link "deltabolic.com" [ref=e72] [cursor=pointer]:
+            - /url: https://www.youtube.com/redirect?event=channel_header&redir_token=QUFFLUhqa2dvRVBtZ1FTakxvV2ZITF9sVi1ndzNsLWQ5QXxBQ3Jtc0ttNXFpbmltZWd6b3Ria21qbFQ4Wk16dVVJVHBxckZaSVRDT0tyX2xYczFPcW9FRjlRWVc0ak1tM2hmN1RXeWk4dzFPUVdzWmQtVkEyZDAtWkFtWTZKbXlLNm1QSHhyX3RIcTJHY21hUk1ocWR5elZMYw&q=https%3A%2F%2Fdeltabolic.com
+          - button "и ещё 2 ссылки" [ref=e75] [cursor=pointer]
+        - button "Подписаться" [ref=e79] [cursor=pointer]:
+          - generic [ref=e80]: Подписаться
+      - tablist [ref=e87]:
+        - button [ref=e88] [cursor=pointer]:
+          - generic [ref=e89]:
+            - img
+        - tablist [ref=e93]:
+          - tab "Главная" [ref=e94] [cursor=pointer]:
+            - generic [ref=e95]: Главная
+          - tab "Видео" [ref=e96] [cursor=pointer]:
+            - generic [ref=e97]: Видео
+          - tab "Shorts" [ref=e98] [cursor=pointer]:
+            - generic [ref=e99]: Shorts
+          - tab "Записи" [ref=e100] [cursor=pointer]:
+            - generic [ref=e101]: Записи
+          - generic [ref=e103]:
+            - button "Поиск" [ref=e105] [cursor=pointer]
+            - textbox "Поиск" [ref=e113]:
+              - /placeholder: ""
+              - text: hammer curl
+        - button [ref=e117] [cursor=pointer]:
+          - generic [ref=e118]:
+            - img
+    - generic [ref=e122]:
+      - generic [ref=e126]:
+        - link [ref=e128] [cursor=pointer]:
+          - /url: /watch?v=MLGpe5vGOh4
+        - generic [ref=e130] [cursor=pointer]:
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - heading "✅ ДЕЛАЙТЕ ЭТО, чтобы нарастить БОЛЬШИЕ БИЦЕПСЫ! 24 секунды" [level=3] [ref=e133]:
+                - link "✅ ДЕЛАЙТЕ ЭТО, чтобы нарастить БОЛЬШИЕ БИЦЕПСЫ! 24 секунды" [ref=e134]:
+                  - /url: /watch?v=MLGpe5vGOh4
+                  - text: ✅ ДЕЛАЙТЕ ЭТО, чтобы нарастить БОЛЬШИЕ БИЦЕПСЫ!
+              - button "Меню действий" [ref=e138]
+            - generic [ref=e141]:
+              - generic [ref=e142]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e146]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e147]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e148]: •
+              - generic [ref=e149]:
+                - generic [ref=e150]: 10 млн просмотров
+                - generic [ref=e151]: •6 месяцев назад
+          - generic [ref=e152]: Программа тренировок Size & Shred 👉🏻 deltabolic.com Если вы хотите, чтобы бицепсы выглядели больше, вам нужно прорабо...
+      - generic [ref=e156]:
+        - link [ref=e158] [cursor=pointer]:
+          - /url: /watch?v=_aoad2yuP5w
+        - generic [ref=e160] [cursor=pointer]:
+          - generic [ref=e161]:
+            - generic [ref=e162]:
+              - heading "Dumbbell Bicep Curl Variations (KNOW THE DIFFERENCE!) 13 секунд" [level=3] [ref=e163]:
+                - link "Dumbbell Bicep Curl Variations (KNOW THE DIFFERENCE!) 13 секунд" [ref=e164]:
+                  - /url: /watch?v=_aoad2yuP5w
+                  - text: Dumbbell Bicep Curl Variations (KNOW THE DIFFERENCE!)
+              - button "Меню действий" [ref=e168]
+            - generic [ref=e171]:
+              - generic [ref=e172]:
+                - generic "Andrew Kwong (DeltaBolic)" [ref=e176]:
+                  - link "Andrew Kwong (DeltaBolic)" [ref=e177]:
+                    - /url: /@DeltaBolic
+                - generic [ref=e178]: •
+              - generic [ref=e179]:
+                - generic [ref=e180]: 7,7 млн просмотров
+                - generic [ref=e181]: •1 год назад
+          - generic [ref=e182]: If you use a supinated grip to perform bicep curls, you'll primarily work your biceps. If you use a neutral grip, you'll shift the emphasis to the brachialis and brachioradialis; you'll still...
