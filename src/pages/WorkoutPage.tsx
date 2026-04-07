@@ -82,6 +82,8 @@ export default function WorkoutPage() {
   const [workoutPhase, setWorkoutPhase] = useState<WorkoutPhase>('preview')
   const [showTip, setShowTip] = useState<string | null>(null)
   const [showVideo, setShowVideo] = useState(true)
+  const [showAltVideos, setShowAltVideos] = useState(false)
+  const [activeAltVideoIndex, setActiveAltVideoIndex] = useState(0)
   const [showGif, setShowGif] = useState(true)
   const [gifLoaded, setGifLoaded] = useState<Record<string, boolean>>({})
   const [showSwapModal, setShowSwapModal] = useState(false)
@@ -639,7 +641,7 @@ export default function WorkoutPage() {
                       >
                         <div style={{
                           position: 'relative',
-                          paddingBottom: isShorts ? '177.78%' : '56.25%',
+                          paddingBottom: '177.78%',
                           height: 0,
                           borderRadius: 16,
                           overflow: 'hidden',
@@ -662,6 +664,87 @@ export default function WorkoutPage() {
             )
           })()}
 
+          {/* Alternative Videos in active workout */}
+          {(() => {
+            const altVideoUrls = (currentExercise.alternatives ?? []).filter(a => a.startsWith('http') && getYouTubeEmbedUrl(a))
+            if (altVideoUrls.length === 0) return null
+            const safeAltIndex = Math.min(activeAltVideoIndex, altVideoUrls.length - 1)
+            const altUrl = altVideoUrls[safeAltIndex]
+            const altEmbed = getYouTubeEmbedUrl(altUrl)
+            if (!altEmbed) return null
+            return (
+              <div className="mb-4">
+                <button
+                  onClick={() => setShowAltVideos(v => !v)}
+                  className="flex items-center gap-2 text-sm mb-2 w-full"
+                  style={{ color: 'rgba(255,255,255,0.55)' }}
+                >
+                  <span>🔄</span>
+                  <span className="font-semibold">Альтернативные видео</span>
+                  <span
+                    className="text-xs font-bold px-1.5 py-0.5 rounded-full ml-1"
+                    style={{ background: 'rgba(99,102,241,0.2)', color: '#a5b4fc' }}
+                  >
+                    {altVideoUrls.length}
+                  </span>
+                  <span className="text-white/30 ml-auto">{showAltVideos ? '▲' : '▼'}</span>
+                </button>
+                <AnimatePresence>
+                  {showAltVideos && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      style={{ overflow: 'hidden' }}
+                    >
+                      {/* Tab buttons if multiple alts */}
+                      {altVideoUrls.length > 1 && (
+                        <div className="flex gap-2 mb-2">
+                          {altVideoUrls.map((_, i) => (
+                            <motion.button
+                              key={i}
+                              whileTap={{ scale: 0.9 }}
+                              onClick={() => setActiveAltVideoIndex(i)}
+                              className="w-8 h-8 rounded-xl text-xs font-bold"
+                              style={{
+                                background: safeAltIndex === i ? 'linear-gradient(135deg, #6366f1, #8b5cf6)' : 'rgba(255,255,255,0.07)',
+                                color: safeAltIndex === i ? 'white' : 'rgba(255,255,255,0.45)',
+                              }}
+                            >
+                              {i + 1}
+                            </motion.button>
+                          ))}
+                        </div>
+                      )}
+                      <div
+                        className="rounded-2xl overflow-hidden"
+                        style={{ border: '1px solid rgba(99,102,241,0.2)', background: 'rgba(99,102,241,0.06)' }}
+                      >
+                        <div style={{
+                          position: 'relative',
+                          paddingBottom: '177.78%',
+                          height: 0,
+                          borderRadius: 16,
+                          overflow: 'hidden',
+                        }}>
+                          <iframe
+                            key={altUrl}
+                            src={altEmbed}
+                            title={`Альтернатива ${safeAltIndex + 1}`}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+                            loading="lazy"
+                          />
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            )
+          })()}
 
           {/* Sets */}
           <div className="space-y-3 mb-4">

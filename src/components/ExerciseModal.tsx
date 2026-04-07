@@ -333,10 +333,10 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                   </div>
                 )}
 
-                {/* Aspect ratio: 9:16 for Shorts, 16:9 for regular */}
+                {/* Aspect ratio: always 9:16 vertical */}
                 <div style={{
                   position: 'relative',
-                  paddingBottom: mainVideoUrl && isYouTubeShorts(mainVideoUrl) ? '177.78%' : '56.25%',
+                  paddingBottom: '177.78%',
                   height: 0,
                   borderRadius: 16,
                   overflow: 'hidden',
@@ -477,10 +477,10 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                                 <VideoSkeleton />
                               </div>
                             )}
-                            {/* Aspect ratio: 9:16 for Shorts, 16:9 for regular */}
+                            {/* Aspect ratio: always 9:16 vertical */}
                             <div style={{
                               position: 'relative',
-                              paddingBottom: isYouTubeShorts(altUrl) ? '177.78%' : '56.25%',
+                              paddingBottom: '177.78%',
                               height: 0,
                               borderRadius: 16,
                               overflow: 'hidden',
