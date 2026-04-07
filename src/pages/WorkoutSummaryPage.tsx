@@ -232,6 +232,30 @@ export default function WorkoutSummaryPage() {
             <div className="text-white/40 text-xs mt-1">подходов</div>
           </div>
         </div>
+
+        {/* Volume explanation */}
+        <div
+          className="mx-4 mb-4 p-3 rounded-xl"
+          style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
+        >
+          <p className="text-xs font-bold text-white/60 mb-1.5">📊 Объём нагрузки — что это?</p>
+          <p className="text-xs text-white/50 leading-relaxed mb-2">
+            Сумма <span className="text-white/75 font-semibold">вес × повторения</span> по всем подходам. Главный научно подтверждённый драйвер гипертрофии (Schoenfeld, 2010).
+          </p>
+          <div className="grid grid-cols-3 gap-1.5">
+            {[
+              { icon: '📈', label: 'Растёт', desc: 'Прогресс идёт' },
+              { icon: '➡️', label: '2–3 нед плато', desc: 'Поднять вес' },
+              { icon: '📉', label: 'Упал', desc: 'Недовосстановление' },
+            ].map(item => (
+              <div key={item.label} className="text-center p-1.5 rounded-lg" style={{ background: 'rgba(255,255,255,0.04)' }}>
+                <div className="text-base">{item.icon}</div>
+                <div className="text-white/60 text-[10px] font-semibold leading-tight">{item.label}</div>
+                <div className="text-white/35 text-[9px] leading-tight mt-0.5">{item.desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
       </motion.div>
 
       {/* Feedback section */}
