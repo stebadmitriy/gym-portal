@@ -24,9 +24,9 @@ const MUSCLE_COLORS: Record<string, string> = {
 }
 
 const WORKOUT_META: Record<WorkoutType, { label: string; dayRu: string; emoji: string; color: string }> = {
-  A: { label: 'Тренировка A', dayRu: 'Понедельник · Ширина', emoji: '💪', color: '#6366f1' },
-  B: { label: 'Тренировка B', dayRu: 'Среда · Мощь', emoji: '⚡', color: '#f59e0b' },
-  C: { label: 'Тренировка C', dayRu: 'Пятница · Детализация', emoji: '🎯', color: '#10b981' },
+  A: { label: 'День 1', dayRu: 'Акцент на верх груди и ширину', emoji: '💪', color: '#6366f1' },
+  B: { label: 'День 2', dayRu: 'Акцент на мощь и толщину спины', emoji: '⚡', color: '#f59e0b' },
+  C: { label: 'День 3', dayRu: 'Детализация и V-Taper Специализация', emoji: '🎯', color: '#10b981' },
 }
 
 function getWeekStart(): string {

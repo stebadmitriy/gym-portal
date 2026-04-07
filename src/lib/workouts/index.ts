@@ -28,3 +28,9 @@ export function getExercisesByWorkout(): { A: Exercise[]; B: Exercise[]; C: Exer
 export const EXERCISES = ALL_EXERCISES
 
 export { DEFAULT_IDS_A, DEFAULT_IDS_B, DEFAULT_IDS_C }
+
+export const WORKOUT_DESCRIPTIONS: Record<WorkoutType, { day: string; title: string; subtitle: string }> = {
+  A: { day: 'День 1', title: 'Ширина', subtitle: 'Акцент на верх груди и ширину' },
+  B: { day: 'День 2', title: 'Мощь', subtitle: 'Акцент на мощь и толщину спины' },
+  C: { day: 'День 3', title: 'Детализация', subtitle: 'Детализация и V-Taper Специализация' },
+}

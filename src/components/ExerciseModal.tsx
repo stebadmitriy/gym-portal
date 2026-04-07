@@ -49,6 +49,10 @@ interface ExerciseModalProps {
   onClose: () => void
 }
 
+function isYouTubeShorts(url: string): boolean {
+  return url.includes('youtube.com/shorts/')
+}
+
 function getYouTubeEmbedUrl(url: string): string | null {
   if (!url) return null
   // Full URL: youtube.com/watch?v=ID
@@ -327,8 +331,14 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                   </div>
                 )}
 
-                {/* 16:9 aspect ratio container */}
-                <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, borderRadius: 16, overflow: 'hidden' }}>
+                {/* Aspect ratio: 9:16 for Shorts, 16:9 for regular */}
+                <div style={{
+                  position: 'relative',
+                  paddingBottom: mainVideoUrl && isYouTubeShorts(mainVideoUrl) ? '177.78%' : '56.25%',
+                  height: 0,
+                  borderRadius: 16,
+                  overflow: 'hidden',
+                }}>
                   <iframe
                     src={mainEmbedUrl}
                     title={exercise.name_ru}
@@ -465,8 +475,14 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                                 <VideoSkeleton />
                               </div>
                             )}
-                            {/* 16:9 aspect ratio */}
-                            <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, borderRadius: 16, overflow: 'hidden' }}>
+                            {/* Aspect ratio: 9:16 for Shorts, 16:9 for regular */}
+                            <div style={{
+                              position: 'relative',
+                              paddingBottom: isYouTubeShorts(altUrl) ? '177.78%' : '56.25%',
+                              height: 0,
+                              borderRadius: 16,
+                              overflow: 'hidden',
+                            }}>
                               <iframe
                                 src={altEmbedUrl}
                                 title={`Альтернатива ${activeAltIndex + 1}`}
