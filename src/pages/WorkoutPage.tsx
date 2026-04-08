@@ -142,7 +142,7 @@ export default function WorkoutPage() {
       const ir: Record<string, number> = {}
       activeWorkout.sets.forEach(s => {
         const key = `${s.exercise_id}_${s.set_number}`
-        iw[key] = s.weight_kg || weights[s.exercise_id] || 20
+        iw[key] = s.weight_kg != null && s.weight_kg !== 0 ? s.weight_kg : (weights[s.exercise_id] ?? 0)
         ir[key] = s.target_reps
       })
       setInputWeights(iw)
@@ -179,7 +179,7 @@ export default function WorkoutPage() {
     const originalId = baseExercises[currentExerciseIndex]?.id
     if (!originalId) return
     const key = `${originalId}_${setNumber}`
-    const w = inputWeights[key] ?? weights[originalId] ?? 20
+    const w = inputWeights[key] ?? weights[originalId] ?? 0
     const r = inputReps[key] ?? 10
 
     completeSet(originalId, setNumber, r, w)
@@ -752,7 +752,7 @@ export default function WorkoutPage() {
             {exerciseSets.map((set) => {
               const originalId = baseExercises[currentExerciseIndex]?.id ?? ''
               const key = `${originalId}_${set.set_number}`
-              const w = inputWeights[key] ?? set.weight_kg ?? 20
+              const w = inputWeights[key] ?? set.weight_kg ?? 0
               const r = inputReps[key] ?? set.target_reps
               // Active set = next uncompleted set
               const isActiveSet = !set.completed && exerciseSets.filter(s => !s.completed)[0]?.set_number === set.set_number
@@ -812,7 +812,9 @@ export default function WorkoutPage() {
                       </motion.button>
                       <div className="flex-1 text-center">
                         <div className="font-bold text-lg text-white">{w}</div>
-                        <div className="text-white/30 text-xs">кг</div>
+                        <div className="text-white/30 text-xs">
+                          {currentExercise.name_ru.toLowerCase().includes('гантел') ? '1 гантель' : 'кг'}
+                        </div>
                       </div>
                       <motion.button
                         onClick={() => {
