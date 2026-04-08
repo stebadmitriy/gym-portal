@@ -26,6 +26,7 @@ interface WorkoutStoreState {
 
   startWorkout: (type: WorkoutType, weekNumber: number, exercises: any[], weights: Record<string, number>, block: BlockType) => void
   completeSet: (exerciseId: string, setNumber: number, actualReps: number, weight: number) => void
+  updateSet: (exerciseId: string, setNumber: number, actualReps: number, weight: number) => void
   startRestTimer: (isCompound: boolean, block: BlockType) => void
   tickRestTimer: () => void
   skipRest: () => void
@@ -92,6 +93,17 @@ export const useWorkoutStore = create<WorkoutStoreState>((set, get) => ({
       return s
     })
 
+    set({ activeWorkout: { ...activeWorkout, sets: updatedSets } })
+  },
+
+  updateSet: (exerciseId, setNumber, actualReps, weight) => {
+    const { activeWorkout } = get()
+    if (!activeWorkout) return
+    const updatedSets = activeWorkout.sets.map(s =>
+      s.exercise_id === exerciseId && s.set_number === setNumber
+        ? { ...s, actual_reps: actualReps, weight_kg: weight }
+        : s
+    )
     set({ activeWorkout: { ...activeWorkout, sets: updatedSets } })
   },
 

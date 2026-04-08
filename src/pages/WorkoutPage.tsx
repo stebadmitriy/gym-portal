@@ -68,6 +68,7 @@ export default function WorkoutPage() {
     activeWorkout,
     restTimer,
     completeSet,
+    updateSet,
     startRestTimer,
     tickRestTimer,
     skipRest,
@@ -798,32 +799,33 @@ export default function WorkoutPage() {
                         onClick={() => {
                           const newW = Math.max(0, w - currentExercise.increment_kg)
                           setInputWeights(prev => ({ ...prev, [key]: newW }))
+                          if (set.completed) updateSet(originalId, set.set_number, inputReps[key] ?? r, newW)
                         }}
                         whileTap={{ scale: 0.88 }}
-                        className="w-8 h-8 rounded-lg flex items-center justify-center text-white/60 text-lg"
-                        style={{ background: 'rgba(255,255,255,0.08)' }}
-                        disabled={set.completed}
+                        className="w-8 h-8 rounded-lg flex items-center justify-center text-lg"
+                        style={{
+                          background: set.completed ? 'rgba(245,158,11,0.15)' : 'rgba(255,255,255,0.08)',
+                          color: set.completed ? '#fbbf24' : 'rgba(255,255,255,0.6)'
+                        }}
                       >
                         −
                       </motion.button>
                       <div className="flex-1 text-center">
-                        <div
-                          className="font-bold text-lg"
-                          style={{ color: set.completed ? 'rgba(255,255,255,0.5)' : 'white' }}
-                        >
-                          {w}
-                        </div>
+                        <div className="font-bold text-lg text-white">{w}</div>
                         <div className="text-white/30 text-xs">кг</div>
                       </div>
                       <motion.button
                         onClick={() => {
                           const newW = w + currentExercise.increment_kg
                           setInputWeights(prev => ({ ...prev, [key]: newW }))
+                          if (set.completed) updateSet(originalId, set.set_number, inputReps[key] ?? r, newW)
                         }}
                         whileTap={{ scale: 0.88 }}
-                        className="w-8 h-8 rounded-lg flex items-center justify-center text-white/60 text-lg"
-                        style={{ background: 'rgba(255,255,255,0.08)' }}
-                        disabled={set.completed}
+                        className="w-8 h-8 rounded-lg flex items-center justify-center text-lg"
+                        style={{
+                          background: set.completed ? 'rgba(245,158,11,0.15)' : 'rgba(255,255,255,0.08)',
+                          color: set.completed ? '#fbbf24' : 'rgba(255,255,255,0.6)'
+                        }}
                       >
                         +
                       </motion.button>
@@ -835,32 +837,33 @@ export default function WorkoutPage() {
                         onClick={() => {
                           const newR = Math.max(1, r - 1)
                           setInputReps(prev => ({ ...prev, [key]: newR }))
+                          if (set.completed) updateSet(originalId, set.set_number, newR, inputWeights[key] ?? w)
                         }}
                         whileTap={{ scale: 0.88 }}
-                        className="w-8 h-8 rounded-lg flex items-center justify-center text-white/60"
-                        style={{ background: 'rgba(255,255,255,0.08)' }}
-                        disabled={set.completed}
+                        className="w-8 h-8 rounded-lg flex items-center justify-center"
+                        style={{
+                          background: set.completed ? 'rgba(245,158,11,0.15)' : 'rgba(255,255,255,0.08)',
+                          color: set.completed ? '#fbbf24' : 'rgba(255,255,255,0.6)'
+                        }}
                       >
                         −
                       </motion.button>
                       <div className="text-center w-8">
-                        <div
-                          className="font-bold"
-                          style={{ color: set.completed ? 'rgba(255,255,255,0.5)' : 'white' }}
-                        >
-                          {r}
-                        </div>
+                        <div className="font-bold text-white">{r}</div>
                         <div className="text-white/30 text-xs">повт</div>
                       </div>
                       <motion.button
                         onClick={() => {
                           const newR = r + 1
                           setInputReps(prev => ({ ...prev, [key]: newR }))
+                          if (set.completed) updateSet(originalId, set.set_number, newR, inputWeights[key] ?? w)
                         }}
                         whileTap={{ scale: 0.88 }}
-                        className="w-8 h-8 rounded-lg flex items-center justify-center text-white/60"
-                        style={{ background: 'rgba(255,255,255,0.08)' }}
-                        disabled={set.completed}
+                        className="w-8 h-8 rounded-lg flex items-center justify-center"
+                        style={{
+                          background: set.completed ? 'rgba(245,158,11,0.15)' : 'rgba(255,255,255,0.08)',
+                          color: set.completed ? '#fbbf24' : 'rgba(255,255,255,0.6)'
+                        }}
                       >
                         +
                       </motion.button>
