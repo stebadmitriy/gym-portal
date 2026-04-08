@@ -33,7 +33,7 @@ export const EXERCISES_A: Exercise[] = [
     sets: 4,
     reps: 'до техн. отказа',
     instagramUrl: 'https://www.youtube.com/watch?v=eDP_OOhMTZ4',
-    alternatives: [],
+    alternatives: ['https://www.youtube.com/shorts/kFgKN1StH2s'],
   },
   {
     id: 'seated_lateral_raise',

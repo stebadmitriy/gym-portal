@@ -106,11 +106,14 @@ export default function WorkoutPage() {
   const exercises = baseExercises.map((ex, i) => swappedExercises[i] ?? ex)
 
   // Initialize workout on mount (but don't start elapsed timer yet)
+  // Re-init if urlSlot changed and workout hasn't started (still in preview)
   useEffect(() => {
-    if (!activeWorkout) {
-      const type = urlSlot || programState.next_workout_type
+    const type = (urlSlot || programState.next_workout_type) as WorkoutType
+    const needsReset = !activeWorkout || (urlSlot && activeWorkout.workout_type !== urlSlot)
+    if (needsReset) {
       const exList = getExercisesForWorkout(type, customProgram)
       startWorkout(type, programState.total_week, exList, weights, block)
+      setWorkoutPhase('preview')
     }
   }, [])
 

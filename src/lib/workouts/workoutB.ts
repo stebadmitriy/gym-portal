@@ -16,7 +16,7 @@ export const EXERCISES_B: Exercise[] = [
     sets: 3,
     reps: '8-10',
     instagramUrl: 'https://www.youtube.com/shorts/E7ngsffMPR0',
-    alternatives: ['https://www.youtube.com/watch?v=4LBVP2Oe7fg'],
+    alternatives: ['https://www.youtube.com/watch?v=4LBVP2Oe7fg', 'https://www.youtube.com/shorts/KqobVMSpqfE'],
   },
   {
     id: 'dumbbell_row',

@@ -16,7 +16,7 @@ export const EXERCISES_C: Exercise[] = [
     sets: 3,
     reps: '12-15',
     instagramUrl: 'https://www.youtube.com/watch?v=ZVwgKeqrYeA',
-    alternatives: ['https://www.youtube.com/watch?v=AJhU25QU7A0'],
+    alternatives: ['https://www.youtube.com/watch?v=AJhU25QU7A0', 'https://www.youtube.com/shorts/4-258XRGL2g'],
   },
   {
     id: 'lat_pulldown',
@@ -33,7 +33,7 @@ export const EXERCISES_C: Exercise[] = [
     sets: 3,
     reps: '12',
     instagramUrl: 'https://www.youtube.com/watch?v=bNmvKpJSWKM',
-    alternatives: ['https://www.youtube.com/shorts/RFgiCDJs8Nk'],
+    alternatives: ['https://www.youtube.com/shorts/RFgiCDJs8Nk', 'https://www.youtube.com/shorts/wUywhht3YBQ'],
   },
   {
     id: 'upright_row',
@@ -67,7 +67,7 @@ export const EXERCISES_C: Exercise[] = [
     sets: 3,
     reps: '15-20',
     instagramUrl: 'https://www.youtube.com/watch?v=FeERX9UwspY',
-    alternatives: ['https://www.youtube.com/watch?v=cGXBVOc5xIk'],
+    alternatives: ['https://www.youtube.com/watch?v=cGXBVOc5xIk', 'https://www.youtube.com/shorts/JlT2xB92lY8'],
   },
   {
     id: 'squat',
