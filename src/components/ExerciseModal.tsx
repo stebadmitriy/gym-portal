@@ -333,24 +333,34 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                   </div>
                 )}
 
-                {/* Aspect ratio: always 9:16 vertical */}
-                <div style={{
-                  position: 'relative',
-                  paddingBottom: '177.78%',
-                  height: 0,
-                  borderRadius: 16,
-                  overflow: 'hidden',
-                }}>
-                  <iframe
-                    src={mainEmbedUrl}
-                    title={exercise.name_ru}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
-                    loading="lazy"
-                    onLoad={() => setMainVideoLoaded(true)}
-                  />
-                </div>
+                {/* Aspect ratio: 9:16 for Shorts, rotated 16:9 for horizontal */}
+                {isYouTubeShorts(mainVideoUrl || '') ? (
+                  <div style={{ position: 'relative', paddingBottom: '177.78%', height: 0, borderRadius: 16, overflow: 'hidden' }}>
+                    <iframe
+                      src={mainEmbedUrl}
+                      title={exercise.name_ru}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+                      loading="lazy"
+                      onLoad={() => setMainVideoLoaded(true)}
+                    />
+                  </div>
+                ) : (
+                  <div style={{ position: 'relative', width: '100%', paddingBottom: '177.78%', overflow: 'hidden', borderRadius: 16 }}>
+                    <div style={{ position: 'absolute', top: '50%', left: '50%', width: '177.78%', height: '56.25%', transform: 'translate(-50%, -50%) rotate(-90deg)' }}>
+                      <iframe
+                        src={mainEmbedUrl}
+                        title={exercise.name_ru}
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
+                        loading="lazy"
+                        onLoad={() => setMainVideoLoaded(true)}
+                      />
+                    </div>
+                  </div>
+                )}
 
                 {allVideos.length > 1 && !isPinned && (
                   <div className="flex justify-end px-3 py-2">
@@ -477,24 +487,34 @@ export default function ExerciseModal({ exercise, currentWeight, onClose }: Exer
                                 <VideoSkeleton />
                               </div>
                             )}
-                            {/* Aspect ratio: always 9:16 vertical */}
-                            <div style={{
-                              position: 'relative',
-                              paddingBottom: '177.78%',
-                              height: 0,
-                              borderRadius: 16,
-                              overflow: 'hidden',
-                            }}>
-                              <iframe
-                                src={altEmbedUrl}
-                                title={`Альтернатива ${activeAltIndex + 1}`}
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
-                                loading="lazy"
-                                onLoad={() => setAltVideoLoaded(true)}
-                              />
-                            </div>
+                            {/* Aspect ratio: 9:16 for Shorts, rotated 16:9 for horizontal */}
+                            {isYouTubeShorts(altUrl) ? (
+                              <div style={{ position: 'relative', paddingBottom: '177.78%', height: 0, borderRadius: 16, overflow: 'hidden' }}>
+                                <iframe
+                                  src={altEmbedUrl}
+                                  title={`Альтернатива ${activeAltIndex + 1}`}
+                                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                  allowFullScreen
+                                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+                                  loading="lazy"
+                                  onLoad={() => setAltVideoLoaded(true)}
+                                />
+                              </div>
+                            ) : (
+                              <div style={{ position: 'relative', width: '100%', paddingBottom: '177.78%', overflow: 'hidden', borderRadius: 16 }}>
+                                <div style={{ position: 'absolute', top: '50%', left: '50%', width: '177.78%', height: '56.25%', transform: 'translate(-50%, -50%) rotate(-90deg)' }}>
+                                  <iframe
+                                    src={altEmbedUrl}
+                                    title={`Альтернатива ${activeAltIndex + 1}`}
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    style={{ width: '100%', height: '100%', border: 'none', display: 'block' }}
+                                    loading="lazy"
+                                    onLoad={() => setAltVideoLoaded(true)}
+                                  />
+                                </div>
+                              </div>
+                            )}
                           </div>
                         </div>
                       ) : null
