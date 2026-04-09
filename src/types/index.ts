@@ -18,6 +18,7 @@ export interface Exercise {
   muscle_emoji: string
   instagramUrl?: string
   alternatives?: string[]
+  video_landscape?: boolean
 }
 
 export interface WorkoutSet {

@@ -34,6 +34,7 @@ export const EXERCISES_A: Exercise[] = [
     reps: '10-15',
     instagramUrl: 'https://www.youtube.com/watch?v=6wzODtDJV_Q',
     alternatives: ['https://www.youtube.com/shorts/S-wUvzp0d_U', 'https://www.youtube.com/shorts/_NV8nNSaR0M', 'https://www.youtube.com/shorts/Snx3CAGxfXs'],
+    video_landscape: true,
   },
   {
     id: 'seated_lateral_raise',

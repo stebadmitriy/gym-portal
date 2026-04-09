@@ -51,6 +51,7 @@ export const EXERCISES_B: Exercise[] = [
     reps: '10-15',
     instagramUrl: 'https://www.youtube.com/watch?v=ooIQjdyy5CA',
     alternatives: ['https://www.youtube.com/shorts/bubDnOh7vn0', 'https://www.youtube.com/watch?v=1KyMeDhEpVc', 'https://www.youtube.com/watch?v=fgy3sHryyCA'],
+    video_landscape: true,
   },
   {
     id: 'rdl',
