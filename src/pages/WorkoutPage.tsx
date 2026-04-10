@@ -93,6 +93,7 @@ export default function WorkoutPage() {
   const [swapToast, setSwapToast] = useState(false)
   const [inputWeights, setInputWeights] = useState<Record<string, number>>({})
   const [inputReps, setInputReps] = useState<Record<string, number>>({})
+  const [rawWeightStrings, setRawWeightStrings] = useState<Record<string, string>>({})
   const [selectedPreviewExercise, setSelectedPreviewExercise] = useState<Exercise | null>(null)
   const elapsedRef = useRef<NodeJS.Timeout | null>(null)
   const restRef = useRef<NodeJS.Timeout | null>(null)
@@ -862,14 +863,20 @@ export default function WorkoutPage() {
                         <input
                           type="text"
                           inputMode="decimal"
-                          value={w === 0 ? '' : String(w)}
+                          value={rawWeightStrings[key] ?? (w === 0 ? '' : String(w))}
                           placeholder="0"
                           onChange={(e) => {
-                            const raw = e.target.value.replace(',', '.')
-                            const val = parseFloat(raw)
-                            const newW = isNaN(val) ? 0 : Math.max(0, val)
-                            propagateWeight(set.set_number, newW)
-                            if (set.completed) updateSet(originalId, set.set_number, inputReps[key] ?? r, newW)
+                            const raw = e.target.value
+                            setRawWeightStrings(prev => ({ ...prev, [key]: raw }))
+                            const val = parseFloat(raw.replace(',', '.'))
+                            if (!isNaN(val)) {
+                              const newW = Math.max(0, val)
+                              propagateWeight(set.set_number, newW)
+                              if (set.completed) updateSet(originalId, set.set_number, inputReps[key] ?? r, newW)
+                            }
+                          }}
+                          onBlur={() => {
+                            setRawWeightStrings(prev => { const n = { ...prev }; delete n[key]; return n })
                           }}
                           className="w-full bg-transparent text-center font-bold text-lg text-white outline-none"
                           style={{ border: 'none', WebkitAppearance: 'none', MozAppearance: 'textfield' } as React.CSSProperties}
