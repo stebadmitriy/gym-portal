@@ -78,7 +78,8 @@ export default function WorkoutSummaryPage() {
       duration_minutes: durationMinutes,
       feedback: selectedFeedback,
       sets: activeWorkout.sets,
-      total_volume: totalVolume
+      total_volume: totalVolume,
+      exercise_notes: activeWorkout.exercise_notes || {}
     }
 
     completeWorkout(workout)

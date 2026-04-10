@@ -229,6 +229,11 @@ export default function HistoryPage() {
                                             </span>
                                           ))}
                                         </div>
+                                        {workout.exercise_notes?.[exerciseId] && (
+                                          <p className="text-white/40 text-xs mt-1.5 italic">
+                                            📝 {workout.exercise_notes[exerciseId]}
+                                          </p>
+                                        )}
                                       </div>
                                     )
                                   })}

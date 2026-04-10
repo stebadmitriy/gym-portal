@@ -44,6 +44,7 @@ export interface Workout {
   feedback?: FeedbackType
   sets?: WorkoutSet[]
   total_volume?: number
+  exercise_notes?: Record<string, string>
 }
 
 export interface ProgramState {

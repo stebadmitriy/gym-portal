@@ -8,10 +8,12 @@ interface ActiveWorkout {
   block: BlockType
   week_number: number
   started_at: string
+  startedAtMs: number
   sets: WorkoutSet[]
   currentExerciseIndex: number
   currentSetIndex: number
   elapsedSeconds: number
+  exercise_notes: Record<string, string>
 }
 
 interface WorkoutStoreState {
@@ -21,6 +23,7 @@ interface WorkoutStoreState {
     seconds: number
     totalSeconds: number
     isCompound: boolean
+    startedAtMs: number
   } | null
   isFinished: boolean
 
@@ -34,6 +37,7 @@ interface WorkoutStoreState {
   tickElapsed: () => void
   finishWorkout: () => ActiveWorkout | null
   resetWorkout: () => void
+  setExerciseNote: (exerciseId: string, note: string) => void
 }
 
 export const useWorkoutStore = create<WorkoutStoreState>((set, get) => ({
@@ -61,16 +65,19 @@ export const useWorkoutStore = create<WorkoutStoreState>((set, get) => ({
       }
     })
 
+    const now = Date.now()
     const workout: ActiveWorkout = {
       id: crypto.randomUUID(),
       workout_type: type,
       block,
       week_number: weekNumber,
-      started_at: new Date().toISOString(),
+      started_at: new Date(now).toISOString(),
+      startedAtMs: now,
       sets,
       currentExerciseIndex: 0,
       currentSetIndex: 0,
-      elapsedSeconds: 0
+      elapsedSeconds: 0,
+      exercise_notes: {}
     }
 
     set({ activeWorkout: workout, isFinished: false })
@@ -114,28 +121,31 @@ export const useWorkoutStore = create<WorkoutStoreState>((set, get) => ({
         active: true,
         seconds: totalSeconds,
         totalSeconds,
-        isCompound
+        isCompound,
+        startedAtMs: Date.now()
       }
     })
   },
 
   tickRestTimer: () => {
     const { restTimer } = get()
-    if (!restTimer || !restTimer.active) return
+    if (!restTimer?.active) return
 
-    if (restTimer.seconds <= 1) {
-      // Vibrate at end
-      if (navigator.vibrate) {
-        navigator.vibrate([200, 100, 200])
-      }
+    const elapsed = Math.floor((Date.now() - restTimer.startedAtMs) / 1000)
+    const remaining = Math.max(0, restTimer.totalSeconds - elapsed)
+
+    if (remaining === 0) {
+      if (navigator.vibrate) navigator.vibrate([200, 100, 200])
       set({ restTimer: { ...restTimer, seconds: 0, active: false } })
-    } else {
-      // Vibrate at 30 seconds warning
-      if (restTimer.seconds === 30 && navigator.vibrate) {
-        navigator.vibrate(100)
-      }
-      set({ restTimer: { ...restTimer, seconds: restTimer.seconds - 1 } })
+      return
     }
+
+    // Warn at 30 seconds
+    if (restTimer.seconds > 30 && remaining <= 30 && navigator.vibrate) {
+      navigator.vibrate(100)
+    }
+
+    set({ restTimer: { ...restTimer, seconds: remaining } })
   },
 
   skipRest: () => {
@@ -151,12 +161,8 @@ export const useWorkoutStore = create<WorkoutStoreState>((set, get) => ({
   tickElapsed: () => {
     const { activeWorkout } = get()
     if (!activeWorkout) return
-    set({
-      activeWorkout: {
-        ...activeWorkout,
-        elapsedSeconds: activeWorkout.elapsedSeconds + 1
-      }
-    })
+    const elapsed = Math.floor((Date.now() - activeWorkout.startedAtMs) / 1000)
+    set({ activeWorkout: { ...activeWorkout, elapsedSeconds: elapsed } })
   },
 
   finishWorkout: () => {
@@ -168,5 +174,16 @@ export const useWorkoutStore = create<WorkoutStoreState>((set, get) => ({
 
   resetWorkout: () => {
     set({ activeWorkout: null, restTimer: null, isFinished: false })
+  },
+
+  setExerciseNote: (exerciseId, note) => {
+    const { activeWorkout } = get()
+    if (!activeWorkout) return
+    set({
+      activeWorkout: {
+        ...activeWorkout,
+        exercise_notes: { ...activeWorkout.exercise_notes, [exerciseId]: note }
+      }
+    })
   }
 }))

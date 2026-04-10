@@ -76,7 +76,8 @@ export default function WorkoutPage() {
     tickElapsed,
     finishWorkout,
     resetWorkout,
-    startWorkout
+    startWorkout,
+    setExerciseNote,
   } = useWorkoutStore()
 
   const { programState, weights, updateWeight, customProgram } = useProgramStore()
@@ -137,6 +138,18 @@ export default function WorkoutPage() {
     }
     return () => { if (restRef.current) clearInterval(restRef.current) }
   }, [restTimer?.active])
+
+  // Recalculate timers when app comes back from background
+  useEffect(() => {
+    const handleVisibility = () => {
+      if (document.visibilityState === 'visible') {
+        tickElapsed()
+        tickRestTimer()
+      }
+    }
+    document.addEventListener('visibilitychange', handleVisibility)
+    return () => document.removeEventListener('visibilitychange', handleVisibility)
+  }, [])
 
   // Init input weights from workout sets
   useEffect(() => {
@@ -397,7 +410,7 @@ export default function WorkoutPage() {
   const progressPct = (completedExercises.size / exercises.length) * 100
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] pb-24 flex flex-col">
+    <div className="min-h-screen bg-[#0a0a0f] flex flex-col" style={{ paddingBottom: restTimer?.active ? '176px' : '96px' }}>
       {/* Sticky header */}
       <div
         className="sticky top-0 z-30 px-4 pb-3"
@@ -772,8 +785,20 @@ export default function WorkoutPage() {
 
           {/* Sets */}
           <div className="space-y-3 mb-4">
-            {exerciseSets.map((set) => {
-              const originalId = baseExercises[currentExerciseIndex]?.id ?? ''
+            {(() => {
+              const currentOriginalId = baseExercises[currentExerciseIndex]?.id ?? ''
+              const propagateWeight = (setNumber: number, newW: number) => {
+                const updates: Record<string, number> = {}
+                updates[`${currentOriginalId}_${setNumber}`] = newW
+                exerciseSets.forEach(s => {
+                  if (s.set_number > setNumber && !s.completed) {
+                    updates[`${currentOriginalId}_${s.set_number}`] = newW
+                  }
+                })
+                setInputWeights(prev => ({ ...prev, ...updates }))
+              }
+              return exerciseSets.map((set) => {
+              const originalId = currentOriginalId
               const key = `${originalId}_${set.set_number}`
               const w = inputWeights[key] ?? set.weight_kg ?? 0
               const r = inputReps[key] ?? set.target_reps
@@ -820,8 +845,8 @@ export default function WorkoutPage() {
                     <div className="flex items-center gap-1.5 flex-1">
                       <motion.button
                         onClick={() => {
-                          const newW = Math.max(0, w - currentExercise.increment_kg)
-                          setInputWeights(prev => ({ ...prev, [key]: newW }))
+                          const newW = Math.max(0, w - 2.5)
+                          propagateWeight(set.set_number, newW)
                           if (set.completed) updateSet(originalId, set.set_number, inputReps[key] ?? r, newW)
                         }}
                         whileTap={{ scale: 0.88 }}
@@ -834,15 +859,29 @@ export default function WorkoutPage() {
                         −
                       </motion.button>
                       <div className="flex-1 text-center">
-                        <div className="font-bold text-lg text-white">{w}</div>
+                        <input
+                          type="text"
+                          inputMode="decimal"
+                          value={w === 0 ? '' : String(w)}
+                          placeholder="0"
+                          onChange={(e) => {
+                            const raw = e.target.value.replace(',', '.')
+                            const val = parseFloat(raw)
+                            const newW = isNaN(val) ? 0 : Math.max(0, val)
+                            propagateWeight(set.set_number, newW)
+                            if (set.completed) updateSet(originalId, set.set_number, inputReps[key] ?? r, newW)
+                          }}
+                          className="w-full bg-transparent text-center font-bold text-lg text-white outline-none"
+                          style={{ border: 'none', WebkitAppearance: 'none', MozAppearance: 'textfield' } as React.CSSProperties}
+                        />
                         <div className="text-white/30 text-xs">
                           {currentExercise.name_ru.toLowerCase().includes('гантел') ? '1 гантель' : 'кг'}
                         </div>
                       </div>
                       <motion.button
                         onClick={() => {
-                          const newW = w + currentExercise.increment_kg
-                          setInputWeights(prev => ({ ...prev, [key]: newW }))
+                          const newW = w + 2.5
+                          propagateWeight(set.set_number, newW)
                           if (set.completed) updateSet(originalId, set.set_number, inputReps[key] ?? r, newW)
                         }}
                         whileTap={{ scale: 0.88 }}
@@ -912,7 +951,28 @@ export default function WorkoutPage() {
                   </div>
                 </motion.div>
               )
-            })}
+            })
+            })()}
+          </div>
+
+          {/* Notes */}
+          <div className="mb-4">
+            <label className="text-white/40 text-xs uppercase tracking-wider mb-1.5 block">📝 Заметки</label>
+            <textarea
+              value={activeWorkout.exercise_notes?.[baseExercises[currentExerciseIndex]?.id ?? ''] ?? ''}
+              onChange={(e) => {
+                const origId = baseExercises[currentExerciseIndex]?.id
+                if (origId) setExerciseNote(origId, e.target.value)
+              }}
+              placeholder="Заметки к упражнению..."
+              rows={2}
+              className="w-full rounded-xl p-3 text-sm resize-none outline-none"
+              style={{
+                background: 'rgba(255,255,255,0.05)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                color: 'rgba(255,255,255,0.8)',
+              }}
+            />
           </div>
 
           {/* Navigation */}
